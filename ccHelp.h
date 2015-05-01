@@ -18,4 +18,13 @@
 #include "OperationGroup.h"
 #include "DialogLayer.h"
 #include "OperationQueue.h"
+
+#include "msgpack/msgpack.h"
+
+#include "hash_container/hmap.h"
+#include "hash_container/hset.h"
+
+#include "Layouts/LayoutHelper.h"
+
 #include "jsoncpp_ser.h"
+#include "jsoncpp/jsonserialization.h"
