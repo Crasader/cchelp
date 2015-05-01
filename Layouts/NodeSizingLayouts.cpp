@@ -8,7 +8,7 @@
 
 #include "LayoutRegistration.h"
 
-namespace vin {
+namespace ccHelp {
     void regisNodeSizingLayouts()
     {
         auto *resize = new FunctionLayout([](Node *n, const Layout::Parameter &p) {

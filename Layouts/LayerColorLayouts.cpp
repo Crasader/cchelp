@@ -8,7 +8,7 @@
 
 #include "LayoutRegistration.h"
 
-namespace vin {
+namespace ccHelp {
     void regisLayerColorLayouts()
     {
         auto *changeColor = new FunctionLayout([](Node *n, const Layout::Parameter &p) {

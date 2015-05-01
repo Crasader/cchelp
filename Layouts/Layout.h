@@ -7,10 +7,11 @@
 //
 
 #pragma once
-#include "jsonserialization.h"
+#include "Def.h"
+#include "jsoncpp/jsonserialization.h"
 #include "cocos2d.h"
 
-namespace vin {
+namespace ccHelp {
     
     class Layout
     {

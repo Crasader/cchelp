@@ -9,7 +9,7 @@
 #include <stdlib.h>
 
 #if !defined(JSON_IS_AMALGAMATION)
-# include <json2/config.h>
+# include <jsoncpp/json2/config.h>
 #endif // if !defined(JSON_IS_AMALGAMATION)
 
 #if JSON_USE_EXCEPTION

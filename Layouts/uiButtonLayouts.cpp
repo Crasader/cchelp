@@ -9,7 +9,7 @@
 #include "LayoutRegistration.h"
 #include "CocosGUI.h"
 
-namespace vin {
+namespace ccHelp {
     void regisButtonLayouts()
     {
         auto *titleText = new FunctionLayout([](Node *n, const Layout::Parameter &p) {
@@ -136,28 +136,27 @@ namespace vin {
             }
         });
         GroupLayout::registerLayout("button-disabled", loadDisabledTexture);
-        
+
+		struct _Button : public ui::Button
+		{
+			void setTitleRenderer(Label *lbl)
+			{
+				if (!lbl)
+					return;
+
+				if (_titleRenderer)
+					_titleRenderer->removeFromParent();
+
+				if (lbl->getParent() != this)
+				{
+					lbl->removeFromParent();
+					this->addProtectedChild(lbl);
+				}
+
+				this->_titleRenderer = lbl;
+			}
+		};
         auto *setTitleRenderer = new FunctionLayout([](Node *n, const Layout::Parameter &p) {
-            struct _Button : public ui::Button
-            {
-                void setTitleRenderer(Label *lbl)
-                {
-                    if (!lbl)
-                        return;
-                    
-                    if (_titleRenderer)
-                        _titleRenderer->removeFromParent();
-                    
-                    if (lbl->getParent() != this)
-                    {
-                        lbl->removeFromParent();
-                        this->addProtectedChild(lbl);
-                    }
-                    
-                    this->_titleRenderer = lbl;
-                }
-            };
-            
             if (!p.isString())
                 return;
             

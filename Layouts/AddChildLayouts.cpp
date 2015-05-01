@@ -9,7 +9,7 @@
 #include "LayoutRegistration.h"
 #include "Utils.h"
 
-namespace vin {
+namespace ccHelp {
     
     class AddChildLayout : public Layout
     {

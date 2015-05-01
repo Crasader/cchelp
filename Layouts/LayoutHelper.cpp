@@ -15,7 +15,7 @@
 USING_NS_CC;
 using namespace std;
 
-namespace vin {
+namespace ccHelp {
     hmap<std::string, Layout::Parameter> LayoutHelper::Cache;
     
     Node* LayoutHelper::queryNode(cocos2d::Node *root, const string &query)
@@ -149,7 +149,7 @@ namespace vin {
             c = toupper(c);
         }
         
-        c = vin::Utils::colorFromText<Color3B>(s);
+        c = ccHelp::Utils::colorFromText<Color3B>(s);
         if (c != Color3B::BLACK || s == "BLACK")
             return true;
         

@@ -9,7 +9,7 @@
 #include "LayoutRegistration.h"
 #include "CocosGUI.h"
 
-namespace vin {
+namespace ccHelp {
     void regisLoadingBarLayouts()
     {
         auto *setProgress = new FunctionLayout([](Node *n, const Layout::Parameter &p) {

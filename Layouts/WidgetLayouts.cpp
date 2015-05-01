@@ -8,7 +8,7 @@
 
 #include "LayoutRegistration.h"
 
-namespace vin {
+namespace ccHelp {
     void regisWidgetLayouts()
     {
         auto *ignoreAdaptSize = new FunctionLayout([](Node *n, const Layout::Parameter &p) {

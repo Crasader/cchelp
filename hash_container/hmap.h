@@ -2,17 +2,20 @@
 #define __JSONSER_TYPE_HASH_MAP_H__
 
 #include "cocos2d.h"
-#include <json2/json.h>
+#include <jsoncpp/json2/json.h>
 #include <string>
-#include "strserialization.hpp"
-#include "def.hpp"
+#include "jsoncpp/strserialization.hpp"
+#include "jsoncpp/def.hpp"
 
 using std::string;
 
 #if (CC_TARGET_PLATFORM == CC_PLATFORM_WIN32) || (CC_TARGET_PLATFORM == CC_PLATFORM_WP8) || (CC_TARGET_PLATFORM == CC_PLATFORM_WINRT)
-#include <hash_map>
+/*#include <hash_map>
 template <typename K, typename V, typename H = std::hash<K>>
-using hmap = std::hash_map<K, V, H>;
+using hmap = std::hash_map<K, V, H>;*/
+#include <unordered_map>
+template <typename K, typename V, typename H = std::hash<K>>
+using hmap = std::unordered_map<K, V, H>;
 #elif (CC_TARGET_PLATFORM == CC_PLATFORM_IOS) || (CC_TARGET_PLATFORM == CC_PLATFORM_MAC)
 #include <unordered_map>
 template <typename K, typename V, typename H = std::hash<K>>

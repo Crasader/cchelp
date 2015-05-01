@@ -2,7 +2,7 @@
 #include "Def.h"
 #include <vector>
 #include "cocos2d.h"
-#include "UtilX.h"
+#include "Utils.h"
 #include "OperationQueue.h"
 
 using namespace std;

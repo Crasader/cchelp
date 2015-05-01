@@ -4,9 +4,9 @@
 // See file LICENSE for detail or copy at http://jsoncpp.sourceforge.net/LICENSE
 
 #if !defined(JSON_IS_AMALGAMATION)
-# include <json2/assertions.h>
-# include <json2/value.h>
-# include <json2/writer.h>
+# include <jsoncpp/json2/assertions.h>
+# include <jsoncpp/json2/value.h>
+# include <jsoncpp/json2/writer.h>
 # ifndef JSON_USE_SIMPLE_INTERNAL_ALLOCATOR
 #  include "json_batchallocator.h"
 # endif // #ifndef JSON_USE_SIMPLE_INTERNAL_ALLOCATOR

@@ -4,9 +4,9 @@
 // See file LICENSE for detail or copy at http://jsoncpp.sourceforge.net/LICENSE
 
 #if !defined(JSON_IS_AMALGAMATION)
-# include <json2/assertions.h>
-# include <json2/reader.h>
-# include <json2/value.h>
+# include <jsoncpp/json2/assertions.h>
+# include <jsoncpp/json2/reader.h>
+# include <jsoncpp/json2/value.h>
 # include "json_tool.h"
 #endif // if !defined(JSON_IS_AMALGAMATION)
 #include <utility>

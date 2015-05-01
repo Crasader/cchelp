@@ -13,7 +13,7 @@
 #include "Array2D.h"
 #include "Matrix.h"
 #include "ActionGroup.h"
-#include "UtilX.h"
+#include "Utils.h"
 #include "Lock.h"
 #include "OperationGroup.h"
 #include "DialogLayer.h"

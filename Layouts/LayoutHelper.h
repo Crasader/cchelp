@@ -7,11 +7,11 @@
 //
 
 #pragma once
-#include "Layout.h"
-#include "hmap.h"
+#include "Layouts/Layout.h"
+#include "hash_container/hmap.h"
 #include "CocosGUI.h"
 
-namespace vin {
+namespace ccHelp {
     class LayoutHelper : public Layout
     {
     public:

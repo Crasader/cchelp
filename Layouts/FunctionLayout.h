@@ -10,7 +10,7 @@
 #include "LayoutHelper.h"
 #include <functional>
 
-namespace vin {
+namespace ccHelp {
     class FunctionLayout : public Layout
     {
     public:

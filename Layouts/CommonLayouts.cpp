@@ -9,7 +9,7 @@
 #include "LayoutRegistration.h"
 #include "Utils.h"
 
-namespace vin {
+namespace ccHelp {
     void regisCommonLayouts()
     {
         // visible
@@ -28,11 +28,11 @@ namespace vin {
             
             if (p.isNull() || p.asBool())
             {
-                vin::Utils::pauseRecursively(n);
+                ccHelp::Utils::pauseRecursively(n);
             }
             else
             {
-                vin::Utils::resumeRecursively(n);
+                ccHelp::Utils::resumeRecursively(n);
             }
         });
         GroupLayout::registerLayout("pause", pause);
@@ -44,11 +44,11 @@ namespace vin {
             
             if (p.isNull() || p.asBool())
             {
-                vin::Utils::resumeRecursively(n);
+                ccHelp::Utils::resumeRecursively(n);
             }
             else
             {
-                vin::Utils::pauseRecursively(n);
+                ccHelp::Utils::pauseRecursively(n);
             }
         });
         GroupLayout::registerLayout("resume", resume);

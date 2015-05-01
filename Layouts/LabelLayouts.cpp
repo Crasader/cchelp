@@ -8,7 +8,7 @@
 
 #include "LayoutRegistration.h"
 
-namespace vin {
+namespace ccHelp {
     void regisLabelLayouts()
     {
         // system font

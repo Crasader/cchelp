@@ -8,7 +8,7 @@
 
 #include "LayoutRegistration.h"
 
-namespace vin {
+namespace ccHelp {
     void regisNodePositioningLayouts()
     {
         auto *positioning = new FunctionLayout([](Node *n, const Layout::Parameter &p) {

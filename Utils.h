@@ -19,7 +19,7 @@ namespace ccHelp
 {
 	class CoordinateTransformer;
 
-	class UtilX
+	class Utils
 	{
 	public:
 		static void setNodeAnchorWithoutChangePosition
@@ -58,24 +58,44 @@ namespace ccHelp
 		static unique_ptr<CoordinateTransformer> uiCoordTransform(float parentHeight);
 
 		static void loadCustomFonts(CREF(vector<string>) fontFiles, CREF(vector<float>) = vector<float>());
+
+		static void pauseRecursively(cocos2d::Node *node);
+		static void resumeRecursively(cocos2d::Node *node);
+		static bool isVisibleRecursively(const cocos2d::Node *node);
+		
+		template <typename COLOR>
+		static COLOR colorFromText(const std::string &text);
+
+		template <typename K, typename V>
+		static typename std::map<K, V>::iterator floorKey(std::map<K, V> &m, const K &k);
+
+		static Json::Value jsonFromFile(const std::string &fileName);
+
+		template <typename T, T DEFAULT = T()>
+		static T deserialize(const std::string &fileName);
+
+		static string tolower(const string &s);
+		static string toupper(const string &s);
+		static string trim(const string &s);
+
 	private:
 		static Vec2 anchorInPoint(const Node *node);
 	};
 
 	template <class T>
-	void UtilX::replaceInVector(std::vector<T> &vec, int i, const T& obj)
+	void Utils::replaceInVector(std::vector<T> &vec, int i, const T& obj)
 	{
 		vec.data()[i] = obj;
 	}
 
 	template <class K, class V>
-	bool UtilX::mapContains(const map<K, V>& m, CREF(K) key)
+	bool Utils::mapContains(const map<K, V>& m, CREF(K) key)
 	{
 		return m.find(key) != m.cend();
 	}
 
 	template <class K, class V>
-	map<K, V> UtilX::mkMap(uint n, ...)
+	map<K, V> Utils::mkMap(uint n, ...)
 	{
 		va_list args;
 		va_start(args, n);
@@ -95,7 +115,7 @@ namespace ccHelp
 	}
 
 	template<class S>
-	Scene* UtilX::createScene()
+	Scene* Utils::createScene()
 	{
 		auto layer = S::create();
 		Scene *scene = Scene::create();
@@ -106,13 +126,13 @@ namespace ccHelp
 	}
 
 	template<class T>
-	T* UtilX::create(T *ref)
+	T* Utils::create(T *ref)
 	{
 		return CCH_CREATE(ref);
 	}
 
 	template<class T>
-	T* UtilX::createnx(T *ref)
+	T* Utils::createnx(T *ref)
 	{
 		return CCH_NOT_INIT_CREATE(ref);
 	}
@@ -123,4 +143,74 @@ namespace ccHelp
 		PUREF(Vec2 transform(CREF(Vec2) p) const);
 		Vec2 transform(CREF(float) x, CREF(float) y) const;
 	};
+
+	template <typename COLOR>
+	COLOR Utils::colorFromText(const std::string &text)
+	{
+		std::string uText = toupper(text);
+
+		if (uText == "WHITE")
+		{
+			return COLOR::WHITE;
+		}
+		else if (uText == "YELLOW")
+		{
+			return COLOR::YELLOW;
+		}
+		else if (uText == "BLUE")
+		{
+			return COLOR::BLUE;
+		}
+		else if (uText == "GREEN")
+		{
+			return COLOR::GREEN;
+		}
+		else if (uText == "RED")
+		{
+			return COLOR::RED;
+		}
+		else if (uText == "MAGENTA")
+		{
+			return COLOR::MAGENTA;
+		}
+		else if (uText == "BLACK")
+		{
+			return COLOR::BLACK;
+		}
+		else if (uText == "ORANGE")
+		{
+			return COLOR::ORANGE;
+		}
+		else if (uText == "GRAY")
+		{
+			return COLOR::GRAY;
+		}
+
+		//CCASSERT(false, cocos2d::StringUtils::format("Invalid color text: %s!", uText.c_str()).c_str());
+		return COLOR::BLACK;
+	}
+
+	template <typename K, typename V>
+	typename std::map<K, V>::iterator Utils::floorKey(std::map<K, V> &m, const K &k)
+	{
+		auto it = m.lower_bound(k);
+		if (it == m.begin())
+			return m.end();
+
+		--it;
+		return it;
+	}
+
+	template <typename T, T DEFAULT>
+	T Utils::deserialize(const std::string &fileName)
+	{
+		Json::Value jv = jsonFromFile(fileName);
+		if (!jv.isNull())
+		{
+			T t = DEFAULT;
+			return Json::type::deserialize(jv, t);
+		}
+
+		return DEFAULT;
+	}
 }

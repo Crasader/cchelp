@@ -8,9 +8,9 @@
 
 #pragma once
 #include "Layout.h"
-#include "hmap.h"
+#include "hash_container/hmap.h"
 
-namespace vin {
+namespace ccHelp {
     class GroupLayout : public Layout
     {
     private:

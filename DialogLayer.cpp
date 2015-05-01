@@ -1,6 +1,6 @@
 #include "DialogLayer.h"
 #include "Shortcut.h"
-#include "UtilX.h"
+#include "Utils.h"
 
 namespace ccHelp
 {
@@ -26,7 +26,7 @@ namespace ccHelp
 		CREF(Color4B) fillBg, DialogAnimation anim,
 		DialogAlign align, DIALOG_COMPLETION completion)
 	{
-		DialogLayer *dlgLayer = UtilX::createnx(new DialogLayer(parent, dialog, fillBg));
+		DialogLayer *dlgLayer = Utils::createnx(new DialogLayer(parent, dialog, fillBg));
 		parent->addChild(dlgLayer, 0x1000);
 
 		dialog->setPosition(alignInPoint(align, dlgLayer, dialog));

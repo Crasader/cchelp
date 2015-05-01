@@ -9,14 +9,14 @@
 #pragma once
 #include "LayoutHelper.h"
 #include "cocos2d.h"
-#include "jsonserialization.h"
+#include "jsoncpp/jsonserialization.h"
 #include "FunctionLayout.h"
 #include "GroupLayout.h"
 
 USING_NS_CC;
 using namespace std;
 
-namespace vin {
+namespace ccHelp {
     // Node
     // Common
     void regisCommonLayouts();

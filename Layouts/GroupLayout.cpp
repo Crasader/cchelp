@@ -8,13 +8,13 @@
 
 #include "GroupLayout.h"
 #include "LayoutHelper.h"
-#include "hset.h"
+#include "hash_container/hset.h"
 #include <stack>
 
 USING_NS_CC;
 using namespace std;
 
-namespace vin {
+namespace ccHelp {
     hmap<string, Layout *> GroupLayout::Layouts;
     GroupLayout* GroupLayout::inst = new GroupLayout;
     
@@ -68,7 +68,7 @@ namespace vin {
         }
     }
     
-    void GroupLayout::registerLayout(const string &k, vin::Layout *layout)
+    void GroupLayout::registerLayout(const string &k, ccHelp::Layout *layout)
     {
         string tag = k;
         for (char &c : tag)

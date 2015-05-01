@@ -1,11 +1,13 @@
-#include "UtilX.h"
+#include "Utils.h"
+#include <string>
+#include <cctype>
 #include "2d/CCFontAtlasCache.h"
 
 using namespace std;
 
 namespace ccHelp
 {
-	void UtilX::setNodeAnchorWithoutChangePosition(Node *target, CREF(Vec2) newAnchor)
+	void Utils::setNodeAnchorWithoutChangePosition(Node *target, CREF(Vec2) newAnchor)
 	{
 		const Node *parent = target->getParent();
 		if (newAnchor != target->getAnchorPoint() && parent)
@@ -19,13 +21,13 @@ namespace ccHelp
 		}
 	}
 
-	Vec2 UtilX::anchorInPoint(const Node *node)
+	Vec2 Utils::anchorInPoint(const Node *node)
 	{
 		return Vec2(node->getAnchorPoint().x * node->getContentSize().width,
 			node->getAnchorPoint().y * node->getContentSize().height);
 	}
 
-	Node* UtilX::warpSpriteBySize(string sprName, CREF(Size) size, int tag)
+	Node* Utils::warpSpriteBySize(string sprName, CREF(Size) size, int tag)
 	{
 		Sprite *sprite = Sprite::create(sprName);
 		Size frameSize = sprite->getBoundingBox().size;
@@ -44,7 +46,7 @@ namespace ccHelp
 		return node;
 	}
 
-	Scene* UtilX::createScene(Node *scn)
+	Scene* Utils::createScene(Node *scn)
 	{
 		Scene *scene = Scene::create();
 		scene->addChild(scn);
@@ -53,7 +55,7 @@ namespace ccHelp
 	}
 
 #define MAX_LENGHT 1024
-	string UtilX::format(const char *format, ...)
+	string Utils::format(const char *format, ...)
 	{
 		static char buffer[MAX_LENGHT];
 
@@ -66,12 +68,12 @@ namespace ccHelp
 	}
 #undef MAX_LENGTH
 
-	Data UtilX::readResourceData(string fileName)
+	Data Utils::readResourceData(string fileName)
 	{
 		return FileUtils::getInstance()->getDataFromFile(fileName);
 	}
 
-	Data UtilX::readGameData(string fileName)
+	Data Utils::readGameData(string fileName)
 	{
 		if (!fileName.size())
 		{
@@ -112,7 +114,7 @@ namespace ccHelp
 		return ret;
 	}
 
-	bool UtilX::writeGameData(string fileName, const char *data, uint len)
+	bool Utils::writeGameData(string fileName, const char *data, uint len)
 	{
 		string fullPath = FileUtils::getInstance()->getWritablePath();
 		fullPath += fileName;
@@ -128,7 +130,7 @@ namespace ccHelp
 		return false;
 	}
 
-	bool UtilX::readResourceJSON(std::string filename, Json::Value &root)
+	bool Utils::readResourceJSON(std::string filename, Json::Value &root)
 	{
 		Json::Reader reader;
 		Data dat = readResourceData(filename);
@@ -141,7 +143,7 @@ namespace ccHelp
 		return false;
 	}
 
-	bool UtilX::readGameJSON(std::string filename, Json::Value &root)
+	bool Utils::readGameJSON(std::string filename, Json::Value &root)
 	{
 		Json::Reader reader;
 		Data dat = readGameData(filename);
@@ -154,7 +156,7 @@ namespace ccHelp
 		return false;
 	}
 
-	bool UtilX::writeGameJSON(CREF(string) file, const Json::Value &root)
+	bool Utils::writeGameJSON(CREF(string) file, const Json::Value &root)
 	{
 		Json::FastWriter writer;
 		string json = writer.write(root);
@@ -180,17 +182,86 @@ namespace ccHelp
 		float parentHeight;
 	};
 
-	unique_ptr<CoordinateTransformer> UtilX::uiCoordTransform(float parentHeight)
+	unique_ptr<CoordinateTransformer> Utils::uiCoordTransform(float parentHeight)
 	{
 		return unique_ptr<CoordinateTransformer>(new UICoordinateTransformer(parentHeight));
 	}
 
-	void UtilX::loadCustomFonts(CREF(vector<string>) fontFiles, CREF(vector<float>) fontSizes)
+	void Utils::loadCustomFonts(CREF(vector<string>) fontFiles, CREF(vector<float>) fontSizes)
 	{
 		for (uint i = 0; i < fontFiles.size(); ++i)
 		{
 			float fSize = (fontSizes.size() > i)?fontSizes[i]:12.f;
 			FontAtlasCache::getFontAtlasTTF(TTFConfig(fontFiles[i].c_str(), fSize, GlyphCollection::DYNAMIC));
 		}
+	}
+	
+	void Utils::pauseRecursively(cocos2d::Node *node)
+	{
+		if (!node)
+			return;
+
+		node->pause();
+		for (auto *child : node->getChildren())
+		{
+			pauseRecursively(child);
+		}
+	}
+
+	void Utils::resumeRecursively(cocos2d::Node *node)
+	{
+		if (!node)
+			return;
+
+		node->resume();
+		for (auto *child : node->getChildren())
+		{
+			resumeRecursively(child);
+		}
+	}
+
+	bool Utils::isVisibleRecursively(const cocos2d::Node *node)
+	{
+		if (!node)
+			return true;
+
+		if (!node->isVisible())
+			return false;
+
+		return isVisibleRecursively(node->getParent());
+	}
+
+	Json::Value Utils::jsonFromFile(const std::string &fileName)
+	{
+		static Json::Reader READER;
+
+		string content = FileUtils::getInstance()->getStringFromFile(fileName);
+		Json::Value j;
+
+		READER.parse(content, j);
+		return j;
+	}
+
+	string Utils::tolower(const string &s)
+	{
+		string lower(s);
+		for (auto &c : lower) { c = std::tolower(c); }
+		return lower;
+	}
+
+	string Utils::toupper(const string &s)
+	{
+		string upper(s);
+		for (auto &c : upper) { c = std::toupper(c); }
+		return upper;
+	}
+
+	string Utils::trim(const string &s)
+	{
+		string trim(s);
+		trim.erase(0, trim.find_first_not_of(" \t"));
+		trim.erase(trim.find_last_not_of(" \t") + 1);
+
+		return trim;
 	}
 }
