@@ -55,12 +55,12 @@ namespace ccHelp {
         auto *scaleToSize = new FunctionLayout([](Node *n, const Layout::Parameter &p) {
             if (p.isMember("width") && p["width"].isNumeric())
             {
-                n->setScaleX(p["width"].isNumeric() / n->getContentSize().width);
+				n->setScaleX(p["width"].asFloat() / n->getContentSize().width);
             }
             
             if (p.isMember("height") && p["height"].isNumeric())
             {
-                n->setScaleY(p["height"].isNumeric() / n->getContentSize().height);
+				n->setScaleY(p["height"].asFloat() / n->getContentSize().height);
             }
         });
         GroupLayout::registerLayout("fit-size", scaleToSize);

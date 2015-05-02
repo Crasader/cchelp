@@ -18,6 +18,7 @@
 #include "OperationGroup.h"
 #include "DialogLayer.h"
 #include "OperationQueue.h"
+#include "Event.h"
 
 #include "msgpack/msgpack.h"
 

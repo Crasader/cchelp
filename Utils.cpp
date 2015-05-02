@@ -264,4 +264,15 @@ namespace ccHelp
 
 		return trim;
 	}
+
+	bool Utils::contains(const cocos2d::Node *node, CREF(Vec2) p)
+	{
+		auto pp = p +node->getAnchorPointInPoints();
+		auto np = node->getPosition();
+		auto sz = node->getContentSize();
+		return (pp.x >= np.x) &&
+			(pp.y >= np.y) &&
+			(pp.x < np.x + sz.width) &&
+			(pp.y < np.y + sz.height);
+	}
 }

@@ -32,6 +32,8 @@ namespace ccHelp
 		template<class T>
 		static T* create(T *ref);
 		template<class T>
+		static T* createx(T *ref, std::function<bool(T*)> init);
+		template<class T>
 		static T* createnx(T *ref);
 
 		template <class T>
@@ -62,6 +64,7 @@ namespace ccHelp
 		static void pauseRecursively(cocos2d::Node *node);
 		static void resumeRecursively(cocos2d::Node *node);
 		static bool isVisibleRecursively(const cocos2d::Node *node);
+		static bool contains(const cocos2d::Node *node, CREF(Vec2) p);
 		
 		template <typename COLOR>
 		static COLOR colorFromText(const std::string &text);
@@ -129,6 +132,18 @@ namespace ccHelp
 	T* Utils::create(T *ref)
 	{
 		return CCH_CREATE(ref);
+	}
+
+	template<class T>
+	T* Utils::createx(T *ref, std::function<bool(typename T*)> init)
+	{
+		if (!init(ref))
+		{
+			delete ref;
+			return nullptr;
+		}
+
+		return ref;
 	}
 
 	template<class T>

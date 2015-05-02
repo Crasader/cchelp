@@ -23,7 +23,7 @@ namespace ccHelp {
         if (query.empty())
             return root;
         
-        stringstream ss(query, '.');
+        stringstream ss(query);
         
         string nodeName;
         Node *qNode = root;

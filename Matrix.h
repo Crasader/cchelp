@@ -17,11 +17,13 @@ namespace ccHelp
 			CCASSERT(rows > 0 && cols > 0, "Invalid size");
 
 			mat = alloc2D(rows, cols, T());
+			this->rows = rows;
+			this->cols = cols;
 		}
 
 		inline ~Matrix()
 		{
-			CC_SAFE_DELETE(mat);
+			delete2D(mat, rows);
 		}
 
 		inline CREF(T) operator[](CREF(Index2D) idx) const
