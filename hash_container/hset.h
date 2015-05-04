@@ -19,9 +19,12 @@ using hset = std::unordered_set<T, H>;
 template <typename T, typename H = std::hash<T>>
 using hset = std::unordered_set<T, H>;
 #else
-#include <tr1/unordered_set >
+/*#include <tr1/unordered_set >
 template <typename T, typename H = std::hash<T>>
-using hset = std::tr1::unordered_set<T, H>;
+using hset = std::tr1::unordered_set<T, H>;*/
+#include <unordered_set>
+template <typename T, typename H = std::hash<T>>
+using hset = std::unordered_set<T, H>;
 #endif
 
 // support json serialization

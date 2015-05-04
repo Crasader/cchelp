@@ -10,6 +10,8 @@
 #include "GroupLayout.h"
 #include "Utils.h"
 #include <string>
+#include <sstream>
+
 #include <limits>
 
 USING_NS_CC;
@@ -126,7 +128,8 @@ namespace ccHelp {
                     ratio = 100;
                 }
                 
-                f = std::stof(s) / ratio;
+                sscanf(s.c_str(), "%f", &f);
+                f /= ratio;
                 return true;
             }
                 break;

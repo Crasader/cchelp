@@ -14,14 +14,19 @@
 #include <locale>
 #include "hmap.h"
 
+using std::string;
+
 namespace ccHelp {
-#ifdef CC_SUPPORT_UNICODE
+/*#ifdef CC_SUPPORT_UNICODE
     typedef wchar_t tchar;
     typedef std::wstring tstring;
 #else
     typedef char tchar;
     typedef std::string tstring;
-#endif
+#endif*/
+    
+    typedef char tchar;
+    typedef std::string tstring;
     
     class Localize
     {
@@ -51,7 +56,7 @@ namespace ccHelp {
             this->languages[lang] = file;
         }
         
-        inline const tstring& get(const string &txt)
+        inline const tstring& get(const string &txt) const
         {
             auto it = this->texts.find(txt);
             if (it == this->texts.end())

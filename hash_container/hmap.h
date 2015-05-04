@@ -13,7 +13,10 @@ using hmap = std::unordered_map<K, V, H>;
 template <typename K, typename V, typename H = std::hash<K>>
 using hmap = std::unordered_map<K, V, H>;
 #else
-#include <tr1/unordered_map>
+/*#include <tr1/unordered_map>
 template <typename K, typename V, typename H = std::hash<K>>
-using hmap = std::tr1::unordered_map<K, V, H>;
+ using hmap = std::tr1::unordered_map<K, V, H>;*/
+#include <unordered_map>
+template <typename K, typename V, typename H = std::hash<K>>
+using hmap = std::unordered_map<K, V, H>;
 #endif
