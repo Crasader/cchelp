@@ -7,7 +7,7 @@
 #include <memory>
 #include <fstream>
 #include "msgpack/msgpack.hpp"
-#include "jsoncpp/json2/json.h"
+#include "jsoncpp/serializor.hpp"
 
 USING_NS_CC;
 using std::string;
@@ -135,7 +135,7 @@ namespace ccHelp
 	}
 
 	template<class T>
-	T* Utils::createx(T *ref, std::function<bool(typename T*)> init)
+	T* Utils::createx(T *ref, std::function<bool(T*)> init)
 	{
 		if (!init(ref))
 		{

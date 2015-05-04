@@ -8,7 +8,7 @@
 
 #pragma once
 #include "Def.h"
-#include "jsoncpp/jsonserialization.h"
+#include "jsoncpp/json2/json.h"
 #include "cocos2d.h"
 
 namespace ccHelp {

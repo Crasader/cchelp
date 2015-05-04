@@ -11,6 +11,8 @@
 #include "hash_container/hmap.h"
 #include "CocosGUI.h"
 
+using std::string;
+
 namespace ccHelp {
     class LayoutHelper : public Layout
     {

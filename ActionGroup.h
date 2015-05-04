@@ -1,30 +1,34 @@
 #pragma once
+#include "Def.h"
 #include "cocos2d.h"
 #include <functional>
-#include <hash_set>
-#include "Def.h"
+#include "Event.h"
 
 using cocos2d::FiniteTimeAction;
 
 namespace ccHelp
 {
+    
 	class ActionGroup : public cocos2d::Ref
 	{
-	public:
-		inline static ActionGroup* create(std::function<void()> callBack)
+    public:
+        inline static ActionGroup* create()
 		{
-			ActionGroup *action = new ActionGroup(callBack);
-			return CCH_NOT_INIT_CREATE(action);
+			ActionGroup *action = new ActionGroup();
+            action->autorelease();
+            return action;
 		}
 
 		FiniteTimeAction* addAction(FiniteTimeAction *action);
-		void lock();
+		
+        void lock();
+        ccHelp::Event<void()> Completion;
+        
 	protected:
 	private:
-		ActionGroup(std::function<void()> callBack);
+		ActionGroup();
 		void activeCallback();
 
-		std::function<void()> callBack;
 		bool isLocked, isFinished;
 		cocos2d::Vector<FiniteTimeAction *> actions;
 	};

@@ -4,8 +4,8 @@ USING_NS_CC;
 
 namespace ccHelp
 {
-	ActionGroup::ActionGroup(std::function<void()> callBack)
-		: callBack(callBack), isFinished(false), isLocked(false)
+	ActionGroup::ActionGroup()
+    : isFinished(false), isLocked(false)
 	{
 		this->retain();
 	}
@@ -17,7 +17,9 @@ namespace ccHelp
 	}
 
 	FiniteTimeAction* ActionGroup::addAction(FiniteTimeAction *action)
-	{
+    {
+        CCASSERT(!isLocked, "The group already locked");
+        
 		if (!isLocked)
 		{
 			this->actions.pushBack(action);
@@ -40,8 +42,10 @@ namespace ccHelp
 
 		if (actions.size() == 0)
 		{
-			this->callBack();
-			this->release();
+            Completion();
+            
+            isFinished = true;
+            this->release();
 		}
 	}
 }

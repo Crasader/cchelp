@@ -10,6 +10,8 @@
 #include "Layout.h"
 #include "hash_container/hmap.h"
 
+using std::string;
+
 namespace ccHelp {
     class GroupLayout : public Layout
     {

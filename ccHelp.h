@@ -13,7 +13,6 @@
 #include "Array2D.h"
 #include "Matrix.h"
 #include "ActionGroup.h"
-#include "Utils.h"
 #include "Lock.h"
 #include "OperationGroup.h"
 #include "DialogLayer.h"
@@ -25,7 +24,15 @@
 #include "hash_container/hmap.h"
 #include "hash_container/hset.h"
 
+#include "MultiStateAnimNode.h"
+#include "ParallaxCamera.h"
+#include "Sound.h"
+#include "Localize.h"
+#include "WidgetUtils.h"
+
 #include "Layouts/LayoutHelper.h"
 
 #include "jsoncpp_ser.h"
 #include "jsoncpp/jsonserialization.h"
+
+#include "Utils.h"

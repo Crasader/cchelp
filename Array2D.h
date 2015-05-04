@@ -8,7 +8,7 @@ namespace ccHelp
 	class Factory;
 
 	template<class E>
-	class Array2D : public cocos2d::Object
+	class Array2D : public cocos2d::Ref
 	{
 	public:
 		Array2D(uint nRows, uint nCols)

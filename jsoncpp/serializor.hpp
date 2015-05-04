@@ -3,6 +3,7 @@
 
 #include "def.hpp"
 #include <string>
+#include "hash_container/hmap.h"
 
 using std::string;
 
@@ -58,7 +59,17 @@ namespace Json {
 		template <typename K, typename V>
 		inline bool deserialize(const Json::Value &j, typename std::map<K, V> &v);
 		template <typename K, typename V>
-		inline Json::Value serialize(typename std::map<K, V> const &v);
+        inline Json::Value serialize(typename std::map<K, V> const &v);
+        
+        template <typename V>
+        inline bool deserialize(const Json::Value &j, hmap<std::string, V> &v);
+        template <typename V>
+        inline Json::Value serialize(hmap<std::string, V> const &v);
+        
+        template <typename K, typename V>
+        inline bool deserialize(const Json::Value &j, hmap<K, V> &v);
+        template <typename K, typename V>
+        inline Json::Value serialize(hmap<K, V> const &v);
 
 		template <typename V>
 		inline bool deserialize(const Json::Value &j, typename std::vector<V> &v);
