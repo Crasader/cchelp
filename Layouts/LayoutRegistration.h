@@ -8,10 +8,10 @@
 
 #pragma once
 #include "LayoutHelper.h"
+#include "GroupLayout.h"
+#include "FunctionLayout.h"
 #include "cocos2d.h"
 #include "jsoncpp/jsonserialization.h"
-#include "FunctionLayout.h"
-#include "GroupLayout.h"
 
 USING_NS_CC;
 using namespace std;

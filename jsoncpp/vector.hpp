@@ -21,7 +21,19 @@ namespace Json {
 					v.push_back(val);
 				}
 				return true;
-			}
+            }
+            else if (j.isObject())
+            {
+                v.resize(j.size());
+                for (Json::ValueIterator it = j.begin(); it != j.end(); ++it)
+                {
+                    int key = std::stoi(it.key().asString());
+                    V val;
+                    Json::type::deserialize((*it), val);
+                    v[key] = val;
+                }
+                return true;
+            }
 
 			return false;
 		}

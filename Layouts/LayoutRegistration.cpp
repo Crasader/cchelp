@@ -9,14 +9,7 @@
 #include "LayoutRegistration.h"
 
 namespace ccHelp {
-    
-    class Registrator
-    {
-    public:
-        STATIC_CONSTRUCTOR_DECLARE(Registrator);
-    };
-    
-    STATIC_CONSTRUCTOR_IMPL(Registrator)
+    void LayoutHelper::initAllLayouts()
     {
         GroupLayout::registerLayout("group", GroupLayout::getInstance());
         

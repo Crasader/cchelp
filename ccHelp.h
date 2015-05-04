@@ -19,6 +19,8 @@
 #include "OperationQueue.h"
 #include "Event.h"
 
+#include "lexical_cast/lexical_cast.h"
+
 #include "msgpack/msgpack.h"
 
 #include "hash_container/hmap.h"

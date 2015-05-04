@@ -46,5 +46,8 @@ namespace ccHelp {
         static bool asColor4(const Layout::Parameter &p, cocos2d::Color4B &c);
         static bool asUIResType(const Layout::Parameter &p, cocos2d::ui::TextureResType &t);
         static string chooseMember(const Layout::Parameter &par, uint npar, ...);
+        
+    public:
+        static void initAllLayouts();
     };
 }

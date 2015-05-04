@@ -9,8 +9,10 @@
 #pragma once
 #include "Layout.h"
 #include "hash_container/hmap.h"
+#include <map>
 
 using std::string;
+using std::map;
 
 namespace ccHelp {
     class GroupLayout : public Layout
