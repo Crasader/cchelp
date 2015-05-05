@@ -24,7 +24,7 @@ namespace ccHelp
 
 		void set(const T& newVal)
 		{
-			const T& oldVal = this->val;
+            T oldVal = this->val;
 			this->val = newVal;
 
 			if (this->valueChanged)
