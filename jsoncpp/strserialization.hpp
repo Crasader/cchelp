@@ -14,6 +14,11 @@ namespace Json {
 
 }  // namespace Json
 
+template<typename V>
+inline std::string toString(const V &v);
+template<typename V>
+inline V fromString(const std::string &s);
+
 #define ENUM_STR_SERIALIZATION_DECL(TYPE) \
 namespace Json { \
 namespace type \
@@ -25,6 +30,10 @@ template<> \
 bool strDeserialize(const std::string &s, TYPE &v); \
 }\
 }
+
+#define ENUM_TO_STRING(TYPE) \
+template<> inline std::string toString(const TYPE &v) {return Json::type::strSerialize(v);} \
+template<> inline TYPE fromString(const string &s) {TYPE v; Json::type::strDeserialize(s, v); return v;}
 
 #define ENUM_STR_SERIALIZATION_IMPL(TOKEN, TYPE, VAR) \
 namespace Json { \
