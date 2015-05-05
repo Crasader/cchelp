@@ -10,8 +10,8 @@
 #define LEXICAL_CAST_DEFINE
 
 namespace ccHelp {
-    template <typename I, typename O>
-    O lexical_cast(const I &i);
+//    template <typename I, typename O>
+//    O lexical_cast(const I &i);
 }
 
 #endif

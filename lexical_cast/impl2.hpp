@@ -31,6 +31,20 @@ namespace ccHelp {
         
         return std::numeric_limits<float>::infinity();
     }
+    
+    template<> inline uint lexical_cast<uint>(const Json::Value &inp)
+    {
+        if (inp.isNumeric())
+        {
+            return inp.asUInt();
+        }
+        else if (inp.isString())
+        {
+            return lexical_cast<uint>(inp.asString());
+        }
+        
+        return std::numeric_limits<uint>::infinity();
+    }
 }
 
 #endif

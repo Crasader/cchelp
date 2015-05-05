@@ -119,8 +119,8 @@ namespace ccHelp
 		string fullPath = FileUtils::getInstance()->getWritablePath();
 		fullPath += fileName;
 
-		FILE *file;
-		if (file = fopen(fullPath.c_str(), "wb"))
+		FILE *file = fopen(fullPath.c_str(), "wb");
+		if (file)
 		{
 			fwrite(data, sizeof(char), len, file);
 			fclose(file);

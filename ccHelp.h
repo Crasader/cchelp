@@ -23,6 +23,8 @@
 
 #include "msgpack/msgpack.h"
 
+#include "Hash.h"
+
 #include "hash_container/hmap.h"
 #include "hash_container/hset.h"
 
