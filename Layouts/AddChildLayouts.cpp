@@ -68,11 +68,18 @@ namespace ccHelp {
         FACTORIES["node"] = [](const Layout::Parameter &p) {return Node::create();};
         FACTORIES["layer"] = [](const Layout::Parameter &p) {return Layer::create();};
         FACTORIES["layer_color"] = [](const Layout::Parameter &p) {return LayerColor::create();};
+        
         FACTORIES["sprite"] = [](const Layout::Parameter &p) {
             if (!p.isMember("sprite") || !p["sprite"].isString())
                 return Sprite::create();
             
             return Sprite::create(p["sprite"].asString());
+        };
+        FACTORIES["sprite-frame"] = [](const Layout::Parameter &p) -> Sprite* {
+            if (!p.isMember("sprite") || !p["sprite"].isString())
+                return nullptr;
+            
+            return Sprite::createWithSpriteFrameName(p["sprite"].asString());
         };
         
         
