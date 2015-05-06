@@ -2,6 +2,7 @@
 #define __JSONSER_TYPE_INT_H__
 
 #include "def.hpp"
+#include <sstream>
 
 namespace Json {
 	namespace type
@@ -17,7 +18,14 @@ namespace Json {
 			{
 				v = j.asInt();
 				return true;
-			}
+            }
+            else if (j.isString())
+            {
+                std::stringstream ss(j.asString());
+                ss>>v;
+                return true;
+            }
+
 
 			return false;
 		}

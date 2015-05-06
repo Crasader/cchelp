@@ -96,7 +96,9 @@ extern CCH_FUNCTION DO_NOTHING_FUNC;
 	inline bool equals(const CLASS &x) const {return this->##comparor(x) == 0;} \
 	inline bool equals(const CLASS *x) const {return this->##comparor(*x) == 0;}
 
-#define PROPERTY_GET(Type, Name, var) inline Type get##Name() const {return this->var;}
+#define PROPERTY_GET(Type, Name, var) \
+inline const Type get##Name() const {return this->var;} \
+inline Type get##Name() {return this->var;}
 #define PROPERTY_VAR_GET(Type, var) PROPERTY_GET(Type, var, var)
 
 #define PROPERTY_SET(Type, Name, var) inline void set##Name(Type val) {this->var = val;}
@@ -151,3 +153,6 @@ extern CCH_FUNCTION DO_NOTHING_FUNC;
 	CLASS::Initializer CLASS::Initializer::__unused_initializer;	\
 	CLASS::Initializer::Initializer()
 
+#define CCH_SYNTHESIZE_PASS_BY_REF(type, var, func) \
+CC_SYNTHESIZE_PASS_BY_REF(type, var, func) \
+public: inline virtual type& get##func() {return var;} 
