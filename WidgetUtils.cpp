@@ -41,4 +41,40 @@ namespace ccHelp {
             }, SCHEDULE_KEY);
         }
     }
+    
+    Label* WidgetUtils::loadButtonTTFTitle(ui::Button *btn, const string &ttf, float fntSize)
+    {
+        struct _Button : public ui::Button
+        {
+            void setTitleRenderer(Label *lbl)
+            {
+                if (!lbl)
+                    return;
+                
+                if (_titleRenderer)
+                    _titleRenderer->removeFromParent();
+                
+                if (lbl->getParent() != this)
+                {
+                    lbl->removeFromParent();
+                    this->addProtectedChild(lbl);
+                }
+                
+                this->_titleRenderer = lbl;
+            }
+        };
+        
+        auto *ttfTitle = Label::createWithTTF(btn->getTitleText(), ttf, fntSize);
+        ((_Button *) btn)->setTitleRenderer(ttfTitle);
+        
+        return ttfTitle;
+    }
+    
+    ui::Button* WidgetUtils::createTTFButton(const string &ttf, float fntSize)
+    {
+        ui::Button *btn = ui::Button::create();
+        loadButtonTTFTitle(btn, ttf, fntSize);
+        
+        return btn;
+    }
 }

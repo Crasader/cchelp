@@ -15,5 +15,7 @@ namespace ccHelp {
     {
     public:
         static void setLoadingBarPercent(cocos2d::ui::LoadingBar *bar, float percent, bool animated);
+        static Label* loadButtonTTFTitle(ui::Button *btn, const string &ttf, float fntSize = 12);
+        static ui::Button* createTTFButton(const string &ttf, float fntSize = 12);
     };
 }

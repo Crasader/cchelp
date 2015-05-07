@@ -7,6 +7,7 @@
 //
 
 #include "LayoutRegistration.h"
+#include "WidgetUtils.h"
 #include "CocosGUI.h"
 
 namespace ccHelp {
