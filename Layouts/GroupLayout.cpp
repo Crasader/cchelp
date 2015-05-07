@@ -20,7 +20,13 @@ namespace ccHelp {
     
     void GroupLayout::doLayout(cocos2d::Node *root, const Parameter &par) const
     {
-        CCASSERT(par.isObject(), "Group layout only use object param!");
+        if (!par.isObject())
+        {
+#if COCOS2D_DEBUG
+            CCASSERT(false, "Group Layout require object param");
+#endif
+            return;
+        }
         
         hset<string> handled;
         

@@ -45,7 +45,7 @@ namespace ccHelp
 		}
 
 	public:
-		PROPERTY_GET(const T&, ,val);
+		PROPERTY_GET(T&, ,val);
 		PROPERTY_GET(DELEGATE, OnValueChanged, valueChanged);
 		void setOnValueChanged(DELEGATE newDelegate, bool dispatchFirst = true)
 		{

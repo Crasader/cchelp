@@ -37,8 +37,8 @@ namespace ccHelp {
     public:
         static void loadLayoutFile(const std::string &file);
         static void apply(cocos2d::Node *root, const std::string &file);
-        static void applyJson(cocos2d::Node *root, const std::string jsParam);
-        static void apply(cocos2d::Node *root, const std::string k, const Layout::Parameter &p);
+        static void applyJsonString(cocos2d::Node *root, const std::string jsParam);
+        static void applyJson(cocos2d::Node *root, const Layout::Parameter &p);
         static const Layout::Parameter& getLayout(const std::string &file);
         
         static bool asFloat(const Layout::Parameter &p, float &f);

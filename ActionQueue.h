@@ -21,7 +21,7 @@ namespace ccHelp
 
 	public:
 		PROPERTY_GET(cocos2d::Node*, Target, target);
-		PROPERTY_GET(const cocos2d::FiniteTimeAction*, currentAction, currentAction);
+		PROPERTY_GET(cocos2d::FiniteTimeAction*, currentAction, currentAction);
 		PROPERTY_SET(DELEGATE, OnActionChanged, actionChanged);
 	private:
 		void pollAction();

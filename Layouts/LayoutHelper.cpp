@@ -82,7 +82,7 @@ namespace ccHelp {
         GroupLayout::getInstance()->doLayout(root, ite->second);
     }
     
-    void LayoutHelper::applyJson(cocos2d::Node *root, const std::string jsParam)
+    void LayoutHelper::applyJsonString(cocos2d::Node *root, const std::string jsParam)
     {
         // no cache for this mode
         Json::Reader reader;
@@ -94,17 +94,28 @@ namespace ccHelp {
         GroupLayout::getInstance()->doLayout(root, js);
     }
     
-    void LayoutHelper::apply(cocos2d::Node *root, const std::string k, const Layout::Parameter &p)
+    void LayoutHelper::applyJson(cocos2d::Node *root, const Layout::Parameter &p)
     {
-        Json::Value j;
-        j[k] = p;
-        
-        GroupLayout::getInstance()->doLayout(root, j);
+        GroupLayout::getInstance()->doLayout(root, p);
     }
     
     const Layout::Parameter& LayoutHelper::getLayout(const std::string &file)
     {
-        return Cache[file];
+        auto ite = Cache.find(file);
+        if (ite == Cache.end())
+        {
+            // not found, try to load
+            loadLayoutFile(file);
+            // get again to make sure the load ok
+            ite = Cache.find(file);
+        }
+        
+        if (ite == Cache.end())
+        {
+            return Json::Value::null;
+        }
+        
+        return ite->second;
     }
     
     bool LayoutHelper::asFloat(const Layout::Parameter &p, float &f)
