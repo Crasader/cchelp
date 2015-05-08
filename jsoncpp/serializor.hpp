@@ -94,7 +94,7 @@ struct serializor<A0> {
 
     bool deserialize(const Json::Value &j) {
         bool ret = true;
-        ret = ret && Json::type::deserialize(j[k0], a0);
+        ret = Json::type::deserialize(j[k0], a0) && ret;
         return true;
     }
 
@@ -117,8 +117,8 @@ struct serializor<A0, A1> {
 
     bool deserialize(const Json::Value &j) {
         bool ret = true;
-        ret = ret && Json::type::deserialize(j[k0], a0);
-        ret = ret && Json::type::deserialize(j[k1], a1);
+        ret = Json::type::deserialize(j[k0], a0) && ret;
+        ret = Json::type::deserialize(j[k1], a1) && ret;
         return true;
     }
 
@@ -144,9 +144,9 @@ struct serializor<A0, A1, A2> {
 
     bool deserialize(const Json::Value &j) {
         bool ret = true;
-        ret = ret && Json::type::deserialize(j[k0], a0);
-        ret = ret && Json::type::deserialize(j[k1], a1);
-        ret = ret && Json::type::deserialize(j[k2], a2);
+        ret = Json::type::deserialize(j[k0], a0) && ret;
+        ret = Json::type::deserialize(j[k1], a1) && ret;
+        ret = Json::type::deserialize(j[k2], a2) && ret;
         return true;
     }
 
@@ -175,10 +175,10 @@ struct serializor<A0, A1, A2, A3> {
 
     bool deserialize(const Json::Value &j) {
         bool ret = true;
-        ret = ret && Json::type::deserialize(j[k0], a0);
-        ret = ret && Json::type::deserialize(j[k1], a1);
-        ret = ret && Json::type::deserialize(j[k2], a2);
-        ret = ret && Json::type::deserialize(j[k3], a3);
+        ret = Json::type::deserialize(j[k0], a0) && ret;
+        ret = Json::type::deserialize(j[k1], a1) && ret;
+        ret = Json::type::deserialize(j[k2], a2) && ret;
+        ret = Json::type::deserialize(j[k3], a3) && ret;
         return true;
     }
 
@@ -210,11 +210,11 @@ struct serializor<A0, A1, A2, A3, A4> {
 
     bool deserialize(const Json::Value &j) {
         bool ret = true;
-        ret = ret && Json::type::deserialize(j[k0], a0);
-        ret = ret && Json::type::deserialize(j[k1], a1);
-        ret = ret && Json::type::deserialize(j[k2], a2);
-        ret = ret && Json::type::deserialize(j[k3], a3);
-        ret = ret && Json::type::deserialize(j[k4], a4);
+        ret = Json::type::deserialize(j[k0], a0) && ret;
+        ret = Json::type::deserialize(j[k1], a1) && ret;
+        ret = Json::type::deserialize(j[k2], a2) && ret;
+        ret = Json::type::deserialize(j[k3], a3) && ret;
+        ret = Json::type::deserialize(j[k4], a4) && ret;
         return true;
     }
 
@@ -249,12 +249,12 @@ struct serializor<A0, A1, A2, A3, A4, A5> {
 
     bool deserialize(const Json::Value &j) {
         bool ret = true;
-        ret = ret && Json::type::deserialize(j[k0], a0);
-        ret = ret && Json::type::deserialize(j[k1], a1);
-        ret = ret && Json::type::deserialize(j[k2], a2);
-        ret = ret && Json::type::deserialize(j[k3], a3);
-        ret = ret && Json::type::deserialize(j[k4], a4);
-        ret = ret && Json::type::deserialize(j[k5], a5);
+        ret = Json::type::deserialize(j[k0], a0) && ret;
+        ret = Json::type::deserialize(j[k1], a1) && ret;
+        ret = Json::type::deserialize(j[k2], a2) && ret;
+        ret = Json::type::deserialize(j[k3], a3) && ret;
+        ret = Json::type::deserialize(j[k4], a4) && ret;
+        ret = Json::type::deserialize(j[k5], a5) && ret;
         return true;
     }
 
@@ -292,13 +292,13 @@ struct serializor<A0, A1, A2, A3, A4, A5, A6> {
 
     bool deserialize(const Json::Value &j) {
         bool ret = true;
-        ret = ret && Json::type::deserialize(j[k0], a0);
-        ret = ret && Json::type::deserialize(j[k1], a1);
-        ret = ret && Json::type::deserialize(j[k2], a2);
-        ret = ret && Json::type::deserialize(j[k3], a3);
-        ret = ret && Json::type::deserialize(j[k4], a4);
-        ret = ret && Json::type::deserialize(j[k5], a5);
-        ret = ret && Json::type::deserialize(j[k6], a6);
+        ret = Json::type::deserialize(j[k0], a0) && ret;
+        ret = Json::type::deserialize(j[k1], a1) && ret;
+        ret = Json::type::deserialize(j[k2], a2) && ret;
+        ret = Json::type::deserialize(j[k3], a3) && ret;
+        ret = Json::type::deserialize(j[k4], a4) && ret;
+        ret = Json::type::deserialize(j[k5], a5) && ret;
+        ret = Json::type::deserialize(j[k6], a6) && ret;
         return true;
     }
 
@@ -339,14 +339,14 @@ struct serializor<A0, A1, A2, A3, A4, A5, A6, A7> {
 
     bool deserialize(const Json::Value &j) {
         bool ret = true;
-        ret = ret && Json::type::deserialize(j[k0], a0);
-        ret = ret && Json::type::deserialize(j[k1], a1);
-        ret = ret && Json::type::deserialize(j[k2], a2);
-        ret = ret && Json::type::deserialize(j[k3], a3);
-        ret = ret && Json::type::deserialize(j[k4], a4);
-        ret = ret && Json::type::deserialize(j[k5], a5);
-        ret = ret && Json::type::deserialize(j[k6], a6);
-        ret = ret && Json::type::deserialize(j[k7], a7);
+        ret = Json::type::deserialize(j[k0], a0) && ret;
+        ret = Json::type::deserialize(j[k1], a1) && ret;
+        ret = Json::type::deserialize(j[k2], a2) && ret;
+        ret = Json::type::deserialize(j[k3], a3) && ret;
+        ret = Json::type::deserialize(j[k4], a4) && ret;
+        ret = Json::type::deserialize(j[k5], a5) && ret;
+        ret = Json::type::deserialize(j[k6], a6) && ret;
+        ret = Json::type::deserialize(j[k7], a7) && ret;
         return true;
     }
 
@@ -390,15 +390,15 @@ struct serializor<A0, A1, A2, A3, A4, A5, A6, A7, A8> {
 
     bool deserialize(const Json::Value &j) {
         bool ret = true;
-        ret = ret && Json::type::deserialize(j[k0], a0);
-        ret = ret && Json::type::deserialize(j[k1], a1);
-        ret = ret && Json::type::deserialize(j[k2], a2);
-        ret = ret && Json::type::deserialize(j[k3], a3);
-        ret = ret && Json::type::deserialize(j[k4], a4);
-        ret = ret && Json::type::deserialize(j[k5], a5);
-        ret = ret && Json::type::deserialize(j[k6], a6);
-        ret = ret && Json::type::deserialize(j[k7], a7);
-        ret = ret && Json::type::deserialize(j[k8], a8);
+        ret = Json::type::deserialize(j[k0], a0) && ret;
+        ret = Json::type::deserialize(j[k1], a1) && ret;
+        ret = Json::type::deserialize(j[k2], a2) && ret;
+        ret = Json::type::deserialize(j[k3], a3) && ret;
+        ret = Json::type::deserialize(j[k4], a4) && ret;
+        ret = Json::type::deserialize(j[k5], a5) && ret;
+        ret = Json::type::deserialize(j[k6], a6) && ret;
+        ret = Json::type::deserialize(j[k7], a7) && ret;
+        ret = Json::type::deserialize(j[k8], a8) && ret;
         return true;
     }
 
@@ -445,16 +445,16 @@ struct serializor<A0, A1, A2, A3, A4, A5, A6, A7, A8, A9> {
 
     bool deserialize(const Json::Value &j) {
         bool ret = true;
-        ret = ret && Json::type::deserialize(j[k0], a0);
-        ret = ret && Json::type::deserialize(j[k1], a1);
-        ret = ret && Json::type::deserialize(j[k2], a2);
-        ret = ret && Json::type::deserialize(j[k3], a3);
-        ret = ret && Json::type::deserialize(j[k4], a4);
-        ret = ret && Json::type::deserialize(j[k5], a5);
-        ret = ret && Json::type::deserialize(j[k6], a6);
-        ret = ret && Json::type::deserialize(j[k7], a7);
-        ret = ret && Json::type::deserialize(j[k8], a8);
-        ret = ret && Json::type::deserialize(j[k9], a9);
+        ret = Json::type::deserialize(j[k0], a0) && ret;
+        ret = Json::type::deserialize(j[k1], a1) && ret;
+        ret = Json::type::deserialize(j[k2], a2) && ret;
+        ret = Json::type::deserialize(j[k3], a3) && ret;
+        ret = Json::type::deserialize(j[k4], a4) && ret;
+        ret = Json::type::deserialize(j[k5], a5) && ret;
+        ret = Json::type::deserialize(j[k6], a6) && ret;
+        ret = Json::type::deserialize(j[k7], a7) && ret;
+        ret = Json::type::deserialize(j[k8], a8) && ret;
+        ret = Json::type::deserialize(j[k9], a9) && ret;
         return true;
     }
 
