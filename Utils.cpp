@@ -275,4 +275,12 @@ namespace ccHelp
 			(pp.x < np.x + sz.width) &&
 			(pp.y < np.y + sz.height);
 	}
+    
+    Vec2 Utils::convertPosition(cocos2d::Node *n, cocos2d::Node *target)
+    {
+        if (!n->getParent())
+            return n->getPosition();
+        
+        return target->convertToNodeSpace(n->getParent()->convertToWorldSpace(n->getPosition()));
+    }
 }

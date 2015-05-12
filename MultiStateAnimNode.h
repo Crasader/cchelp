@@ -47,7 +47,7 @@ namespace ccHelp {
         const string& getState() const;
         void setState(const string &st, bool updateAnim = true);
         
-        const cocos2d::Sprite* getInnerSprite() const;
+        cocos2d::Sprite* getInnerSprite() const;
         const AnimationMap& getAnimMap() const;
         
         void addAnimation(const string &st, cocos2d::Animation *anim);

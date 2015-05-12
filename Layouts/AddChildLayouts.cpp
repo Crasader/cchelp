@@ -81,6 +81,19 @@ namespace ccHelp {
             
             return Sprite::createWithSpriteFrameName(p["sprite"].asString());
         };
+        FACTORIES["animation"] = [](const Layout::Parameter &p) -> Sprite* {
+            if (!p["animation"].isString())
+                return nullptr;
+            
+            Animation *anim = AnimationCache::getInstance()->getAnimation(p["animation"].asString());
+            if (!anim)
+                return nullptr;
+            
+            Sprite *sprite = Sprite::createWithSpriteFrame(anim->getFrames().front()->getSpriteFrame());
+            sprite->runAction(RepeatForever::create(Animate::create(anim)));
+            
+            return sprite;
+        };
         
         
         FACTORIES["button"] = [](const Layout::Parameter &p) {return ui::Button::create();};

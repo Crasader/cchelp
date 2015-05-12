@@ -25,7 +25,9 @@ namespace ccHelp
 		static void setNodeAnchorWithoutChangePosition
 			(Node *target, CREF(Vec2) newAnchor);
 		static Node* warpSpriteBySize(string sprName,  CREF(Size) size, int tag = 0);
-		template<class S>
+        static Vec2 convertPosition(Node *n, Node *target);   
+        
+        template<class S>
 		static Scene* createScene();
 		static Scene* createScene(Node *scn);
 

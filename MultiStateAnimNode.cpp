@@ -60,7 +60,7 @@ namespace ccHelp {
         }
     }
     
-    const Sprite* MultiStateAnimNode::getInnerSprite() const {return this->animSprite;}
+    Sprite* MultiStateAnimNode::getInnerSprite() const {return this->animSprite;}
     const MultiStateAnimNode::AnimationMap& MultiStateAnimNode::getAnimMap() const {return this->animMap;}
     
     void MultiStateAnimNode::addAnimation(const string &st, Animation *anim)
