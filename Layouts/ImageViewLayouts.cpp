@@ -25,6 +25,19 @@ namespace ccHelp {
         });
         GroupLayout::registerLayout("img-view-scale9-enabled", scale9);
         
+        auto *scale9Rect = new FunctionLayout([](Node *n, const Layout::Parameter &p) {
+            Rect r;
+            if (!Json::type::deserialize(p, r))
+                return;
+            
+            ui::ImageView *imgView = dynamic_cast<ui::ImageView*>(n);
+            if (!imgView)
+                return;
+            
+            imgView->setCapInsets(r);
+        });
+        GroupLayout::registerLayout("img-view-scale9-rect", scale9Rect);
+        
         auto *setImage = new FunctionLayout([](Node *n, const Layout::Parameter &p) {
             if (!p.isString())
                 return;

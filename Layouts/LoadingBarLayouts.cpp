@@ -61,6 +61,19 @@ namespace ccHelp {
             
             loadBar->setScale9Enabled(p.asBool());
         });
-        GroupLayout::registerLayout("loadingbar-scale9", enableScale9);
+        GroupLayout::registerLayout("loadingbar-scale9-enabled", enableScale9);
+        
+        auto *scale9Rect = new FunctionLayout([](Node *n, const Layout::Parameter &p) {
+            Rect r;
+            if (!Json::type::deserialize(p, r))
+                return;
+            
+            ui::LoadingBar *loadBar = dynamic_cast<ui::LoadingBar*>(n);
+            if (!loadBar)
+                return;
+            
+            loadBar->setCapInsets(r);
+        });
+        GroupLayout::registerLayout("loadingbar-scale9-rect", scale9Rect);
     }
 }
