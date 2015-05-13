@@ -264,6 +264,15 @@ namespace ccHelp
 
 		return trim;
 	}
+    
+    string Utils::enUSFormat(int d)
+    {
+        std::ostringstream ss;
+        ss.imbue(std::locale("en_US.UTF-8"));
+        ss<<d;
+        
+        return ss.str();
+    }
 
 	bool Utils::contains(const cocos2d::Node *node, CREF(Vec2) p)
 	{
