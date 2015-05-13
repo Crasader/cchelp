@@ -26,6 +26,7 @@ namespace ccHelp {
         
         regisWidgetLayouts();
         regisButtonLayouts();
+        regisImageViewLayouts();
         regisLabelLayouts();
         regisLoadingBarLayouts();
     }
