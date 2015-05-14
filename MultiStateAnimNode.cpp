@@ -112,6 +112,8 @@ namespace ccHelp {
             // remake animSprite
             auto oldSprite = animSprite;
             animSprite = Sprite::createWithTexture(animTexture, Rect::ZERO);
+            animSprite->setName("InnerSprite");
+            this->OnInnerSpriteChanged(animSprite);
             
             // copy data
             if (oldSprite)

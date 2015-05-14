@@ -14,6 +14,7 @@
 #include "AnimationManager.h"
 #include "jsoncpp/json2/json.h"
 #include <string>
+#include "Event.h"
 
 using std::string;
 
@@ -64,6 +65,8 @@ namespace ccHelp {
         virtual void resume() override;
 
         AnimState getAnimState() const;
+        
+        ccHelp::Event<void(cocos2d::Sprite*)> OnInnerSpriteChanged;
 
     private:
         void releaseAll();
