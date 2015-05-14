@@ -1,6 +1,7 @@
 #include "Utils.h"
 #include <string>
 #include <cctype>
+#include <iomanip>
 #include "2d/CCFontAtlasCache.h"
 
 using namespace std;
@@ -267,11 +268,14 @@ namespace ccHelp
     
     string Utils::enUSFormat(int d)
     {
-        std::ostringstream ss;
-        ss.imbue(std::locale("en_US.UTF-8"));
-        ss<<d;
+        std::string str = StringUtils::format("%d", d);
         
-        return ss.str();
+        for (int i = str.length()-3; i > 0; i -= 3)
+        {
+            str.insert(i, ",");
+        }
+        
+        return str;
     }
 
 	bool Utils::contains(const cocos2d::Node *node, CREF(Vec2) p)
