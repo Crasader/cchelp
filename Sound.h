@@ -10,6 +10,7 @@
 #define __GodRage_Endless_Revamp__Sound__
 
 #pragma once
+#include "def.h"
 #include <string>
 #include <functional>
 
