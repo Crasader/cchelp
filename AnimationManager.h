@@ -7,14 +7,36 @@
 //
 #pragma once
 
-#include <stdio.h>
 #include "Def.h"
 #include "cocos2d.h"
 #include "hmap.h"
-#include <vector>
-#include <string>
+#include "jsonserialization.h"
 
 namespace ccHelp {
+    struct AnimationSpriteSheetData
+    {
+        struct AnimationData
+        {
+            std::string sprite;
+            std::string name;
+            float delay;
+            bool nonCached;
+            
+            std::vector<std::string> frames;
+            
+            JSONCPP_DEFINE("name", name, "delay", delay,
+                           "non_cached", nonCached,
+                           "frames", frames, "sprite_sheet", sprite);
+        };
+        
+        
+        std::string spriteSheetFile;
+        std::vector<AnimationData> animations;
+        
+        JSONCPP_DEFINE("sprite_sheet", spriteSheetFile,
+                       "animations", animations);
+    };
+    
     class AnimationManager
     {
     private:
@@ -22,6 +44,7 @@ namespace ccHelp {
         AnimationManager() {};  // block constructor for singleton
         
         hmap<std::string, std::string> animSpriteName;
+        hmap<std::string, AnimationSpriteSheetData> NonCachedAnim;
         
     public:
         inline static AnimationManager* getInstance() {return inst;}

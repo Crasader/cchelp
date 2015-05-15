@@ -13,27 +13,6 @@ USING_NS_CC;
 using namespace std;
 
 namespace ccHelp {
-    struct AnimationSpriteSheetData
-    {
-        struct AnimationData
-        {
-            std::string sprite;
-            std::string name;
-            float delay;
-            
-            std::vector<std::string> frames;
-            
-            JSONCPP_DEFINE("name", name, "delay", delay,
-                           "frames", frames, "sprite_sheet", sprite);
-        };
-        
-        
-        std::string spriteSheetFile;
-        std::vector<AnimationData> animations;
-        
-        JSONCPP_DEFINE("sprite_sheet", spriteSheetFile,
-                       "animations", animations);
-    };
     
     AnimationManager* AnimationManager::inst = new AnimationManager;
     
