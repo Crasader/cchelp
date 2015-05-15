@@ -65,10 +65,49 @@ namespace ccHelp {
         
         // color
         auto *cascadingColor = new FunctionLayout([](Node *n, const Layout::Parameter &p){
-            if (!p.isBool())
+            if (p.isBool())
+            {
+                n->setCascadeColorEnabled(p.asBool());
                 return;
+            }
             
-            n->setCascadeColorEnabled(p.asBool());
+            if (p.isObject() && p["enabled"].isBool() && p["mode"].isString())
+            {
+                string mode = p["mode"].asString();
+                mode = Utils::tolower(mode);
+                
+                bool enabled = p["enabled"].asBool();
+                
+                if (mode == "node")
+                {
+                    n->setCascadeColorEnabled(enabled);
+                }
+                else if (mode == "allchilds")
+                {
+                    n->setCascadeColorEnabled(enabled);
+                    for (auto *child : n->getChildren())
+                    {
+                        child->setCascadeColorEnabled(enabled);
+                    }
+                }
+                else if (mode == "recursive")
+                {
+                    list<Node *> queue;
+                    queue.push_back(n);
+                    
+                    while (!queue.empty())
+                    {
+                        auto *node = queue.front();
+                        queue.pop_front();
+                        
+                        node->setCascadeColorEnabled(enabled);
+                        for (auto *child : node->getChildren())
+                        {
+                            queue.push_back(child);
+                        }
+                    }
+                }
+            }
         });
         GroupLayout::registerLayout("cascade-color", cascadingColor);
         

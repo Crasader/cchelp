@@ -19,11 +19,21 @@ using namespace std;
 
 namespace ccHelp {
     hmap<std::string, Layout::Parameter> LayoutHelper::Cache;
+    hmap<std::string, LayoutQuery> LayoutHelper::Queries;
     
     Node* LayoutHelper::queryNode(cocos2d::Node *root, const string &query)
     {
         if (query.empty())
             return root;
+        
+        // try custome query
+        auto it = Queries.find(query);
+        if (it != Queries.end())
+        {
+            Node *ret = it->second(root);
+            if (ret)
+                return ret;
+        }
         
         stringstream ss(query);
         

@@ -11,6 +11,31 @@
 #include "CocosGUI.h"
 
 namespace ccHelp {
+    struct _Button : public ui::Button
+    {
+        void setTitleRenderer(Label *lbl)
+        {
+            if (!lbl)
+                return;
+            
+            if (_titleRenderer)
+                _titleRenderer->removeFromParent();
+            
+            if (lbl->getParent() != this)
+            {
+                lbl->removeFromParent();
+                this->addProtectedChild(lbl);
+            }
+            
+            this->_titleRenderer = lbl;
+        }
+        
+        Node *getNormalRenderer()
+        {
+            return _buttonNormalRenderer;
+        }
+    };
+    
     void regisButtonLayouts()
     {
         auto *titleText = new FunctionLayout([](Node *n, const Layout::Parameter &p) {
@@ -63,7 +88,6 @@ namespace ccHelp {
             btn->setTitleColor(c);
         });
         GroupLayout::registerLayout("button-title-color", titleColor);
-        
         
         auto *loadNormalTexture = new FunctionLayout([](Node *n, const Layout::Parameter &p) {
             ui::Button *btn = dynamic_cast<ui::Button*>(n);
@@ -138,25 +162,6 @@ namespace ccHelp {
         });
         GroupLayout::registerLayout("button-disabled", loadDisabledTexture);
 
-		struct _Button : public ui::Button
-		{
-			void setTitleRenderer(Label *lbl)
-			{
-				if (!lbl)
-					return;
-
-				if (_titleRenderer)
-					_titleRenderer->removeFromParent();
-
-				if (lbl->getParent() != this)
-				{
-					lbl->removeFromParent();
-					this->addProtectedChild(lbl);
-				}
-
-				this->_titleRenderer = lbl;
-			}
-		};
         auto *setTitleRenderer = new FunctionLayout([](Node *n, const Layout::Parameter &p) {
             if (!p.isString())
                 return;
@@ -172,5 +177,16 @@ namespace ccHelp {
             ((_Button *) btn)->setTitleRenderer(lbl);
         });
         GroupLayout::registerLayout("button-title-renderer!", setTitleRenderer);
+    }
+    
+    void regisButtonQueries()
+    {
+        LayoutHelper::putQuery("@button-normal", [](Node *n) -> Node* {
+            ui::Button *btn = dynamic_cast<ui::Button*>(n);
+            if (!btn)
+                return nullptr;
+            
+            return ((_Button *) btn)->getNormalRenderer();
+        });
     }
 }

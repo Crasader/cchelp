@@ -8,6 +8,7 @@
 
 #pragma once
 #include "Layouts/Layout.h"
+#include "LayoutQuery.h"
 #include "hash_container/hmap.h"
 #include "CocosGUI.h"
 
@@ -33,6 +34,7 @@ namespace ccHelp {
         
     private:
         static hmap<std::string, Layout::Parameter> Cache;
+        static hmap<std::string, LayoutQuery> Queries;
         
     public:
         static void loadLayoutFile(const std::string &file);
@@ -49,5 +51,7 @@ namespace ccHelp {
         
     public:
         static void initAllLayouts();
+        static void initQueries();
+        inline static void putQuery(string q, LayoutQuery lq) {Queries[q] = lq;}
     };
 }

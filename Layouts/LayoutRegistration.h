@@ -40,6 +40,9 @@ namespace ccHelp {
     
     // Button
     void regisButtonLayouts();
+    void regisButtonQueries();
+    
+    // Image View
     void regisImageViewLayouts();
     
     // Progress bar

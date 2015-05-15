@@ -30,4 +30,9 @@ namespace ccHelp {
         regisLabelLayouts();
         regisLoadingBarLayouts();
     }
+    
+    void LayoutHelper::initQueries()
+    {
+        regisButtonQueries();
+    }
 }
