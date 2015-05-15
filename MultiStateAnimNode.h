@@ -67,6 +67,7 @@ namespace ccHelp {
         AnimState getAnimState() const;
         
         ccHelp::Event<void(cocos2d::Sprite*)> OnInnerSpriteChanged;
+        ccHelp::Event<void(MultiStateAnimNode *msaNode, cocos2d::Animation *anim)> OnAnimationBegan;
 
     private:
         void releaseAll();

@@ -125,7 +125,9 @@ namespace ccHelp {
             this->addChild(animSprite);
         }
         
-        currentAction = RepeatForever::create(Animate::create(anim));
+        auto *animate = Animate::create(anim);
+        auto *completed = CallFunc::create([=]() {this->OnAnimationBegan(this, anim);});
+        currentAction = RepeatForever::create(Sequence::createWithTwoActions(animate, completed));
         animSprite->runAction(currentAction);
         this->animState = AnimState::ANIMATED;
     }
