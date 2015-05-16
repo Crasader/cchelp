@@ -21,6 +21,6 @@ namespace ccHelp {
         static void regisFactory(const string &token, ActionFactory *factory);
         
     public:
-        static initAllActionFactories();
+        static void initAllActionFactories();
     };
 }
