@@ -10,8 +10,9 @@
 #include "ActionHelper.h"
 
 namespace ccHelp {
-    cocos2d::Sequence* SequenceActionFactory::createAction(const Parameter &p, const ActionFactoryContext &ctx) const
+    cocos2d::Sequence* SequenceActionFactory::createAction(const Parameter &par, const ActionFactoryContext &ctx) const
     {
+        const auto &p = par["Actions"];
         if (!p.isArray() || p.size() < 2)
             return nullptr;
         
