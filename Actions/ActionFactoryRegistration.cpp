@@ -9,6 +9,7 @@
 #include "ActionFactoryRegistration.h"
 #include "MoveByActionFactory.h"
 #include "SequenceActionFactory.h"
+#include "ScaleToActionFactory.h"
 
 namespace ccHelp {
     
@@ -21,5 +22,6 @@ namespace ccHelp {
     {
         ActionHelper::regisFactory("moveby", new MoveByActionFactory);
         ActionHelper::regisFactory("sequence", new SequenceActionFactory);
+        ActionHelper::regisFactory("scaleto", new ScaleToActionFactory);
     }
 }

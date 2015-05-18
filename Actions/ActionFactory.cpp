@@ -7,3 +7,7 @@
 //
 
 #include "ActionFactory.h"
+
+namespace ccHelp {
+    const ActionFactoryContext ActionFactoryContext::EMPTY;
+}

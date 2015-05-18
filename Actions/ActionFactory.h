@@ -9,6 +9,7 @@
 #pragma once
 #include "Def.h"
 #include "jsoncpp/json2/json.h"
+#include "hmap.h"
 #include "cocos2d.h"
 
 using cocos2d::Action;
@@ -17,7 +18,12 @@ using std::string;
 namespace ccHelp {
     class ActionFactoryContext
     {
+    private:
         
+    public:
+        ActionFactoryContext() {};
+        
+        static const ActionFactoryContext EMPTY;
     };
     
     class ActionFactory
