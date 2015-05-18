@@ -1,8 +1,8 @@
 //
-//  ScaleToActionFactory.h
+//  PlaySoundActionFactory.h
 //  cchelp-action-factory-test_
 //
-//  Created by Vinova on 5/16/15.
+//  Created by Vinova on 5/18/15.
 //
 //
 
@@ -10,10 +10,10 @@
 #include "ActionFactory.h"
 
 namespace ccHelp {
-    class ScaleToActionFactory : public ActionFactory
+    class PlaySoundActionFactory : public ActionFactory
     {
     public:
-        virtual cocos2d::ScaleTo* createAction(const Parameter &p,
+        virtual cocos2d::CallFunc* createAction(const Parameter &p,
                                                const ActionFactoryContext &ctx) const override;
     };
 }

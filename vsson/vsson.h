@@ -60,6 +60,11 @@ namespace vsson
         void put(const string &name, const VSSValue &vssv);
         unsigned int push(const VSSValue &vssv);
         
+        void foreach(std::function<void(const string &s,
+                                        const VSSValue &vssv)> &func) const;
+        void foreach(std::function<void(const string &s,
+                                        VSSValue &vssv)> &func);
+        
         void clear();
     };
     

@@ -15,18 +15,23 @@ namespace ccHelp {
     {
     private:
         static hmap<string, ActionFactory*> FACTORIES;
-        static hmap<string, Action*> CACHE;
+        static hmap<string, ActionFactory::Parameter> CACHE;
+        
+        static Json::Value jsonFromVsson(const vsson::VSSObject &vsson);
         
     public:
         static Action* createAction(const ActionFactory::Parameter &p, const ActionFactoryContext &ctx);
+        static Action* createAction(const string &actName, const ActionFactoryContext &ctx);
+        static Action* createActionFromFile(const string &file, const ActionFactoryContext &ctx);
+        static Action* createActionFromFile(const string &file,
+                                            const string &actID,
+                                            const ActionFactoryContext &ctx);
+        
+        static void loadAction(const string &actID, const ActionFactory::Parameter &p);
+        inline static void loadActionFromFile(const string &fileName);
+        
         static void regisFactory(const string &token, ActionFactory *factory);
         
-        static void loadAction(const string &actID, const ActionFactory::Parameter &p, const ActionFactoryContext &ctx);
-        static void loadAction(const ActionFactory::Parameter &p, const ActionFactoryContext &ctx);
-        inline static void loadActionFromFile(const string &fileName,
-                                              const ActionFactoryContext &ctx);
-        
-        static Action* getAction(const string &actID);
     public:
         static void initAllActionFactories();
     };

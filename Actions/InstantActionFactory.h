@@ -12,11 +12,7 @@
 
 namespace ccHelp {
     class InstantActionFactory : public ActionFactory
-    {
-    public:
-        typedef std::function<void()> CallFuncFunction;
-        typedef std::function<void(cocos2d::Node*)> CallFuncNFunction;
-        
+    {   
     private:
         static cocos2d::Map<string, cocos2d::CallFunc*> FUNC_CACHE;
         static cocos2d::Map<string, cocos2d::CallFuncN*> FUNCN_CACHE;
@@ -24,8 +20,8 @@ namespace ccHelp {
     public:
         virtual cocos2d::ActionInstant* createAction(const ActionFactory::Parameter &p,
                                                      const ActionFactoryContext &ctx) const override;
-        virtual cocos2d::ActionInstant* createAction(const ShortcutParameter &p,
-                                                     const ActionFactoryContext &ctx) const override;
+        
+        bool containsAction(const string &ID) const;
         
         
         static void addFunctionShortcut(string ID,
@@ -42,5 +38,7 @@ namespace ccHelp {
         {
             return INSTANCE;
         }
+        
+        static void initCommonInstantActions();
     };
 }

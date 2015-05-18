@@ -32,29 +32,20 @@ namespace ccHelp {
                 return fnsIte->second->clone();
             }
             
-            // or return call back from context
+            auto callback = ctx.getFunction(ID);
+            if (callback)
+            {
+                return cocos2d::CallFunc::create(callback);
+            }
         }
         
         return nullptr;
     }
     
-    cocos2d::ActionInstant* InstantActionFactory::createAction(const ShortcutParameter &p, const ccHelp::ActionFactoryContext &ctx) const
+    bool InstantActionFactory::containsAction(const string &ID) const
     {
-        string ID = p[0].asString();
-        
-        auto fsIte = FUNC_CACHE.find(ID);
-        if (fsIte != FUNC_CACHE.end())
-        {
-            return fsIte->second->clone();
-        }
-        
-        auto fnsIte = FUNCN_CACHE.find(ID);
-        if (fnsIte != FUNCN_CACHE.end())
-        {
-            return fnsIte->second->clone();
-        }
-        
-        return nullptr;
+        return ((FUNC_CACHE.find(ID) != FUNC_CACHE.end()) ||
+                (FUNCN_CACHE.find(ID) != FUNCN_CACHE.end()));
     }
     
     void InstantActionFactory::addFunctionShortcut(string ID, CallFuncFunction func)
@@ -65,5 +56,26 @@ namespace ccHelp {
     void InstantActionFactory::addFunctionNShortcut(string ID, CallFuncNFunction func)
     {
         FUNCN_CACHE.insert(ID, cocos2d::CallFuncN::create(func));
+    }
+    
+    void InstantActionFactory::initCommonInstantActions()
+    {
+        addFunctionNShortcut("removeFromParent", [](cocos2d::Node *node) {
+            node->removeFromParent();
+        });
+        
+        addFunctionNShortcut("show", [](cocos2d::Node *node) {
+            node->setVisible(false);
+        });
+        
+        addFunctionNShortcut("hide", [](cocos2d::Node *node) {
+            node->setVisible(false);
+        });
+        
+        addFunctionNShortcut("togglevisibility", [](cocos2d::Node *node) {
+            node->setVisible(!node->isVisible());
+        });
+        
+        // add more
     }
 }

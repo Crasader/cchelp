@@ -14,10 +14,5 @@ namespace ccHelp {
     {
     public:
         virtual cocos2d::Sequence* createAction(const Parameter &p, const ActionFactoryContext &ctx) const override;
-        inline virtual cocos2d::Sequence* createAction(const ShorcutParameter &p, const ActionFactoryContext &ctx) const override
-        {
-            assert(false);
-            return nullptr;
-        }
     };
 }

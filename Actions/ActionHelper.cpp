@@ -7,16 +7,41 @@
 //
 
 #include "ActionHelper.h"
+#include "InstantActionFactory.h"
 #include "Utils.h"
 
 namespace ccHelp {
     hmap<string, ActionFactory*> ActionHelper::FACTORIES;
-    hmap<string, Action*> ActionHelper::CACHE;
+    hmap<string, ActionFactory::Parameter> ActionHelper::CACHE;
+    
+    Json::Value ActionHelper::jsonFromVsson(const vsson::VSSObject &vsson)
+    {
+        Json::Value js;
+        
+        std::function<void(const string&,
+                           const vsson::VSSValue &)> func = [&js](const string &name,
+                          const vsson::VSSValue &vssv)
+        {
+            if (name == "0")
+            {
+                js["Type"] = vssv.asString();
+                return;
+            }
+            
+            js[name] = vssv.asString();
+        };
+        
+        vsson.foreach(func);
+        
+        return js;
+    }
     
     cocos2d::Action* ActionHelper::createAction(const ActionFactory::Parameter &p, const ccHelp::ActionFactoryContext &ctx)
     {
-        if (p.isObject() && p["Type"].isString())
+        if (p.isObject())
         {
+            CCASSERT(p["Type"].isString(), "Action object must contains Type field");
+            
             string type = Utils::tolower(p["Type"].asString());
             auto it = FACTORIES.find(type);
             
@@ -24,6 +49,64 @@ namespace ccHelp {
             {
                 return it->second->createAction(p, ctx);
             }
+            
+            // it may be instant action
+            auto *instantAction = InstantActionFactory::getInstance()->createAction(type, ctx);
+            if (instantAction)
+                return instantAction;
+        }
+        else if (p.isString())
+        {
+            vsson::VSSObject vsson = vsson::VSSParser::parse(p.asString());
+            auto json = jsonFromVsson(vsson);
+            return createAction(json, ctx);
+        }
+        
+        return nullptr;
+    }
+    
+    cocos2d::Action* ActionHelper::createAction(const string &actName, const ccHelp::ActionFactoryContext &ctx)
+    {
+        auto it = CACHE.find(actName);
+        if (it == CACHE.end())
+        {
+            return createAction(it->first, ctx);
+        }
+        
+        return nullptr;
+    }
+    
+    cocos2d::Action* ActionHelper::createActionFromFile(const string &file, const ccHelp::ActionFactoryContext &ctx)
+    {
+        auto it = CACHE.find(file);
+        if (it == CACHE.end())
+        {
+            loadActionFromFile(file);
+            it = CACHE.find(file);
+        }
+        
+        if (it != CACHE.end())
+        {
+            return createAction(it->second, ctx);
+        }
+        
+        return nullptr;
+    }
+    
+    cocos2d::Action* ActionHelper::createActionFromFile(const string &file,
+                                                        const string &actID,
+                                                        const ccHelp::ActionFactoryContext &ctx)
+    {
+        auto it = CACHE.find(actID);
+        if (it == CACHE.end())
+        {
+            loadActionFromFile(file);
+            it = CACHE.find(actID);
+        }
+        
+        if (it != CACHE.end())
+        {
+            return createAction(it->second, ctx);
         }
         
         return nullptr;
@@ -34,62 +117,56 @@ namespace ccHelp {
         FACTORIES[token] = factory;
     }
     
-    void ActionHelper::loadAction(const string &actID, const ActionFactory::Parameter &p, const ccHelp::ActionFactoryContext &ctx)
+    void ActionHelper::loadAction(const string &actID, const ActionFactory::Parameter &p)
     {
         if (p.isObject())
         {
-            if (!actID.empty() && p["Type"].isString())
+            if (p["Type"].isString())
             {
-                // p contains Type field, p is an action
-                auto *act = createAction(p, ctx);
-                if (act)
+                string type = Utils::tolower(p["Type"].asString());
+                auto it = FACTORIES.find(type);
+                
+                if (it != FACTORIES.end())
                 {
-                    CACHE[actID] = act;
+                    CACHE[actID] = p;
+                    return;
                 }
-                return;
+                
+                // it may be instant actiom
+                if (InstantActionFactory::getInstance()->containsAction(type))
+                {
+                    CACHE[actID] = p;
+                }
             }
-            
-            // p doesn't contains type field, p may be an dictionary of actions
-            for (Json::ValueIterator it = p.begin(); it != p.end(); ++it)
+            else
             {
-                loadAction(it.key().asString(), *it, ctx);
+                for (Json::ValueIterator it = p.begin(); it != p.end(); ++it)
+                {
+                    loadAction(actID + "." + it.key().asString(), *it);
+                }
             }
-            return;
         }
-        
-        if (p.isArray())
+        else if (p.isString())
         {
-            // p may be array of actions
-            for (uint i = 0; i < p.size(); ++i)
+            vsson::VSSObject vsson = vsson::VSSParser::parse(p.asString());
+            auto json = jsonFromVsson(vsson);
+            loadAction(actID, json);
+        }
+    }
+    
+    void ActionHelper::loadActionFromFile(const string &fileName)
+    {
+        auto js = ccHelp::Utils::jsonFromFile(fileName);
+        if (js["Type"].isString())
+        {
+            loadAction(fileName, js);
+        }
+        else
+        {
+            for (Json::ValueIterator ite = js.begin(); ite != js.end(); ++ite)
             {
-                loadAction(p[i], ctx);
+                loadAction(ite.key().asString(), *ite);
             }
         }
-    }
-    
-    void ActionHelper::loadAction(const ActionFactory::Parameter &p, const ccHelp::ActionFactoryContext &ctx)
-    {
-        string actID;
-        if (p["ID"].isString())
-        {
-            actID = p["ID"].asString();
-        }
-        
-        loadAction(actID, p, ctx);
-    }
-    
-    void ActionHelper::loadActionFromFile(const string &fileName,
-                                          const ActionFactoryContext &ctx)
-    {
-        loadAction(Utils::jsonFromFile(fileName), ctx);
-    }
-    
-    Action* ActionHelper::getAction(const string &actID)
-    {
-        auto it = CACHE.find(actID);
-        if (it == CACHE.end())
-            return nullptr;
-        
-        return it->second->clone();
     }
 }

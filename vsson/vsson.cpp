@@ -124,6 +124,36 @@ namespace vsson {
         indexedField.clear();
     }
     
+    void VSSObject::foreach(std::function<void (const string &, VSSValue &)> &func)
+    {
+        for (auto it : namedField)
+        {
+            func(it.first, it.second);
+        }
+        
+        for (uint i = 0; i < indexedField.size(); ++i)
+        {
+            std::stringstream ss;
+            ss<<i;
+            func(ss.str(), indexedField[i]);
+        }
+    }
+    
+    void VSSObject::foreach(std::function<void (const string &, const VSSValue &)> &func) const
+    {
+        for (auto it : namedField)
+        {
+            func(it.first, it.second);
+        }
+        
+        for (uint i = 0; i < indexedField.size(); ++i)
+        {
+            std::stringstream ss;
+            ss<<i;
+            func(ss.str(), indexedField[i]);
+        }
+    }
+
     VSSObject VSSParser::parse(const string &s)
     {
         VSSObject vsso;
