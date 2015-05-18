@@ -13,6 +13,8 @@ namespace ccHelp {
     class MoveByActionFactory : public ActionFactory
     {
     public:
-        virtual Action* createAction(const Parameter &p, const ActionFactoryContext &ctx) const override;
+        virtual cocos2d::MoveBy* createAction(const Parameter &p, const ActionFactoryContext &ctx) const override;
+        virtual cocos2d::MoveBy* createAction(const ShorcutParameter &p,
+                                              const ActionFactoryContext &ctx) const override;
     };
 }

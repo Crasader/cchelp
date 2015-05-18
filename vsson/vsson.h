@@ -30,9 +30,11 @@ namespace vsson
         
         bool isInt() const;
         int asInt() const;
+        bool parseInt(int &i) const;
         
         bool isReal() const;
         float asReal() const;
+        bool parseReal(float &f) const;
     };
     
     class VSSObject
