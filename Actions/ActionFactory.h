@@ -10,7 +10,6 @@
 #include "Def.h"
 #include "jsoncpp/json2/json.h"
 #include "vsson/vsson.h"
-#include "hmap.h"
 #include "cocos2d.h"
 
 using cocos2d::Action;

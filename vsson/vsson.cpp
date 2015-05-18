@@ -27,40 +27,44 @@ namespace vsson {
     
     bool VSSValue::isInt() const
     {
-        std::stringstream ss(rootString);
         int i;
-        
-        ss>>i;
-        
-        return ss.good();
+        return parseInt(i);
     }
     
     int VSSValue::asInt() const
     {
-        std::stringstream ss(rootString);
-        int i;
-        
-        ss>>i;
+        int i = 0;
+        parseInt(i);
         return i;
     }
     
-    bool VSSValue::isReal() const
+    bool VSSValue::parseInt(int &i) const
     {
         std::stringstream ss(rootString);
-        float f;
-        
-        ss>>f;
+        ss>>i;
         
         return ss.good();
     }
     
+    bool VSSValue::isReal() const
+    {
+        float f;
+        return parseReal(f);
+    }
+    
     float VSSValue::asReal() const
     {
-        std::stringstream ss(rootString);
-        float f;
-        
-        ss>>f;
+        float f = 0;
+        parseReal(f);
         return f;
+    }
+    
+    bool VSSValue::parseReal(float &f) const
+    {
+        std::stringstream ss(rootString);
+        ss>>f;
+        
+        return ss.good();
     }
     
     const VSSValue& VSSObject::operator[](const string &name) const
