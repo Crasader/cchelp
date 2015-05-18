@@ -147,6 +147,7 @@ namespace ccHelp
 			return nullptr;
 		}
 
+        ref->autorelease();
 		return ref;
 	}
 
