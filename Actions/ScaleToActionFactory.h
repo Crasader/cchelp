@@ -13,6 +13,9 @@ namespace ccHelp {
     class ScaleToActionFactory : public ActionFactory
     {
     public:
-        virtual cocos2d::ScaleTo* createAction(const Parameter &p, const ActionFactoryContext &ctx) const override;
+        virtual cocos2d::ScaleTo* createAction(const Parameter &p,
+                                               const ActionFactoryContext &ctx) const override;
+        virtual cocos2d::ScaleTo* createAction(const ShortcutParameter &p,
+                                               const ActionFactoryContext &ctx) const override;
     };
 }

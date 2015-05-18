@@ -38,6 +38,25 @@ namespace ccHelp {
         return nullptr;
     }
     
+    cocos2d::ActionInstant* InstantActionFactory::createAction(const ShortcutParameter &p, const ccHelp::ActionFactoryContext &ctx) const
+    {
+        string ID = p[0].asString();
+        
+        auto fsIte = FUNC_CACHE.find(ID);
+        if (fsIte != FUNC_CACHE.end())
+        {
+            return fsIte->second->clone();
+        }
+        
+        auto fnsIte = FUNCN_CACHE.find(ID);
+        if (fnsIte != FUNCN_CACHE.end())
+        {
+            return fnsIte->second->clone();
+        }
+        
+        return nullptr;
+    }
+    
     void InstantActionFactory::addFunctionShortcut(string ID, CallFuncFunction func)
     {
         FUNC_CACHE.insert(ID, cocos2d::CallFunc::create(func));

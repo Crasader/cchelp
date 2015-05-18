@@ -30,9 +30,9 @@ namespace ccHelp {
     {
     public:
         typedef Json::Value Parameter;
-        typedef vsson::VSSObject ShorcutParameter;
+        typedef vsson::VSSObject ShortcutParameter;
         
         virtual Action* createAction(const Parameter &p, const ActionFactoryContext &ctx) const = 0;
-        virtual Action* createAction(const ShorcutParameter &p, const ActionFactoryContext &ctx) const = 0;
+        virtual Action* createAction(const ShortcutParameter &p, const ActionFactoryContext &ctx) const = 0;
     };
 }

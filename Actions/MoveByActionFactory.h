@@ -14,7 +14,7 @@ namespace ccHelp {
     {
     public:
         virtual cocos2d::MoveBy* createAction(const Parameter &p, const ActionFactoryContext &ctx) const override;
-        virtual cocos2d::MoveBy* createAction(const ShorcutParameter &p,
+        virtual cocos2d::MoveBy* createAction(const ShortcutParameter &p,
                                               const ActionFactoryContext &ctx) const override;
     };
 }

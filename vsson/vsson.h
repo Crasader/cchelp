@@ -35,6 +35,9 @@ namespace vsson
         bool isReal() const;
         float asReal() const;
         bool parseReal(float &f) const;
+        
+    public:
+        static VSSValue EMPTY;
     };
     
     class VSSObject

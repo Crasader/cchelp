@@ -26,7 +26,7 @@ namespace ccHelp {
         return nullptr;
     }
     
-    cocos2d::MoveBy* MoveByActionFactory::createAction(const ShorcutParameter &p, const ccHelp::ActionFactoryContext &ctx) const
+    cocos2d::MoveBy* MoveByActionFactory::createAction(const ShortcutParameter &p, const ccHelp::ActionFactoryContext &ctx) const
     {
         float dur;
         cocos2d::Vec2 by;

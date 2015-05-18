@@ -10,6 +10,8 @@
 #include <sstream>
 
 namespace vsson {
+    VSSValue VSSValue::EMPTY("");
+    
     VSSValue::VSSValue(const string &s)
     : rootString(s)
     {
@@ -69,22 +71,40 @@ namespace vsson {
     
     const VSSValue& VSSObject::operator[](const string &name) const
     {
-        return namedField.at(name);
+        auto it = namedField.find(name);
+        if (it != namedField.end())
+            return it->second;
+        
+        return VSSValue::EMPTY;
     }
     
     VSSValue& VSSObject::operator[](const string &name)
     {
-        return namedField.at(name);
+        auto it = namedField.find(name);
+        if (it != namedField.end())
+            return it->second;
+        
+        return VSSValue::EMPTY;
     }
     
     const VSSValue& VSSObject::operator[](uint idx) const
     {
-        return indexedField[idx];
+        if (idx < indexedField.size())
+        {
+            return indexedField[idx];
+        }
+        
+        return VSSValue::EMPTY;
     }
     
     VSSValue& VSSObject::operator[](unsigned int idx)
     {
-        return indexedField[idx];
+        if (idx < indexedField.size())
+        {
+            return indexedField[idx];
+        }
+        
+        return VSSValue::EMPTY;
     }
     
     void VSSObject::put(const string &name, const vsson::VSSValue &vssv)

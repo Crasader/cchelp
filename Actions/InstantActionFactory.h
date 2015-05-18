@@ -24,6 +24,8 @@ namespace ccHelp {
     public:
         virtual cocos2d::ActionInstant* createAction(const ActionFactory::Parameter &p,
                                                      const ActionFactoryContext &ctx) const override;
+        virtual cocos2d::ActionInstant* createAction(const ShortcutParameter &p,
+                                                     const ActionFactoryContext &ctx) const override;
         
         
         static void addFunctionShortcut(string ID,
