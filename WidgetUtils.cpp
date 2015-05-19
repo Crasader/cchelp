@@ -27,7 +27,7 @@ namespace ccHelp {
         {
             bar->schedule([=](float dt) {
                 const float currentDistance = targetPercent - bar->getPercent();
-                float d = 100 * dt;
+                float d = 30 * dt;
                 
                 if (d >= fabsf(currentDistance))
                 {
