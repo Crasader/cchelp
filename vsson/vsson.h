@@ -65,6 +65,9 @@ namespace vsson
         void foreach(std::function<void(const string &s,
                                         VSSValue &vssv)> &func);
         
+        bool member(const string &name) const;
+        bool member(int idx) const;
+        
         void clear();
     };
     

@@ -153,6 +153,16 @@ namespace vsson {
             func(ss.str(), indexedField[i]);
         }
     }
+    
+    bool VSSObject::member(const string &name) const
+    {
+        return namedField.find(name) != namedField.cend();
+    }
+    
+    bool VSSObject::member(int idx) const
+    {
+        return idx < indexedField.size();
+    }
 
     VSSObject VSSParser::parse(const string &s)
     {
