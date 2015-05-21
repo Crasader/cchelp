@@ -11,6 +11,8 @@
 
 namespace ccHelp {
     const ActionFactoryContext ActionFactoryContext::EMPTY {};
+    // fucking test 2
+    
     
     ActionFactoryContext::ActionFactoryContext(const CallFuncFunction &completion)
     {
