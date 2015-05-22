@@ -23,7 +23,7 @@ namespace Json {
             {
                 std::stringstream ss(j.asString());
                 ss>>v;
-                return ss.good();
+                return !ss.fail();
             }
 
 			return false;

@@ -45,7 +45,7 @@ namespace vsson {
         std::stringstream ss(rootString);
         ss>>i;
         
-        return ss.good();
+        return !ss.fail();
     }
     
     bool VSSValue::isReal() const
@@ -66,7 +66,7 @@ namespace vsson {
         std::stringstream ss(rootString);
         ss>>f;
         
-        return ss.good();
+        return !ss.fail();
     }
     
     const VSSValue& VSSObject::operator[](const string &name) const

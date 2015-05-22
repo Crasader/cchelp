@@ -13,6 +13,8 @@
 #include "InstantActionFactory.h"
 #include "PlaySoundActionFactory.h"
 #include "DoLayoutActionFactory.h"
+#include "SpawnActionFactory.h"
+#include "FadeToActionFactory.h"
 
 namespace ccHelp {
     
@@ -27,7 +29,9 @@ namespace ccHelp {
         
         ActionHelper::regisFactory("moveby", new MoveByActionFactory);
         ActionHelper::regisFactory("sequence", new SequenceActionFactory);
+        ActionHelper::regisFactory("spawn", new SpawnActionFactory);
         ActionHelper::regisFactory("scaleto", new ScaleToActionFactory);
+        ActionHelper::regisFactory("fadeto", new FadeToActionFactory);
         ActionHelper::regisFactory("playsound", new PlaySoundActionFactory);
         ActionHelper::regisFactory("layout", new DoLayoutActionFactory);
     }
