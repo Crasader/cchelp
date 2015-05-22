@@ -9,63 +9,57 @@
 #include "ActionHelper.h"
 #include "InstantActionFactory.h"
 #include "Utils.h"
+#include "vsson.h"
 
 namespace ccHelp {
     hmap<string, ActionFactory*> ActionHelper::FACTORIES;
     hmap<string, ActionFactory::Parameter> ActionHelper::CACHE;
     
-    Json::Value ActionHelper::jsonFromVsson(const vsson::VSSObject &vsson)
-    {
-        Json::Value js;
-        
-        std::function<void(const string&,
-                           const vsson::VSSValue &)> func = [&js](const string &name,
-                          const vsson::VSSValue &vssv)
-        {
-            if (name == "0")
-            {
-                js["Type"] = vssv.asString();
-                return;
-            }
-            
-            js[name] = vssv.asString();
-        };
-        
-        vsson.foreach(func);
-        
-        return js;
-    }
-    
-    cocos2d::Action* ActionHelper::createAction(const ActionFactory::Parameter &p, const ccHelp::ActionFactoryContext &ctx)
+    cocos2d::Action* ActionHelper::createAction(const ActionFactory::Parameter &p, const ActionContext &ctx)
     {
         if (p.isObject())
         {
-            CCASSERT(p["Type"].isString(), "Action object must contains Type field");
+            bool valid = false;
+            string type;
             
-            string type = Utils::tolower(p["Type"].asString());
+            if (p["Type"].isString())
+            {
+                type = p["Type"].asString();
+                valid = true;
+            }
+            else if (p["0"].isString())
+            {
+                type = p["0"].asString();
+                valid = true;
+            }
+            
+            
+            CCASSERT(valid, "Action object must contains Type field");
+            
+            type = Utils::tolower(type);
             auto it = FACTORIES.find(type);
             
             if (it != FACTORIES.end())
             {
-                return it->second->createAction(p, ctx);
+                return it->second->createAction(AFContext(ctx, p));
             }
             
             // it may be instant action
-            auto *instantAction = InstantActionFactory::getInstance()->createAction(type, ctx);
+            auto *instantAction = InstantActionFactory::getInstance()->createAction(AFContext(ctx, p));
             if (instantAction)
                 return instantAction;
         }
         else if (p.isString())
         {
             vsson::VSSObject vsson = vsson::VSSParser::parse(p.asString());
-            auto json = jsonFromVsson(vsson);
+            auto json = Utils::jsonFromVsson(vsson);
             return createAction(json, ctx);
         }
         
         return nullptr;
     }
     
-    cocos2d::Action* ActionHelper::createAction(const string &actName, const ccHelp::ActionFactoryContext &ctx)
+    cocos2d::Action* ActionHelper::createActionByName(const string &actName, const ActionContext &ctx)
     {
         auto it = CACHE.find(actName);
         if (it == CACHE.end())
@@ -76,7 +70,7 @@ namespace ccHelp {
         return nullptr;
     }
     
-    cocos2d::Action* ActionHelper::createActionFromFile(const string &file, const ccHelp::ActionFactoryContext &ctx)
+    cocos2d::Action* ActionHelper::createActionFromFile(const string &file, const ActionContext &ctx)
     {
         auto it = CACHE.find(file);
         if (it == CACHE.end())
@@ -95,7 +89,7 @@ namespace ccHelp {
     
     cocos2d::Action* ActionHelper::createActionFromFile(const string &file,
                                                         const string &actID,
-                                                        const ccHelp::ActionFactoryContext &ctx)
+                                                        const ActionContext &ctx)
     {
         auto it = CACHE.find(actID);
         if (it == CACHE.end())
@@ -149,7 +143,7 @@ namespace ccHelp {
         else if (p.isString())
         {
             vsson::VSSObject vsson = vsson::VSSParser::parse(p.asString());
-            auto json = jsonFromVsson(vsson);
+            auto json = Utils::jsonFromVsson(vsson);
             loadAction(actID, json);
         }
     }

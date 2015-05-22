@@ -18,8 +18,7 @@ namespace ccHelp {
         static cocos2d::Map<string, cocos2d::CallFuncN*> FUNCN_CACHE;
         
     public:
-        virtual cocos2d::ActionInstant* createAction(const ActionFactory::Parameter &p,
-                                                     const ActionFactoryContext &ctx) const override;
+        virtual cocos2d::ActionInstant* createAction(const AFContext &ctx) const override;
         
         bool containsAction(const string &ID) const;
         

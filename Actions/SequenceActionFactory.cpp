@@ -10,16 +10,19 @@
 #include "ActionHelper.h"
 
 namespace ccHelp {
-    cocos2d::Sequence* SequenceActionFactory::createAction(const Parameter &par, const ActionFactoryContext &ctx) const
+    cocos2d::Sequence* SequenceActionFactory::createAction(const AFContext &ctx) const
     {
-        const auto &p = par["Actions"];
-        if (!p.isArray() || p.size() < 2)
+        Json::Value jsActions;
+        if (!ctx.getField("Actions", jsActions))
             return nullptr;
         
-        cocos2d::Vector<cocos2d::FiniteTimeAction *> actions(p.size());
-        for (uint i = 0; i < p.size(); ++i)
+        if (!jsActions.isArray() || jsActions.size() < 2)
+            return nullptr;
+        
+        cocos2d::Vector<cocos2d::FiniteTimeAction *> actions(jsActions.size());
+        for (uint i = 0; i < jsActions.size(); ++i)
         {
-            auto *act = ActionHelper::createAction(p[i], ctx);
+            auto *act = ActionHelper::createAction(jsActions[i], ctx.getContext());
             if (!act)
                 continue;
             

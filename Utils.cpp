@@ -242,6 +242,22 @@ namespace ccHelp
 		READER.parse(content, j);
 		return j;
 	}
+    
+    Json::Value Utils::jsonFromVsson(const vsson::VSSObject &vsson)
+    {
+        Json::Value js;
+        
+        std::function<void(const string&,
+                           const vsson::VSSValue &)> func = [&js](const string &name,
+                                                                  const vsson::VSSValue &vssv)
+        {
+            js[name] = vssv.asString();
+        };
+        
+        vsson.foreach(func);
+        
+        return js;
+    }
 
 	string Utils::tolower(const string &s)
 	{

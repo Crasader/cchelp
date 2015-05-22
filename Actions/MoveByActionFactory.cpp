@@ -11,19 +11,24 @@
 
 namespace ccHelp {
     
-    cocos2d::MoveBy* MoveByActionFactory::createAction(const Parameter &p, const ActionFactoryContext &ctx) const
+    cocos2d::MoveBy* MoveByActionFactory::createAction(const AFContext &ctx) const
     {
         float dur;
         cocos2d::Vec2 by;
         
-        if ((Json::type::deserialize(p["duration"], dur) ||
-             Json::type::deserialize(p["dur"], dur)) &&
-            Json::type::deserialize(p["dx"], by.x) &&
-            Json::type::deserialize(p["dy"], by.y))
+        if (!ctx.getField("duration", dur) &&
+            !ctx.getField("dur", dur))
         {
-            return cocos2d::MoveBy::create(dur, by);
+            return nullptr;
         }
         
-        return nullptr;
+        if (!ctx.getField("by", by) &&
+            !ctx.getField("dx", by.x) &&
+            !ctx.getField("dy", by.y))
+        {
+            return nullptr;
+        }
+        
+        return cocos2d::MoveBy::create(dur, by);
     }
 }

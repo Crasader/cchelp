@@ -195,6 +195,40 @@ namespace ccHelp {
         return true;
     }
     
+    bool LayoutHelper::asColor4(const Layout::Parameter &p, cocos2d::Color4B &c)
+    {
+        if (!p.isString())
+            return false;
+        
+        string s = p.asString();
+        for (auto &c : s)
+        {
+            c = toupper(c);
+        }
+        
+        c = ccHelp::Utils::colorFromText<Color4B>(s);
+        if (c != Color3B::BLACK || s == "BLACK")
+            return true;
+        
+        if (s[0] == '#')
+            s.erase(s.begin());
+        
+        if (s.length() != 8)
+            return false;
+        
+        stringstream ss;
+        ss<<std::hex<<s;
+        int cc;
+        ss>>cc;
+        
+        c.a = (cc) & 0x000000ff;
+        c.b = (cc>>8) & 0x000000ff;
+        c.g = (cc>>16) & 0x000000ff;
+        c.r = (cc>>24) & 0x000000ff;
+        
+        return true;
+    }
+    
     bool LayoutHelper::asUIResType(const Layout::Parameter &p, ui::TextureResType &t)
     {
         if (!p.isString())

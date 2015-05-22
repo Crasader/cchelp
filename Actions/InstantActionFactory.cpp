@@ -13,13 +13,11 @@ namespace ccHelp {
     cocos2d::Map<string, cocos2d::CallFunc*> InstantActionFactory::FUNC_CACHE;
     cocos2d::Map<string, cocos2d::CallFuncN*> InstantActionFactory::FUNCN_CACHE;
     
-    cocos2d::ActionInstant* InstantActionFactory::createAction(const ActionFactory::Parameter &p, const ccHelp::ActionFactoryContext &ctx) const
+    cocos2d::ActionInstant* InstantActionFactory::createAction(const AFContext &ctx) const
     {
-        if (p.isString())
+        string ID;
+        if (ctx.getField("0", ID))
         {
-            // this is shortcut
-            string ID = p.asString();
-            
             auto fsIte = FUNC_CACHE.find(ID);
             if (fsIte != FUNC_CACHE.end())
             {
@@ -32,8 +30,8 @@ namespace ccHelp {
                 return fnsIte->second->clone();
             }
             
-            auto callback = ctx.getFunction(ID);
-            if (callback)
+            CallFuncFunction callback;
+            if (ctx.getContext().get(ID, callback) && callback)
             {
                 return cocos2d::CallFunc::create(callback);
             }

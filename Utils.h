@@ -8,6 +8,7 @@
 #include <fstream>
 #include "msgpack/msgpack.hpp"
 #include "jsoncpp/serializor.hpp"
+#include "vsson.h"
 
 USING_NS_CC;
 using std::string;
@@ -75,6 +76,7 @@ namespace ccHelp
 		static typename std::map<K, V>::iterator floorKey(std::map<K, V> &m, const K &k);
 
 		static Json::Value jsonFromFile(const std::string &fileName);
+        static Json::Value jsonFromVsson(const vsson::VSSObject &vsson);
 
 		template <typename T, T DEFAULT = T()>
 		static T deserialize(const std::string &fileName);

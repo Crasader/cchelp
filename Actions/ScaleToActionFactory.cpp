@@ -11,25 +11,25 @@
 
 namespace ccHelp {
     
-    cocos2d::ScaleTo* ScaleToActionFactory::createAction(const Parameter &p, const ActionFactoryContext &ctx) const
+    cocos2d::ScaleTo* ScaleToActionFactory::createAction(const AFContext &ctx) const
     {
         float dur;
-        cocos2d::Vec2 scaleXY(1, 1);
-        if (!Json::type::deserialize(p["duration"], dur) &&
-            !Json::type::deserialize(p["dur"], dur))
+        if (!ctx.getField("duration", dur) &&
+            !ctx.getField("dur", dur))
+        {
             return nullptr;
+        }
         
-        bool isScaleXY = false;
-        isScaleXY |= Json::type::deserialize(p["x"], scaleXY.x);
-        isScaleXY |= Json::type::deserialize(p["y"], scaleXY.y);
+        cocos2d::Vec2 scaleXY(1, 1);
         
-        if (isScaleXY)
+        if (ctx.getField("x", scaleXY.x) ||
+            ctx.getField("y", scaleXY.y))
         {
             return cocos2d::ScaleTo::create(dur, scaleXY.x, scaleXY.y);
         }
         
         float &scale = scaleXY.x;
-        if (Json::type::deserialize(p["scale"], scale))
+        if (ctx.getField("scale", scale))
         {
             return cocos2d::ScaleTo::create(dur, scale);
         }

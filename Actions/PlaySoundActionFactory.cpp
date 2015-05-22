@@ -12,11 +12,11 @@
 
 namespace ccHelp {
     
-    cocos2d::CallFunc* PlaySoundActionFactory::createAction(const Parameter &p, const ActionFactoryContext &ctx) const
+    cocos2d::CallFunc* PlaySoundActionFactory::createAction(const AFContext &ctx) const
     {
         string sound;
-        if (!Json::type::deserialize(p["Sound"], sound) &&
-            !Json::type::deserialize(p["1"], sound))
+        if (!ctx.getField("Sound", sound) &&
+            !ctx.getField("1", sound))
         {
             return nullptr;
         }

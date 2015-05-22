@@ -20,6 +20,7 @@
 #include "Event.h"
 
 #include "lexical_cast/lexical_cast.h"
+#include "vsson/vsson.h"
 
 #include "msgpack/msgpack.h"
 
@@ -40,3 +41,4 @@
 #include "jsoncpp/jsonserialization.h"
 
 #include "Utils.h"
+#include "ActionHelper.h"

@@ -13,6 +13,6 @@ namespace ccHelp {
     class SequenceActionFactory : public ActionFactory
     {
     public:
-        virtual cocos2d::Sequence* createAction(const Parameter &p, const ActionFactoryContext &ctx) const override;
+        virtual cocos2d::Sequence* createAction(const AFContext &ctx) const override;
     };
 }

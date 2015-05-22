@@ -29,6 +29,45 @@ namespace ccHelp {
         GroupLayout::registerLayout("size", resize);
         GroupLayout::registerLayout("resize", resize);
         
+        auto *resizeDesignRate = new FunctionLayout([](Node *n, const Layout::Parameter &p) {
+            Size winSize = Director::getInstance()->getOpenGLView()->getDesignResolutionSize();
+            Size size = n->getContentSize();
+            
+            if (LayoutHelper::asFloat(p["width"], size.width))
+            {
+                size.width *= winSize.width;
+            }
+            
+            if (LayoutHelper::asFloat(p["height"], size.height))
+            {
+                size.height *= winSize.height;
+            }
+            
+            n->setContentSize(size);
+        });
+        GroupLayout::registerLayout("size-design-rate", resizeDesignRate);
+        
+        auto *resizeParentRate = new FunctionLayout([](Node *n, const Layout::Parameter &p) {
+            if (!n || !n->getParent())
+                return;
+            
+            Size parentSize = n->getParent()->getContentSize();
+            Size size = n->getContentSize();
+            
+            if (LayoutHelper::asFloat(p["width"], size.width))
+            {
+                size.width *= parentSize.width;
+            }
+            
+            if (LayoutHelper::asFloat(p["height"], size.height))
+            {
+                size.height *= parentSize.height;
+            }
+            
+            n->setContentSize(size);
+        });
+        GroupLayout::registerLayout("size-parent-rate", resizeParentRate);
+        
         auto *scale = new FunctionLayout([](Node *n, const Layout::Parameter &p) {
             if (p.isNumeric())
             {

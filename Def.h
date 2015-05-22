@@ -1,4 +1,5 @@
 #pragma once
+#include "cocos2d.h"
 #include <functional>
 
 #define USING_CC_HELP using namespace ccHelp
