@@ -63,7 +63,7 @@ namespace ccHelp {
         });
         
         addFunctionNShortcut("show", [](cocos2d::Node *node) {
-            node->setVisible(false);
+            node->setVisible(true);
         });
         
         addFunctionNShortcut("hide", [](cocos2d::Node *node) {

@@ -54,6 +54,15 @@ namespace ccHelp {
         }
     }
     
+    ActionContext::BaseHolder* ActionContext::getHolder(const std::string &k) const
+    {
+        auto it = mData.find(k);
+        if (it == mData.end())
+            return nullptr;
+        
+        return it->second;
+    }
+    
     AFContext::AFContext(const ActionContext &ctx, const Json::Value &js)
     : ctx(ctx), js(js) {}
     

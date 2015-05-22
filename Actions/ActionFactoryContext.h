@@ -63,15 +63,12 @@ namespace ccHelp {
         ActionContext(ActionContext &&ctx);
         ~ActionContext();
         
+        BaseHolder* getHolder(const std::string &k) const;
+        
         template <typename T>
         bool get(const std::string &k, T &t) const
         {
-            auto it = mData.find(k);
-            if (it == mData.cend() ||
-                it->second == nullptr)
-                return false;
-            
-            auto *holder = dynamic_cast<Holder<T>*>(it->second);
+            auto *holder = dynamic_cast<Holder<T>*>(getHolder(k));
             if (!holder)
                 return false;
             
@@ -95,23 +92,22 @@ namespace ccHelp {
             return *this;
         }
         
-        template <typename T>
-        ActionContext& operator()(const std::string &k, const T& data);
-    };
-    
 #define ACTION_CONTEXT_IMPLICIT(TYPE) \
-    template<> \
-    inline ActionContext& ActionContext::operator()(const std::string &k, const TYPE &data) \
-    { \
-        return this->put(k, data); \
-    }
-    
-    ACTION_CONTEXT_IMPLICIT(int);
-    ACTION_CONTEXT_IMPLICIT(float);
-    ACTION_CONTEXT_IMPLICIT(cocos2d::Size);
-    ACTION_CONTEXT_IMPLICIT(cocos2d::Vec2);
-    ACTION_CONTEXT_IMPLICIT(CallFuncFunction);
-    ACTION_CONTEXT_IMPLICIT(CallFuncNFunction);
+inline ActionContext& operator()(const std::string &k, const TYPE &data) \
+{ \
+return this->put<TYPE>(k, data); \
+}
+        
+        ACTION_CONTEXT_IMPLICIT(int);
+        ACTION_CONTEXT_IMPLICIT(float);
+        ACTION_CONTEXT_IMPLICIT(string);
+        ACTION_CONTEXT_IMPLICIT(cocos2d::Size);
+        ACTION_CONTEXT_IMPLICIT(cocos2d::Vec2);
+        ACTION_CONTEXT_IMPLICIT(CallFuncFunction);
+        ACTION_CONTEXT_IMPLICIT(CallFuncNFunction);
+        
+#undef ACTION_CONTEXT_IMPLICIT
+    };
     
     class AFContext
     {
@@ -137,7 +133,7 @@ namespace ccHelp {
                     std::string ref = js[k].asString();
                     ref = ref.substr(1, ref.length() - 1);
                     
-                    return ctx.get<T>(k, t);
+                    return ctx.get<T>(ref, t);
                 }
                 
                 return Json::type::deserialize(js[k], t);

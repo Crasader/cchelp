@@ -15,6 +15,8 @@
 #include "DoLayoutActionFactory.h"
 #include "SpawnActionFactory.h"
 #include "FadeToActionFactory.h"
+#include "DelayActionFactory.h"
+#include "AnimateActionFactory.h"
 
 namespace ccHelp {
     
@@ -34,5 +36,7 @@ namespace ccHelp {
         ActionHelper::regisFactory("fadeto", new FadeToActionFactory);
         ActionHelper::regisFactory("playsound", new PlaySoundActionFactory);
         ActionHelper::regisFactory("layout", new DoLayoutActionFactory);
+        ActionHelper::regisFactory("delay", new DelayActionFactory);
+        ActionHelper::regisFactory("animate", new AnimateActionFactory);
     }
 }

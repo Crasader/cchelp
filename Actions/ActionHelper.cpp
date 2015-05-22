@@ -17,6 +17,7 @@ namespace ccHelp {
     
     cocos2d::Action* ActionHelper::createAction(const ActionFactory::Parameter &p, const ActionContext &ctx)
     {
+        cocos2d::Action *action = nullptr;
         if (p.isObject())
         {
             bool valid = false;
@@ -41,22 +42,30 @@ namespace ccHelp {
             
             if (it != FACTORIES.end())
             {
-                return it->second->createAction(AFContext(ctx, p));
+                action = it->second->createAction(AFContext(ctx, p));
+            }
+            else
+            {
+                // it may be instant action
+                action = InstantActionFactory::getInstance()->createAction(AFContext(ctx, p));
             }
             
-            // it may be instant action
-            auto *instantAction = InstantActionFactory::getInstance()->createAction(AFContext(ctx, p));
-            if (instantAction)
-                return instantAction;
         }
         else if (p.isString())
         {
             vsson::VSSObject vsson = vsson::VSSParser::parse(p.asString());
             auto json = Utils::jsonFromVsson(vsson);
-            return createAction(json, ctx);
+            action = createAction(json, ctx);
         }
-        
-        return nullptr;
+
+#if COCOS2D_DEBUG <= 0
+        // no debug return safe action
+        if (!action)
+        {
+            return cocos2d::CallFunc::create([](){});
+        }
+#endif
+        return action;
     }
     
     cocos2d::Action* ActionHelper::createActionByName(const string &actName, const ActionContext &ctx)
