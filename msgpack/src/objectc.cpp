@@ -15,8 +15,8 @@
  *    See the License for the specific language governing permissions and
  *    limitations under the License.
  */
-#include "msgpack/object.h"
-#include "msgpack/pack.h"
+#include "msgpack/msgpack/object.h"
+#include "msgpack/msgpack/pack.h"
 #include <stdio.h>
 #include <string.h>
 

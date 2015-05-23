@@ -18,7 +18,7 @@
 #ifndef MSGPACK_TYPE_MAP_HPP__
 #define MSGPACK_TYPE_MAP_HPP__
 
-#include "msgpack/object.hpp"
+#include "msgpack/msgpack/object.hpp"
 #include <map>
 #include <vector>
 #include <algorithm>

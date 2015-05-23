@@ -18,7 +18,7 @@
 #ifndef MSGPACK_TYPE_BOOL_HPP__
 #define MSGPACK_TYPE_BOOL_HPP__
 
-#include "msgpack/object.hpp"
+#include "msgpack/msgpack/object.hpp"
 #include <vector>
 
 namespace msgpack {

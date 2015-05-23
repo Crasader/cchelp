@@ -15,8 +15,8 @@
  *    See the License for the specific language governing permissions and
  *    limitations under the License.
  */
-#include "msgpack/unpack.h"
-#include "msgpack/unpack_define.h"
+#include "msgpack/msgpack/unpack.h"
+#include "msgpack/msgpack/unpack_define.h"
 #include <stdlib.h>
 
 #ifdef _msgpack_atomic_counter_header
@@ -152,7 +152,7 @@ static inline int template_callback_raw(unpack_user* u, const char* b, const cha
 	return 0;
 }
 
-#include "msgpack/unpack_template.h"
+#include "msgpack/msgpack/unpack_template.h"
 
 
 #define CTX_CAST(m) ((template_context*)(m))

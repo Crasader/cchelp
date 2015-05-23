@@ -18,8 +18,8 @@
 #ifndef MSGPACK_TYPE_FIXINT_HPP__
 #define MSGPACK_TYPE_FIXINT_HPP__
 
-#include "msgpack/object.hpp"
-#include "msgpack/type/int.hpp"
+#include "msgpack/msgpack/object.hpp"
+#include "msgpack/msgpack/type/int.hpp"
 
 namespace msgpack {
 

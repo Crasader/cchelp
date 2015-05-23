@@ -18,7 +18,7 @@
 #ifndef MSGPACK_TYPE_PAIR_HPP__
 #define MSGPACK_TYPE_PAIR_HPP__
 
-#include "msgpack/object.hpp"
+#include "msgpack/msgpack/object.hpp"
 #include <utility>
 
 namespace msgpack {

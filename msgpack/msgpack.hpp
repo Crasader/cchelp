@@ -15,10 +15,10 @@
 //    See the License for the specific language governing permissions and
 //    limitations under the License.
 //
-#include "msgpack/object.hpp"
-#include "msgpack/zone.hpp"
-#include "msgpack/pack.hpp"
-#include "msgpack/unpack.hpp"
-#include "msgpack/sbuffer.hpp"
-#include "msgpack/vrefbuffer.hpp"
+#include "msgpack/msgpack/object.hpp"
+#include "msgpack/msgpack/zone.hpp"
+#include "msgpack/msgpack/pack.hpp"
+#include "msgpack/msgpack/unpack.hpp"
+#include "msgpack/msgpack/sbuffer.hpp"
+#include "msgpack/msgpack/vrefbuffer.hpp"
 #include "msgpack.h"

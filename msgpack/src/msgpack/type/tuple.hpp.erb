@@ -18,7 +18,7 @@
 #ifndef MSGPACK_TYPE_TUPLE_HPP__
 #define MSGPACK_TYPE_TUPLE_HPP__
 
-#include "msgpack/object.hpp"
+#include "msgpack/msgpack/object.hpp"
 
 namespace msgpack {
 

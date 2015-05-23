@@ -15,7 +15,7 @@
 //    See the License for the specific language governing permissions and
 //    limitations under the License.
 //
-#include "msgpack/object.hpp"
+#include "msgpack/msgpack/object.hpp"
 
 namespace msgpack {
 

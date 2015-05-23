@@ -18,7 +18,7 @@
 #ifndef MSGPACK_TYPE_TR1_UNORDERED_SET_HPP__
 #define MSGPACK_TYPE_TR1_UNORDERED_SET_HPP__
 
-#include "msgpack/object.hpp"
+#include "msgpack/msgpack/object.hpp"
 #include <tr1/unordered_set>
 
 namespace msgpack {

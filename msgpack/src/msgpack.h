@@ -20,11 +20,11 @@
  * @{
  * @}
  */
-#include "msgpack/object.h"
-#include "msgpack/zone.h"
-#include "msgpack/pack.h"
-#include "msgpack/unpack.h"
-#include "msgpack/sbuffer.h"
-#include "msgpack/vrefbuffer.h"
-#include "msgpack/version.h"
+#include "msgpack/msgpack/object.h"
+#include "msgpack/msgpack/zone.h"
+#include "msgpack/msgpack/pack.h"
+#include "msgpack/msgpack/unpack.h"
+#include "msgpack/msgpack/sbuffer.h"
+#include "msgpack/msgpack/vrefbuffer.h"
+#include "msgpack/msgpack/version.h"
 
