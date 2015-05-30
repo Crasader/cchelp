@@ -8,7 +8,7 @@
 
 #include "LayoutRegistration.h"
 #include "WidgetUtils.h"
-#include "CocosGUI.h"
+#include "ui/CocosGUI.h"
 
 namespace ccHelp {
     struct _Button : public ui::Button

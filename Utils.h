@@ -8,7 +8,7 @@
 #include <fstream>
 #include "msgpack/msgpack.hpp"
 #include "jsoncpp/serializor.hpp"
-#include "vsson.h"
+#include <vsson/vsson.h>
 
 USING_NS_CC;
 using std::string;

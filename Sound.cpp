@@ -7,7 +7,7 @@
 //
 
 #include "Sound.h"
-#include "SimpleAudioEngine.h"
+#include "audio/include/SimpleAudioEngine.h"
 #include "cocos2d.h"
 
 USING_NS_CC;

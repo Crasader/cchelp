@@ -9,7 +9,7 @@
 #include "ActionHelper.h"
 #include "InstantActionFactory.h"
 #include "Utils.h"
-#include "vsson.h"
+#include <vsson/vsson.h>
 
 namespace ccHelp {
     hmap<string, ActionFactory*> ActionHelper::FACTORIES;

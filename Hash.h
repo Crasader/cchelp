@@ -7,7 +7,7 @@
 //
 
 #pragma once
-#include <xxhash/xxhash.h>
+#include "../external/xxhash/xxhash.h"
 
 namespace ccHelp {
     template <typename T>

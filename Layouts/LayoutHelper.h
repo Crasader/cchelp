@@ -10,7 +10,7 @@
 #include "Layouts/Layout.h"
 #include "LayoutQuery.h"
 #include "hash_container/hmap.h"
-#include "CocosGUI.h"
+#include "ui/CocosGUI.h"
 
 using std::string;
 

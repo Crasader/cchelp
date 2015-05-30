@@ -11,7 +11,7 @@
 
 #include <stdio.h>
 #include "cocos2d.h"
-#include "hmap.h"
+#include "hash_container/hmap.h"
 using std::string;
 
 namespace ccHelp {

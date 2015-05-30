@@ -8,7 +8,7 @@
 
 #pragma once
 #include "Utils.h"
-#include "CocosGUI.h"
+#include "ui/CocosGUI.h"
 
 namespace ccHelp {
     class WidgetUtils

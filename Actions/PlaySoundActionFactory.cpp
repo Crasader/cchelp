@@ -7,7 +7,7 @@
 //
 
 #include "PlaySoundActionFactory.h"
-#include "jsonserialization.h"
+#include "jsoncpp/jsonserialization.h"
 #include "Sound.h"
 
 namespace ccHelp {

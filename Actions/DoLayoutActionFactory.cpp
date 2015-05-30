@@ -7,7 +7,7 @@
 //
 
 #include "DoLayoutActionFactory.h"
-#include "jsonserialization.h"
+#include "jsoncpp/jsonserialization.h"
 #include "Layouts/LayoutHelper.h"
 
 namespace ccHelp {

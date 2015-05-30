@@ -9,7 +9,7 @@
 #pragma once
 #include "Def.h"
 #include "ActionFactoryContext.h"
-#include "hmap.h"
+#include "hash_container/hmap.h"
 
 using cocos2d::Action;
 using std::string;

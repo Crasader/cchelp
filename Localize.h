@@ -12,7 +12,7 @@
 #include <stdio.h>
 #include <string>
 #include <locale>
-#include "hmap.h"
+#include "hash_container/hmap.h"
 
 using std::string;
 

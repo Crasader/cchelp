@@ -7,7 +7,7 @@
 //
 
 #include "MultiStateAnimNode.h"
-#include "jsonserialization.h"
+#include "jsoncpp/jsonserialization.h"
 
 USING_NS_CC;
 

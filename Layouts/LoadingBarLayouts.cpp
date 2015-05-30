@@ -7,7 +7,7 @@
 //
 
 #include "LayoutRegistration.h"
-#include "CocosGUI.h"
+#include "ui/CocosGUI.h"
 
 namespace ccHelp {
     void regisLoadingBarLayouts()

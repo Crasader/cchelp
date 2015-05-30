@@ -7,7 +7,7 @@
 //
 
 #include "MoveByActionFactory.h"
-#include "jsonserialization.h"
+#include "jsoncpp/jsonserialization.h"
 
 namespace ccHelp {
     

@@ -8,8 +8,8 @@
 
 #pragma once
 #include "cocos2d.h"
-#include "hset.h"
-#include "hmap.h"
+#include "hash_container/hset.h"
+#include "hash_container/hmap.h"
 
 namespace ccHelp {
 

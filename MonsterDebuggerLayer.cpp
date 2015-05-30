@@ -8,7 +8,7 @@
 
 #include "MonsterDebuggerLayer.h"
 #include <limits>
-#include "CocosGUI.h"
+#include "ui/CocosGUI.h"
 
 USING_NS_CC;
 using namespace std;

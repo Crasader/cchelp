@@ -6,7 +6,8 @@
 //
 //
 
-#include "vsson.h"
+#include <vsson/vsson.h>
+#include "Def.h"
 #include <sstream>
 
 namespace vsson {

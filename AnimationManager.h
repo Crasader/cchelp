@@ -9,8 +9,8 @@
 
 #include "Def.h"
 #include "cocos2d.h"
-#include "hmap.h"
-#include "jsonserialization.h"
+#include "hash_container/hmap.h"
+#include "jsoncpp/jsonserialization.h"
 
 namespace ccHelp {
     struct AnimationSpriteSheetData
