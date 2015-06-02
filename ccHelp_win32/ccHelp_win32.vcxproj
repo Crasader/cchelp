@@ -1,0 +1,343 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{3347CBE3-BFE3-4FE7-BE19-775A6FD591F5}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>ccHelp_win32</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v120</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v120</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="..\..\cocos2d\cocos\2d\cocos2dx.props" />
+    <Import Project="..\..\cocos2d\cocos\2d\cocos2d_headers.props" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="..\..\cocos2d\cocos\2d\cocos2dx.props" />
+    <Import Project="..\..\cocos2d\cocos\2d\cocos2d_headers.props" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <LinkIncremental>true</LinkIncremental>
+    <LibraryPath>$(MSBuildProgramFiles32)\Microsoft SDKs\Windows\v7.1A\lib;$(LibraryPath)</LibraryPath>
+    <OutDir>$(SolutionDir)$(Configuration).win32\</OutDir>
+    <IntDir>$(Configuration).win32\</IntDir>
+    <TargetName>cchelp</TargetName>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;_USE_MATH_DEFINES;GL_GLEXT_PROTOTYPES;CC_ENABLE_CHIPMUNK_INTEGRATION=1;COCOS2D_DEBUG=1;_CRT_SECURE_NO_WARNINGS;_SCL_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>../src;../../cocos2d/cocos;%(AdditionalIncludeDirectories);$(_COCOS_HEADER_WIN32_BEGIN);$(_COCOS_HEADER_WIN32_END)</AdditionalIncludeDirectories>
+      <DisableSpecificWarnings>4267;4251;4244;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>%(AdditionalDependencies);$(_COCOS_LIB_WIN32_BEGIN);$(_COCOS_LIB_WIN32_END)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(OutDir);%(AdditionalLibraryDirectories);$(_COCOS_LIB_PATH_WIN32_BEGIN);$(_COCOS_LIB_PATH_WIN32_END)</AdditionalLibraryDirectories>
+    </Link>
+    <PreLinkEvent>
+      <Command>
+      </Command>
+    </PreLinkEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <Text Include="ReadMe.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\src\ActionGroup.cpp" />
+    <ClCompile Include="..\src\ActionQueue.cpp" />
+    <ClCompile Include="..\src\Actions\ActionFactory.cpp" />
+    <ClCompile Include="..\src\Actions\ActionFactoryContext.cpp" />
+    <ClCompile Include="..\src\Actions\ActionFactoryRegistration.cpp" />
+    <ClCompile Include="..\src\Actions\ActionHelper.cpp" />
+    <ClCompile Include="..\src\Actions\AnimateActionFactory.cpp" />
+    <ClCompile Include="..\src\Actions\DelayActionFactory.cpp" />
+    <ClCompile Include="..\src\Actions\DoLayoutActionFactory.cpp" />
+    <ClCompile Include="..\src\Actions\FadeToActionFactory.cpp" />
+    <ClCompile Include="..\src\Actions\InstantActionFactory.cpp" />
+    <ClCompile Include="..\src\Actions\MoveByActionFactory.cpp" />
+    <ClCompile Include="..\src\Actions\PlaySoundActionFactory.cpp" />
+    <ClCompile Include="..\src\Actions\ScaleToActionFactory.cpp" />
+    <ClCompile Include="..\src\Actions\SequenceActionFactory.cpp" />
+    <ClCompile Include="..\src\Actions\SpawnAction.cpp" />
+    <ClCompile Include="..\src\AnimationManager.cpp" />
+    <ClCompile Include="..\src\Def.cpp" />
+    <ClCompile Include="..\src\DialogLayer.cpp" />
+    <ClCompile Include="..\src\DrawNodeHelper.cpp" />
+    <ClCompile Include="..\src\ExceptionFactory.cpp" />
+    <ClCompile Include="..\src\Hash.cpp" />
+    <ClCompile Include="..\src\jsoncpp\src\json_reader.cpp" />
+    <ClCompile Include="..\src\jsoncpp\src\json_value.cpp" />
+    <ClCompile Include="..\src\jsoncpp\src\json_writer.cpp" />
+    <ClCompile Include="..\src\Layouts\AddChildLayouts.cpp" />
+    <ClCompile Include="..\src\Layouts\CommonLayouts.cpp" />
+    <ClCompile Include="..\src\Layouts\GroupLayout.cpp" />
+    <ClCompile Include="..\src\Layouts\ImageViewLayouts.cpp" />
+    <ClCompile Include="..\src\Layouts\LabelLayouts.cpp" />
+    <ClCompile Include="..\src\Layouts\LayerColorLayouts.cpp" />
+    <ClCompile Include="..\src\Layouts\LayoutHelper.cpp" />
+    <ClCompile Include="..\src\Layouts\LayoutRegistration.cpp" />
+    <ClCompile Include="..\src\Layouts\LoadingBarLayouts.cpp" />
+    <ClCompile Include="..\src\Layouts\NodePositioningLayouts.cpp" />
+    <ClCompile Include="..\src\Layouts\NodeSizingLayouts.cpp" />
+    <ClCompile Include="..\src\Layouts\uiButtonLayouts.cpp" />
+    <ClCompile Include="..\src\Layouts\WidgetLayouts.cpp" />
+    <ClCompile Include="..\src\Localize.cpp" />
+    <ClCompile Include="..\src\Lock.cpp" />
+    <ClCompile Include="..\src\MonsterDebuggerLayer.cpp" />
+    <ClCompile Include="..\src\msgpack\src\gcc_atomic.cpp" />
+    <ClCompile Include="..\src\msgpack\src\object.cpp" />
+    <ClCompile Include="..\src\msgpack\src\objectc.cpp" />
+    <ClCompile Include="..\src\msgpack\src\unpack.cpp" />
+    <ClCompile Include="..\src\msgpack\src\version.cpp" />
+    <ClCompile Include="..\src\msgpack\src\vrefbuffer.cpp" />
+    <ClCompile Include="..\src\msgpack\src\zone.cpp" />
+    <ClCompile Include="..\src\MultiStateAnimNode.cpp" />
+    <ClCompile Include="..\src\OperationGroup.cpp" />
+    <ClCompile Include="..\src\OperationQueue.cpp" />
+    <ClCompile Include="..\src\ParallaxCamera.cpp" />
+    <ClCompile Include="..\src\Random.cpp" />
+    <ClCompile Include="..\src\Shortcut.cpp" />
+    <ClCompile Include="..\src\Sound.cpp" />
+    <ClCompile Include="..\src\Utils.cpp" />
+    <ClCompile Include="..\src\vsson\vsson.cpp" />
+    <ClCompile Include="..\src\WidgetUtils.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\src\ActionGroup.h" />
+    <ClInclude Include="..\src\ActionQueue.h" />
+    <ClInclude Include="..\src\Actions\ActionFactory.h" />
+    <ClInclude Include="..\src\Actions\ActionFactoryContext.h" />
+    <ClInclude Include="..\src\Actions\ActionFactoryRegistration.h" />
+    <ClInclude Include="..\src\Actions\ActionHelper.h" />
+    <ClInclude Include="..\src\Actions\AnimateActionFactory.h" />
+    <ClInclude Include="..\src\Actions\DelayActionFactory.h" />
+    <ClInclude Include="..\src\Actions\DoLayoutActionFactory.h" />
+    <ClInclude Include="..\src\Actions\FadeToActionFactory.h" />
+    <ClInclude Include="..\src\Actions\InstantActionFactory.h" />
+    <ClInclude Include="..\src\Actions\MoveByActionFactory.h" />
+    <ClInclude Include="..\src\Actions\PlaySoundActionFactory.h" />
+    <ClInclude Include="..\src\Actions\ScaleToActionFactory.h" />
+    <ClInclude Include="..\src\Actions\SequenceActionFactory.h" />
+    <ClInclude Include="..\src\Actions\SpawnActionFactory.h" />
+    <ClInclude Include="..\src\AnimationManager.h" />
+    <ClInclude Include="..\src\Array2D.h" />
+    <ClInclude Include="..\src\ccHelp.h" />
+    <ClInclude Include="..\src\Def.h" />
+    <ClInclude Include="..\src\DialogLayer.h" />
+    <ClInclude Include="..\src\DrawNodeHelper.h" />
+    <ClInclude Include="..\src\Event.h" />
+    <ClInclude Include="..\src\ExceptionFactory.h" />
+    <ClInclude Include="..\src\Factory.h" />
+    <ClInclude Include="..\src\Hash.h" />
+    <ClInclude Include="..\src\hash_container\hmap.h" />
+    <ClInclude Include="..\src\hash_container\hset.h" />
+    <ClInclude Include="..\src\Index2D.h" />
+    <ClInclude Include="..\src\jsoncpp\bool.hpp" />
+    <ClInclude Include="..\src\jsoncpp\def.hpp" />
+    <ClInclude Include="..\src\jsoncpp\double.hpp" />
+    <ClInclude Include="..\src\jsoncpp\float.hpp" />
+    <ClInclude Include="..\src\jsoncpp\hash_map.hpp" />
+    <ClInclude Include="..\src\jsoncpp\int.hpp" />
+    <ClInclude Include="..\src\jsoncpp\json2\assertions.h" />
+    <ClInclude Include="..\src\jsoncpp\json2\autolink.h" />
+    <ClInclude Include="..\src\jsoncpp\json2\config.h" />
+    <ClInclude Include="..\src\jsoncpp\json2\features.h" />
+    <ClInclude Include="..\src\jsoncpp\json2\forwards.h" />
+    <ClInclude Include="..\src\jsoncpp\json2\json.h" />
+    <ClInclude Include="..\src\jsoncpp\json2\reader.h" />
+    <ClInclude Include="..\src\jsoncpp\json2\value.h" />
+    <ClInclude Include="..\src\jsoncpp\json2\version.h" />
+    <ClInclude Include="..\src\jsoncpp\json2\writer.h" />
+    <ClInclude Include="..\src\jsoncpp\jsonserialization.h" />
+    <ClInclude Include="..\src\jsoncpp\jsonvalue.hpp" />
+    <ClInclude Include="..\src\jsoncpp\map.hpp" />
+    <ClInclude Include="..\src\jsoncpp\object.hpp" />
+    <ClInclude Include="..\src\jsoncpp\object_str.hpp" />
+    <ClInclude Include="..\src\jsoncpp\serializor.hpp" />
+    <ClInclude Include="..\src\jsoncpp\src\json_batchallocator.h" />
+    <ClInclude Include="..\src\jsoncpp\src\json_tool.h" />
+    <ClInclude Include="..\src\jsoncpp\string.hpp" />
+    <ClInclude Include="..\src\jsoncpp\strserialization.hpp" />
+    <ClInclude Include="..\src\jsoncpp\uint.hpp" />
+    <ClInclude Include="..\src\jsoncpp\vector.hpp" />
+    <ClInclude Include="..\src\jsoncpp_ser.h" />
+    <ClInclude Include="..\src\Layouts\FunctionLayout.h" />
+    <ClInclude Include="..\src\Layouts\GroupLayout.h" />
+    <ClInclude Include="..\src\Layouts\Layout.h" />
+    <ClInclude Include="..\src\Layouts\LayoutHelper.h" />
+    <ClInclude Include="..\src\Layouts\LayoutQuery.h" />
+    <ClInclude Include="..\src\Layouts\LayoutRegistration.h" />
+    <ClInclude Include="..\src\lexical_cast\impl1.hpp" />
+    <ClInclude Include="..\src\lexical_cast\impl2.hpp" />
+    <ClInclude Include="..\src\lexical_cast\lc_def.hpp" />
+    <ClInclude Include="..\src\lexical_cast\lexical_cast.h" />
+    <ClInclude Include="..\src\Localize.h" />
+    <ClInclude Include="..\src\Lock.h" />
+    <ClInclude Include="..\src\Matrix.h" />
+    <ClInclude Include="..\src\MonsterDebuggerLayer.h" />
+    <ClInclude Include="..\src\msgpack\msgpack\object.h" />
+    <ClInclude Include="..\src\msgpack\msgpack\object.hpp" />
+    <ClInclude Include="..\src\msgpack\msgpack\pack.h" />
+    <ClInclude Include="..\src\msgpack\msgpack\pack.hpp" />
+    <ClInclude Include="..\src\msgpack\msgpack\pack_define.h" />
+    <ClInclude Include="..\src\msgpack\msgpack\pack_template.h" />
+    <ClInclude Include="..\src\msgpack\msgpack\sbuffer.h" />
+    <ClInclude Include="..\src\msgpack\msgpack\sbuffer.hpp" />
+    <ClInclude Include="..\src\msgpack\msgpack\sysdep.h" />
+    <ClInclude Include="..\src\msgpack\msgpack\type.hpp" />
+    <ClInclude Include="..\src\msgpack\msgpack\type\bool.hpp" />
+    <ClInclude Include="..\src\msgpack\msgpack\type\define.hpp" />
+    <ClInclude Include="..\src\msgpack\msgpack\type\deque.hpp" />
+    <ClInclude Include="..\src\msgpack\msgpack\type\fixint.hpp" />
+    <ClInclude Include="..\src\msgpack\msgpack\type\float.hpp" />
+    <ClInclude Include="..\src\msgpack\msgpack\type\int.hpp" />
+    <ClInclude Include="..\src\msgpack\msgpack\type\list.hpp" />
+    <ClInclude Include="..\src\msgpack\msgpack\type\map.hpp" />
+    <ClInclude Include="..\src\msgpack\msgpack\type\nil.hpp" />
+    <ClInclude Include="..\src\msgpack\msgpack\type\pair.hpp" />
+    <ClInclude Include="..\src\msgpack\msgpack\type\raw.hpp" />
+    <ClInclude Include="..\src\msgpack\msgpack\type\set.hpp" />
+    <ClInclude Include="..\src\msgpack\msgpack\type\string.hpp" />
+    <ClInclude Include="..\src\msgpack\msgpack\type\tr1\unordered_map.hpp" />
+    <ClInclude Include="..\src\msgpack\msgpack\type\tr1\unordered_set.hpp" />
+    <ClInclude Include="..\src\msgpack\msgpack\type\tuple.hpp" />
+    <ClInclude Include="..\src\msgpack\msgpack\type\vector.hpp" />
+    <ClInclude Include="..\src\msgpack\msgpack\unpack.h" />
+    <ClInclude Include="..\src\msgpack\msgpack\unpack.hpp" />
+    <ClInclude Include="..\src\msgpack\msgpack\unpack_define.h" />
+    <ClInclude Include="..\src\msgpack\msgpack\unpack_template.h" />
+    <ClInclude Include="..\src\msgpack\msgpack\version.h" />
+    <ClInclude Include="..\src\msgpack\msgpack\vrefbuffer.h" />
+    <ClInclude Include="..\src\msgpack\msgpack\vrefbuffer.hpp" />
+    <ClInclude Include="..\src\msgpack\msgpack\zbuffer.h" />
+    <ClInclude Include="..\src\msgpack\msgpack\zbuffer.hpp" />
+    <ClInclude Include="..\src\msgpack\msgpack\zone.h" />
+    <ClInclude Include="..\src\msgpack\msgpack\zone.hpp" />
+    <ClInclude Include="..\src\msgpack\src\msgpack.h" />
+    <ClInclude Include="..\src\msgpack\src\msgpack.hpp" />
+    <ClInclude Include="..\src\msgpack\src\msgpack\object.h" />
+    <ClInclude Include="..\src\msgpack\src\msgpack\object.hpp" />
+    <ClInclude Include="..\src\msgpack\src\msgpack\pack.h" />
+    <ClInclude Include="..\src\msgpack\src\msgpack\pack.hpp" />
+    <ClInclude Include="..\src\msgpack\src\msgpack\pack_define.h" />
+    <ClInclude Include="..\src\msgpack\src\msgpack\pack_template.h" />
+    <ClInclude Include="..\src\msgpack\src\msgpack\sbuffer.h" />
+    <ClInclude Include="..\src\msgpack\src\msgpack\sbuffer.hpp" />
+    <ClInclude Include="..\src\msgpack\src\msgpack\sysdep.h" />
+    <ClInclude Include="..\src\msgpack\src\msgpack\type.hpp" />
+    <ClInclude Include="..\src\msgpack\src\msgpack\type\bool.hpp" />
+    <ClInclude Include="..\src\msgpack\src\msgpack\type\define.hpp" />
+    <ClInclude Include="..\src\msgpack\src\msgpack\type\deque.hpp" />
+    <ClInclude Include="..\src\msgpack\src\msgpack\type\fixint.hpp" />
+    <ClInclude Include="..\src\msgpack\src\msgpack\type\float.hpp" />
+    <ClInclude Include="..\src\msgpack\src\msgpack\type\int.hpp" />
+    <ClInclude Include="..\src\msgpack\src\msgpack\type\list.hpp" />
+    <ClInclude Include="..\src\msgpack\src\msgpack\type\map.hpp" />
+    <ClInclude Include="..\src\msgpack\src\msgpack\type\nil.hpp" />
+    <ClInclude Include="..\src\msgpack\src\msgpack\type\pair.hpp" />
+    <ClInclude Include="..\src\msgpack\src\msgpack\type\raw.hpp" />
+    <ClInclude Include="..\src\msgpack\src\msgpack\type\set.hpp" />
+    <ClInclude Include="..\src\msgpack\src\msgpack\type\string.hpp" />
+    <ClInclude Include="..\src\msgpack\src\msgpack\type\tr1\unordered_map.hpp" />
+    <ClInclude Include="..\src\msgpack\src\msgpack\type\tr1\unordered_set.hpp" />
+    <ClInclude Include="..\src\msgpack\src\msgpack\type\tuple.hpp" />
+    <ClInclude Include="..\src\msgpack\src\msgpack\type\vector.hpp" />
+    <ClInclude Include="..\src\msgpack\src\msgpack\unpack.h" />
+    <ClInclude Include="..\src\msgpack\src\msgpack\unpack.hpp" />
+    <ClInclude Include="..\src\msgpack\src\msgpack\unpack_define.h" />
+    <ClInclude Include="..\src\msgpack\src\msgpack\unpack_template.h" />
+    <ClInclude Include="..\src\msgpack\src\msgpack\version.h" />
+    <ClInclude Include="..\src\msgpack\src\msgpack\vrefbuffer.h" />
+    <ClInclude Include="..\src\msgpack\src\msgpack\vrefbuffer.hpp" />
+    <ClInclude Include="..\src\msgpack\src\msgpack\zbuffer.h" />
+    <ClInclude Include="..\src\msgpack\src\msgpack\zbuffer.hpp" />
+    <ClInclude Include="..\src\msgpack\src\msgpack\zone.h" />
+    <ClInclude Include="..\src\msgpack\src\msgpack\zone.hpp" />
+    <ClInclude Include="..\src\MultiStateAnimNode.h" />
+    <ClInclude Include="..\src\OperationGroup.h" />
+    <ClInclude Include="..\src\OperationQueue.h" />
+    <ClInclude Include="..\src\ParallaxCamera.h" />
+    <ClInclude Include="..\src\Parcel\Parcel.h" />
+    <ClInclude Include="..\src\Random.h" />
+    <ClInclude Include="..\src\RefHolder.h" />
+    <ClInclude Include="..\src\Shortcut.h" />
+    <ClInclude Include="..\src\Sound.h" />
+    <ClInclude Include="..\src\STLHelper.h" />
+    <ClInclude Include="..\src\Utils.h" />
+    <ClInclude Include="..\src\ValueProxy.h" />
+    <ClInclude Include="..\src\vsson\vsson.h" />
+    <ClInclude Include="..\src\WidgetUtils.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\src\jsoncpp\src\json_internalarray.inl" />
+    <None Include="..\src\jsoncpp\src\json_internalmap.inl" />
+    <None Include="..\src\jsoncpp\src\json_valueiterator.inl" />
+    <None Include="..\src\msgpack\src\msgpack\type\define.hpp.erb" />
+    <None Include="..\src\msgpack\src\msgpack\type\tuple.hpp.erb" />
+    <None Include="..\src\msgpack\src\msgpack\version.h.in" />
+    <None Include="..\src\msgpack\src\msgpack\zone.hpp.erb" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\cocos2d\cocos\2d\libcocos2d.vcxproj">
+      <Project>{98a51ba8-fc3a-415b-ac8f-8c7bd464e93e}</Project>
+      <Private>false</Private>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyLocalSatelliteAssemblies>false</CopyLocalSatelliteAssemblies>
+      <LinkLibraryDependencies>true</LinkLibraryDependencies>
+      <UseLibraryDependencyInputs>false</UseLibraryDependencyInputs>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

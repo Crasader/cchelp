@@ -1,0 +1,767 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="src">
+      <UniqueIdentifier>{27fef3c6-c354-4fef-955a-ae4351bd2838}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Actions">
+      <UniqueIdentifier>{1b24b845-f3c8-4031-972e-be4961e0177a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\hash_container">
+      <UniqueIdentifier>{00eeb2a4-a77c-4160-965c-aeaf11e44f8f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\jsoncpp">
+      <UniqueIdentifier>{3293a63b-870f-4cff-8806-95ac1faa57e8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\jsoncpp\json2">
+      <UniqueIdentifier>{a3d0ee24-4b0d-4d9d-8b82-a365cc117d39}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\jsoncpp\src">
+      <UniqueIdentifier>{e3687bc3-e39e-4136-a32c-58ac3d736a0c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Layouts">
+      <UniqueIdentifier>{63ce0dbc-c059-4125-a817-3eaf0908c698}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\lexical_cast">
+      <UniqueIdentifier>{103af715-ac6a-4463-b471-fea48bb8f4bc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\msgpack">
+      <UniqueIdentifier>{aba9106b-8f80-4557-8417-4df51aa406db}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\msgpack\msgpack">
+      <UniqueIdentifier>{77e917a6-e1b2-4559-a08a-cecf5711f3b3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\msgpack\msgpack\type">
+      <UniqueIdentifier>{e1dbfdba-b79a-425a-be13-258668c4d5df}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\msgpack\msgpack\type\tr1">
+      <UniqueIdentifier>{07141f9e-4abf-4969-a2c4-3799208f58f2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\msgpack\src">
+      <UniqueIdentifier>{9ef6c764-519b-43f2-81bb-092345dabc4b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\msgpack\src\msgpack">
+      <UniqueIdentifier>{22861b57-a923-4b06-bb52-227c5869ee2d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\msgpack\src\msgpack\type">
+      <UniqueIdentifier>{58552afd-7303-4cc6-9c78-cb5f66165943}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\msgpack\src\msgpack\tr1">
+      <UniqueIdentifier>{8c842da6-a67d-48cf-943a-ed71bb6a3e46}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Parcel">
+      <UniqueIdentifier>{1c4c9b51-8fae-4116-8dad-1cb25d8fa85f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\vsson">
+      <UniqueIdentifier>{50df706c-3e53-4944-9621-960580571c61}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="ReadMe.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\src\ActionGroup.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\ActionQueue.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\AnimationManager.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Def.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\DialogLayer.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\DrawNodeHelper.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\ExceptionFactory.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Hash.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Localize.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Lock.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\MonsterDebuggerLayer.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\MultiStateAnimNode.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\OperationGroup.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\OperationQueue.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\ParallaxCamera.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Random.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Shortcut.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Sound.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Utils.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\WidgetUtils.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Actions\ActionFactory.cpp">
+      <Filter>src\Actions</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Actions\ActionFactoryContext.cpp">
+      <Filter>src\Actions</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Actions\ActionFactoryRegistration.cpp">
+      <Filter>src\Actions</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Actions\ActionHelper.cpp">
+      <Filter>src\Actions</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Actions\AnimateActionFactory.cpp">
+      <Filter>src\Actions</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Actions\DelayActionFactory.cpp">
+      <Filter>src\Actions</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Actions\DoLayoutActionFactory.cpp">
+      <Filter>src\Actions</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Actions\FadeToActionFactory.cpp">
+      <Filter>src\Actions</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Actions\InstantActionFactory.cpp">
+      <Filter>src\Actions</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Actions\MoveByActionFactory.cpp">
+      <Filter>src\Actions</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Actions\PlaySoundActionFactory.cpp">
+      <Filter>src\Actions</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Actions\ScaleToActionFactory.cpp">
+      <Filter>src\Actions</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Actions\SequenceActionFactory.cpp">
+      <Filter>src\Actions</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Actions\SpawnAction.cpp">
+      <Filter>src\Actions</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\jsoncpp\src\json_value.cpp">
+      <Filter>src\jsoncpp\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\jsoncpp\src\json_writer.cpp">
+      <Filter>src\jsoncpp\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\jsoncpp\src\json_reader.cpp">
+      <Filter>src\jsoncpp\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Layouts\ImageViewLayouts.cpp">
+      <Filter>src\Layouts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Layouts\LabelLayouts.cpp">
+      <Filter>src\Layouts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Layouts\LayerColorLayouts.cpp">
+      <Filter>src\Layouts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Layouts\LayoutHelper.cpp">
+      <Filter>src\Layouts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Layouts\LayoutRegistration.cpp">
+      <Filter>src\Layouts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Layouts\LoadingBarLayouts.cpp">
+      <Filter>src\Layouts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Layouts\NodePositioningLayouts.cpp">
+      <Filter>src\Layouts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Layouts\NodeSizingLayouts.cpp">
+      <Filter>src\Layouts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Layouts\uiButtonLayouts.cpp">
+      <Filter>src\Layouts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Layouts\WidgetLayouts.cpp">
+      <Filter>src\Layouts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Layouts\AddChildLayouts.cpp">
+      <Filter>src\Layouts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Layouts\CommonLayouts.cpp">
+      <Filter>src\Layouts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Layouts\GroupLayout.cpp">
+      <Filter>src\Layouts</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\msgpack\src\object.cpp">
+      <Filter>src\msgpack\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\msgpack\src\objectc.cpp">
+      <Filter>src\msgpack\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\msgpack\src\unpack.cpp">
+      <Filter>src\msgpack\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\msgpack\src\version.cpp">
+      <Filter>src\msgpack\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\msgpack\src\vrefbuffer.cpp">
+      <Filter>src\msgpack\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\msgpack\src\zone.cpp">
+      <Filter>src\msgpack\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\msgpack\src\gcc_atomic.cpp">
+      <Filter>src\msgpack\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\vsson\vsson.cpp">
+      <Filter>src\vsson</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\src\ActionGroup.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\ActionQueue.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\AnimationManager.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\Array2D.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\ccHelp.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\Def.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\DialogLayer.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\DrawNodeHelper.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\Event.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\ExceptionFactory.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\Factory.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\Hash.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\Index2D.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\jsoncpp_ser.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\Localize.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\Lock.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\Matrix.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\MonsterDebuggerLayer.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\MultiStateAnimNode.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\OperationGroup.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\OperationQueue.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\ParallaxCamera.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\Random.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\RefHolder.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\Shortcut.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\Sound.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\STLHelper.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\Utils.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\ValueProxy.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\WidgetUtils.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\Actions\ActionFactory.h">
+      <Filter>src\Actions</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\Actions\ActionFactoryContext.h">
+      <Filter>src\Actions</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\Actions\ActionFactoryRegistration.h">
+      <Filter>src\Actions</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\Actions\ActionHelper.h">
+      <Filter>src\Actions</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\Actions\AnimateActionFactory.h">
+      <Filter>src\Actions</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\Actions\DelayActionFactory.h">
+      <Filter>src\Actions</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\Actions\DoLayoutActionFactory.h">
+      <Filter>src\Actions</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\Actions\FadeToActionFactory.h">
+      <Filter>src\Actions</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\Actions\InstantActionFactory.h">
+      <Filter>src\Actions</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\Actions\MoveByActionFactory.h">
+      <Filter>src\Actions</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\Actions\PlaySoundActionFactory.h">
+      <Filter>src\Actions</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\Actions\ScaleToActionFactory.h">
+      <Filter>src\Actions</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\Actions\SequenceActionFactory.h">
+      <Filter>src\Actions</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\Actions\SpawnActionFactory.h">
+      <Filter>src\Actions</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\hash_container\hset.h">
+      <Filter>src\hash_container</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\hash_container\hmap.h">
+      <Filter>src\hash_container</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\jsoncpp\bool.hpp">
+      <Filter>src\jsoncpp</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\jsoncpp\def.hpp">
+      <Filter>src\jsoncpp</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\jsoncpp\double.hpp">
+      <Filter>src\jsoncpp</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\jsoncpp\float.hpp">
+      <Filter>src\jsoncpp</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\jsoncpp\hash_map.hpp">
+      <Filter>src\jsoncpp</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\jsoncpp\int.hpp">
+      <Filter>src\jsoncpp</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\jsoncpp\jsonserialization.h">
+      <Filter>src\jsoncpp</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\jsoncpp\jsonvalue.hpp">
+      <Filter>src\jsoncpp</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\jsoncpp\map.hpp">
+      <Filter>src\jsoncpp</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\jsoncpp\object.hpp">
+      <Filter>src\jsoncpp</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\jsoncpp\object_str.hpp">
+      <Filter>src\jsoncpp</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\jsoncpp\serializor.hpp">
+      <Filter>src\jsoncpp</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\jsoncpp\string.hpp">
+      <Filter>src\jsoncpp</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\jsoncpp\strserialization.hpp">
+      <Filter>src\jsoncpp</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\jsoncpp\uint.hpp">
+      <Filter>src\jsoncpp</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\jsoncpp\vector.hpp">
+      <Filter>src\jsoncpp</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\jsoncpp\json2\forwards.h">
+      <Filter>src\jsoncpp\json2</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\jsoncpp\json2\json.h">
+      <Filter>src\jsoncpp\json2</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\jsoncpp\json2\reader.h">
+      <Filter>src\jsoncpp\json2</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\jsoncpp\json2\value.h">
+      <Filter>src\jsoncpp\json2</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\jsoncpp\json2\version.h">
+      <Filter>src\jsoncpp\json2</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\jsoncpp\json2\writer.h">
+      <Filter>src\jsoncpp\json2</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\jsoncpp\json2\assertions.h">
+      <Filter>src\jsoncpp\json2</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\jsoncpp\json2\autolink.h">
+      <Filter>src\jsoncpp\json2</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\jsoncpp\json2\config.h">
+      <Filter>src\jsoncpp\json2</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\jsoncpp\json2\features.h">
+      <Filter>src\jsoncpp\json2</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\jsoncpp\src\json_tool.h">
+      <Filter>src\jsoncpp\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\jsoncpp\src\json_batchallocator.h">
+      <Filter>src\jsoncpp\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\Layouts\GroupLayout.h">
+      <Filter>src\Layouts</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\Layouts\Layout.h">
+      <Filter>src\Layouts</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\Layouts\LayoutHelper.h">
+      <Filter>src\Layouts</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\Layouts\LayoutQuery.h">
+      <Filter>src\Layouts</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\Layouts\LayoutRegistration.h">
+      <Filter>src\Layouts</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\Layouts\FunctionLayout.h">
+      <Filter>src\Layouts</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\lexical_cast\lexical_cast.h">
+      <Filter>src\lexical_cast</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\lexical_cast\impl1.hpp">
+      <Filter>src\lexical_cast</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\lexical_cast\impl2.hpp">
+      <Filter>src\lexical_cast</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\lexical_cast\lc_def.hpp">
+      <Filter>src\lexical_cast</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\msgpack\msgpack\type\tr1\unordered_set.hpp">
+      <Filter>src\msgpack\msgpack\type\tr1</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\msgpack\msgpack\type\tr1\unordered_map.hpp">
+      <Filter>src\msgpack\msgpack\type\tr1</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\msgpack\msgpack\type\bool.hpp">
+      <Filter>src\msgpack\msgpack\type</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\msgpack\msgpack\type\define.hpp">
+      <Filter>src\msgpack\msgpack\type</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\msgpack\msgpack\type\deque.hpp">
+      <Filter>src\msgpack\msgpack\type</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\msgpack\msgpack\type\fixint.hpp">
+      <Filter>src\msgpack\msgpack\type</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\msgpack\msgpack\type\float.hpp">
+      <Filter>src\msgpack\msgpack\type</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\msgpack\msgpack\type\int.hpp">
+      <Filter>src\msgpack\msgpack\type</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\msgpack\msgpack\type\list.hpp">
+      <Filter>src\msgpack\msgpack\type</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\msgpack\msgpack\type\map.hpp">
+      <Filter>src\msgpack\msgpack\type</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\msgpack\msgpack\type\nil.hpp">
+      <Filter>src\msgpack\msgpack\type</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\msgpack\msgpack\type\pair.hpp">
+      <Filter>src\msgpack\msgpack\type</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\msgpack\msgpack\type\raw.hpp">
+      <Filter>src\msgpack\msgpack\type</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\msgpack\msgpack\type\set.hpp">
+      <Filter>src\msgpack\msgpack\type</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\msgpack\msgpack\type\string.hpp">
+      <Filter>src\msgpack\msgpack\type</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\msgpack\msgpack\type\tuple.hpp">
+      <Filter>src\msgpack\msgpack\type</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\msgpack\msgpack\type\vector.hpp">
+      <Filter>src\msgpack\msgpack\type</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\msgpack\msgpack\object.h">
+      <Filter>src\msgpack\msgpack</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\msgpack\msgpack\object.hpp">
+      <Filter>src\msgpack\msgpack</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\msgpack\msgpack\pack.h">
+      <Filter>src\msgpack\msgpack</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\msgpack\msgpack\pack.hpp">
+      <Filter>src\msgpack\msgpack</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\msgpack\msgpack\pack_define.h">
+      <Filter>src\msgpack\msgpack</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\msgpack\msgpack\pack_template.h">
+      <Filter>src\msgpack\msgpack</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\msgpack\msgpack\sbuffer.h">
+      <Filter>src\msgpack\msgpack</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\msgpack\msgpack\sbuffer.hpp">
+      <Filter>src\msgpack\msgpack</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\msgpack\msgpack\sysdep.h">
+      <Filter>src\msgpack\msgpack</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\msgpack\msgpack\type.hpp">
+      <Filter>src\msgpack\msgpack</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\msgpack\msgpack\unpack.h">
+      <Filter>src\msgpack\msgpack</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\msgpack\msgpack\unpack.hpp">
+      <Filter>src\msgpack\msgpack</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\msgpack\msgpack\unpack_define.h">
+      <Filter>src\msgpack\msgpack</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\msgpack\msgpack\unpack_template.h">
+      <Filter>src\msgpack\msgpack</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\msgpack\msgpack\version.h">
+      <Filter>src\msgpack\msgpack</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\msgpack\msgpack\vrefbuffer.h">
+      <Filter>src\msgpack\msgpack</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\msgpack\msgpack\vrefbuffer.hpp">
+      <Filter>src\msgpack\msgpack</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\msgpack\msgpack\zbuffer.h">
+      <Filter>src\msgpack\msgpack</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\msgpack\msgpack\zbuffer.hpp">
+      <Filter>src\msgpack\msgpack</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\msgpack\msgpack\zone.h">
+      <Filter>src\msgpack\msgpack</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\msgpack\msgpack\zone.hpp">
+      <Filter>src\msgpack\msgpack</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\msgpack\src\msgpack.h">
+      <Filter>src\msgpack\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\msgpack\src\msgpack.hpp">
+      <Filter>src\msgpack\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\msgpack\src\msgpack\object.h">
+      <Filter>src\msgpack\src\msgpack</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\msgpack\src\msgpack\object.hpp">
+      <Filter>src\msgpack\src\msgpack</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\msgpack\src\msgpack\pack.h">
+      <Filter>src\msgpack\src\msgpack</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\msgpack\src\msgpack\pack.hpp">
+      <Filter>src\msgpack\src\msgpack</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\msgpack\src\msgpack\pack_define.h">
+      <Filter>src\msgpack\src\msgpack</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\msgpack\src\msgpack\pack_template.h">
+      <Filter>src\msgpack\src\msgpack</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\msgpack\src\msgpack\sbuffer.h">
+      <Filter>src\msgpack\src\msgpack</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\msgpack\src\msgpack\sbuffer.hpp">
+      <Filter>src\msgpack\src\msgpack</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\msgpack\src\msgpack\sysdep.h">
+      <Filter>src\msgpack\src\msgpack</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\msgpack\src\msgpack\type.hpp">
+      <Filter>src\msgpack\src\msgpack</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\msgpack\src\msgpack\unpack.h">
+      <Filter>src\msgpack\src\msgpack</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\msgpack\src\msgpack\unpack.hpp">
+      <Filter>src\msgpack\src\msgpack</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\msgpack\src\msgpack\unpack_define.h">
+      <Filter>src\msgpack\src\msgpack</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\msgpack\src\msgpack\unpack_template.h">
+      <Filter>src\msgpack\src\msgpack</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\msgpack\src\msgpack\version.h">
+      <Filter>src\msgpack\src\msgpack</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\msgpack\src\msgpack\vrefbuffer.h">
+      <Filter>src\msgpack\src\msgpack</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\msgpack\src\msgpack\vrefbuffer.hpp">
+      <Filter>src\msgpack\src\msgpack</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\msgpack\src\msgpack\zbuffer.h">
+      <Filter>src\msgpack\src\msgpack</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\msgpack\src\msgpack\zbuffer.hpp">
+      <Filter>src\msgpack\src\msgpack</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\msgpack\src\msgpack\zone.h">
+      <Filter>src\msgpack\src\msgpack</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\msgpack\src\msgpack\zone.hpp">
+      <Filter>src\msgpack\src\msgpack</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\msgpack\src\msgpack\type\bool.hpp">
+      <Filter>src\msgpack\src\msgpack\type</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\msgpack\src\msgpack\type\define.hpp">
+      <Filter>src\msgpack\src\msgpack\type</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\msgpack\src\msgpack\type\deque.hpp">
+      <Filter>src\msgpack\src\msgpack\type</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\msgpack\src\msgpack\type\fixint.hpp">
+      <Filter>src\msgpack\src\msgpack\type</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\msgpack\src\msgpack\type\float.hpp">
+      <Filter>src\msgpack\src\msgpack\type</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\msgpack\src\msgpack\type\int.hpp">
+      <Filter>src\msgpack\src\msgpack\type</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\msgpack\src\msgpack\type\list.hpp">
+      <Filter>src\msgpack\src\msgpack\type</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\msgpack\src\msgpack\type\map.hpp">
+      <Filter>src\msgpack\src\msgpack\type</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\msgpack\src\msgpack\type\nil.hpp">
+      <Filter>src\msgpack\src\msgpack\type</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\msgpack\src\msgpack\type\pair.hpp">
+      <Filter>src\msgpack\src\msgpack\type</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\msgpack\src\msgpack\type\raw.hpp">
+      <Filter>src\msgpack\src\msgpack\type</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\msgpack\src\msgpack\type\set.hpp">
+      <Filter>src\msgpack\src\msgpack\type</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\msgpack\src\msgpack\type\string.hpp">
+      <Filter>src\msgpack\src\msgpack\type</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\msgpack\src\msgpack\type\tuple.hpp">
+      <Filter>src\msgpack\src\msgpack\type</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\msgpack\src\msgpack\type\vector.hpp">
+      <Filter>src\msgpack\src\msgpack\type</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\msgpack\src\msgpack\type\tr1\unordered_set.hpp">
+      <Filter>src\msgpack\src\msgpack\tr1</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\msgpack\src\msgpack\type\tr1\unordered_map.hpp">
+      <Filter>src\msgpack\src\msgpack\tr1</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\Parcel\Parcel.h">
+      <Filter>src\Parcel</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\vsson\vsson.h">
+      <Filter>src\vsson</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\src\jsoncpp\src\json_valueiterator.inl">
+      <Filter>src\jsoncpp\src</Filter>
+    </None>
+    <None Include="..\src\jsoncpp\src\json_internalarray.inl">
+      <Filter>src\jsoncpp\src</Filter>
+    </None>
+    <None Include="..\src\jsoncpp\src\json_internalmap.inl">
+      <Filter>src\jsoncpp\src</Filter>
+    </None>
+    <None Include="..\src\msgpack\src\msgpack\version.h.in">
+      <Filter>src\msgpack\src\msgpack</Filter>
+    </None>
+    <None Include="..\src\msgpack\src\msgpack\zone.hpp.erb">
+      <Filter>src\msgpack\src\msgpack</Filter>
+    </None>
+    <None Include="..\src\msgpack\src\msgpack\type\define.hpp.erb">
+      <Filter>src\msgpack\src\msgpack\type</Filter>
+    </None>
+    <None Include="..\src\msgpack\src\msgpack\type\tuple.hpp.erb">
+      <Filter>src\msgpack\src\msgpack\type</Filter>
+    </None>
+  </ItemGroup>
+</Project>
