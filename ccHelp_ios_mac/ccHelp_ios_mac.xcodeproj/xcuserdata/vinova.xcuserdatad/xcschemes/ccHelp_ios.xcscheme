@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "7693DF5C1B22A0400068F1CD"
-               BuildableName = "libccHelp_ios.a"
+               BuildableName = "ccHelp_ios.a"
                BlueprintName = "ccHelp_ios"
                ReferencedContainer = "container:ccHelp_ios_mac.xcodeproj">
             </BuildableReference>
@@ -57,7 +57,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "7693DF5C1B22A0400068F1CD"
-            BuildableName = "libccHelp_ios.a"
+            BuildableName = "ccHelp_ios.a"
             BlueprintName = "ccHelp_ios"
             ReferencedContainer = "container:ccHelp_ios_mac.xcodeproj">
          </BuildableReference>
@@ -76,7 +76,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "7693DF5C1B22A0400068F1CD"
-            BuildableName = "libccHelp_ios.a"
+            BuildableName = "ccHelp_ios.a"
             BlueprintName = "ccHelp_ios"
             ReferencedContainer = "container:ccHelp_ios_mac.xcodeproj">
          </BuildableReference>
@@ -94,7 +94,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "7693DF5C1B22A0400068F1CD"
-            BuildableName = "libccHelp_ios.a"
+            BuildableName = "ccHelp_ios.a"
             BlueprintName = "ccHelp_ios"
             ReferencedContainer = "container:ccHelp_ios_mac.xcodeproj">
          </BuildableReference>
