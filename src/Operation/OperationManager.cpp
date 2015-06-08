@@ -163,30 +163,60 @@ namespace ccHelp2 {
     
     OperationBuilder OperationBuilder::INST;
     
+    OperationQueue::OperationJob::OperationJob(Operation *_op)
+    : op(_op), ctx(nullptr)
+    {
+        
+    }
+    
+    OperationQueue::OperationJob::~OperationJob()
+    {
+        if (op)
+            delete op;
+        
+        if (ctx)
+            delete ctx;
+    }
+    
+    Operation* OperationQueue::OperationJob::getOperation() const
+    {
+        return op;
+    }
+    
+    ccHelp::Context* OperationQueue::OperationJob::getContext()
+    {
+        if (!ctx)
+        {
+            ctx = new ccHelp::Context();
+        }
+        
+        return ctx;
+    }
+    
     OperationQueue::OperationQueue()
-    : runningOp(nullptr)
+    : runningJob(nullptr)
     {
         
     }
     
     OperationQueue::~OperationQueue()
     {
-        for (Operation *op : ops)
+        for (OperationJob *job : ops)
         {
-            delete op;
+            delete job;
         }
         ops.clear();
     }
     
     void OperationQueue::pushBack(Operation *op)
     {
-        this->ops.push_back(op);
+        this->ops.push_back(new OperationJob(op));
         this->activeNextOperation();
     }
     
     void OperationQueue::pushFront(Operation *op)
     {
-        this->ops.push_front(op);
+        this->ops.push_front(new OperationJob(op));
     }
     
     void OperationQueue::push(Operation *op, OperationAddRule rule)
@@ -204,16 +234,16 @@ namespace ccHelp2 {
     
     void OperationQueue::activeNextOperation()
     {
-        if (runningOp || this->ops.empty())
+        if (runningJob || this->ops.empty())
             return;
         
-        Operation *topOp = this->ops.front();
+        OperationJob *topJob = this->ops.front();
         this->ops.front();
         
-        runningOp = topOp;
-        topOp->run([=] {
-            runningOp = nullptr;
-            delete topOp;
+        runningJob = topJob;
+        topJob->getOperation()->run([=] {
+            runningJob = nullptr;
+            delete topJob;
             
             this->activeNextOperation();
         });
@@ -308,6 +338,11 @@ namespace ccHelp2 {
         {
             this->opQueue->push(op, currentBuilding.rule);
         }
+    }
+    
+    ccHelp::Context& OperationManager::currentContext()
+    {
+        return *opQueue->getCurrentJob()->getContext();
     }
     
     OperationManager OP;

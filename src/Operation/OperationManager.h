@@ -8,6 +8,7 @@
 
 #pragma once
 #include "Def.h"
+#include "Context.h"
 #include <list>
 #include <vector>
 #include <queue>
@@ -16,6 +17,8 @@
 namespace ccHelp2 {
     class /*interface*/ Operation
     {
+    private:
+        
     public:
         virtual ~Operation();
         virtual void run(CCH_CALLBACK completion) = 0;
@@ -88,9 +91,24 @@ namespace ccHelp2 {
     
     class OperationQueue
     {
+    public:
+        struct OperationJob
+        {
+        private:
+            Operation *op;
+            ccHelp::Context *ctx;
+            
+        public:
+            OperationJob(Operation *op);
+            ~OperationJob();
+            
+            Operation* getOperation() const;
+            ccHelp::Context* getContext();
+        };
+        
     private:
-        std::deque<Operation *> ops;
-        Operation *runningOp;
+        std::deque<OperationJob *> ops;
+        OperationJob *runningJob;
         
         void activeNextOperation();
         
@@ -100,6 +118,7 @@ namespace ccHelp2 {
         void pushBack(Operation *op);
         void pushFront(Operation *op);
         void push(Operation *op, OperationAddRule rule);
+        OperationJob* getCurrentJob() const;
     };
     
     template<typename T>
@@ -131,6 +150,8 @@ namespace ccHelp2 {
         void newSequence(OperationAddRule rule = OperationAddRule::RULE_NONE);
         void newGroup(OperationAddRule rule = OperationAddRule::RULE_NONE);
         void closeCurrent();
+        
+        ccHelp::Context& currentContext();
         
         template<typename T>
         void addmk(const T& t, OperationAddRule rule = OperationAddRule::RULE_NONE)
