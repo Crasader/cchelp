@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7646FEE51B22F760002B2E23 /* OperationManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7646FEE31B22F760002B2E23 /* OperationManager.cpp */; };
+		7646FEE61B22F760002B2E23 /* OperationManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7646FEE31B22F760002B2E23 /* OperationManager.cpp */; };
+		7646FEE71B22F760002B2E23 /* OperationManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 7646FEE41B22F760002B2E23 /* OperationManager.h */; };
 		7693E0321B22A6100068F1CD /* libcocos2d Mac.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7693E02F1B22A5EB0068F1CD /* libcocos2d Mac.a */; };
 		7693E0341B22A6660068F1CD /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 7693E0331B22A6660068F1CD /* libz.dylib */; };
 		7693E0361B22A66B0068F1CD /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7693E0351B22A66B0068F1CD /* QuartzCore.framework */; };
@@ -313,6 +316,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		7646FEE31B22F760002B2E23 /* OperationManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = OperationManager.cpp; sourceTree = "<group>"; };
+		7646FEE41B22F760002B2E23 /* OperationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OperationManager.h; sourceTree = "<group>"; };
 		7693DF451B229ED30068F1CD /* ccHelp_Mac.a */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = ccHelp_Mac.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		7693DF5D1B22A0400068F1CD /* ccHelp_ios.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = ccHelp_ios.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		7693E02F1B22A5EB0068F1CD /* libcocos2d Mac.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libcocos2d Mac.a"; path = "../../../../../Library/Developer/Xcode/DerivedData/FillTree-ctxalenanebtesgifgthounuyhlb/Build/Products/Debug/libcocos2d Mac.a"; sourceTree = "<group>"; };
@@ -589,6 +594,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7646FEE21B22F5C8002B2E23 /* Operation */ = {
+			isa = PBXGroup;
+			children = (
+				7646FEE31B22F760002B2E23 /* OperationManager.cpp */,
+				7646FEE41B22F760002B2E23 /* OperationManager.h */,
+			);
+			path = Operation;
+			sourceTree = "<group>";
+		};
 		7693DF3C1B229ED30068F1CD = {
 			isa = PBXGroup;
 			children = (
@@ -626,6 +640,7 @@
 		7693E0401B22A6E80068F1CD /* src */ = {
 			isa = PBXGroup;
 			children = (
+				7646FEE21B22F5C8002B2E23 /* Operation */,
 				7693E0411B22A6E80068F1CD /* ActionGroup.cpp */,
 				7693E0421B22A6E80068F1CD /* ActionGroup.h */,
 				7693E0431B22A6E80068F1CD /* ActionQueue.cpp */,
@@ -1134,6 +1149,7 @@
 				7693E20D1B22A6EA0068F1CD /* deque.hpp in Headers */,
 				7693E1DC1B22A6E90068F1CD /* pack_define.h in Headers */,
 				7693E1A51B22A6E90068F1CD /* string.hpp in Headers */,
+				7646FEE71B22F760002B2E23 /* OperationManager.h in Headers */,
 				7693E21E1B22A6EB0068F1CD /* unpack.hpp in Headers */,
 				7693E18C1B22A6E90068F1CD /* int.hpp in Headers */,
 				7693E1611B22A6E90068F1CD /* MoveByActionFactory.h in Headers */,
@@ -1282,6 +1298,7 @@
 				7693E22E1B22A6EB0068F1CD /* unpack.cpp in Sources */,
 				7693E16B1B22A6E90068F1CD /* SpawnAction.cpp in Sources */,
 				7693E22A1B22A6EB0068F1CD /* object.cpp in Sources */,
+				7646FEE51B22F760002B2E23 /* OperationManager.cpp in Sources */,
 				7693E2471B22A6EC0068F1CD /* Shortcut.cpp in Sources */,
 				7693E1B21B22A6E90068F1CD /* ImageViewLayouts.cpp in Sources */,
 				7693E1AA1B22A6E90068F1CD /* AddChildLayouts.cpp in Sources */,
@@ -1347,6 +1364,7 @@
 				7693E1C11B22A6E90068F1CD /* LoadingBarLayouts.cpp in Sources */,
 				7693E22D1B22A6EB0068F1CD /* objectc.cpp in Sources */,
 				7693E1BE1B22A6E90068F1CD /* LayoutRegistration.cpp in Sources */,
+				7646FEE61B22F760002B2E23 /* OperationManager.cpp in Sources */,
 				7693E1691B22A6E90068F1CD /* SequenceActionFactory.cpp in Sources */,
 				7693E1C71B22A6E90068F1CD /* uiButtonLayouts.cpp in Sources */,
 				7693E1661B22A6E90068F1CD /* ScaleToActionFactory.cpp in Sources */,
