@@ -10,7 +10,7 @@
 
 using namespace std;
 
-namespace ccHelp {
+namespace ccHelp2 {
     Operation::~Operation() {}
     
     OperationSequence::OperationSequence(const vector<Operation *> &_ops)
@@ -111,7 +111,7 @@ namespace ccHelp {
         return *this;
     }
     
-    OperationBuilder& OperationBuilder::add(ccHelp::Operation *op, OperationAddRule rule)
+    OperationBuilder& OperationBuilder::add(Operation *op, OperationAddRule rule)
     {
         assert(isBuilding);
         
@@ -178,18 +178,18 @@ namespace ccHelp {
         ops.clear();
     }
     
-    void OperationQueue::pushBack(ccHelp::Operation *op)
+    void OperationQueue::pushBack(Operation *op)
     {
         this->ops.push_back(op);
         this->activeNextOperation();
     }
     
-    void OperationQueue::pushFront(ccHelp::Operation *op)
+    void OperationQueue::pushFront(Operation *op)
     {
         this->ops.push_front(op);
     }
     
-    void OperationQueue::push(ccHelp::Operation *op, ccHelp::OperationAddRule rule)
+    void OperationQueue::push(Operation *op, OperationAddRule rule)
     {
         switch (rule) {
             case OperationAddRule::RULE_AT_FIRST :
@@ -252,7 +252,7 @@ namespace ccHelp {
         }
     }
     
-    void OperationManager::add(ccHelp::Operation *op, OperationAddRule rule)
+    void OperationManager::add(Operation *op, OperationAddRule rule)
     {
         if (currentBuilding.builder)
         {
@@ -264,7 +264,7 @@ namespace ccHelp {
         }
     }
     
-    void OperationManager::newSequence(ccHelp::OperationAddRule rule)
+    void OperationManager::newSequence(OperationAddRule rule)
     {
         if (currentBuilding.builder)
         {
@@ -276,7 +276,7 @@ namespace ccHelp {
         currentBuilding.builder->begin(OperationBuilder::SEQUENCE);
     }
     
-    void OperationManager::newGroup(ccHelp::OperationAddRule rule)
+    void OperationManager::newGroup(OperationAddRule rule)
     {
         if (currentBuilding.builder)
         {

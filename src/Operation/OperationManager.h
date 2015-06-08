@@ -13,7 +13,7 @@
 #include <queue>
 #include <iostream>
 
-namespace ccHelp {
+namespace ccHelp2 {
     class /*interface*/ Operation
     {
     public:

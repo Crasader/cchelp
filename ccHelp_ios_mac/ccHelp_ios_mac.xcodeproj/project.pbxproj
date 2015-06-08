@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		76416D911B25FA7D00ECEFCD /* Context.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 76416D8E1B25FA7D00ECEFCD /* Context.cpp */; };
+		76416D921B25FA7D00ECEFCD /* Context.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 76416D8E1B25FA7D00ECEFCD /* Context.cpp */; };
+		76416D931B25FA7D00ECEFCD /* Context.h in Headers */ = {isa = PBXBuildFile; fileRef = 76416D8F1B25FA7D00ECEFCD /* Context.h */; };
+		76416D941B25FA7D00ECEFCD /* Context.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 76416D901B25FA7D00ECEFCD /* Context.hpp */; };
 		7646FEE51B22F760002B2E23 /* OperationManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7646FEE31B22F760002B2E23 /* OperationManager.cpp */; };
 		7646FEE61B22F760002B2E23 /* OperationManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7646FEE31B22F760002B2E23 /* OperationManager.cpp */; };
 		7646FEE71B22F760002B2E23 /* OperationManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 7646FEE41B22F760002B2E23 /* OperationManager.h */; };
@@ -316,6 +320,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		76416D8E1B25FA7D00ECEFCD /* Context.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Context.cpp; sourceTree = "<group>"; };
+		76416D8F1B25FA7D00ECEFCD /* Context.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Context.h; sourceTree = "<group>"; };
+		76416D901B25FA7D00ECEFCD /* Context.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Context.hpp; sourceTree = "<group>"; };
 		7646FEE31B22F760002B2E23 /* OperationManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = OperationManager.cpp; sourceTree = "<group>"; };
 		7646FEE41B22F760002B2E23 /* OperationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OperationManager.h; sourceTree = "<group>"; };
 		7693DF451B229ED30068F1CD /* ccHelp_Mac.a */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = ccHelp_Mac.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -699,6 +706,9 @@
 				7693E1391B22A6E80068F1CD /* vsson */,
 				7693E13C1B22A6E80068F1CD /* WidgetUtils.cpp */,
 				7693E13D1B22A6E80068F1CD /* WidgetUtils.h */,
+				76416D8E1B25FA7D00ECEFCD /* Context.cpp */,
+				76416D8F1B25FA7D00ECEFCD /* Context.h */,
+				76416D901B25FA7D00ECEFCD /* Context.hpp */,
 			);
 			name = src;
 			path = ../src;
@@ -1077,6 +1087,7 @@
 				7693E1DD1B22A6E90068F1CD /* pack_template.h in Headers */,
 				7693E2151B22A6EB0068F1CD /* raw.hpp in Headers */,
 				7693E1E21B22A6EA0068F1CD /* define.hpp in Headers */,
+				76416D931B25FA7D00ECEFCD /* Context.h in Headers */,
 				7693E2251B22A6EB0068F1CD /* zbuffer.hpp in Headers */,
 				7693E1F11B22A6EA0068F1CD /* vector.hpp in Headers */,
 				7693E20F1B22A6EB0068F1CD /* float.hpp in Headers */,
@@ -1116,6 +1127,7 @@
 				7693E1881B22A6E90068F1CD /* def.hpp in Headers */,
 				7693E1FA1B22A6EA0068F1CD /* zbuffer.h in Headers */,
 				7693E14C1B22A6E90068F1CD /* ActionFactoryRegistration.h in Headers */,
+				76416D941B25FA7D00ECEFCD /* Context.hpp in Headers */,
 				7693E1E61B22A6EA0068F1CD /* int.hpp in Headers */,
 				7693E20E1B22A6EA0068F1CD /* fixint.hpp in Headers */,
 				7693E2411B22A6EC0068F1CD /* ParallaxCamera.h in Headers */,
@@ -1305,6 +1317,7 @@
 				7693E2391B22A6EB0068F1CD /* OperationGroup.cpp in Sources */,
 				7693E1621B22A6E90068F1CD /* PlaySoundActionFactory.cpp in Sources */,
 				7693E1CE1B22A6E90068F1CD /* Localize.cpp in Sources */,
+				76416D911B25FA7D00ECEFCD /* Context.cpp in Sources */,
 				7693E1A11B22A6E90068F1CD /* json_value.cpp in Sources */,
 				7693E1791B22A6E90068F1CD /* DrawNodeHelper.cpp in Sources */,
 				7693E1C61B22A6E90068F1CD /* uiButtonLayouts.cpp in Sources */,
@@ -1371,6 +1384,7 @@
 				7693E17E1B22A6E90068F1CD /* ExceptionFactory.cpp in Sources */,
 				7693E23D1B22A6EC0068F1CD /* OperationQueue.cpp in Sources */,
 				7693E2401B22A6EC0068F1CD /* ParallaxCamera.cpp in Sources */,
+				76416D921B25FA7D00ECEFCD /* Context.cpp in Sources */,
 				7693E2331B22A6EB0068F1CD /* vrefbuffer.cpp in Sources */,
 				7693E1C31B22A6E90068F1CD /* NodePositioningLayouts.cpp in Sources */,
 				7693E16C1B22A6E90068F1CD /* SpawnAction.cpp in Sources */,
