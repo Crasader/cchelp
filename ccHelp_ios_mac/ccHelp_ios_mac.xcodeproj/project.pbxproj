@@ -298,6 +298,10 @@
 		7693E2571B22A6EC0068F1CD /* WidgetUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = 7693E13D1B22A6E80068F1CD /* WidgetUtils.h */; };
 		7693E25C1B22ADFD0068F1CD /* libcocos2d iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7693E25B1B22ADFD0068F1CD /* libcocos2d iOS.a */; };
 		7693E25E1B22AE070068F1CD /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7693E25D1B22AE070068F1CD /* Foundation.framework */; };
+		76B602111B3C5DF500B79B6E /* ContextValue.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 76B6020F1B3C5DF500B79B6E /* ContextValue.cpp */; };
+		76B602121B3C5DF500B79B6E /* ContextValue.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 76B6020F1B3C5DF500B79B6E /* ContextValue.cpp */; };
+		76B602131B3C5DF500B79B6E /* ContextValue.h in Headers */ = {isa = PBXBuildFile; fileRef = 76B602101B3C5DF500B79B6E /* ContextValue.h */; };
+		76B602151B3C5E0D00B79B6E /* ContextValue.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 76B602141B3C5E0D00B79B6E /* ContextValue.hpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -560,6 +564,9 @@
 		7693E13D1B22A6E80068F1CD /* WidgetUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WidgetUtils.h; sourceTree = "<group>"; };
 		7693E25B1B22ADFD0068F1CD /* libcocos2d iOS.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libcocos2d iOS.a"; path = "../../cocos2d/build/build/Debug-iphoneos/libcocos2d iOS.a"; sourceTree = "<group>"; };
 		7693E25D1B22AE070068F1CD /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		76B6020F1B3C5DF500B79B6E /* ContextValue.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ContextValue.cpp; sourceTree = "<group>"; };
+		76B602101B3C5DF500B79B6E /* ContextValue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContextValue.h; sourceTree = "<group>"; };
+		76B602141B3C5E0D00B79B6E /* ContextValue.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = ContextValue.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -635,6 +642,7 @@
 				7693E0631B22A6E80068F1CD /* AnimationManager.h */,
 				7693E0641B22A6E80068F1CD /* Array2D.h */,
 				7693E0651B22A6E80068F1CD /* ccHelp.h */,
+				76B6020E1B3C5DE700B79B6E /* Context */,
 				7693E0661B22A6E80068F1CD /* Def.cpp */,
 				7693E0671B22A6E80068F1CD /* Def.h */,
 				7693E0681B22A6E80068F1CD /* DialogLayer.cpp */,
@@ -1003,6 +1011,16 @@
 			path = vsson;
 			sourceTree = "<group>";
 		};
+		76B6020E1B3C5DE700B79B6E /* Context */ = {
+			isa = PBXGroup;
+			children = (
+				76B6020F1B3C5DF500B79B6E /* ContextValue.cpp */,
+				76B602101B3C5DF500B79B6E /* ContextValue.h */,
+				76B602141B3C5E0D00B79B6E /* ContextValue.hpp */,
+			);
+			path = Context;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -1034,6 +1052,7 @@
 				7693E14F1B22A6E90068F1CD /* ActionHelper.h in Headers */,
 				7693E1861B22A6E90068F1CD /* Index2D.h in Headers */,
 				7693E21D1B22A6EB0068F1CD /* unpack.h in Headers */,
+				76B602151B3C5E0D00B79B6E /* ContextValue.hpp in Headers */,
 				7693E1701B22A6E90068F1CD /* AnimationManager.h in Headers */,
 				7693E19D1B22A6E90068F1CD /* json_batchallocator.h in Headers */,
 				7693E2571B22A6EC0068F1CD /* WidgetUtils.h in Headers */,
@@ -1148,6 +1167,7 @@
 				7693E2501B22A6EC0068F1CD /* Utils.h in Headers */,
 				7693E21A1B22A6EB0068F1CD /* tuple.hpp in Headers */,
 				7693E1581B22A6E90068F1CD /* DoLayoutActionFactory.h in Headers */,
+				76B602131B3C5DF500B79B6E /* ContextValue.h in Headers */,
 				7693E1781B22A6E90068F1CD /* DialogLayer.h in Headers */,
 				7693E1891B22A6E90068F1CD /* double.hpp in Headers */,
 				7693E1961B22A6E90068F1CD /* writer.h in Headers */,
@@ -1301,6 +1321,7 @@
 				7693E1591B22A6E90068F1CD /* FadeToActionFactory.cpp in Sources */,
 				7693E1C41B22A6E90068F1CD /* NodeSizingLayouts.cpp in Sources */,
 				7693E1C01B22A6E90068F1CD /* LoadingBarLayouts.cpp in Sources */,
+				76B602111B3C5DF500B79B6E /* ContextValue.cpp in Sources */,
 				7693E1531B22A6E90068F1CD /* DelayActionFactory.cpp in Sources */,
 				7693E1811B22A6E90068F1CD /* Hash.cpp in Sources */,
 				7693E14D1B22A6E90068F1CD /* ActionHelper.cpp in Sources */,
@@ -1366,6 +1387,7 @@
 				7693E1821B22A6E90068F1CD /* Hash.cpp in Sources */,
 				7693E1D21B22A6E90068F1CD /* Lock.cpp in Sources */,
 				7693E1A41B22A6E90068F1CD /* json_writer.cpp in Sources */,
+				76B602121B3C5DF500B79B6E /* ContextValue.cpp in Sources */,
 				7693E24F1B22A6EC0068F1CD /* Utils.cpp in Sources */,
 				7693E15A1B22A6E90068F1CD /* FadeToActionFactory.cpp in Sources */,
 				7693E2311B22A6EB0068F1CD /* version.cpp in Sources */,
