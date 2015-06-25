@@ -21,9 +21,13 @@ namespace ccHelp
         {
             this->vCustomHolder = ctxVal.vCustomHolder->clone();
         }
+        else if (ctxVal.type == STRING)
+        {
+            new (&vString) std::string(ctxVal.vString);
+        }
         else
         {
-            (*this) = ctxVal;
+            memcpy(this, &ctxVal, sizeof(ContextValue));
         }
         
         this->type = ctxVal.type;
@@ -31,18 +35,19 @@ namespace ccHelp
     
     ContextValue& ContextValue::operator=(const ContextValue &ctxVal)
     {
-        if (this->type == CUSTOM_HOLDER)
-        {
-            delete vCustomHolder;
-        }
+        this->release();
         
         if (ctxVal.type == CUSTOM_HOLDER)
         {
             this->vCustomHolder = ctxVal.vCustomHolder->clone();
         }
+        else if (ctxVal.type == STRING)
+        {
+            new (&vString) std::string(ctxVal.vString);
+        }
         else
         {
-            (*this) = ctxVal;
+            memcpy(this, &ctxVal, sizeof(ContextValue));
         }
         
         this->type = ctxVal.type;
@@ -51,33 +56,19 @@ namespace ccHelp
     
     ContextValue::ContextValue(const ContextValue &&ctxVal)
     {
-        (*this) = ctxVal;
-    }
-    
-    ContextValue& ContextValue::operator=(const ContextValue &&ctxVal)
-    {
-        if (this->type == CUSTOM_HOLDER)
-        {
-            delete vCustomHolder;
-        }
-        
-        (*this) = ctxVal;
-        return *this;
+        memcpy(this, &ctxVal, sizeof(ContextValue));
+        this->type = ctxVal.type;
     }
     
     ContextValue::~ContextValue()
     {
-        if (type == CUSTOM_HOLDER)
-        {
-            delete vCustomHolder;
-            vCustomHolder = nullptr;
-        }
+        this->release();
     }
     
     ContextValue::ContextValue()
     {
         type = NONE;
-        vVoidPointer = nullptr;
+        this->release();
     }
     
     ContextValue::ContextValue(char v)
@@ -149,7 +140,7 @@ namespace ccHelp
     ContextValue::ContextValue(const std::string &v)
     {
         type = STRING;
-        vString = v;
+        new (&vString) std::string(v);
     }
     
     ContextValue::ContextValue(void *v)
@@ -822,4 +813,21 @@ namespace ccHelp
     {
         return type == CUSTOM_HOLDER;
     }
+    
+    void ContextValue::release()
+    {
+        if (type == CUSTOM_HOLDER)
+        {
+            delete vCustomHolder;
+        }
+        else if (type == STRING)
+        {
+            vString.~basic_string<char>();
+        }
+        
+        memset(this, 0, sizeof(ContextValue));
+        type = NONE;
+    }
+    
+    const ContextValue ContextValue::EMPTY;
 }

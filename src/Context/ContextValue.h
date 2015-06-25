@@ -93,7 +93,6 @@ namespace ccHelp {
         ContextValue(const ContextValue &ctxVal);
         ContextValue& operator=(const ContextValue &ctxVal);
         ContextValue(const ContextValue &&ctxVal);
-        ContextValue& operator=(const ContextValue &&ctxVal);
         ~ContextValue();
         
         ContextValue(char v);
@@ -139,6 +138,12 @@ namespace ccHelp {
         bool isPointer() const;
         bool isString() const;
         bool isCustom() const;
+        
+    private:
+        void release();
+        
+    public:
+        static const ContextValue EMPTY;
         
         friend class Context;
     };
