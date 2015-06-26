@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		764515741B3CE5CD00CD5E1E /* Context.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 764515721B3CE5CD00CD5E1E /* Context.cpp */; };
+		764515751B3CE5CD00CD5E1E /* Context.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 764515721B3CE5CD00CD5E1E /* Context.cpp */; };
+		764515761B3CE5CD00CD5E1E /* Context.h in Headers */ = {isa = PBXBuildFile; fileRef = 764515731B3CE5CD00CD5E1E /* Context.h */; };
+		764515781B3CE60800CD5E1E /* Context.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 764515771B3CE60800CD5E1E /* Context.hpp */; };
 		7693E0321B22A6100068F1CD /* libcocos2d Mac.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7693E02F1B22A5EB0068F1CD /* libcocos2d Mac.a */; };
 		7693E0341B22A6660068F1CD /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 7693E0331B22A6660068F1CD /* libz.dylib */; };
 		7693E0361B22A66B0068F1CD /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7693E0351B22A66B0068F1CD /* QuartzCore.framework */; };
@@ -317,6 +321,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		764515721B3CE5CD00CD5E1E /* Context.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Context.cpp; sourceTree = "<group>"; };
+		764515731B3CE5CD00CD5E1E /* Context.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Context.h; sourceTree = "<group>"; };
+		764515771B3CE60800CD5E1E /* Context.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Context.hpp; sourceTree = "<group>"; };
 		7693DF451B229ED30068F1CD /* ccHelp_Mac.a */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = ccHelp_Mac.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		7693DF5D1B22A0400068F1CD /* ccHelp_ios.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = ccHelp_ios.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		7693E02F1B22A5EB0068F1CD /* libcocos2d Mac.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libcocos2d Mac.a"; path = "../../../../../Library/Developer/Xcode/DerivedData/FillTree-ctxalenanebtesgifgthounuyhlb/Build/Products/Debug/libcocos2d Mac.a"; sourceTree = "<group>"; };
@@ -1017,6 +1024,9 @@
 				76B6020F1B3C5DF500B79B6E /* ContextValue.cpp */,
 				76B602101B3C5DF500B79B6E /* ContextValue.h */,
 				76B602141B3C5E0D00B79B6E /* ContextValue.hpp */,
+				764515721B3CE5CD00CD5E1E /* Context.cpp */,
+				764515731B3CE5CD00CD5E1E /* Context.h */,
+				764515771B3CE60800CD5E1E /* Context.hpp */,
 			);
 			path = Context;
 			sourceTree = "<group>";
@@ -1096,6 +1106,7 @@
 				7693E1B81B22A6E90068F1CD /* Layout.h in Headers */,
 				7693E1DA1B22A6E90068F1CD /* pack.h in Headers */,
 				7693E1971B22A6E90068F1CD /* jsonserialization.h in Headers */,
+				764515781B3CE60800CD5E1E /* Context.hpp in Headers */,
 				7693E15E1B22A6E90068F1CD /* InstantActionFactory.h in Headers */,
 				7693E2031B22A6EA0068F1CD /* object.hpp in Headers */,
 				7693E17C1B22A6E90068F1CD /* Event.h in Headers */,
@@ -1144,6 +1155,7 @@
 				7693E1871B22A6E90068F1CD /* bool.hpp in Headers */,
 				7693E16D1B22A6E90068F1CD /* SpawnActionFactory.h in Headers */,
 				7693E18F1B22A6E90068F1CD /* config.h in Headers */,
+				764515761B3CE5CD00CD5E1E /* Context.h in Headers */,
 				7693E1F81B22A6EA0068F1CD /* vrefbuffer.h in Headers */,
 				7693E1A81B22A6E90068F1CD /* vector.hpp in Headers */,
 				7693E1801B22A6E90068F1CD /* Factory.h in Headers */,
@@ -1309,6 +1321,7 @@
 				7693E1621B22A6E90068F1CD /* PlaySoundActionFactory.cpp in Sources */,
 				7693E1CE1B22A6E90068F1CD /* Localize.cpp in Sources */,
 				7693E1A11B22A6E90068F1CD /* json_value.cpp in Sources */,
+				764515741B3CE5CD00CD5E1E /* Context.cpp in Sources */,
 				7693E1791B22A6E90068F1CD /* DrawNodeHelper.cpp in Sources */,
 				7693E1C61B22A6E90068F1CD /* uiButtonLayouts.cpp in Sources */,
 				7693E1C21B22A6E90068F1CD /* NodePositioningLayouts.cpp in Sources */,
@@ -1375,6 +1388,7 @@
 				7693E23D1B22A6EC0068F1CD /* OperationQueue.cpp in Sources */,
 				7693E2401B22A6EC0068F1CD /* ParallaxCamera.cpp in Sources */,
 				7693E2331B22A6EB0068F1CD /* vrefbuffer.cpp in Sources */,
+				764515751B3CE5CD00CD5E1E /* Context.cpp in Sources */,
 				7693E1C31B22A6E90068F1CD /* NodePositioningLayouts.cpp in Sources */,
 				7693E16C1B22A6E90068F1CD /* SpawnAction.cpp in Sources */,
 				7693E1B71B22A6E90068F1CD /* LayerColorLayouts.cpp in Sources */,
