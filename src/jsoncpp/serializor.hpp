@@ -46,6 +46,22 @@ using std::string;
 		return Json::type::make_serializor(__VA_ARGS__).deserialize(j); \
 	}
 
+#define JSONCPP_REGISTER_CUSTOM_CLASS_SER(TYPE) \
+__JSONSER_TEMPLATE inline Json::Value Json::type::serialize(const TYPE &V) \
+{ \
+return v.serialize(); \
+}
+
+#define JSONCPP_REGISTER_CUSTOM_CLASS_DESER(TYPE) \
+__JSONSER_TEMPLATE inline bool Json::type::deserialize(const Json::Value& j, TYPE &FACE) \
+{ \
+return v.deserialize(j); \
+}
+
+#define JSONCPP_REGISTER_CUSTOM_CLASS(TYPE) \
+JSONCPP_REGISTER_CUSTOM_CLASS_SER(TYPE) \
+JSONCPP_REGISTER_CUSTOM_CLASS_DESER(TYPE)
+
 namespace Json {
 	namespace type
 	{
@@ -77,9 +93,15 @@ namespace Json {
 		inline Json::Value serialize( typename std::vector<V> const &v);
 
 		template <typename V>
-		inline bool deserialize(const Json::Value &j, V &v);
+		inline bool deserialize(const Json::Value &j, V &v)
+        {
+            return false;
+        }
 		template <typename V>
-		inline Json::Value serialize(const V &v);
+		inline Json::Value serialize(const V &v)
+        {
+            return Json::Value::null;
+        }
 #endif
 
 		template<typename A0 = void, typename A1 = void, typename A2 = void, typename A3 = void, typename A4 = void, typename A5 = void, typename A6 = void, typename A7 = void, typename A8 = void, typename A9 = void, typename A10 = void>

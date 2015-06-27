@@ -14,5 +14,4 @@
 #include "jsonvalue.hpp"
 #include "object_str.hpp"
 #include "jsoncpp_ser.h"
-#include "object.hpp"
 #endif

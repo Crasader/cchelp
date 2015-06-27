@@ -11,6 +11,10 @@
 		764515751B3CE5CD00CD5E1E /* Context.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 764515721B3CE5CD00CD5E1E /* Context.cpp */; };
 		764515761B3CE5CD00CD5E1E /* Context.h in Headers */ = {isa = PBXBuildFile; fileRef = 764515731B3CE5CD00CD5E1E /* Context.h */; };
 		764515781B3CE60800CD5E1E /* Context.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 764515771B3CE60800CD5E1E /* Context.hpp */; };
+		7645157B1B3CF7B400CD5E1E /* FContext.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 764515791B3CF7B400CD5E1E /* FContext.cpp */; };
+		7645157C1B3CF7B400CD5E1E /* FContext.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 764515791B3CF7B400CD5E1E /* FContext.cpp */; };
+		7645157D1B3CF7B400CD5E1E /* FContext.h in Headers */ = {isa = PBXBuildFile; fileRef = 7645157A1B3CF7B400CD5E1E /* FContext.h */; };
+		7645157F1B3CF80F00CD5E1E /* FContext.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 7645157E1B3CF80F00CD5E1E /* FContext.hpp */; };
 		7693E0321B22A6100068F1CD /* libcocos2d Mac.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7693E02F1B22A5EB0068F1CD /* libcocos2d Mac.a */; };
 		7693E0341B22A6660068F1CD /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 7693E0331B22A6660068F1CD /* libz.dylib */; };
 		7693E0361B22A66B0068F1CD /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7693E0351B22A66B0068F1CD /* QuartzCore.framework */; };
@@ -110,7 +114,6 @@
 		7693E1971B22A6E90068F1CD /* jsonserialization.h in Headers */ = {isa = PBXBuildFile; fileRef = 7693E0881B22A6E80068F1CD /* jsonserialization.h */; };
 		7693E1981B22A6E90068F1CD /* jsonvalue.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 7693E0891B22A6E80068F1CD /* jsonvalue.hpp */; };
 		7693E1991B22A6E90068F1CD /* map.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 7693E08A1B22A6E80068F1CD /* map.hpp */; };
-		7693E19A1B22A6E90068F1CD /* object.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 7693E08B1B22A6E80068F1CD /* object.hpp */; };
 		7693E19B1B22A6E90068F1CD /* object_str.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 7693E08C1B22A6E80068F1CD /* object_str.hpp */; };
 		7693E19C1B22A6E90068F1CD /* serializor.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 7693E08D1B22A6E80068F1CD /* serializor.hpp */; };
 		7693E19D1B22A6E90068F1CD /* json_batchallocator.h in Headers */ = {isa = PBXBuildFile; fileRef = 7693E0901B22A6E80068F1CD /* json_batchallocator.h */; };
@@ -324,6 +327,9 @@
 		764515721B3CE5CD00CD5E1E /* Context.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Context.cpp; sourceTree = "<group>"; };
 		764515731B3CE5CD00CD5E1E /* Context.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Context.h; sourceTree = "<group>"; };
 		764515771B3CE60800CD5E1E /* Context.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Context.hpp; sourceTree = "<group>"; };
+		764515791B3CF7B400CD5E1E /* FContext.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = FContext.cpp; sourceTree = "<group>"; };
+		7645157A1B3CF7B400CD5E1E /* FContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FContext.h; sourceTree = "<group>"; };
+		7645157E1B3CF80F00CD5E1E /* FContext.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = FContext.hpp; sourceTree = "<group>"; };
 		7693DF451B229ED30068F1CD /* ccHelp_Mac.a */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = ccHelp_Mac.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		7693DF5D1B22A0400068F1CD /* ccHelp_ios.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = ccHelp_ios.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		7693E02F1B22A5EB0068F1CD /* libcocos2d Mac.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libcocos2d Mac.a"; path = "../../../../../Library/Developer/Xcode/DerivedData/FillTree-ctxalenanebtesgifgthounuyhlb/Build/Products/Debug/libcocos2d Mac.a"; sourceTree = "<group>"; };
@@ -403,7 +409,6 @@
 		7693E0881B22A6E80068F1CD /* jsonserialization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = jsonserialization.h; sourceTree = "<group>"; };
 		7693E0891B22A6E80068F1CD /* jsonvalue.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = jsonvalue.hpp; sourceTree = "<group>"; };
 		7693E08A1B22A6E80068F1CD /* map.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = map.hpp; sourceTree = "<group>"; };
-		7693E08B1B22A6E80068F1CD /* object.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = object.hpp; sourceTree = "<group>"; };
 		7693E08C1B22A6E80068F1CD /* object_str.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = object_str.hpp; sourceTree = "<group>"; };
 		7693E08D1B22A6E80068F1CD /* serializor.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = serializor.hpp; sourceTree = "<group>"; };
 		7693E08F1B22A6E80068F1CD /* CMakeLists.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = CMakeLists.txt; sourceTree = "<group>"; };
@@ -761,7 +766,6 @@
 				7693E0881B22A6E80068F1CD /* jsonserialization.h */,
 				7693E0891B22A6E80068F1CD /* jsonvalue.hpp */,
 				7693E08A1B22A6E80068F1CD /* map.hpp */,
-				7693E08B1B22A6E80068F1CD /* object.hpp */,
 				7693E08C1B22A6E80068F1CD /* object_str.hpp */,
 				7693E08D1B22A6E80068F1CD /* serializor.hpp */,
 				7693E08E1B22A6E80068F1CD /* src */,
@@ -1027,6 +1031,9 @@
 				764515721B3CE5CD00CD5E1E /* Context.cpp */,
 				764515731B3CE5CD00CD5E1E /* Context.h */,
 				764515771B3CE60800CD5E1E /* Context.hpp */,
+				764515791B3CF7B400CD5E1E /* FContext.cpp */,
+				7645157A1B3CF7B400CD5E1E /* FContext.h */,
+				7645157E1B3CF80F00CD5E1E /* FContext.hpp */,
 			);
 			path = Context;
 			sourceTree = "<group>";
@@ -1121,6 +1128,7 @@
 				7693E1E41B22A6EA0068F1CD /* fixint.hpp in Headers */,
 				7693E1F01B22A6EA0068F1CD /* tuple.hpp in Headers */,
 				7693E1FE1B22A6EA0068F1CD /* msgpack.h in Headers */,
+				7645157D1B3CF7B400CD5E1E /* FContext.h in Headers */,
 				7693E1931B22A6E90068F1CD /* reader.h in Headers */,
 				7693E1DE1B22A6E90068F1CD /* sbuffer.h in Headers */,
 				7693E1F91B22A6EA0068F1CD /* vrefbuffer.hpp in Headers */,
@@ -1150,6 +1158,7 @@
 				7693E1A71B22A6E90068F1CD /* uint.hpp in Headers */,
 				7693E18A1B22A6E90068F1CD /* float.hpp in Headers */,
 				7693E2171B22A6EB0068F1CD /* string.hpp in Headers */,
+				7645157F1B3CF80F00CD5E1E /* FContext.hpp in Headers */,
 				7693E1EC1B22A6EA0068F1CD /* set.hpp in Headers */,
 				7693E1851B22A6E90068F1CD /* hset.h in Headers */,
 				7693E1871B22A6E90068F1CD /* bool.hpp in Headers */,
@@ -1195,7 +1204,6 @@
 				7693E2201B22A6EB0068F1CD /* unpack_template.h in Headers */,
 				7693E2161B22A6EB0068F1CD /* set.hpp in Headers */,
 				7693E1551B22A6E90068F1CD /* DelayActionFactory.h in Headers */,
-				7693E19A1B22A6E90068F1CD /* object.hpp in Headers */,
 				7693E1D31B22A6E90068F1CD /* Lock.h in Headers */,
 				7693E1E71B22A6EA0068F1CD /* list.hpp in Headers */,
 				7693E1EF1B22A6EA0068F1CD /* unordered_set.hpp in Headers */,
@@ -1332,6 +1340,7 @@
 				7693E24A1B22A6EC0068F1CD /* Sound.cpp in Sources */,
 				7693E2551B22A6EC0068F1CD /* WidgetUtils.cpp in Sources */,
 				7693E1591B22A6E90068F1CD /* FadeToActionFactory.cpp in Sources */,
+				7645157B1B3CF7B400CD5E1E /* FContext.cpp in Sources */,
 				7693E1C41B22A6E90068F1CD /* NodeSizingLayouts.cpp in Sources */,
 				7693E1C01B22A6E90068F1CD /* LoadingBarLayouts.cpp in Sources */,
 				76B602111B3C5DF500B79B6E /* ContextValue.cpp in Sources */,
@@ -1399,6 +1408,7 @@
 				7693E1AD1B22A6E90068F1CD /* CommonLayouts.cpp in Sources */,
 				7693E2351B22A6EB0068F1CD /* zone.cpp in Sources */,
 				7693E1821B22A6E90068F1CD /* Hash.cpp in Sources */,
+				7645157C1B3CF7B400CD5E1E /* FContext.cpp in Sources */,
 				7693E1D21B22A6E90068F1CD /* Lock.cpp in Sources */,
 				7693E1A41B22A6E90068F1CD /* json_writer.cpp in Sources */,
 				76B602121B3C5DF500B79B6E /* ContextValue.cpp in Sources */,
