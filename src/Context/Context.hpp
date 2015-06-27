@@ -13,23 +13,25 @@ namespace ccHelp {
     Context& Context::putPointer(const std::string &k, T *v)
     {
         valueMap[k] = ContextValue((void *) v);
+        return *this;
     }
     
     template <typename T>
     Context& Context::putCustom(const std::string &k, const T& v)
     {
         valueMap[k] = ContextValue::makeCustom<T>(v);
+        return *this;
     }
     
     template <typename T>
     T* Context::getPointer(const std::string &k) const
     {
-        return valueMap.at(k).asPointer<T>();
+        return getValue(k).asPointer<T>();
     }
     
     template <typename T>
     bool Context::getCustom(const std::string &k, T& t) const
     {
-        return valueMap.at(k).asCustom<T>(t);
+        return getValue(k).asCustom<T>(t);
     }
 }

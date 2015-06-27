@@ -63,6 +63,9 @@ namespace ccHelp
         void remove(const std::string &k);
         unsigned int size() const;
         void clear();
+        
+    public:
+        static const Context EMPTY;
     };
 }
 

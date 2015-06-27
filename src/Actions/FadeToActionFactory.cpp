@@ -11,18 +11,18 @@
 
 namespace ccHelp {
     
-    cocos2d::FadeTo* FadeToActionFactory::createAction(const AFContext &ctx) const
+    cocos2d::FadeTo* FadeToActionFactory::createAction(const FContext &ctx) const
     {
         float dur;
-        if (!ctx.getField("duration", dur) &&
-            !ctx.getField("dur", dur))
+        if (!ctx.get("duration", dur) &&
+            !ctx.get("dur", dur))
         {
             return nullptr;
         }
         
         int opactity;
-        if (!ctx.getField("opacity", opactity) &&
-            !ctx.getField("opact", opactity))
+        if (!ctx.get("opacity", opactity) &&
+            !ctx.get("opact", opactity))
         {
             return nullptr;
         }

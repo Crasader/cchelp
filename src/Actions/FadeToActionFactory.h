@@ -13,6 +13,6 @@ namespace ccHelp {
     class FadeToActionFactory : public ActionFactory
     {
     public:
-        virtual cocos2d::FadeTo* createAction(const AFContext &ctx) const override;
+        virtual cocos2d::FadeTo* createAction(const FContext &ctx) const override;
     };
 }

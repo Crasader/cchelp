@@ -13,6 +13,6 @@ namespace ccHelp {
     class AnimateActionFactory : public ActionFactory
     {
     public:
-        virtual cocos2d::Animate* createAction(const AFContext &ctx) const override;
+        virtual cocos2d::Animate* createAction(const FContext &ctx) const override;
     };
 }

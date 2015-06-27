@@ -12,10 +12,10 @@
 
 namespace ccHelp {
     
-    cocos2d::CallFunc* DoLayoutActionFactory::createAction(const AFContext &ctx) const
+    cocos2d::CallFunc* DoLayoutActionFactory::createAction(const FContext &ctx) const
     {
         Json::Value layout;
-        if (!ctx.getField("Layout", layout))
+        if (!ctx.get("Layout", layout))
             return nullptr;
         
         return cocos2d::CallFuncN::create([layout](cocos2d::Node *n) {

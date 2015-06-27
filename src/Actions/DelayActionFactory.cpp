@@ -11,11 +11,11 @@
 
 namespace ccHelp {
     
-    cocos2d::DelayTime* DelayActionFactory::createAction(const AFContext &ctx) const
+    cocos2d::DelayTime* DelayActionFactory::createAction(const FContext &ctx) const
     {
         float dur;
-        if (!ctx.getField("duration", dur) &&
-            !ctx.getField("dur", dur))
+        if (!ctx.get("duration", dur) &&
+            !ctx.get("dur", dur))
         {
             return nullptr;
         }

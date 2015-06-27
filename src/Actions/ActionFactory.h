@@ -8,24 +8,22 @@
 
 #pragma once
 #include "Def.h"
-#include "ActionFactoryContext.h"
+#include "../Context/FContext.h"
 #include "hash_container/hmap.h"
 
 using cocos2d::Action;
 using std::string;
 
 namespace ccHelp {
+    typedef std::function<void(void)> CallFuncFunction;
+    typedef std::function<void(cocos2d::Node*)> CallFuncNFunction;
+    
     class ActionFactory
     {
     public:
+        virtual ~ActionFactory();
         typedef Json::Value Parameter;
-        typedef vsson::VSSObject ShortcutParameter;
         
-        virtual Action* createAction(const AFContext &ctx) const = 0;
-        
-        inline static ActionContext newContext()
-        {
-            return ActionContext();
-        }
+        virtual Action* createAction(const FContext &ctx) const = 0;
     };
 }

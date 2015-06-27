@@ -31,9 +31,6 @@
 		7693E1441B22A6E80068F1CD /* ActionFactory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7693E0461B22A6E80068F1CD /* ActionFactory.cpp */; };
 		7693E1451B22A6E80068F1CD /* ActionFactory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7693E0461B22A6E80068F1CD /* ActionFactory.cpp */; };
 		7693E1461B22A6E80068F1CD /* ActionFactory.h in Headers */ = {isa = PBXBuildFile; fileRef = 7693E0471B22A6E80068F1CD /* ActionFactory.h */; };
-		7693E1471B22A6E80068F1CD /* ActionFactoryContext.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7693E0481B22A6E80068F1CD /* ActionFactoryContext.cpp */; };
-		7693E1481B22A6E90068F1CD /* ActionFactoryContext.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7693E0481B22A6E80068F1CD /* ActionFactoryContext.cpp */; };
-		7693E1491B22A6E90068F1CD /* ActionFactoryContext.h in Headers */ = {isa = PBXBuildFile; fileRef = 7693E0491B22A6E80068F1CD /* ActionFactoryContext.h */; };
 		7693E14A1B22A6E90068F1CD /* ActionFactoryRegistration.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7693E04A1B22A6E80068F1CD /* ActionFactoryRegistration.cpp */; };
 		7693E14B1B22A6E90068F1CD /* ActionFactoryRegistration.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7693E04A1B22A6E80068F1CD /* ActionFactoryRegistration.cpp */; };
 		7693E14C1B22A6E90068F1CD /* ActionFactoryRegistration.h in Headers */ = {isa = PBXBuildFile; fileRef = 7693E04B1B22A6E80068F1CD /* ActionFactoryRegistration.h */; };
@@ -345,8 +342,6 @@
 		7693E0441B22A6E80068F1CD /* ActionQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActionQueue.h; sourceTree = "<group>"; };
 		7693E0461B22A6E80068F1CD /* ActionFactory.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ActionFactory.cpp; sourceTree = "<group>"; };
 		7693E0471B22A6E80068F1CD /* ActionFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActionFactory.h; sourceTree = "<group>"; };
-		7693E0481B22A6E80068F1CD /* ActionFactoryContext.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ActionFactoryContext.cpp; sourceTree = "<group>"; };
-		7693E0491B22A6E80068F1CD /* ActionFactoryContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActionFactoryContext.h; sourceTree = "<group>"; };
 		7693E04A1B22A6E80068F1CD /* ActionFactoryRegistration.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ActionFactoryRegistration.cpp; sourceTree = "<group>"; };
 		7693E04B1B22A6E80068F1CD /* ActionFactoryRegistration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActionFactoryRegistration.h; sourceTree = "<group>"; };
 		7693E04C1B22A6E80068F1CD /* ActionHelper.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ActionHelper.cpp; sourceTree = "<group>"; };
@@ -714,8 +709,6 @@
 			children = (
 				7693E0461B22A6E80068F1CD /* ActionFactory.cpp */,
 				7693E0471B22A6E80068F1CD /* ActionFactory.h */,
-				7693E0481B22A6E80068F1CD /* ActionFactoryContext.cpp */,
-				7693E0491B22A6E80068F1CD /* ActionFactoryContext.h */,
 				7693E04A1B22A6E80068F1CD /* ActionFactoryRegistration.cpp */,
 				7693E04B1B22A6E80068F1CD /* ActionFactoryRegistration.h */,
 				7693E04C1B22A6E80068F1CD /* ActionHelper.cpp */,
@@ -1195,7 +1188,6 @@
 				7693E18B1B22A6E90068F1CD /* hash_map.hpp in Headers */,
 				7693E2061B22A6EA0068F1CD /* pack_define.h in Headers */,
 				7693E2511B22A6EC0068F1CD /* ValueProxy.h in Headers */,
-				7693E1491B22A6E90068F1CD /* ActionFactoryContext.h in Headers */,
 				7693E2051B22A6EA0068F1CD /* pack.hpp in Headers */,
 				7693E19C1B22A6E90068F1CD /* serializor.hpp in Headers */,
 				7693E1721B22A6E90068F1CD /* ccHelp.h in Headers */,
@@ -1303,7 +1295,6 @@
 				7693E2361B22A6EB0068F1CD /* MultiStateAnimNode.cpp in Sources */,
 				7693E2301B22A6EB0068F1CD /* version.cpp in Sources */,
 				7693E2341B22A6EB0068F1CD /* zone.cpp in Sources */,
-				7693E1471B22A6E80068F1CD /* ActionFactoryContext.cpp in Sources */,
 				7693E1761B22A6E90068F1CD /* DialogLayer.cpp in Sources */,
 				7693E23C1B22A6EC0068F1CD /* OperationQueue.cpp in Sources */,
 				7693E22C1B22A6EB0068F1CD /* objectc.cpp in Sources */,
@@ -1381,7 +1372,6 @@
 				7693E1631B22A6E90068F1CD /* PlaySoundActionFactory.cpp in Sources */,
 				7693E15D1B22A6E90068F1CD /* InstantActionFactory.cpp in Sources */,
 				7693E1BA1B22A6E90068F1CD /* LayoutHelper.cpp in Sources */,
-				7693E1481B22A6E90068F1CD /* ActionFactoryContext.cpp in Sources */,
 				7693E17A1B22A6E90068F1CD /* DrawNodeHelper.cpp in Sources */,
 				7693E13F1B22A6E80068F1CD /* ActionGroup.cpp in Sources */,
 				7693E22B1B22A6EB0068F1CD /* object.cpp in Sources */,

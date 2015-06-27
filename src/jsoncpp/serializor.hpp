@@ -47,13 +47,13 @@ using std::string;
 	}
 
 #define JSONCPP_REGISTER_CUSTOM_CLASS_SER(TYPE) \
-__JSONSER_TEMPLATE inline Json::Value Json::type::serialize(const TYPE &V) \
+__JSONSER_TEMPLATE inline Json::Value Json::type::serialize(const TYPE &v) \
 { \
 return v.serialize(); \
 }
 
 #define JSONCPP_REGISTER_CUSTOM_CLASS_DESER(TYPE) \
-__JSONSER_TEMPLATE inline bool Json::type::deserialize(const Json::Value& j, TYPE &FACE) \
+__JSONSER_TEMPLATE inline bool Json::type::deserialize(const Json::Value& j, TYPE &v) \
 { \
 return v.deserialize(j); \
 }

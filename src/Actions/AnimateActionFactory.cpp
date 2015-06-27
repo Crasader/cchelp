@@ -11,12 +11,12 @@
 
 namespace ccHelp {
     
-    cocos2d::Animate* AnimateActionFactory::createAction(const AFContext &ctx) const
+    cocos2d::Animate* AnimateActionFactory::createAction(const FContext &ctx) const
     {
         string animName;
-        if (!ctx.getField("animation", animName) &&
-            !ctx.getField("anim", animName) &&
-            !ctx.getField("1", animName))
+        if (!ctx.get("animation", animName) &&
+            !ctx.get("anim", animName) &&
+            !ctx.get("1", animName))
         {
             return nullptr;
         }

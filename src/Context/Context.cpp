@@ -10,6 +10,10 @@
 
 namespace ccHelp
 {
+    Context::~Context()
+    {
+        
+    }
     
     Context& Context::put(const std::string &k, char v)
     {
@@ -195,4 +199,6 @@ namespace ccHelp
     {
         valueMap.clear();
     }
+    
+    const Context Context::EMPTY{};
 }

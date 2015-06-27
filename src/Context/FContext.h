@@ -7,7 +7,7 @@
 //
 
 #include "Context.h"
-#include "jsoncpp/json2/json.h"
+#include "jsoncpp/jsonserialization.h"
 
 namespace ccHelp
 {
@@ -24,7 +24,23 @@ namespace ccHelp
         FContext& operator=(const FContext&) = delete;
         
         template <typename T>
-        bool get(const std::string &k, T &t) const;
+        bool get(const std::string &k, T &v) const
+        {
+            if (js.isMember(k))
+            {
+                if (isReference(k))
+                {
+                    std::string ref = js[k].asString();
+                    ref = ref.substr(1, ref.length() - 1);
+                    
+                    return ctx[ref].asCustom<T>(v);
+                }
+                
+                return Json::type::deserialize<T>(js[k], v);
+            }
+            
+            return false;
+        }
         
         bool isContains(const std::string &k) const;
         bool isReference(const std::string &k) const;

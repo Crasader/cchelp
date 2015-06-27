@@ -11,25 +11,25 @@
 
 namespace ccHelp {
     
-    cocos2d::ScaleTo* ScaleToActionFactory::createAction(const AFContext &ctx) const
+    cocos2d::ScaleTo* ScaleToActionFactory::createAction(const FContext &ctx) const
     {
         float dur;
-        if (!ctx.getField("duration", dur) &&
-            !ctx.getField("dur", dur))
+        if (!ctx.get("duration", dur) &&
+            !ctx.get("dur", dur))
         {
             return nullptr;
         }
         
         cocos2d::Vec2 scaleXY(1, 1);
         
-        if (ctx.getField("x", scaleXY.x) ||
-            ctx.getField("y", scaleXY.y))
+        if (ctx.get("x", scaleXY.x) ||
+            ctx.get("y", scaleXY.y))
         {
             return cocos2d::ScaleTo::create(dur, scaleXY.x, scaleXY.y);
         }
         
         float &scale = scaleXY.x;
-        if (ctx.getField("scale", scale))
+        if (ctx.get("scale", scale))
         {
             return cocos2d::ScaleTo::create(dur, scale);
         }

@@ -18,12 +18,12 @@ namespace ccHelp {
         static hmap<string, ActionFactory::Parameter> CACHE;
         
     public:
-        static Action* createAction(const ActionFactory::Parameter &p, const ActionContext &ctx);
-        static Action* createActionByName(const string &actName, const ActionContext &ctx);
-        static Action* createActionFromFile(const string &file, const ActionContext &ctx);
+        static Action* createAction(const ActionFactory::Parameter &p, const Context &ctx);
+        static Action* createActionByName(const string &actName, const Context &ctx);
+        static Action* createActionFromFile(const string &file, const Context &ctx);
         static Action* createActionFromFile(const string &file,
                                             const string &actID,
-                                            const ActionContext &ctx);
+                                            const Context &ctx);
         
         static void loadAction(const string &actID, const ActionFactory::Parameter &p);
         inline static void loadActionFromFile(const string &fileName);

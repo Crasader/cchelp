@@ -55,3 +55,6 @@ namespace ccHelp {
         const std::string& getAnimationSpriteName(const std::string &animName) const;
     };
 }
+
+JSONCPP_REGISTER_CUSTOM_CLASS(ccHelp::AnimationSpriteSheetData::AnimationData);
+JSONCPP_REGISTER_CUSTOM_CLASS(ccHelp::AnimationSpriteSheetData);
