@@ -86,6 +86,8 @@ namespace ccHelp
 		static string trim(const string &s);
         
         static string enUSFormat(int d);
+        
+        static long time();
 
 	private:
 		static Vec2 anchorInPoint(const Node *node);

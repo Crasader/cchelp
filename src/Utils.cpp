@@ -314,4 +314,9 @@ namespace ccHelp
         
         return target->convertToNodeSpace(n->getParent()->convertToWorldSpace(n->getPosition()));
     }
+    
+    long Utils::time()
+    {
+        return std::chrono::duration_cast<std::chrono::milliseconds>(std::chrono::system_clock::now().time_since_epoch()).count();
+    }
 }
