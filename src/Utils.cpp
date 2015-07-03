@@ -239,8 +239,10 @@ namespace ccHelp
 		string content = FileUtils::getInstance()->getStringFromFile(fileName);
 		Json::Value j;
 
-		READER.parse(content, j);
-		return j;
+		if (READER.parse(content, j))
+            return j;
+        
+        return Json::Value::null;
 	}
     
     Json::Value Utils::jsonFromVsson(const vsson::VSSObject &vsson)
