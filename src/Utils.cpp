@@ -284,11 +284,11 @@ namespace ccHelp
 		return trim;
 	}
     
-    string Utils::enUSFormat(int d)
+    string Utils::enUSFormat(long d)
     {
-        std::string str = StringUtils::format("%d", d);
+        std::string str = StringUtils::format("%ld", d);
         
-        for (int i = str.length()-3; i > 0; i -= 3)
+        for (long i = str.length()-3; i > 0; i -= 3)
         {
             str.insert(i, ",");
         }

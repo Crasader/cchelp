@@ -85,7 +85,7 @@ namespace ccHelp
 		static string toupper(const string &s);
 		static string trim(const string &s);
         
-        static string enUSFormat(int d);
+        static string enUSFormat(long d);
         
         static long time();
 
