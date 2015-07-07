@@ -57,7 +57,7 @@ namespace ccHelp {
         fwrite(buffer, sizeof(char), len, f);
     }
     
-    void IOHelper::seek(uint seek, int mode)
+    void IOHelper::seek(int seek, int mode)
     {
         fseek(f, seek, mode);
     }

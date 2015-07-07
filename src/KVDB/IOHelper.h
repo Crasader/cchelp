@@ -39,7 +39,7 @@ namespace ccHelp
         T peek()
         {
             T t = read<T>();
-            seek((uint) -sizeof(T), SEEK_CUR);
+            seek(-sizeof(T), SEEK_CUR);
             return t;
         }
         
@@ -52,7 +52,7 @@ namespace ccHelp
         void read(char *buffer, uint len);
         void write(const char *buffer, uint len);
         
-        void seek(uint seek, int mode = SEEK_SET);
+        void seek(int seek, int mode = SEEK_SET);
         void seekAndPush(uint seek);
         void backAndPop();
     };

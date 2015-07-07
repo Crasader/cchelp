@@ -19,8 +19,9 @@ namespace ccHelp
     private:
         struct Value
         {
-            const char *data;
+            char *data;
             unsigned short len;
+            unsigned short cap;
         };
         
         const std::string path;
@@ -40,7 +41,7 @@ namespace ccHelp
         bool reloadFromFile();
         
         bool get(const std::string &k, void *v, uint max = 0xffffffff, uint *len = nullptr) const;
-        bool set(const std::string &k, const void *v, int len);
+        bool set(const std::string &k, const void *v, uint len, uint cap = 0);
         bool del(const std::string &k);
         
         template <typename T>

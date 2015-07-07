@@ -69,9 +69,10 @@ namespace ccHelp {
             
             // read value
             Value val;
+            val.cap = valueFile.read<unsigned short>();
             val.len = valueFile.read<unsigned short>();
-            char *valData = new char[val.len];
-            valueFile.read(valData, val.len);
+            char *valData = new char[val.cap];
+            valueFile.read(valData, val.cap);
             val.data = valData;
             
             valueFile.backAndPop();
@@ -98,33 +99,55 @@ namespace ccHelp {
         
         if (len)
         {
-            *len = 0;
+            *len = it->second.len;
         }
         memcpy(v, it->second.data, MIN(max, it->second.len));
         return true;
     }
     
-    bool KVDB::set(const std::string &k, const void *v, int len)
+    bool KVDB::set(const std::string &k, const void *v, uint len, uint cap)
     {
+        if (cap == 0)
+        {
+            cap = len;
+        }
+        
         bool isKeyExisted = false;
+        char *data = nullptr;
         auto it = mData.find(k);
         
         if (it != mData.end())
         {
-            if (memcmp(v, it->second.data, len) == 0)
-                return true;
-            
-            SAFE_DELETE(it->second.data);
-            it->second.len = 0;
+            if (it->second.cap >= cap)
+            {
+                if (memcmp(v, it->second.data, len) == 0)
+                    return true;
+                
+                data = it->second.data;
+                cap = it->second.cap;
+                memset(data, 0, cap);
+            }
+            else
+            {
+                SAFE_DELETE(it->second.data);
+                it->second.len = 0;
+                it->second.cap = 0;
+            }
             
             isKeyExisted = true;
         }
         
-        char *data = new char[len];
+        if (!data)
+        {
+            data = new char[cap];
+            memset(data, 0, cap);
+        }
+        
         memcpy(data, v, len);
         Value val;
-        val.data = data;
+        val.cap = cap;
         val.len = len;
+        val.data = data;
         mData[k] = val;
         
         mUpdatedKey.insert(k);
@@ -142,6 +165,7 @@ namespace ccHelp {
         {
             SAFE_DELETE(it->second.data);
             it->second.len = 0;
+            it->second.cap = 0;
             mData.erase(k);
             
             isKeyExisted = true;
@@ -179,6 +203,7 @@ namespace ccHelp {
             if (it == mKeyIndexes.end())
                 continue;
             
+            // SHOULD STORE THAT FOR REUSE
             keyFile.seek(it->second + sizeof(unsigned short));
             keyFile.write('\0');
             mKeyIndexes.erase(k);
@@ -199,12 +224,21 @@ namespace ccHelp {
                 
                 // move to value
                 valueFile.seek(valIndex);
-                uint oldValSize = valueFile.peek<unsigned short>();
-                if (oldValSize < val.len)
+                uint oldValCap = valueFile.peek<unsigned short>();
+                if (oldValCap < val.cap)
                 {
                     // ignore that chunk, write and end
                     valueFile.seek(0, SEEK_END);
                     valIndex = valueFile.tell();
+                }
+                else if (oldValCap > val.cap)
+                {
+                    // if cap in file > cap on mem, recreate chunk on mem
+                    char *data = val.data;
+                    val.data = new char[oldValCap];
+                    memset(val.data, 0, oldValCap);
+                    memcpy(val.data, data, val.len);
+                    SAFE_DELETE(data);
                 }
                 keyFile.write(valIndex);
             }
@@ -220,6 +254,7 @@ namespace ccHelp {
                 keyFile.write(valueFile.tell());
             }
             
+            valueFile.write(val.cap);
             valueFile.write(val.len);
             valueFile.write(val.data, val.len);
         }
