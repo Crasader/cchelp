@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7607A9B51B4BBEE700F594EE /* Model.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7607A9B31B4BBEE700F594EE /* Model.cpp */; };
+		7607A9B61B4BBEE700F594EE /* Model.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7607A9B31B4BBEE700F594EE /* Model.cpp */; };
+		7607A9B71B4BBEE700F594EE /* Model.h in Headers */ = {isa = PBXBuildFile; fileRef = 7607A9B41B4BBEE700F594EE /* Model.h */; };
+		7607A9BA1B4BC03200F594EE /* BaseModel.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7607A9B81B4BC03200F594EE /* BaseModel.cpp */; };
+		7607A9BB1B4BC03200F594EE /* BaseModel.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7607A9B81B4BC03200F594EE /* BaseModel.cpp */; };
+		7607A9BC1B4BC03200F594EE /* BaseModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 7607A9B91B4BC03200F594EE /* BaseModel.h */; };
+		7607A9C01B4BE68200F594EE /* PP_NARG.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 7607A9BF1B4BE68200F594EE /* PP_NARG.hpp */; };
+		7607A9C41B4BE96300F594EE /* CCH_FOR.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 7607A9C31B4BE96300F594EE /* CCH_FOR.hpp */; };
 		76372D8E1B4B822F009E66B8 /* IOHelper.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 76372D8A1B4B822F009E66B8 /* IOHelper.cpp */; };
 		76372D8F1B4B822F009E66B8 /* IOHelper.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 76372D8A1B4B822F009E66B8 /* IOHelper.cpp */; };
 		76372D901B4B822F009E66B8 /* IOHelper.h in Headers */ = {isa = PBXBuildFile; fileRef = 76372D8B1B4B822F009E66B8 /* IOHelper.h */; };
@@ -21,6 +29,8 @@
 		7645157C1B3CF7B400CD5E1E /* FContext.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 764515791B3CF7B400CD5E1E /* FContext.cpp */; };
 		7645157D1B3CF7B400CD5E1E /* FContext.h in Headers */ = {isa = PBXBuildFile; fileRef = 7645157A1B3CF7B400CD5E1E /* FContext.h */; };
 		7645157F1B3CF80F00CD5E1E /* FContext.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 7645157E1B3CF80F00CD5E1E /* FContext.hpp */; };
+		7679C8481B4C40A200081830 /* CCH_FOR2.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 7679C8471B4C40A200081830 /* CCH_FOR2.hpp */; };
+		7679C84A1B4C464000081830 /* CCH_EVEN_ODD.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 7679C8491B4C464000081830 /* CCH_EVEN_ODD.hpp */; };
 		7693E0321B22A6100068F1CD /* libcocos2d Mac.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7693E02F1B22A5EB0068F1CD /* libcocos2d Mac.a */; };
 		7693E0341B22A6660068F1CD /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 7693E0331B22A6660068F1CD /* libz.dylib */; };
 		7693E0361B22A66B0068F1CD /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7693E0351B22A66B0068F1CD /* QuartzCore.framework */; };
@@ -324,6 +334,12 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		7607A9B31B4BBEE700F594EE /* Model.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Model.cpp; sourceTree = "<group>"; };
+		7607A9B41B4BBEE700F594EE /* Model.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Model.h; sourceTree = "<group>"; };
+		7607A9B81B4BC03200F594EE /* BaseModel.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BaseModel.cpp; sourceTree = "<group>"; };
+		7607A9B91B4BC03200F594EE /* BaseModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseModel.h; sourceTree = "<group>"; };
+		7607A9BF1B4BE68200F594EE /* PP_NARG.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = PP_NARG.hpp; sourceTree = "<group>"; };
+		7607A9C31B4BE96300F594EE /* CCH_FOR.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = CCH_FOR.hpp; sourceTree = "<group>"; };
 		76372D8A1B4B822F009E66B8 /* IOHelper.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = IOHelper.cpp; sourceTree = "<group>"; };
 		76372D8B1B4B822F009E66B8 /* IOHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IOHelper.h; sourceTree = "<group>"; };
 		76372D8C1B4B822F009E66B8 /* KVDB.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = KVDB.cpp; sourceTree = "<group>"; };
@@ -334,6 +350,8 @@
 		764515791B3CF7B400CD5E1E /* FContext.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = FContext.cpp; sourceTree = "<group>"; };
 		7645157A1B3CF7B400CD5E1E /* FContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FContext.h; sourceTree = "<group>"; };
 		7645157E1B3CF80F00CD5E1E /* FContext.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = FContext.hpp; sourceTree = "<group>"; };
+		7679C8471B4C40A200081830 /* CCH_FOR2.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = CCH_FOR2.hpp; sourceTree = "<group>"; };
+		7679C8491B4C464000081830 /* CCH_EVEN_ODD.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = CCH_EVEN_ODD.hpp; sourceTree = "<group>"; };
 		7693DF451B229ED30068F1CD /* ccHelp_Mac.a */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = ccHelp_Mac.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		7693DF5D1B22A0400068F1CD /* ccHelp_ios.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = ccHelp_ios.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		7693E02F1B22A5EB0068F1CD /* libcocos2d Mac.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libcocos2d Mac.a"; path = "../../../../../Library/Developer/Xcode/DerivedData/FillTree-ctxalenanebtesgifgthounuyhlb/Build/Products/Debug/libcocos2d Mac.a"; sourceTree = "<group>"; };
@@ -607,9 +625,32 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7607A9B21B4BBEBA00F594EE /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				7607A9B31B4BBEE700F594EE /* Model.cpp */,
+				7607A9B41B4BBEE700F594EE /* Model.h */,
+				7607A9B81B4BC03200F594EE /* BaseModel.cpp */,
+				7607A9B91B4BC03200F594EE /* BaseModel.h */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		7607A9BD1B4BE63900F594EE /* Macro */ = {
+			isa = PBXGroup;
+			children = (
+				7607A9BF1B4BE68200F594EE /* PP_NARG.hpp */,
+				7607A9C31B4BE96300F594EE /* CCH_FOR.hpp */,
+				7679C8471B4C40A200081830 /* CCH_FOR2.hpp */,
+				7679C8491B4C464000081830 /* CCH_EVEN_ODD.hpp */,
+			);
+			path = Macro;
+			sourceTree = "<group>";
+		};
 		76372D891B4B822F009E66B8 /* KVDB */ = {
 			isa = PBXGroup;
 			children = (
+				7607A9B21B4BBEBA00F594EE /* Model */,
 				76372D8A1B4B822F009E66B8 /* IOHelper.cpp */,
 				76372D8B1B4B822F009E66B8 /* IOHelper.h */,
 				76372D8C1B4B822F009E66B8 /* KVDB.cpp */,
@@ -659,6 +700,7 @@
 				7693E0421B22A6E80068F1CD /* ActionGroup.h */,
 				7693E0431B22A6E80068F1CD /* ActionQueue.cpp */,
 				7693E0441B22A6E80068F1CD /* ActionQueue.h */,
+				7607A9BD1B4BE63900F594EE /* Macro */,
 				76372D891B4B822F009E66B8 /* KVDB */,
 				7693E0451B22A6E80068F1CD /* Actions */,
 				7693E0621B22A6E80068F1CD /* AnimationManager.cpp */,
@@ -1055,6 +1097,7 @@
 				7693E1F61B22A6EA0068F1CD /* unpack_template.h in Headers */,
 				7693E1941B22A6E90068F1CD /* value.h in Headers */,
 				7693E1841B22A6E90068F1CD /* hmap.h in Headers */,
+				7607A9B71B4BBEE700F594EE /* Model.h in Headers */,
 				7693E1B11B22A6E90068F1CD /* GroupLayout.h in Headers */,
 				7693E2081B22A6EA0068F1CD /* sbuffer.h in Headers */,
 				7693E1A01B22A6E90068F1CD /* json_tool.h in Headers */,
@@ -1084,6 +1127,7 @@
 				7693E2101B22A6EB0068F1CD /* int.hpp in Headers */,
 				7693E2491B22A6EC0068F1CD /* Shortcut.h in Headers */,
 				7693E1DF1B22A6E90068F1CD /* sbuffer.hpp in Headers */,
+				7679C8481B4C40A200081830 /* CCH_FOR2.hpp in Headers */,
 				7693E1ED1B22A6EA0068F1CD /* string.hpp in Headers */,
 				7693E1F31B22A6EA0068F1CD /* unpack.h in Headers */,
 				7693E1FC1B22A6EA0068F1CD /* zone.h in Headers */,
@@ -1101,6 +1145,7 @@
 				7693E1CA1B22A6E90068F1CD /* impl1.hpp in Headers */,
 				7693E2071B22A6EA0068F1CD /* pack_template.h in Headers */,
 				7693E2221B22A6EB0068F1CD /* vrefbuffer.h in Headers */,
+				7607A9BC1B4BC03200F594EE /* BaseModel.h in Headers */,
 				7693E23B1B22A6EB0068F1CD /* OperationGroup.h in Headers */,
 				7693E1431B22A6E80068F1CD /* ActionQueue.h in Headers */,
 				7693E1DD1B22A6E90068F1CD /* pack_template.h in Headers */,
@@ -1179,6 +1224,7 @@
 				7693E2281B22A6EB0068F1CD /* msgpack.h in Headers */,
 				7693E21F1B22A6EB0068F1CD /* unpack_define.h in Headers */,
 				7693E20D1B22A6EA0068F1CD /* deque.hpp in Headers */,
+				7679C84A1B4C464000081830 /* CCH_EVEN_ODD.hpp in Headers */,
 				7693E1DC1B22A6E90068F1CD /* pack_define.h in Headers */,
 				7693E1A51B22A6E90068F1CD /* string.hpp in Headers */,
 				7693E21E1B22A6EB0068F1CD /* unpack.hpp in Headers */,
@@ -1197,6 +1243,7 @@
 				76B602131B3C5DF500B79B6E /* ContextValue.h in Headers */,
 				7693E1781B22A6E90068F1CD /* DialogLayer.h in Headers */,
 				7693E1961B22A6E90068F1CD /* writer.h in Headers */,
+				7607A9C01B4BE68200F594EE /* PP_NARG.hpp in Headers */,
 				7693E18B1B22A6E90068F1CD /* hash_map.hpp in Headers */,
 				7693E2061B22A6EA0068F1CD /* pack_define.h in Headers */,
 				7693E2511B22A6EC0068F1CD /* ValueProxy.h in Headers */,
@@ -1213,6 +1260,7 @@
 				7693E1EF1B22A6EA0068F1CD /* unordered_set.hpp in Headers */,
 				7693E1A61B22A6E90068F1CD /* strserialization.hpp in Headers */,
 				7693E1901B22A6E90068F1CD /* features.h in Headers */,
+				7607A9C41B4BE96300F594EE /* CCH_FOR.hpp in Headers */,
 				7693E23E1B22A6EC0068F1CD /* OperationQueue.h in Headers */,
 				7693E1DB1B22A6E90068F1CD /* pack.hpp in Headers */,
 				7693E1FB1B22A6EA0068F1CD /* zbuffer.hpp in Headers */,
@@ -1318,6 +1366,7 @@
 				7693E2321B22A6EB0068F1CD /* vrefbuffer.cpp in Sources */,
 				7693E23F1B22A6EC0068F1CD /* ParallaxCamera.cpp in Sources */,
 				7693E2521B22A6EC0068F1CD /* vsson.cpp in Sources */,
+				7607A9B51B4BBEE700F594EE /* Model.cpp in Sources */,
 				7693E1561B22A6E90068F1CD /* DoLayoutActionFactory.cpp in Sources */,
 				7693E1BD1B22A6E90068F1CD /* LayoutRegistration.cpp in Sources */,
 				7693E1501B22A6E90068F1CD /* AnimateActionFactory.cpp in Sources */,
@@ -1341,6 +1390,7 @@
 				7693E1D51B22A6E90068F1CD /* MonsterDebuggerLayer.cpp in Sources */,
 				7693E1AF1B22A6E90068F1CD /* GroupLayout.cpp in Sources */,
 				7693E24A1B22A6EC0068F1CD /* Sound.cpp in Sources */,
+				7607A9BA1B4BC03200F594EE /* BaseModel.cpp in Sources */,
 				7693E2551B22A6EC0068F1CD /* WidgetUtils.cpp in Sources */,
 				7693E1591B22A6E90068F1CD /* FadeToActionFactory.cpp in Sources */,
 				7645157B1B3CF7B400CD5E1E /* FContext.cpp in Sources */,
@@ -1387,6 +1437,7 @@
 				7693E15D1B22A6E90068F1CD /* InstantActionFactory.cpp in Sources */,
 				7693E1BA1B22A6E90068F1CD /* LayoutHelper.cpp in Sources */,
 				7693E17A1B22A6E90068F1CD /* DrawNodeHelper.cpp in Sources */,
+				7607A9B61B4BBEE700F594EE /* Model.cpp in Sources */,
 				7693E13F1B22A6E80068F1CD /* ActionGroup.cpp in Sources */,
 				7693E22B1B22A6EB0068F1CD /* object.cpp in Sources */,
 				7693E2481B22A6EC0068F1CD /* Shortcut.cpp in Sources */,
@@ -1410,6 +1461,7 @@
 				7693E1511B22A6E90068F1CD /* AnimateActionFactory.cpp in Sources */,
 				7693E1C91B22A6E90068F1CD /* WidgetLayouts.cpp in Sources */,
 				7693E1AD1B22A6E90068F1CD /* CommonLayouts.cpp in Sources */,
+				7607A9BB1B4BC03200F594EE /* BaseModel.cpp in Sources */,
 				7693E2351B22A6EB0068F1CD /* zone.cpp in Sources */,
 				7693E1821B22A6E90068F1CD /* Hash.cpp in Sources */,
 				7645157C1B3CF7B400CD5E1E /* FContext.cpp in Sources */,

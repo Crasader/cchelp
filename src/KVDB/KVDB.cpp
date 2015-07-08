@@ -256,7 +256,7 @@ namespace ccHelp {
             
             valueFile.write(val.cap);
             valueFile.write(val.len);
-            valueFile.write(val.data, val.len);
+            valueFile.write(val.data, val.cap);
         }
         mUpdatedKey.clear();
         
@@ -286,8 +286,9 @@ namespace ccHelp {
         for (auto it : mData)
         {
             uint valIndex = valueFile.tell();
+            valueFile.write(it.second.cap);
             valueFile.write(it.second.len);
-            valueFile.write(it.second.data, it.second.len);
+            valueFile.write(it.second.data, it.second.cap);
             
             uint keyIndex = keyFile.tell();
             keyFile.write((unsigned short) it.first.length());
