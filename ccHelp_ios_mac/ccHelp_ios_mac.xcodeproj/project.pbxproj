@@ -15,9 +15,6 @@
 		7607A9BC1B4BC03200F594EE /* BaseModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 7607A9B91B4BC03200F594EE /* BaseModel.h */; };
 		7607A9C01B4BE68200F594EE /* PP_NARG.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 7607A9BF1B4BE68200F594EE /* PP_NARG.hpp */; };
 		7607A9C41B4BE96300F594EE /* CCH_FOR.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 7607A9C31B4BE96300F594EE /* CCH_FOR.hpp */; };
-		760B8FAA1B4EE3B8003C4FF9 /* Expression.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 760B8FA81B4EE3B8003C4FF9 /* Expression.cpp */; };
-		760B8FAB1B4EE3B8003C4FF9 /* Expression.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 760B8FA81B4EE3B8003C4FF9 /* Expression.cpp */; };
-		760B8FAC1B4EE3B8003C4FF9 /* Expression.h in Headers */ = {isa = PBXBuildFile; fileRef = 760B8FA91B4EE3B8003C4FF9 /* Expression.h */; };
 		760B8FB21B4EE495003C4FF9 /* Parser.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 760B8FB01B4EE495003C4FF9 /* Parser.cpp */; };
 		760B8FB31B4EE495003C4FF9 /* Parser.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 760B8FB01B4EE495003C4FF9 /* Parser.cpp */; };
 		760B8FB41B4EE495003C4FF9 /* Parser.h in Headers */ = {isa = PBXBuildFile; fileRef = 760B8FB11B4EE495003C4FF9 /* Parser.h */; };
@@ -348,8 +345,6 @@
 		7607A9B91B4BC03200F594EE /* BaseModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseModel.h; sourceTree = "<group>"; };
 		7607A9BF1B4BE68200F594EE /* PP_NARG.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = PP_NARG.hpp; sourceTree = "<group>"; };
 		7607A9C31B4BE96300F594EE /* CCH_FOR.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = CCH_FOR.hpp; sourceTree = "<group>"; };
-		760B8FA81B4EE3B8003C4FF9 /* Expression.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Expression.cpp; sourceTree = "<group>"; };
-		760B8FA91B4EE3B8003C4FF9 /* Expression.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Expression.h; sourceTree = "<group>"; };
 		760B8FAD1B4EE409003C4FF9 /* TokenType.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TokenType.h; sourceTree = "<group>"; };
 		760B8FAF1B4EE448003C4FF9 /* Token.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Token.h; sourceTree = "<group>"; };
 		760B8FB01B4EE495003C4FF9 /* Parser.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Parser.cpp; sourceTree = "<group>"; };
@@ -614,6 +609,7 @@
 		76B6020F1B3C5DF500B79B6E /* ContextValue.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ContextValue.cpp; sourceTree = "<group>"; };
 		76B602101B3C5DF500B79B6E /* ContextValue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContextValue.h; sourceTree = "<group>"; };
 		76B602141B3C5E0D00B79B6E /* ContextValue.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = ContextValue.hpp; sourceTree = "<group>"; };
+		76D423411B4F736700BB49A9 /* MathExpression.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MathExpression.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -668,13 +664,12 @@
 		760B8FA71B4EE3AB003C4FF9 /* MathExpression */ = {
 			isa = PBXGroup;
 			children = (
-				760B8FA81B4EE3B8003C4FF9 /* Expression.cpp */,
-				760B8FA91B4EE3B8003C4FF9 /* Expression.h */,
 				760B8FAD1B4EE409003C4FF9 /* TokenType.h */,
 				760B8FB51B4EE5DF003C4FF9 /* TokenType.cpp */,
 				760B8FAF1B4EE448003C4FF9 /* Token.h */,
 				760B8FB01B4EE495003C4FF9 /* Parser.cpp */,
 				760B8FB11B4EE495003C4FF9 /* Parser.h */,
+				76D423411B4F736700BB49A9 /* MathExpression.h */,
 			);
 			path = MathExpression;
 			sourceTree = "<group>";
@@ -1187,7 +1182,6 @@
 				7693E1911B22A6E90068F1CD /* forwards.h in Headers */,
 				7693E2291B22A6EB0068F1CD /* msgpack.hpp in Headers */,
 				7693E1CA1B22A6E90068F1CD /* impl1.hpp in Headers */,
-				760B8FAC1B4EE3B8003C4FF9 /* Expression.h in Headers */,
 				7693E2071B22A6EA0068F1CD /* pack_template.h in Headers */,
 				7693E2221B22A6EB0068F1CD /* vrefbuffer.h in Headers */,
 				7607A9BC1B4BC03200F594EE /* BaseModel.h in Headers */,
@@ -1397,7 +1391,6 @@
 				7693E1681B22A6E90068F1CD /* SequenceActionFactory.cpp in Sources */,
 				7693E17D1B22A6E90068F1CD /* ExceptionFactory.cpp in Sources */,
 				7693E16E1B22A6E90068F1CD /* AnimationManager.cpp in Sources */,
-				760B8FAA1B4EE3B8003C4FF9 /* Expression.cpp in Sources */,
 				7693E19E1B22A6E90068F1CD /* json_reader.cpp in Sources */,
 				7693E2361B22A6EB0068F1CD /* MultiStateAnimNode.cpp in Sources */,
 				7693E2301B22A6EB0068F1CD /* version.cpp in Sources */,
@@ -1471,7 +1464,6 @@
 				7693E16F1B22A6E90068F1CD /* AnimationManager.cpp in Sources */,
 				7693E22F1B22A6EB0068F1CD /* unpack.cpp in Sources */,
 				7693E1B51B22A6E90068F1CD /* LabelLayouts.cpp in Sources */,
-				760B8FAB1B4EE3B8003C4FF9 /* Expression.cpp in Sources */,
 				7693E1451B22A6E80068F1CD /* ActionFactory.cpp in Sources */,
 				7693E1741B22A6E90068F1CD /* Def.cpp in Sources */,
 				7693E14E1B22A6E90068F1CD /* ActionHelper.cpp in Sources */,

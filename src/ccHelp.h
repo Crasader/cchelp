@@ -42,3 +42,5 @@
 
 #include "Utils.h"
 #include "Actions/ActionHelper.h"
+
+#include "MathExpression/MathExpression.h"
