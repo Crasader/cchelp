@@ -33,6 +33,7 @@ namespace ccHelp
         Context& put(const std::string &k, double v);
         Context& put(const std::string &k, bool v);
         Context& put(const std::string &k, const std::string &v);
+        Context& put(const std::string &k, const ContextValue &v);
         
         template <typename T>
         Context& putPointer(const std::string &k, T *v);

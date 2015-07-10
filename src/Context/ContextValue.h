@@ -142,6 +142,9 @@ namespace ccHelp {
         bool isString() const;
         bool isCustom() const;
         
+        bool operator==(const ContextValue &v) const;
+        bool operator!=(const ContextValue &v) const;
+        
     private:
         void release();
         

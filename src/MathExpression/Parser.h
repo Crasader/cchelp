@@ -26,13 +26,21 @@ namespace ccHelp { namespace expr {
     
     template <typename E>
     E* parseExpression(const std::string &expr, const ExprFactory<E> &ef);
+    
+    template <typename E>
+    E* parseExpression(const std::list<Token> &postfix, const ExprFactory<E> &ef);
 } }
 
 template <typename E>
-E* ccHelp::expr::parseExpression(const std::string &sExpr, const ccHelp::expr::ExprFactory<E> &ef)
+E* ccHelp::expr::parseExpression(const std::string &expr, const ccHelp::expr::ExprFactory<E> &ef)
 {
-    auto postfix = postfixParse(sExpr);
-    
+    auto postfix = postfixParse(expr);
+    return ccHelp::expr::parseExpression(postfix, ef);
+}
+
+template <typename E>
+E* ccHelp::expr::parseExpression(const std::list<Token> &postfix, const ccHelp::expr::ExprFactory<E> &ef)
+{
     std::stack<E *> buildingExprs;
     std::vector<E *> args;
     for (auto &token : postfix)
@@ -68,7 +76,7 @@ E* ccHelp::expr::parseExpression(const std::string &sExpr, const ccHelp::expr::E
     }
     
     if (buildingExprs.size() != 1)
-        throw std::invalid_argument("More than 1 expression in: " + sExpr);
+        throw std::invalid_argument("More than 1 expression");
     
     return buildingExprs.top();
 }

@@ -86,6 +86,12 @@ namespace ccHelp
         return *this;
     }
     
+    Context& Context::put(const std::string &k, const ContextValue &v)
+    {
+        valueMap[k] = v;
+        return *this;
+    }
+    
     Context& Context::put(const std::string &k, const std::string &v)
     {
         valueMap[k] = ContextValue(v);

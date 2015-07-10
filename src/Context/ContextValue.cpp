@@ -814,6 +814,51 @@ namespace ccHelp
         return type == CUSTOM_HOLDER;
     }
     
+    bool ContextValue::operator==(const ccHelp::ContextValue &v) const
+    {
+        if (this->type != v.type)
+            return false;
+        
+        switch (this->type)
+        {
+            case NONE:
+                return true;
+            case BYTE:
+                return vByte == v.vByte;
+            case UBYTE:
+                return vUByte == v.vUByte;
+            case SHORT:
+                return vShort == v.vShort;
+            case USHORT:
+                return vUShort == v.vUShort;
+            case INT:
+                return vInt == v.vInt;
+            case UINT:
+                return vUInt == v.vUInt;
+            case LONG:
+                return vLong == v.vLong;
+            case ULONG:
+                return vULong == v.vULong;
+            case FLOAT:
+                return vFloat == v.vFloat;
+            case DOUBLE:
+                return vDouble == v.vDouble;
+            case _BOOL:
+                return vBool == v.vBool;
+            case STRING:
+                return vString == v.vString;
+            case VOID_POINTER:
+                return vVoidPointer == v.vVoidPointer;
+            case CUSTOM_HOLDER:
+                return vCustomHolder == v.vCustomHolder;
+        }
+    }
+    
+    bool ContextValue::operator!=(const ccHelp::ContextValue &v) const
+    {
+        return !this->operator==(v);
+    }
+    
     void ContextValue::release()
     {
         if (type == CUSTOM_HOLDER)
