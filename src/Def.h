@@ -4,7 +4,11 @@
 
 #define USING_CC_HELP using namespace ccHelp
 
+typedef char byte;
+typedef unsigned char ubyte;
+typedef unsigned short ushort;
 typedef unsigned int uint;
+typedef unsigned long ulong;
 
 namespace ccHelp
 {

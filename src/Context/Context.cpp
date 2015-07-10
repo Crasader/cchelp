@@ -10,6 +10,11 @@
 
 namespace ccHelp
 {
+    Context::Context(size_t cap)
+    {
+        this->setCapacity(cap);
+    }
+    
     Context::~Context()
     {
         
@@ -198,6 +203,11 @@ namespace ccHelp
     void Context::clear()
     {
         valueMap.clear();
+    }
+    
+    void Context::setCapacity(size_t cap)
+    {
+        valueMap.reserve(cap);
     }
     
     const Context Context::EMPTY{};

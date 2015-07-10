@@ -24,7 +24,7 @@
 	{ \
 		msgpack::type::make_define(__VA_ARGS__).msgpack_pack(pk); \
 	} \
-	void msgpack_unpack(msgpack::object o) \
+	inline void msgpack_unpack(msgpack::object o) \
 	{ \
 		msgpack::type::make_define(__VA_ARGS__).msgpack_unpack(o); \
 	}\
@@ -46,7 +46,7 @@
       return v; \
     } \
     template <> \
-    void operator<< (object::with_zone& o, const enum& v) \
+    inline void operator<< (object::with_zone& o, const enum& v) \
     { \
       o << static_cast<int>(v); \
     } \

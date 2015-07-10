@@ -27,4 +27,5 @@
 #include "msgpack/msgpack/sbuffer.h"
 #include "msgpack/msgpack/vrefbuffer.h"
 #include "msgpack/msgpack/version.h"
+#include "ext/msgpack_ext.h"
 

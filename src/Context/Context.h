@@ -17,6 +17,8 @@ namespace ccHelp
         hmap<std::string, ContextValue> valueMap;
         
     public:
+        Context() = default;
+        Context(size_t cap);
         virtual ~Context();
         
         Context& put(const std::string &k, char v);
@@ -63,6 +65,12 @@ namespace ccHelp
         void remove(const std::string &k);
         unsigned int size() const;
         void clear();
+        
+        void setCapacity(size_t cap);
+        
+    public:
+        // support msgpack
+        MSGPACK_DEFINE(valueMap);
         
     public:
         static const Context EMPTY;

@@ -15,6 +15,14 @@
 		7607A9BC1B4BC03200F594EE /* BaseModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 7607A9B91B4BC03200F594EE /* BaseModel.h */; };
 		7607A9C01B4BE68200F594EE /* PP_NARG.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 7607A9BF1B4BE68200F594EE /* PP_NARG.hpp */; };
 		7607A9C41B4BE96300F594EE /* CCH_FOR.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 7607A9C31B4BE96300F594EE /* CCH_FOR.hpp */; };
+		760B8FAA1B4EE3B8003C4FF9 /* Expression.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 760B8FA81B4EE3B8003C4FF9 /* Expression.cpp */; };
+		760B8FAB1B4EE3B8003C4FF9 /* Expression.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 760B8FA81B4EE3B8003C4FF9 /* Expression.cpp */; };
+		760B8FAC1B4EE3B8003C4FF9 /* Expression.h in Headers */ = {isa = PBXBuildFile; fileRef = 760B8FA91B4EE3B8003C4FF9 /* Expression.h */; };
+		760B8FB21B4EE495003C4FF9 /* Parser.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 760B8FB01B4EE495003C4FF9 /* Parser.cpp */; };
+		760B8FB31B4EE495003C4FF9 /* Parser.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 760B8FB01B4EE495003C4FF9 /* Parser.cpp */; };
+		760B8FB41B4EE495003C4FF9 /* Parser.h in Headers */ = {isa = PBXBuildFile; fileRef = 760B8FB11B4EE495003C4FF9 /* Parser.h */; };
+		760B8FB61B4EE5DF003C4FF9 /* TokenType.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 760B8FB51B4EE5DF003C4FF9 /* TokenType.cpp */; };
+		760B8FB71B4EE5DF003C4FF9 /* TokenType.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 760B8FB51B4EE5DF003C4FF9 /* TokenType.cpp */; };
 		76372D8E1B4B822F009E66B8 /* IOHelper.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 76372D8A1B4B822F009E66B8 /* IOHelper.cpp */; };
 		76372D8F1B4B822F009E66B8 /* IOHelper.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 76372D8A1B4B822F009E66B8 /* IOHelper.cpp */; };
 		76372D901B4B822F009E66B8 /* IOHelper.h in Headers */ = {isa = PBXBuildFile; fileRef = 76372D8B1B4B822F009E66B8 /* IOHelper.h */; };
@@ -340,6 +348,16 @@
 		7607A9B91B4BC03200F594EE /* BaseModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseModel.h; sourceTree = "<group>"; };
 		7607A9BF1B4BE68200F594EE /* PP_NARG.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = PP_NARG.hpp; sourceTree = "<group>"; };
 		7607A9C31B4BE96300F594EE /* CCH_FOR.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = CCH_FOR.hpp; sourceTree = "<group>"; };
+		760B8FA81B4EE3B8003C4FF9 /* Expression.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Expression.cpp; sourceTree = "<group>"; };
+		760B8FA91B4EE3B8003C4FF9 /* Expression.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Expression.h; sourceTree = "<group>"; };
+		760B8FAD1B4EE409003C4FF9 /* TokenType.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TokenType.h; sourceTree = "<group>"; };
+		760B8FAF1B4EE448003C4FF9 /* Token.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Token.h; sourceTree = "<group>"; };
+		760B8FB01B4EE495003C4FF9 /* Parser.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Parser.cpp; sourceTree = "<group>"; };
+		760B8FB11B4EE495003C4FF9 /* Parser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Parser.h; sourceTree = "<group>"; };
+		760B8FB51B4EE5DF003C4FF9 /* TokenType.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TokenType.cpp; sourceTree = "<group>"; };
+		762B24131B4E1782001290EE /* msgpack_ext.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = msgpack_ext.h; sourceTree = "<group>"; };
+		762B24141B4E1782001290EE /* msgpack_hmap.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = msgpack_hmap.h; sourceTree = "<group>"; };
+		762B24151B4E1782001290EE /* msgpack_hset.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = msgpack_hset.h; sourceTree = "<group>"; };
 		76372D8A1B4B822F009E66B8 /* IOHelper.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = IOHelper.cpp; sourceTree = "<group>"; };
 		76372D8B1B4B822F009E66B8 /* IOHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IOHelper.h; sourceTree = "<group>"; };
 		76372D8C1B4B822F009E66B8 /* KVDB.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = KVDB.cpp; sourceTree = "<group>"; };
@@ -647,6 +665,30 @@
 			path = Macro;
 			sourceTree = "<group>";
 		};
+		760B8FA71B4EE3AB003C4FF9 /* MathExpression */ = {
+			isa = PBXGroup;
+			children = (
+				760B8FA81B4EE3B8003C4FF9 /* Expression.cpp */,
+				760B8FA91B4EE3B8003C4FF9 /* Expression.h */,
+				760B8FAD1B4EE409003C4FF9 /* TokenType.h */,
+				760B8FB51B4EE5DF003C4FF9 /* TokenType.cpp */,
+				760B8FAF1B4EE448003C4FF9 /* Token.h */,
+				760B8FB01B4EE495003C4FF9 /* Parser.cpp */,
+				760B8FB11B4EE495003C4FF9 /* Parser.h */,
+			);
+			path = MathExpression;
+			sourceTree = "<group>";
+		};
+		762B24121B4E1782001290EE /* ext */ = {
+			isa = PBXGroup;
+			children = (
+				762B24131B4E1782001290EE /* msgpack_ext.h */,
+				762B24141B4E1782001290EE /* msgpack_hmap.h */,
+				762B24151B4E1782001290EE /* msgpack_hset.h */,
+			);
+			path = ext;
+			sourceTree = "<group>";
+		};
 		76372D891B4B822F009E66B8 /* KVDB */ = {
 			isa = PBXGroup;
 			children = (
@@ -700,6 +742,7 @@
 				7693E0421B22A6E80068F1CD /* ActionGroup.h */,
 				7693E0431B22A6E80068F1CD /* ActionQueue.cpp */,
 				7693E0441B22A6E80068F1CD /* ActionQueue.h */,
+				760B8FA71B4EE3AB003C4FF9 /* MathExpression */,
 				7607A9BD1B4BE63900F594EE /* Macro */,
 				76372D891B4B822F009E66B8 /* KVDB */,
 				7693E0451B22A6E80068F1CD /* Actions */,
@@ -900,6 +943,7 @@
 		7693E0BF1B22A6E80068F1CD /* msgpack */ = {
 			isa = PBXGroup;
 			children = (
+				762B24121B4E1782001290EE /* ext */,
 				7693E0C01B22A6E80068F1CD /* msgpack */,
 				7693E0E91B22A6E80068F1CD /* msgpack.h */,
 				7693E0EA1B22A6E80068F1CD /* msgpack.hpp */,
@@ -1143,6 +1187,7 @@
 				7693E1911B22A6E90068F1CD /* forwards.h in Headers */,
 				7693E2291B22A6EB0068F1CD /* msgpack.hpp in Headers */,
 				7693E1CA1B22A6E90068F1CD /* impl1.hpp in Headers */,
+				760B8FAC1B4EE3B8003C4FF9 /* Expression.h in Headers */,
 				7693E2071B22A6EA0068F1CD /* pack_template.h in Headers */,
 				7693E2221B22A6EB0068F1CD /* vrefbuffer.h in Headers */,
 				7607A9BC1B4BC03200F594EE /* BaseModel.h in Headers */,
@@ -1185,6 +1230,7 @@
 				7693E1931B22A6E90068F1CD /* reader.h in Headers */,
 				7693E1DE1B22A6E90068F1CD /* sbuffer.h in Headers */,
 				7693E1F91B22A6EA0068F1CD /* vrefbuffer.hpp in Headers */,
+				760B8FB41B4EE495003C4FF9 /* Parser.h in Headers */,
 				7693E1F71B22A6EA0068F1CD /* version.h in Headers */,
 				7693E24C1B22A6EC0068F1CD /* Sound.h in Headers */,
 				7693E20B1B22A6EA0068F1CD /* bool.hpp in Headers */,
@@ -1351,6 +1397,7 @@
 				7693E1681B22A6E90068F1CD /* SequenceActionFactory.cpp in Sources */,
 				7693E17D1B22A6E90068F1CD /* ExceptionFactory.cpp in Sources */,
 				7693E16E1B22A6E90068F1CD /* AnimationManager.cpp in Sources */,
+				760B8FAA1B4EE3B8003C4FF9 /* Expression.cpp in Sources */,
 				7693E19E1B22A6E90068F1CD /* json_reader.cpp in Sources */,
 				7693E2361B22A6EB0068F1CD /* MultiStateAnimNode.cpp in Sources */,
 				7693E2301B22A6EB0068F1CD /* version.cpp in Sources */,
@@ -1360,9 +1407,11 @@
 				7693E22C1B22A6EB0068F1CD /* objectc.cpp in Sources */,
 				7693E1441B22A6E80068F1CD /* ActionFactory.cpp in Sources */,
 				7693E1651B22A6E90068F1CD /* ScaleToActionFactory.cpp in Sources */,
+				760B8FB61B4EE5DF003C4FF9 /* TokenType.cpp in Sources */,
 				7693E1B41B22A6E90068F1CD /* LabelLayouts.cpp in Sources */,
 				7693E1AC1B22A6E90068F1CD /* CommonLayouts.cpp in Sources */,
 				7693E2001B22A6EA0068F1CD /* gcc_atomic.cpp in Sources */,
+				760B8FB21B4EE495003C4FF9 /* Parser.cpp in Sources */,
 				7693E2321B22A6EB0068F1CD /* vrefbuffer.cpp in Sources */,
 				7693E23F1B22A6EC0068F1CD /* ParallaxCamera.cpp in Sources */,
 				7693E2521B22A6EC0068F1CD /* vsson.cpp in Sources */,
@@ -1422,6 +1471,7 @@
 				7693E16F1B22A6E90068F1CD /* AnimationManager.cpp in Sources */,
 				7693E22F1B22A6EB0068F1CD /* unpack.cpp in Sources */,
 				7693E1B51B22A6E90068F1CD /* LabelLayouts.cpp in Sources */,
+				760B8FAB1B4EE3B8003C4FF9 /* Expression.cpp in Sources */,
 				7693E1451B22A6E80068F1CD /* ActionFactory.cpp in Sources */,
 				7693E1741B22A6E90068F1CD /* Def.cpp in Sources */,
 				7693E14E1B22A6E90068F1CD /* ActionHelper.cpp in Sources */,
@@ -1431,9 +1481,11 @@
 				7693E23A1B22A6EB0068F1CD /* OperationGroup.cpp in Sources */,
 				7693E1541B22A6E90068F1CD /* DelayActionFactory.cpp in Sources */,
 				7693E24B1B22A6EC0068F1CD /* Sound.cpp in Sources */,
+				760B8FB71B4EE5DF003C4FF9 /* TokenType.cpp in Sources */,
 				7693E14B1B22A6E90068F1CD /* ActionFactoryRegistration.cpp in Sources */,
 				7693E2011B22A6EA0068F1CD /* gcc_atomic.cpp in Sources */,
 				7693E1631B22A6E90068F1CD /* PlaySoundActionFactory.cpp in Sources */,
+				760B8FB31B4EE495003C4FF9 /* Parser.cpp in Sources */,
 				7693E15D1B22A6E90068F1CD /* InstantActionFactory.cpp in Sources */,
 				7693E1BA1B22A6E90068F1CD /* LayoutHelper.cpp in Sources */,
 				7693E17A1B22A6E90068F1CD /* DrawNodeHelper.cpp in Sources */,
