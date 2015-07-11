@@ -32,7 +32,7 @@ namespace ccHelp { namespace expr {
     
     bool isOperator(char c)
     {
-        char s[] = {c};
+        char s[] = {c, '\0'};
         Operator op = {s, 0, false};
         
         return ((op == Operator::ADD) ||
@@ -83,6 +83,12 @@ namespace ccHelp { namespace expr {
     {
         struct ParseIterator
         {
+            ParseIterator()
+            : index(0), token(NONE)
+            {
+                
+            }
+            
             unsigned int index;
             string current;
             TokenType token;
@@ -215,15 +221,15 @@ namespace ccHelp { namespace expr {
                             break;
                         
                         auto topToken = stOps.back();
-                        stOps.pop_back();
                         auto &topOp = getOperator(topToken.value);
                         
-                        if (!(op.priority > topOp.priority ||
-                            (!op.isRightAssocciative && op.priority == topOp.priority)))
-                        {
+                        if (op.priority > topOp.priority)
                             break;
-                        }
                         
+                        if (op.isRightAssocciative || op.priority != topOp.priority)
+                            break;
+                        
+                        stOps.pop_back();
                         postfix.push_back(topToken);
                     }
                     stOps.push_back(token);
