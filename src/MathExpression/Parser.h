@@ -18,6 +18,7 @@ namespace ccHelp { namespace expr {
     template <typename E>
     struct ExprFactory
     {
+    public:
         virtual E* createNumber(const Token &t) const = 0;
         virtual E* createSymbol(const Token &t) const = 0;
         virtual uint getNumberReqArguments(const Token &t) const = 0;

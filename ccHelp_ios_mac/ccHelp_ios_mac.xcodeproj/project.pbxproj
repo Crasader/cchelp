@@ -26,6 +26,9 @@
 		76372D911B4B822F009E66B8 /* KVDB.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 76372D8C1B4B822F009E66B8 /* KVDB.cpp */; };
 		76372D921B4B822F009E66B8 /* KVDB.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 76372D8C1B4B822F009E66B8 /* KVDB.cpp */; };
 		76372D931B4B822F009E66B8 /* KVDB.h in Headers */ = {isa = PBXBuildFile; fileRef = 76372D8D1B4B822F009E66B8 /* KVDB.h */; };
+		763F86091B52DABB004C5411 /* Expression.hpp in Sources */ = {isa = PBXBuildFile; fileRef = 763F86071B52DABB004C5411 /* Expression.hpp */; };
+		763F860A1B52DABB004C5411 /* Expression.hpp in Sources */ = {isa = PBXBuildFile; fileRef = 763F86071B52DABB004C5411 /* Expression.hpp */; };
+		763F860B1B52DABB004C5411 /* Expression.h in Headers */ = {isa = PBXBuildFile; fileRef = 763F86081B52DABB004C5411 /* Expression.h */; };
 		764515741B3CE5CD00CD5E1E /* Context.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 764515721B3CE5CD00CD5E1E /* Context.cpp */; };
 		764515751B3CE5CD00CD5E1E /* Context.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 764515721B3CE5CD00CD5E1E /* Context.cpp */; };
 		764515761B3CE5CD00CD5E1E /* Context.h in Headers */ = {isa = PBXBuildFile; fileRef = 764515731B3CE5CD00CD5E1E /* Context.h */; };
@@ -357,6 +360,8 @@
 		76372D8B1B4B822F009E66B8 /* IOHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IOHelper.h; sourceTree = "<group>"; };
 		76372D8C1B4B822F009E66B8 /* KVDB.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = KVDB.cpp; sourceTree = "<group>"; };
 		76372D8D1B4B822F009E66B8 /* KVDB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KVDB.h; sourceTree = "<group>"; };
+		763F86071B52DABB004C5411 /* Expression.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Expression.hpp; sourceTree = "<group>"; };
+		763F86081B52DABB004C5411 /* Expression.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Expression.h; sourceTree = "<group>"; };
 		764515721B3CE5CD00CD5E1E /* Context.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Context.cpp; sourceTree = "<group>"; };
 		764515731B3CE5CD00CD5E1E /* Context.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Context.h; sourceTree = "<group>"; };
 		764515771B3CE60800CD5E1E /* Context.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Context.hpp; sourceTree = "<group>"; };
@@ -670,6 +675,8 @@
 				760B8FB01B4EE495003C4FF9 /* Parser.cpp */,
 				760B8FB11B4EE495003C4FF9 /* Parser.h */,
 				76D423411B4F736700BB49A9 /* MathExpression.h */,
+				763F86071B52DABB004C5411 /* Expression.hpp */,
+				763F86081B52DABB004C5411 /* Expression.h */,
 			);
 			path = MathExpression;
 			sourceTree = "<group>";
@@ -1188,6 +1195,7 @@
 				7693E23B1B22A6EB0068F1CD /* OperationGroup.h in Headers */,
 				7693E1431B22A6E80068F1CD /* ActionQueue.h in Headers */,
 				7693E1DD1B22A6E90068F1CD /* pack_template.h in Headers */,
+				763F860B1B52DABB004C5411 /* Expression.h in Headers */,
 				7693E2151B22A6EB0068F1CD /* raw.hpp in Headers */,
 				7693E1E21B22A6EA0068F1CD /* define.hpp in Headers */,
 				7693E2251B22A6EB0068F1CD /* zbuffer.hpp in Headers */,
@@ -1446,6 +1454,7 @@
 				7693E1B61B22A6E90068F1CD /* LayerColorLayouts.cpp in Sources */,
 				7693E1731B22A6E90068F1CD /* Def.cpp in Sources */,
 				7693E2431B22A6EC0068F1CD /* Random.cpp in Sources */,
+				763F86091B52DABB004C5411 /* Expression.hpp in Sources */,
 				7693E1D11B22A6E90068F1CD /* Lock.cpp in Sources */,
 				7693E13E1B22A6E80068F1CD /* ActionGroup.cpp in Sources */,
 				76372D911B4B822F009E66B8 /* KVDB.cpp in Sources */,
@@ -1519,6 +1528,7 @@
 				7693E2561B22A6EC0068F1CD /* WidgetUtils.cpp in Sources */,
 				7693E1771B22A6E90068F1CD /* DialogLayer.cpp in Sources */,
 				7693E1B01B22A6E90068F1CD /* GroupLayout.cpp in Sources */,
+				763F860A1B52DABB004C5411 /* Expression.hpp in Sources */,
 				7693E2441B22A6EC0068F1CD /* Random.cpp in Sources */,
 				7693E1A21B22A6E90068F1CD /* json_value.cpp in Sources */,
 				76372D921B4B822F009E66B8 /* KVDB.cpp in Sources */,

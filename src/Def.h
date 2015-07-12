@@ -12,6 +12,12 @@ typedef unsigned long ulong;
 
 namespace ccHelp
 {
+    class obj
+    {
+    public:
+        virtual ~obj();
+    };
+    
 	template<class T>
 	int compare(const T& t1, const T& t2)
 	{
@@ -161,3 +167,5 @@ inline Type get##Name() {return this->var;}
 #define CCH_SYNTHESIZE_PASS_BY_REF(type, var, func) \
 CC_SYNTHESIZE_PASS_BY_REF(type, var, func) \
 public: inline virtual type& get##func() {return var;} 
+
+#define ARG(...) __VA_ARGS__

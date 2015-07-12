@@ -67,12 +67,11 @@ namespace ccHelp
 namespace std
 {
 	template <>
-	struct hash<ccHelp::Index2D>
+    struct hash<ccHelp::Index2D>
 	{
 		std::size_t operator()(const ccHelp::Index2D &k) const
 		{
 			return (size_t) k;
 		}
 	};
-
 }
