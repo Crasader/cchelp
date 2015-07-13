@@ -29,10 +29,6 @@ namespace ccHelp {
             return;
         }
         
-        auto handle = [&](string tag, const Parameter &p)
-        {
-        };
-        
         auto tags = par.getOrderedMemberNames();
         for (auto &tag : tags)
         {
@@ -41,14 +37,14 @@ namespace ccHelp {
             if (node)
             {
                 doLayout(node, par[tag]);
-                return;
+                continue;
             }
             
             // if this tag wasn't node, it may be a layout method
-            tag = Utils::tolower(tag);
-            auto layoutIte = GroupLayout::Layouts.find(tag);
+            auto layoutTag = Utils::tolower(tag);
+            auto layoutIte = GroupLayout::Layouts.find(layoutTag);
             if (layoutIte == GroupLayout::Layouts.end())
-                return;
+                continue;
             
             // this tag is a layout
             Layout *layout = layoutIte->second;

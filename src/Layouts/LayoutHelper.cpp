@@ -66,7 +66,13 @@ namespace ccHelp {
         string content = FileUtils::getInstance()->getStringFromFile(file);
         
         if (!reader.parse(content, param))
+        {
+#if COCOS2D_DEBUG > 0
+            CCASSERT(false, "Invalid json syntax");
+#endif
+            log("Invalid json syntax: %s", file.c_str());
             return;
+        }
         
         Cache[file] = param;
     }
@@ -141,6 +147,7 @@ namespace ccHelp {
                 
             case Json::ValueType::stringValue:
             {
+                float ff = 0;
                 auto s = p.asString();
                 float ratio = 1;
                 if (s[s.length() - 1] == '%')
@@ -149,8 +156,8 @@ namespace ccHelp {
                     ratio = 100;
                 }
                 
-                sscanf(s.c_str(), "%f", &f);
-                f /= ratio;
+                sscanf(s.c_str(), "%f", &ff);
+                f = ff / ratio;
                 return true;
             }
                 break;

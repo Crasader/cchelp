@@ -149,22 +149,40 @@ namespace ccHelp {
         GroupLayout::registerLayout("tag", tagging);
         
         // anchor
-        auto *anchor = new FunctionLayout([](Node *n, const Layout::Parameter &p){
+        auto *anchorLayout = new FunctionLayout([](Node *n, const Layout::Parameter &p){
             Vec2 anchor = n->getAnchorPoint();
-            float f;
-            if (LayoutHelper::asFloat(p["x"], f))
+            if (p.isObject())
             {
-                anchor.x = f;
+                LayoutHelper::asFloat(p["x"], anchor.x);
+                LayoutHelper::asFloat(p["y"], anchor.y);
             }
-            
-            if (LayoutHelper::asFloat(p["y"], f))
+            else if (p.isString())
             {
-                anchor.y = f;
+                string s = p.asString();
+                s = Utils::tolower(Utils::trim(s));
+                if (s == "top-left")
+                    anchor = Vec2::ANCHOR_TOP_LEFT;
+                else if (s == "middle-left")
+                    anchor = Vec2::ANCHOR_MIDDLE_LEFT;
+                else if (s == "bottom-left")
+                    anchor = Vec2::ANCHOR_BOTTOM_LEFT;
+                else if (s == "top-middle")
+                    anchor = Vec2::ANCHOR_MIDDLE_TOP;
+                else if (s == "middle-middle")
+                    anchor = Vec2::ANCHOR_MIDDLE;
+                else if (s == "bottom-middle")
+                    anchor = Vec2::ANCHOR_MIDDLE_BOTTOM;
+                else if (s == "top-right")
+                    anchor = Vec2::ANCHOR_TOP_RIGHT;
+                else if (s == "middle-right")
+                    anchor = Vec2::ANCHOR_MIDDLE_RIGHT;
+                else if (s == "bottom-right")
+                    anchor = Vec2::ANCHOR_BOTTOM_RIGHT;
             }
             
             n->setAnchorPoint(anchor);
         });
-        GroupLayout::registerLayout("anchor", anchor);
+        GroupLayout::registerLayout("anchor", anchorLayout);
         
         // anchor x
         auto *anchorX = new FunctionLayout([](Node *n, const Layout::Parameter &p){
