@@ -7,9 +7,22 @@ namespace Json {
 	namespace type
 	{
 		template <typename V>
-		inline std::string strSerialize(const V &v);
+		inline std::string strSerialize(const V &v)
+        {
+            std::stringstream ss;
+            ss<<v;
+            
+            return ss.str();
+        }
+        
 		template <typename V>
-		inline bool strDeserialize(const std::string &s, V &v);
+		inline bool strDeserialize(const std::string &s, V &v)
+        {
+            std::stringstream ss(s);
+            ss>>v;
+            
+            return !ss.fail();
+        }
 	}
 
 }  // namespace Json
