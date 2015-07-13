@@ -275,6 +275,7 @@ Value::Value( ValueType type )
    , comments_( 0 )
    , start_( 0 )
    , limit_( 0 )
+   , keyList_ (nullptr)
 {
    switch ( type )
    {
@@ -294,6 +295,7 @@ Value::Value( ValueType type )
    case arrayValue:
    case objectValue:
       value_.map_ = new ObjectValues();
+      keyList_ = new KeyList();
       break;
 #else
    case arrayValue:
@@ -301,6 +303,7 @@ Value::Value( ValueType type )
       break;
    case objectValue:
       value_.map_ = mapAllocator()->newMap();
+      keyList_ = new KeyList();
       break;
 #endif
    case booleanValue:
@@ -504,6 +507,7 @@ Value::Value( const Value &other )
    case arrayValue:
    case objectValue:
       value_.map_ = new ObjectValues( *other.value_.map_ );
+      keyList_ = new KeyList(*other.keyList_);
       break;
 #else
    case arrayValue:
@@ -511,6 +515,7 @@ Value::Value( const Value &other )
       break;
    case objectValue:
       value_.map_ = mapAllocator()->newMapCopy( *other.value_.map_ );
+      keyList_ = new KeyList(*other.keyList_);
       break;
 #endif
    default:
@@ -547,6 +552,7 @@ Value::~Value()
    case arrayValue:
    case objectValue:
       delete value_.map_;
+      delete keyList_;
       break;
 #else
    case arrayValue:
@@ -554,6 +560,7 @@ Value::~Value()
       break;
    case objectValue:
       mapAllocator()->destructMap( value_.map_ );
+      delete keyList_;
       break;
 #endif
    default:
@@ -584,6 +591,7 @@ Value::swap( Value &other )
    other.allocated_ = temp2;
    std::swap( start_, other.start_ );
    std::swap( limit_, other.limit_ );
+   std::swap(keyList_, other.keyList_);
 }
 
 ValueType 
@@ -1062,6 +1070,7 @@ Value::clear()
    case arrayValue:
    case objectValue:
       value_.map_->clear();
+      keyList_->clear();
       break;
 #else
    case arrayValue:
@@ -1069,6 +1078,7 @@ Value::clear()
       break;
    case objectValue:
       value_.map_->clear();
+      keyList_->clear();
       break;
 #endif
    default:
@@ -1181,6 +1191,7 @@ Value::resolveReference( const char *key,
 
    ObjectValues::value_type defaultValue( actualKey, null );
    it = value_.map_->insert( it, defaultValue );
+   keyList_->push_back(actualKey);
    Value &value = (*it).second;
    return value;
 #else
@@ -1296,6 +1307,7 @@ Value::removeMember( const char* key )
    if ( it == value_.map_->end() )
       return null;
    Value old(it->second);
+   keyList_->remove(it->first);
    value_.map_->erase(it);
    return old;
 #else
@@ -1371,6 +1383,30 @@ Value::getMemberNames() const
 #endif
    return members;
 }
+
+Value::Members 
+Value::getOrderedMemberNames() const
+{
+   JSON_ASSERT_MESSAGE( type_ == nullValue  ||  type_ == objectValue, "in Json::Value::getOrderedMemberNames(), value must be objectValue" );
+   if ( type_ == nullValue )
+       return Value::Members();
+   Members members;
+   members.reserve( value_.map_->size() );
+#ifndef JSON_VALUE_USE_INTERNAL_MAP
+   for (CZString &key : *keyList_) {
+       members.push_back(key.c_str());
+   }
+#else
+   ValueInternalMap::IteratorState it;
+   ValueInternalMap::IteratorState itEnd;
+   value_.map_->makeBeginIterator( it );
+   value_.map_->makeEndIterator( itEnd );
+   for ( ; !ValueInternalMap::equals( it, itEnd ); ValueInternalMap::increment(it) )
+      members.push_back( std::string( ValueInternalMap::key( it ) ) );
+#endif
+   return members;
+}
+    
 //
 //# ifdef JSON_USE_CPPTL
 //EnumMemberNames

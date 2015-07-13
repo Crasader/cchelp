@@ -9,6 +9,7 @@
 #include "GroupLayout.h"
 #include "LayoutHelper.h"
 #include "hash_container/hset.h"
+#include "Utils.h"
 #include <stack>
 
 USING_NS_CC;
@@ -28,49 +29,30 @@ namespace ccHelp {
             return;
         }
         
-        hset<string> handled;
-        
         auto handle = [&](string tag, const Parameter &p)
         {
-            if (handled.find(tag) != handled.end())
-                return;
-            
-            handled.insert(tag);
-            
+        };
+        
+        auto tags = par.getOrderedMemberNames();
+        for (auto &tag : tags)
+        {
             // check if this tag is assign to a node
             Node *node = LayoutHelper::queryNode(root, tag);
             if (node)
             {
-                doLayout(node, p);
+                doLayout(node, par[tag]);
                 return;
             }
             
-            // if this tag wasn't node
-            for (char &c : tag) {c = tolower(c);}
+            // if this tag wasn't node, it may be a layout method
+            tag = Utils::tolower(tag);
             auto layoutIte = GroupLayout::Layouts.find(tag);
             if (layoutIte == GroupLayout::Layouts.end())
                 return;
             
             // this tag is a layout
             Layout *layout = layoutIte->second;
-            layout->doLayout(root, p);
-        };
-        
-        if (par.isMember("order") && par["order"].isArray())
-        {
-            const auto &od = par["order"];
-            for (uint i = 0; i < od.size(); ++i)
-            {
-                if (!od[i].isString())
-                    continue;
-                
-                handle(od[i].asString(), par[od[i].asString()]);
-            }
-        }
-        
-        for (Json::ValueIterator it = par.begin(); it != par.end(); ++it)
-        {
-            handle(it.key().asString(), *it);
+            layout->doLayout(root, par[tag]);
         }
     }
     

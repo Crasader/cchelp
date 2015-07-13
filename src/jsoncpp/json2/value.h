@@ -21,6 +21,8 @@
 #  include <cpptl/forwards.h>
 # endif
 
+#include <list>
+
 // Disable warning C4251: <data member>: <type> needs to have dll-interface to be used by...
 #if defined(JSONCPP_DISABLE_DLL_INTERFACE_WARNING)
 # pragma warning(push)
@@ -201,6 +203,7 @@ namespace Json {
 #  else
       typedef CppTL::SmallMap<CZString, Value> ObjectValues;
 #  endif // ifndef JSON_USE_CPPTL_SMALLMAP
+      typedef std::list<CZString> KeyList;
 # endif // ifndef JSON_VALUE_USE_INTERNAL_MAP
 #endif // ifndef JSONCPP_DOC_EXCLUDE_IMPLEMENTATION
 
@@ -418,6 +421,8 @@ namespace Json {
       /// \pre type() is objectValue or nullValue
       /// \post if type() was nullValue, it remains nullValue
       Members getMemberNames() const;
+       
+      Members getOrderedMemberNames() const;
 
 //# ifdef JSON_USE_CPPTL
 //      EnumMemberNames enumMemberNames() const;
@@ -516,6 +521,7 @@ namespace Json {
       int memberNameIsStatic_ : 1;       // used by the ValueInternalMap container.
 # endif
       CommentInfo *comments_;
+      KeyList *keyList_;
 
       // [start, limit) byte offsets in the source JSON text from which this Value
       // was extracted.
