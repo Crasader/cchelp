@@ -23,6 +23,11 @@ namespace ccHelp { namespace expr {
         {
             return val;
         }
+        
+        virtual FixedExpression<T>* clone() const override
+        {
+            return new FixedExpression<T>(val);
+        }
     };
     
     template <typename T>
@@ -38,6 +43,11 @@ namespace ccHelp { namespace expr {
         virtual T eval(const ExpressionContext<T> &ctx) const override
         {
             return ctx.getVariable(var);
+        }
+        
+        virtual VariableExpression<T>* clone() const override
+        {
+            return new VariableExpression<T>(var);
         }
     };
     
@@ -62,6 +72,11 @@ namespace ccHelp { namespace expr {
         {
             return e1->eval(ctx) + e2->eval(ctx);
         }
+        
+        virtual AddExpression<T>* clone() const override
+        {
+            return new AddExpression<T>(e1->clone(), e2->clone());
+        }
     };
     
     template <typename T>
@@ -83,6 +98,11 @@ namespace ccHelp { namespace expr {
         virtual T eval(const ExpressionContext<T> &ctx) const override
         {
             return e1->eval(ctx) - e2->eval(ctx);
+        }
+        
+        virtual SubExpression<T>* clone() const override
+        {
+            return new SubExpression<T>(e1->clone(), e2->clone());
         }
     };
     
@@ -106,6 +126,11 @@ namespace ccHelp { namespace expr {
         {
             return e1->eval(ctx) * e2->eval(ctx);
         }
+        
+        virtual MultExpression<T>* clone() const override
+        {
+            return new MultExpression<T>(e1->clone(), e2->clone());
+        }
     };
     
     template <typename T>
@@ -128,6 +153,11 @@ namespace ccHelp { namespace expr {
         {
             return e1->eval(ctx) / e2->eval(ctx);
         }
+        
+        virtual DivExpression<T>* clone() const override
+        {
+            return new DivExpression<T>(e1->clone(), e2->clone());
+        }
     };
     
     template <typename T>
@@ -149,6 +179,11 @@ namespace ccHelp { namespace expr {
         virtual T eval(const ExpressionContext<T> &ctx) const override
         {
             return pow(e1->eval(ctx), e2->eval(ctx));
+        }
+        
+        virtual PowExpression<T>* clone() const override
+        {
+            return new PowExpression<T>(e1->clone(), e2->clone());
         }
     };
     

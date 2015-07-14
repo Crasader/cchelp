@@ -22,6 +22,7 @@ namespace ccHelp { namespace expr {
     {
     public:
         virtual T eval(const ExpressionContext<T> &ctx) const = 0;
+        virtual Expression<T>* clone() const = 0;
     };
 } }
 
