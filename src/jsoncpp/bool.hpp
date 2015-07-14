@@ -18,6 +18,29 @@ namespace Json {
 				v = j.asBool();
 				return true;
 			}
+            else if (j.isNumeric())
+            {
+                v = (j.asInt() != 0);
+            }
+            else if (j.isString())
+            {
+                std::string s = j.asString();
+                for (char &c : s) {c = tolower(c);}
+                s.erase(0, s.find_first_not_of(" \t"));       //prefixing spaces
+                s.erase(s.find_last_not_of(" \t") + 1);
+                
+                if ("true" == s || "yes" == s)
+                {
+                    v = true;
+                    return true;
+                }
+                
+                if ("false" == s || "no" == s || "" == s)
+                {
+                    v = false;
+                    return true;
+                }
+            }
 
 			return false;
 		}

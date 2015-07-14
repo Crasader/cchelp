@@ -26,6 +26,7 @@
 		76372D911B4B822F009E66B8 /* KVDB.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 76372D8C1B4B822F009E66B8 /* KVDB.cpp */; };
 		76372D921B4B822F009E66B8 /* KVDB.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 76372D8C1B4B822F009E66B8 /* KVDB.cpp */; };
 		76372D931B4B822F009E66B8 /* KVDB.h in Headers */ = {isa = PBXBuildFile; fileRef = 76372D8D1B4B822F009E66B8 /* KVDB.h */; };
+		763C33E21B556A4900A0DE3B /* UniqueRandom.h in Headers */ = {isa = PBXBuildFile; fileRef = 763C33DF1B556A4900A0DE3B /* UniqueRandom.h */; };
 		763F86091B52DABB004C5411 /* Expression.hpp in Sources */ = {isa = PBXBuildFile; fileRef = 763F86071B52DABB004C5411 /* Expression.hpp */; };
 		763F860A1B52DABB004C5411 /* Expression.hpp in Sources */ = {isa = PBXBuildFile; fileRef = 763F86071B52DABB004C5411 /* Expression.hpp */; };
 		763F860B1B52DABB004C5411 /* Expression.h in Headers */ = {isa = PBXBuildFile; fileRef = 763F86081B52DABB004C5411 /* Expression.h */; };
@@ -360,6 +361,7 @@
 		76372D8B1B4B822F009E66B8 /* IOHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IOHelper.h; sourceTree = "<group>"; };
 		76372D8C1B4B822F009E66B8 /* KVDB.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = KVDB.cpp; sourceTree = "<group>"; };
 		76372D8D1B4B822F009E66B8 /* KVDB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KVDB.h; sourceTree = "<group>"; };
+		763C33DF1B556A4900A0DE3B /* UniqueRandom.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UniqueRandom.h; sourceTree = "<group>"; };
 		763F86071B52DABB004C5411 /* Expression.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Expression.hpp; sourceTree = "<group>"; };
 		763F86081B52DABB004C5411 /* Expression.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Expression.h; sourceTree = "<group>"; };
 		764515721B3CE5CD00CD5E1E /* Context.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Context.cpp; sourceTree = "<group>"; };
@@ -802,6 +804,7 @@
 				7693E1391B22A6E80068F1CD /* vsson */,
 				7693E13C1B22A6E80068F1CD /* WidgetUtils.cpp */,
 				7693E13D1B22A6E80068F1CD /* WidgetUtils.h */,
+				763C33DF1B556A4900A0DE3B /* UniqueRandom.h */,
 			);
 			name = src;
 			path = ../src;
@@ -1183,6 +1186,7 @@
 				76372D931B4B822F009E66B8 /* KVDB.h in Headers */,
 				7693E1CD1B22A6E90068F1CD /* lexical_cast.h in Headers */,
 				7693E18E1B22A6E90068F1CD /* autolink.h in Headers */,
+				763C33E21B556A4900A0DE3B /* UniqueRandom.h in Headers */,
 				7693E1711B22A6E90068F1CD /* Array2D.h in Headers */,
 				7693E2461B22A6EC0068F1CD /* RefHolder.h in Headers */,
 				7693E1671B22A6E90068F1CD /* ScaleToActionFactory.h in Headers */,

@@ -919,6 +919,8 @@ namespace ccHelp
         assert(o.type == msgpack::type::ARRAY);
         assert(o.via.array.size == 2);
         
+        this->release();
+        
         o.via.array.ptr[0].convert(&type);
         switch (this->type)
         {
@@ -958,6 +960,7 @@ namespace ccHelp
                 o.via.array.ptr[1].convert(&vDouble);
                 break;
             case STRING:
+                new (&vString) std::string();
                 o.via.array.ptr[1].convert(&vString);
                 break;
             case VOID_POINTER:

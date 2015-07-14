@@ -6,6 +6,7 @@
 #include "vector.hpp"
 #include "map.hpp"
 #include "hash_map.hpp"
+#include "bool.hpp"
 #include "number.hpp"
 #include "jsonvalue.hpp"
 #include "object_str.hpp"
