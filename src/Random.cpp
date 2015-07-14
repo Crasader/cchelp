@@ -15,7 +15,7 @@ namespace ccHelp
 	
 	void Random::ChangeSeed()
 	{
-		int seed = time(nullptr);
+		int seed = (int) time(nullptr);
 		ChangeSeed(seed);
 	}
 
