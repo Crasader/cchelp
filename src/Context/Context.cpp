@@ -216,5 +216,10 @@ namespace ccHelp
         valueMap.reserve(cap);
     }
     
+    const hmap<std::string, ContextValue>& Context::asMap() const
+    {
+        return valueMap;
+    }
+    
     const Context Context::EMPTY{};
 }

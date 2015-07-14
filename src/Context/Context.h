@@ -68,6 +68,7 @@ namespace ccHelp
         void clear();
         
         void setCapacity(size_t cap);
+        const hmap<std::string, ContextValue>& asMap() const;
         
     public:
         // support msgpack
