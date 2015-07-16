@@ -177,6 +177,32 @@ namespace ccHelp {
             ((_Button *) btn)->setTitleRenderer(lbl);
         });
         GroupLayout::registerLayout("button-title-renderer!", setTitleRenderer);
+        
+        auto *pressedEnabled = new FunctionLayout([](Node *n, const Layout::Parameter &p) {
+            bool isEnabled = false;
+            if (!Json::type::deserialize(p, isEnabled))
+                return;
+            
+            ui::Button *btn = dynamic_cast<ui::Button*>(n);
+            if (!btn)
+                return;
+            
+            btn->setPressedActionEnabled(isEnabled);
+        });
+        GroupLayout::registerLayout("button-pressed-enabled", pressedEnabled);
+        
+        auto *setZoomScale = new FunctionLayout([](Node *n, const Layout::Parameter &p) {
+            float zoomScale = 1;
+            if (!LayoutHelper::asFloat(p, zoomScale))
+                return;
+            
+            ui::Button *btn = dynamic_cast<ui::Button*>(n);
+            if (!btn)
+                return;
+            
+            btn->setZoomScale(zoomScale);
+        });
+        GroupLayout::registerLayout("button-zoom-scale", setZoomScale);
     }
     
     void regisButtonQueries()
