@@ -242,6 +242,7 @@ namespace ccHelp
 		if (READER.parse(content, j))
             return j;
         
+        log("Invalid json file: %s", fileName.c_str());
         return Json::Value::null;
 	}
     
