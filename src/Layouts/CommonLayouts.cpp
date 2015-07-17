@@ -7,11 +7,27 @@
 //
 
 #include "LayoutRegistration.h"
+#include "Layoutable.h"
 #include "Utils.h"
 
 namespace ccHelp {
     void regisCommonLayouts()
     {
+        // on layout
+        auto *onLayout = new FunctionLayout([](Node *n, const Layout::Parameter &p) {
+            auto *layoutable = dynamic_cast<Layoutable *>(n);
+            if (!layoutable)
+                return;
+            
+            layoutable->onLayout();
+        });
+        GroupLayout::registerLayout("begin-layout", onLayout);
+        GroupLayout::registerLayout("start-layout", onLayout);
+        GroupLayout::registerLayout("on-layout", onLayout);
+        GroupLayout::registerLayout("do-layout", onLayout);
+        GroupLayout::registerLayout("custom-layout", onLayout);
+        GroupLayout::registerLayout("layout", onLayout);
+        
         // visible
         auto *visible = new FunctionLayout([](Node *n, const Layout::Parameter &p){
             if (p.isBool())

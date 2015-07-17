@@ -370,6 +370,7 @@
 		764515791B3CF7B400CD5E1E /* FContext.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = FContext.cpp; sourceTree = "<group>"; };
 		7645157A1B3CF7B400CD5E1E /* FContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FContext.h; sourceTree = "<group>"; };
 		7645157E1B3CF80F00CD5E1E /* FContext.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = FContext.hpp; sourceTree = "<group>"; };
+		764D64E81B589CE400DDE6CB /* Layoutable.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Layoutable.h; sourceTree = "<group>"; };
 		7679C8471B4C40A200081830 /* CCH_FOR2.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = CCH_FOR2.hpp; sourceTree = "<group>"; };
 		7679C8491B4C464000081830 /* CCH_EVEN_ODD.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = CCH_EVEN_ODD.hpp; sourceTree = "<group>"; };
 		7693DF451B229ED30068F1CD /* ccHelp_Mac.a */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = ccHelp_Mac.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -930,6 +931,7 @@
 				7693E0B01B22A6E80068F1CD /* NodeSizingLayouts.cpp */,
 				7693E0B11B22A6E80068F1CD /* uiButtonLayouts.cpp */,
 				7693E0B21B22A6E80068F1CD /* WidgetLayouts.cpp */,
+				764D64E81B589CE400DDE6CB /* Layoutable.h */,
 			);
 			path = Layouts;
 			sourceTree = "<group>";
