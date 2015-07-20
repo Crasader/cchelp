@@ -45,3 +45,5 @@
 #include "Actions/ActionHelper.h"
 
 #include "MathExpression/MathExpression.h"
+
+#include "ThirdParty/cocos2d-x-GridView/GridView.h"

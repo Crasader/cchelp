@@ -28,9 +28,18 @@ namespace Json {
 }  // namespace Json
 
 template<typename V>
-inline std::string toString(const V &v);
+inline std::string toString(const V &v)
+{
+    return Json::type::strSerialize(v);
+}
+
 template<typename V>
-inline V fromString(const std::string &s);
+inline V fromString(const std::string &s)
+{
+    V v;
+    Json::type::strDeserialize(s, v);
+    return v;
+}
 
 #define ENUM_STR_SERIALIZATION_DECL(TYPE) \
 namespace Json { \
