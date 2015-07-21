@@ -8,6 +8,28 @@ using namespace std;
 
 namespace ccHelp
 {
+    void Utils::setCascadeOpacityAllChilds(cocos2d::Node *n, bool enabled)
+    {
+        n->setCascadeOpacityEnabled(enabled);
+        for (auto *child : n->getChildren())
+        {
+            child->setCascadeOpacityEnabled(enabled);
+        }
+    }
+    
+    void Utils::setCascadeOpacityRecursively(cocos2d::Node *n, bool enabled)
+    {
+        if (!n)
+            return;
+        
+        n->setCascadeOpacityEnabled(enabled);
+        
+        for (auto *child : n->getChildren())
+        {
+            Utils::setCascadeOpacityRecursively(child);
+        }
+    }
+    
     void Utils::swallowTouch(cocos2d::Node *n)
     {
         auto *touchListener = EventListenerTouchOneByOne::create();

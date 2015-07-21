@@ -24,6 +24,8 @@ namespace ccHelp
 	{
 	public:
         static void swallowTouch(Node *n);
+        static void setCascadeOpacityAllChilds(Node *n, bool enabled = true);
+        static void setCascadeOpacityRecursively(Node *n, bool enabled = true);
         
 		static void setNodeAnchorWithoutChangePosition
 			(Node *target, CREF(Vec2) newAnchor);
