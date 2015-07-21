@@ -26,10 +26,6 @@
 		76372D911B4B822F009E66B8 /* KVDB.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 76372D8C1B4B822F009E66B8 /* KVDB.cpp */; };
 		76372D921B4B822F009E66B8 /* KVDB.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 76372D8C1B4B822F009E66B8 /* KVDB.cpp */; };
 		76372D931B4B822F009E66B8 /* KVDB.h in Headers */ = {isa = PBXBuildFile; fileRef = 76372D8D1B4B822F009E66B8 /* KVDB.h */; };
-		763A71F81B5CAB3B00D3CF75 /* CCTableView.h in Headers */ = {isa = PBXBuildFile; fileRef = 763A71ED1B5CAB3B00D3CF75 /* CCTableView.h */; };
-		763A71F91B5CAB3B00D3CF75 /* GridView.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 763A71EE1B5CAB3B00D3CF75 /* GridView.cpp */; };
-		763A71FA1B5CAB3B00D3CF75 /* GridView.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 763A71EE1B5CAB3B00D3CF75 /* GridView.cpp */; };
-		763A71FB1B5CAB3B00D3CF75 /* GridView.h in Headers */ = {isa = PBXBuildFile; fileRef = 763A71EF1B5CAB3B00D3CF75 /* GridView.h */; };
 		763C33E21B556A4900A0DE3B /* UniqueRandom.h in Headers */ = {isa = PBXBuildFile; fileRef = 763C33DF1B556A4900A0DE3B /* UniqueRandom.h */; };
 		763F86091B52DABB004C5411 /* Expression.hpp in Sources */ = {isa = PBXBuildFile; fileRef = 763F86071B52DABB004C5411 /* Expression.hpp */; };
 		763F860A1B52DABB004C5411 /* Expression.hpp in Sources */ = {isa = PBXBuildFile; fileRef = 763F86071B52DABB004C5411 /* Expression.hpp */; };
@@ -365,9 +361,6 @@
 		76372D8B1B4B822F009E66B8 /* IOHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IOHelper.h; sourceTree = "<group>"; };
 		76372D8C1B4B822F009E66B8 /* KVDB.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = KVDB.cpp; sourceTree = "<group>"; };
 		76372D8D1B4B822F009E66B8 /* KVDB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KVDB.h; sourceTree = "<group>"; };
-		763A71ED1B5CAB3B00D3CF75 /* CCTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCTableView.h; sourceTree = "<group>"; };
-		763A71EE1B5CAB3B00D3CF75 /* GridView.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GridView.cpp; sourceTree = "<group>"; };
-		763A71EF1B5CAB3B00D3CF75 /* GridView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GridView.h; sourceTree = "<group>"; };
 		763C33DF1B556A4900A0DE3B /* UniqueRandom.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UniqueRandom.h; sourceTree = "<group>"; };
 		763F86071B52DABB004C5411 /* Expression.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Expression.hpp; sourceTree = "<group>"; };
 		763F86081B52DABB004C5411 /* Expression.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Expression.h; sourceTree = "<group>"; };
@@ -713,24 +706,6 @@
 			path = KVDB;
 			sourceTree = "<group>";
 		};
-		763A71EA1B5CAB2F00D3CF75 /* ThirdParty */ = {
-			isa = PBXGroup;
-			children = (
-				763A71EB1B5CAB3B00D3CF75 /* cocos2d-x-GridView */,
-			);
-			path = ThirdParty;
-			sourceTree = "<group>";
-		};
-		763A71EB1B5CAB3B00D3CF75 /* cocos2d-x-GridView */ = {
-			isa = PBXGroup;
-			children = (
-				763A71ED1B5CAB3B00D3CF75 /* CCTableView.h */,
-				763A71EE1B5CAB3B00D3CF75 /* GridView.cpp */,
-				763A71EF1B5CAB3B00D3CF75 /* GridView.h */,
-			);
-			path = "cocos2d-x-GridView";
-			sourceTree = "<group>";
-		};
 		7693DF3C1B229ED30068F1CD = {
 			isa = PBXGroup;
 			children = (
@@ -768,7 +743,6 @@
 		7693E0401B22A6E80068F1CD /* src */ = {
 			isa = PBXGroup;
 			children = (
-				763A71EA1B5CAB2F00D3CF75 /* ThirdParty */,
 				7693E0411B22A6E80068F1CD /* ActionGroup.cpp */,
 				7693E0421B22A6E80068F1CD /* ActionGroup.h */,
 				7693E0431B22A6E80068F1CD /* ActionQueue.cpp */,
@@ -1236,7 +1210,6 @@
 				7693E2261B22A6EB0068F1CD /* zone.h in Headers */,
 				7693E1641B22A6E90068F1CD /* PlaySoundActionFactory.h in Headers */,
 				7693E1F21B22A6EA0068F1CD /* type.hpp in Headers */,
-				763A71F81B5CAB3B00D3CF75 /* CCTableView.h in Headers */,
 				7693E18D1B22A6E90068F1CD /* assertions.h in Headers */,
 				7693E1FD1B22A6EA0068F1CD /* zone.hpp in Headers */,
 				7693E1521B22A6E90068F1CD /* AnimateActionFactory.h in Headers */,
@@ -1323,7 +1296,6 @@
 				7693E1581B22A6E90068F1CD /* DoLayoutActionFactory.h in Headers */,
 				76B602131B3C5DF500B79B6E /* ContextValue.h in Headers */,
 				7693E1781B22A6E90068F1CD /* DialogLayer.h in Headers */,
-				763A71FB1B5CAB3B00D3CF75 /* GridView.h in Headers */,
 				7693E1961B22A6E90068F1CD /* writer.h in Headers */,
 				7607A9C01B4BE68200F594EE /* PP_NARG.hpp in Headers */,
 				7693E18B1B22A6E90068F1CD /* hash_map.hpp in Headers */,
@@ -1480,7 +1452,6 @@
 				7645157B1B3CF7B400CD5E1E /* FContext.cpp in Sources */,
 				7693E1C41B22A6E90068F1CD /* NodeSizingLayouts.cpp in Sources */,
 				7693E1C01B22A6E90068F1CD /* LoadingBarLayouts.cpp in Sources */,
-				763A71F91B5CAB3B00D3CF75 /* GridView.cpp in Sources */,
 				76B602111B3C5DF500B79B6E /* ContextValue.cpp in Sources */,
 				7693E1531B22A6E90068F1CD /* DelayActionFactory.cpp in Sources */,
 				76372D8E1B4B822F009E66B8 /* IOHelper.cpp in Sources */,
@@ -1555,7 +1526,6 @@
 				7645157C1B3CF7B400CD5E1E /* FContext.cpp in Sources */,
 				7693E1D21B22A6E90068F1CD /* Lock.cpp in Sources */,
 				7693E1A41B22A6E90068F1CD /* json_writer.cpp in Sources */,
-				763A71FA1B5CAB3B00D3CF75 /* GridView.cpp in Sources */,
 				76B602121B3C5DF500B79B6E /* ContextValue.cpp in Sources */,
 				7693E24F1B22A6EC0068F1CD /* Utils.cpp in Sources */,
 				76372D8F1B4B822F009E66B8 /* IOHelper.cpp in Sources */,

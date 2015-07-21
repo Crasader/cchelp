@@ -23,6 +23,8 @@ namespace ccHelp
 	class Utils
 	{
 	public:
+        static void swallowTouch(Node *n);
+        
 		static void setNodeAnchorWithoutChangePosition
 			(Node *target, CREF(Vec2) newAnchor);
 		static Node* warpSpriteBySize(string sprName,  CREF(Size) size, int tag = 0);

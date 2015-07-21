@@ -51,6 +51,17 @@ std::string strSerialize(const TYPE &v); \
 template<> \
 bool strDeserialize(const std::string &s, TYPE &v); \
 }\
+} \
+template<> inline Json::Value Json::type::serialize(const TYPE &v) \
+{ \
+    return Json::Value(strSerialize(v)); \
+} \
+template<> inline bool Json::type::deserialize(const Json::Value& j, TYPE &v) \
+{ \
+    if (!j.isString()) \
+        return false; \
+    \
+    return strDeserialize(j.asString(), v); \
 }
 
 #define ENUM_TO_STRING(TYPE) \
