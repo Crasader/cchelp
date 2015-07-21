@@ -86,6 +86,11 @@ namespace Json {
         inline bool deserialize(const Json::Value &j, hmap<K, V> &v);
         template <typename K, typename V>
         inline Json::Value serialize(hmap<K, V> const &v);
+        
+        template <typename K, typename V, typename H>
+        inline bool deserialize(const Json::Value &j, hmap<K, V, H> &v);
+        template <typename K, typename V, typename H>
+        inline Json::Value serialize(hmap<K, V, H> const &v);
 
 		template <typename V>
 		inline bool deserialize(const Json::Value &j, typename std::vector<V> &v);
