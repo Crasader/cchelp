@@ -223,14 +223,17 @@ namespace ccHelp { namespace expr {
                         auto topToken = stOps.back();
                         auto &topOp = getOperator(topToken.value);
                         
-                        if (op.priority > topOp.priority)
+                        if ((topOp.priority > op.priority) ||
+                            (op.isRightAssocciative && topOp.priority == op.priority))
+                        {
+                            
+                            stOps.pop_back();
+                            postfix.push_back(topToken);
+                        }
+                        else
+                        {
                             break;
-                        
-                        if (op.isRightAssocciative || op.priority != topOp.priority)
-                            break;
-                        
-                        stOps.pop_back();
-                        postfix.push_back(topToken);
+                        }
                     }
                     stOps.push_back(token);
                 }
