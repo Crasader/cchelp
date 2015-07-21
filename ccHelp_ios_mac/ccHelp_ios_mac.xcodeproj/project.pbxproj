@@ -20,6 +20,9 @@
 		760B8FB41B4EE495003C4FF9 /* Parser.h in Headers */ = {isa = PBXBuildFile; fileRef = 760B8FB11B4EE495003C4FF9 /* Parser.h */; };
 		760B8FB61B4EE5DF003C4FF9 /* TokenType.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 760B8FB51B4EE5DF003C4FF9 /* TokenType.cpp */; };
 		760B8FB71B4EE5DF003C4FF9 /* TokenType.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 760B8FB51B4EE5DF003C4FF9 /* TokenType.cpp */; };
+		7627E1191B5E370000ED7B66 /* InvokeLater.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7627E1171B5E370000ED7B66 /* InvokeLater.cpp */; };
+		7627E11A1B5E370000ED7B66 /* InvokeLater.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7627E1171B5E370000ED7B66 /* InvokeLater.cpp */; };
+		7627E11B1B5E370000ED7B66 /* InvokeLater.h in Headers */ = {isa = PBXBuildFile; fileRef = 7627E1181B5E370000ED7B66 /* InvokeLater.h */; };
 		76372D8E1B4B822F009E66B8 /* IOHelper.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 76372D8A1B4B822F009E66B8 /* IOHelper.cpp */; };
 		76372D8F1B4B822F009E66B8 /* IOHelper.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 76372D8A1B4B822F009E66B8 /* IOHelper.cpp */; };
 		76372D901B4B822F009E66B8 /* IOHelper.h in Headers */ = {isa = PBXBuildFile; fileRef = 76372D8B1B4B822F009E66B8 /* IOHelper.h */; };
@@ -354,6 +357,8 @@
 		760B8FB01B4EE495003C4FF9 /* Parser.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Parser.cpp; sourceTree = "<group>"; };
 		760B8FB11B4EE495003C4FF9 /* Parser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Parser.h; sourceTree = "<group>"; };
 		760B8FB51B4EE5DF003C4FF9 /* TokenType.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TokenType.cpp; sourceTree = "<group>"; };
+		7627E1171B5E370000ED7B66 /* InvokeLater.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = InvokeLater.cpp; sourceTree = "<group>"; };
+		7627E1181B5E370000ED7B66 /* InvokeLater.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InvokeLater.h; sourceTree = "<group>"; };
 		762B24131B4E1782001290EE /* msgpack_ext.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = msgpack_ext.h; sourceTree = "<group>"; };
 		762B24141B4E1782001290EE /* msgpack_hmap.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = msgpack_hmap.h; sourceTree = "<group>"; };
 		762B24151B4E1782001290EE /* msgpack_hset.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = msgpack_hset.h; sourceTree = "<group>"; };
@@ -806,6 +811,8 @@
 				7693E13C1B22A6E80068F1CD /* WidgetUtils.cpp */,
 				7693E13D1B22A6E80068F1CD /* WidgetUtils.h */,
 				763C33DF1B556A4900A0DE3B /* UniqueRandom.h */,
+				7627E1171B5E370000ED7B66 /* InvokeLater.cpp */,
+				7627E1181B5E370000ED7B66 /* InvokeLater.h */,
 			);
 			name = src;
 			path = ../src;
@@ -1283,6 +1290,7 @@
 				7693E1A51B22A6E90068F1CD /* string.hpp in Headers */,
 				7693E21E1B22A6EB0068F1CD /* unpack.hpp in Headers */,
 				7693E1611B22A6E90068F1CD /* MoveByActionFactory.h in Headers */,
+				7627E11B1B5E370000ED7B66 /* InvokeLater.h in Headers */,
 				7693E1FF1B22A6EA0068F1CD /* msgpack.hpp in Headers */,
 				7693E2181B22A6EB0068F1CD /* unordered_map.hpp in Headers */,
 				7693E2131B22A6EB0068F1CD /* nil.hpp in Headers */,
@@ -1426,6 +1434,7 @@
 				7693E1561B22A6E90068F1CD /* DoLayoutActionFactory.cpp in Sources */,
 				7693E1BD1B22A6E90068F1CD /* LayoutRegistration.cpp in Sources */,
 				7693E1501B22A6E90068F1CD /* AnimateActionFactory.cpp in Sources */,
+				7627E1191B5E370000ED7B66 /* InvokeLater.cpp in Sources */,
 				7693E15F1B22A6E90068F1CD /* MoveByActionFactory.cpp in Sources */,
 				7693E22E1B22A6EB0068F1CD /* unpack.cpp in Sources */,
 				7693E16B1B22A6E90068F1CD /* SpawnAction.cpp in Sources */,
@@ -1500,6 +1509,7 @@
 				7693E13F1B22A6E80068F1CD /* ActionGroup.cpp in Sources */,
 				7693E22B1B22A6EB0068F1CD /* object.cpp in Sources */,
 				7693E2481B22A6EC0068F1CD /* Shortcut.cpp in Sources */,
+				7627E11A1B5E370000ED7B66 /* InvokeLater.cpp in Sources */,
 				7693E1CF1B22A6E90068F1CD /* Localize.cpp in Sources */,
 				7693E1C11B22A6E90068F1CD /* LoadingBarLayouts.cpp in Sources */,
 				7693E22D1B22A6EB0068F1CD /* objectc.cpp in Sources */,

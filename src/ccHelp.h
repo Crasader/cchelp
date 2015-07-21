@@ -44,4 +44,6 @@
 #include "Utils.h"
 #include "Actions/ActionHelper.h"
 
+#include "InvokeLater.h"
+
 #include "MathExpression/MathExpression.h"
