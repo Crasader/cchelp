@@ -42,6 +42,17 @@ namespace ccHelp {
         }
     }
     
+    void WidgetUtils::setLoadingBarPercentLimit(cocos2d::ui::LoadingBar *bar, float percent, float limit)
+    {
+        assert(limit > 0);
+        float delta = percent - bar->getPercent();
+        if (delta != 0.f)
+        {
+            delta = (delta / fabsf(delta)) * fmin(fabsf(delta), limit);
+            bar->setPercent(bar->getPercent() + delta);
+        }
+    }
+    
     Label* WidgetUtils::loadButtonTTFTitle(ui::Button *btn, const string &ttf, float fntSize)
     {
         struct _Button : public ui::Button
