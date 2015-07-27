@@ -349,8 +349,18 @@ namespace ccHelp
         return target->convertToNodeSpace(n->getParent()->convertToWorldSpace(n->getPosition()));
     }
     
-    long Utils::time()
+    ulong Utils::time()
     {
         return std::chrono::duration_cast<std::chrono::milliseconds>(std::chrono::system_clock::now().time_since_epoch()).count();
+    }
+    
+    unsigned long long Utils::timeInMicros()
+    {
+        return std::chrono::duration_cast<std::chrono::microseconds>(std::chrono::system_clock::now().time_since_epoch()).count();
+    }
+    
+    unsigned long long Utils::timeInNanos()
+    {
+        return std::chrono::duration_cast<std::chrono::nanoseconds>(std::chrono::system_clock::now().time_since_epoch()).count();
     }
 }

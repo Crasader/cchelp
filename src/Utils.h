@@ -91,7 +91,9 @@ namespace ccHelp
         
         static string enUSFormat(long d);
         
-        static long time();
+        static ulong time();
+        static unsigned long long timeInMicros();
+        static unsigned long long timeInNanos();
 
 	private:
 		static Vec2 anchorInPoint(const Node *node);

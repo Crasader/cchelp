@@ -7,6 +7,7 @@
 //
 
 #include "ContextValue.h"
+#include <sstream>
 
 namespace ccHelp
 {
@@ -741,10 +742,56 @@ namespace ccHelp
     bool ContextValue::asString(std::string &v) const
     {
         v.clear();
-        if (type == STRING)
-        {
-            v = vString;
-            return true;
+        std::stringstream ss;
+        switch (type) {
+            case STRING:
+                v = vString;
+                return true;
+            case _BOOL:
+                v = (vBool)?"true":"false";
+                return true;
+            case BYTE:
+                ss<<((short)vByte);
+                return true;
+            case UBYTE:
+                ss<<((ushort)vUByte);
+                v = ss.str();
+                return true;
+            case SHORT:
+                ss<<vShort;
+                v = ss.str();
+                return true;
+            case USHORT:
+                ss<<vUShort;
+                v = ss.str();
+                return true;
+            case INT:
+                ss<<vInt;
+                v = ss.str();
+                return true;
+            case UINT:
+                ss<<vUInt;
+                v = ss.str();
+                return true;
+            case LONG:
+                ss<<vLong;
+                v = ss.str();
+                return true;
+            case ULONG:
+                ss<<vULong;
+                v = ss.str();
+                return true;
+            case FLOAT:
+                ss<<vFloat;
+                v = ss.str();
+                return true;
+            case DOUBLE:
+                ss<<vDouble;
+                v = ss.str();
+                return true;
+                
+            default:
+                return false;
         }
         
         return false;
