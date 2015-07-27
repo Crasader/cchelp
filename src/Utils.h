@@ -90,6 +90,7 @@ namespace ccHelp
 		static string trim(const string &s);
         
         static string enUSFormat(long d);
+        static string collapse(double n);
         
         static ulong time();
         static unsigned long long timeInMicros();

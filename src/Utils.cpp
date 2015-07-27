@@ -329,6 +329,62 @@ namespace ccHelp
         
         return str;
     }
+    
+    string get_suffix(short nn3)
+    {
+        switch (nn3) {
+            case 0:
+                return "";
+            case 1:
+                return "K";
+            case 2:
+                return "M";
+            case 3:
+                return "B";
+            case 4:
+                return "T";
+            default:
+                break;
+        }
+        
+        nn3 -= 5;
+        
+        ushort nrep = 2 + (nn3 / ('z' - 'a'));
+        char c = 'a' + (nn3 % ('z' - 'a'));
+        
+        stringstream ss;
+        while (nrep > 0) {
+            ss<<c;
+            --nrep;
+        }
+        
+        return ss.str();
+    }
+    
+    string Utils::collapse(double n)
+    {
+        static uint DIV = 100000;
+        static double MAGIC_NUM = log(10) / DIV;
+        
+        stringstream ss;
+        if (n < 0)
+        {
+            ss<<'-';
+            n = abs(n);
+        }
+        
+        double nc = log(n);
+        nc /= MAGIC_NUM;
+        uint nn = static_cast<uint>(round(nc));
+        nn /= DIV;
+        ushort nn3 = nn / 3;
+        
+        n /= pow(10, 3 * nn3);
+        
+        ss<<std::setiosflags(ios::fixed)<<std::setprecision((nn3>0?2:0))<<n<<get_suffix(nn3);
+        
+        return ss.str();
+    }
 
 	bool Utils::contains(const cocos2d::Node *node, CREF(Vec2) p)
 	{
