@@ -2,31 +2,41 @@
 #include "Def.h"
 
 namespace ccHelp {
-    class UniqueRandom
+    class UniqueRandomFull
     {
     private:
         uint index;
         uint theOffset;
         
-        static inline uint permute(uint x)
-        {
-            static const uint prime = 4294967291u;
-            if (x >= prime)
-                return x;  // The 5 integers out of range are mapped to themselves.
-            uint residue = ((unsigned long long) x * x) % prime;
-            return (x <= prime / 2) ? residue : prime - residue;
-        }
+        static inline uint permute(uint x);
         
     public:
-        inline UniqueRandom(uint _index, uint _seed)
-        {
-            index = _index;
-            theOffset = permute(permute(_seed) + 0x66AD6D7);
-        }
+        inline UniqueRandomFull(uint _index, uint _seed);
+        inline uint next();
+    };
+    
+    class UniqueRandom
+    {
+    private:
+        static uint INVALID;
+    private:
+        uint upperBound;
+        uint prime;
         
-        inline uint next()
-        {
-            return permute((permute(index++) + theOffset) ^ 0x4DF9B9E);
-        }
+        uint index;
+        uint theOffset;
+        
+        void init(uint _bound, uint _prime, uint _index, uint _seed);
+        uint permute(uint x);
+        
+        static uint findPrime(uint subBound);
+        static bool isPrime(uint n);
+        
+    public:
+        UniqueRandom(uint bound);
+        UniqueRandom(uint bound, uint _index, uint _seed);
+        UniqueRandom(uint bound, uint _prime, uint _index, uint _seed);
+        
+        uint next();
     };
 }

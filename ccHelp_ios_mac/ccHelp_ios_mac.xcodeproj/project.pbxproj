@@ -20,6 +20,8 @@
 		760B8FB41B4EE495003C4FF9 /* Parser.h in Headers */ = {isa = PBXBuildFile; fileRef = 760B8FB11B4EE495003C4FF9 /* Parser.h */; };
 		760B8FB61B4EE5DF003C4FF9 /* TokenType.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 760B8FB51B4EE5DF003C4FF9 /* TokenType.cpp */; };
 		760B8FB71B4EE5DF003C4FF9 /* TokenType.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 760B8FB51B4EE5DF003C4FF9 /* TokenType.cpp */; };
+		76233DDB1B6794A1007915FA /* UniqueRandom.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 76233DDA1B6794A1007915FA /* UniqueRandom.cpp */; };
+		76233DDC1B6794A1007915FA /* UniqueRandom.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 76233DDA1B6794A1007915FA /* UniqueRandom.cpp */; };
 		7627E1191B5E370000ED7B66 /* InvokeLater.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7627E1171B5E370000ED7B66 /* InvokeLater.cpp */; };
 		7627E11A1B5E370000ED7B66 /* InvokeLater.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7627E1171B5E370000ED7B66 /* InvokeLater.cpp */; };
 		7627E11B1B5E370000ED7B66 /* InvokeLater.h in Headers */ = {isa = PBXBuildFile; fileRef = 7627E1181B5E370000ED7B66 /* InvokeLater.h */; };
@@ -357,6 +359,7 @@
 		760B8FB01B4EE495003C4FF9 /* Parser.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Parser.cpp; sourceTree = "<group>"; };
 		760B8FB11B4EE495003C4FF9 /* Parser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Parser.h; sourceTree = "<group>"; };
 		760B8FB51B4EE5DF003C4FF9 /* TokenType.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TokenType.cpp; sourceTree = "<group>"; };
+		76233DDA1B6794A1007915FA /* UniqueRandom.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = UniqueRandom.cpp; sourceTree = "<group>"; };
 		7627E1171B5E370000ED7B66 /* InvokeLater.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = InvokeLater.cpp; sourceTree = "<group>"; };
 		7627E1181B5E370000ED7B66 /* InvokeLater.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InvokeLater.h; sourceTree = "<group>"; };
 		762B24131B4E1782001290EE /* msgpack_ext.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = msgpack_ext.h; sourceTree = "<group>"; };
@@ -811,6 +814,7 @@
 				7693E13C1B22A6E80068F1CD /* WidgetUtils.cpp */,
 				7693E13D1B22A6E80068F1CD /* WidgetUtils.h */,
 				763C33DF1B556A4900A0DE3B /* UniqueRandom.h */,
+				76233DDA1B6794A1007915FA /* UniqueRandom.cpp */,
 				7627E1171B5E370000ED7B66 /* InvokeLater.cpp */,
 				7627E1181B5E370000ED7B66 /* InvokeLater.h */,
 			);
@@ -1452,6 +1456,7 @@
 				7693E1C21B22A6E90068F1CD /* NodePositioningLayouts.cpp in Sources */,
 				7693E15C1B22A6E90068F1CD /* InstantActionFactory.cpp in Sources */,
 				7693E14A1B22A6E90068F1CD /* ActionFactoryRegistration.cpp in Sources */,
+				76233DDB1B6794A1007915FA /* UniqueRandom.cpp in Sources */,
 				7693E1D51B22A6E90068F1CD /* MonsterDebuggerLayer.cpp in Sources */,
 				7693E1AF1B22A6E90068F1CD /* GroupLayout.cpp in Sources */,
 				7693E24A1B22A6EC0068F1CD /* Sound.cpp in Sources */,
@@ -1527,6 +1532,7 @@
 				7693E1B71B22A6E90068F1CD /* LayerColorLayouts.cpp in Sources */,
 				7693E1AB1B22A6E90068F1CD /* AddChildLayouts.cpp in Sources */,
 				7693E1571B22A6E90068F1CD /* DoLayoutActionFactory.cpp in Sources */,
+				76233DDC1B6794A1007915FA /* UniqueRandom.cpp in Sources */,
 				7693E1511B22A6E90068F1CD /* AnimateActionFactory.cpp in Sources */,
 				7693E1C91B22A6E90068F1CD /* WidgetLayouts.cpp in Sources */,
 				7693E1AD1B22A6E90068F1CD /* CommonLayouts.cpp in Sources */,
