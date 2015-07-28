@@ -43,8 +43,7 @@ namespace ccHelp {
     
     uint UniqueRandom::permute(uint x)
     {
-        if (x >= prime)
-            return INVALID; // you are random too much, return invalid number
+        assert(x < prime);
         
         uint residue = ((unsigned long long) x * x) % prime;
         return ((x<<1) <= prime) ? residue : prime - residue;
@@ -67,8 +66,11 @@ namespace ccHelp {
     
     uint UniqueRandom::next()
     {
-        uint r = permute(index++) ^ theOffset;
-        return (r < upperBound)?r:((r == (INVALID ^ theOffset))?INVALID:next());
+        if (index > prime)
+            return INVALID;
+        
+        uint r = permute((permute(index++) + theOffset) % prime);
+        return (r < upperBound)?r:next();
     }
     
     uint UniqueRandom::findPrime(uint subBound)
