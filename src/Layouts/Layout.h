@@ -13,7 +13,7 @@
 
 namespace ccHelp {
     
-    class Layout
+    class Layout : public virtual obj
     {
     public:
         typedef Json::Value Parameter;
