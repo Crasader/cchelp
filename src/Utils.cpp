@@ -41,6 +41,21 @@ namespace ccHelp
         Director::getInstance()->getEventDispatcher()->addEventListenerWithSceneGraphPriority(touchListener, n);
     }
     
+    void Utils::swallowTouchBB(cocos2d::Node *n)
+    {
+        auto *touchListener = EventListenerTouchOneByOne::create();
+        touchListener->setSwallowTouches(true);
+        touchListener->onTouchBegan = [=](Touch *t, cocos2d::Event *e)
+        {
+            if (!n->getParent())
+                return false;
+            
+            auto pos = n->getParent()->convertToNodeSpace(t->getLocation());
+            return n->getBoundingBox().containsPoint(pos);
+        };
+        Director::getInstance()->getEventDispatcher()->addEventListenerWithSceneGraphPriority(touchListener, n);
+    }
+    
 	void Utils::setNodeAnchorWithoutChangePosition(Node *target, CREF(Vec2) newAnchor)
 	{
 		const Node *parent = target->getParent();
