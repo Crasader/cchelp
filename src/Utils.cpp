@@ -97,6 +97,10 @@ namespace ccHelp
 
 	Scene* Utils::createScene(Node *scn)
 	{
+        if (scn->getName().empty())
+        {
+            scn->setName("main");
+        }
 		Scene *scene = Scene::create();
 		scene->addChild(scn);
 

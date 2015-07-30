@@ -47,3 +47,4 @@
 #include "InvokeLater.h"
 
 #include "MathExpression/MathExpression.h"
+#include "ApplicationListener.h"
