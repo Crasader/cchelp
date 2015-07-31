@@ -48,3 +48,5 @@
 
 #include "MathExpression/MathExpression.h"
 #include "ApplicationListener.h"
+
+#include "Macro/CCH_CREATE_FUNC.hpp"

@@ -46,6 +46,9 @@
 		764576E41B69CD9E004B4728 /* ApplicationListener.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 764576E21B69CD9E004B4728 /* ApplicationListener.cpp */; };
 		764576E51B69CD9E004B4728 /* ApplicationListener.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 764576E21B69CD9E004B4728 /* ApplicationListener.cpp */; };
 		764576E61B69CD9E004B4728 /* ApplicationListener.h in Headers */ = {isa = PBXBuildFile; fileRef = 764576E31B69CD9E004B4728 /* ApplicationListener.h */; };
+		765B7E2D1B6B7F7000A26E33 /* CCH_CREATE_FUNC.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 765B7E2C1B6B7F7000A26E33 /* CCH_CREATE_FUNC.hpp */; };
+		765B7E2F1B6B869500A26E33 /* LAST_ARG.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 765B7E2E1B6B869500A26E33 /* LAST_ARG.hpp */; };
+		765B7E331B6B889C00A26E33 /* CUT_LAST_ARG.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 765B7E321B6B889C00A26E33 /* CUT_LAST_ARG.hpp */; };
 		7679C8481B4C40A200081830 /* CCH_FOR2.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 7679C8471B4C40A200081830 /* CCH_FOR2.hpp */; };
 		7679C84A1B4C464000081830 /* CCH_EVEN_ODD.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 7679C8491B4C464000081830 /* CCH_EVEN_ODD.hpp */; };
 		7693E0321B22A6100068F1CD /* libcocos2d Mac.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7693E02F1B22A5EB0068F1CD /* libcocos2d Mac.a */; };
@@ -384,6 +387,9 @@
 		764576E21B69CD9E004B4728 /* ApplicationListener.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ApplicationListener.cpp; sourceTree = "<group>"; };
 		764576E31B69CD9E004B4728 /* ApplicationListener.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApplicationListener.h; sourceTree = "<group>"; };
 		764D64E81B589CE400DDE6CB /* Layoutable.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Layoutable.h; sourceTree = "<group>"; };
+		765B7E2C1B6B7F7000A26E33 /* CCH_CREATE_FUNC.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = CCH_CREATE_FUNC.hpp; sourceTree = "<group>"; };
+		765B7E2E1B6B869500A26E33 /* LAST_ARG.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = LAST_ARG.hpp; sourceTree = "<group>"; };
+		765B7E321B6B889C00A26E33 /* CUT_LAST_ARG.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = CUT_LAST_ARG.hpp; sourceTree = "<group>"; };
 		7679C8471B4C40A200081830 /* CCH_FOR2.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = CCH_FOR2.hpp; sourceTree = "<group>"; };
 		7679C8491B4C464000081830 /* CCH_EVEN_ODD.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = CCH_EVEN_ODD.hpp; sourceTree = "<group>"; };
 		7693DF451B229ED30068F1CD /* ccHelp_Mac.a */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = ccHelp_Mac.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -678,6 +684,9 @@
 				7607A9C31B4BE96300F594EE /* CCH_FOR.hpp */,
 				7679C8471B4C40A200081830 /* CCH_FOR2.hpp */,
 				7679C8491B4C464000081830 /* CCH_EVEN_ODD.hpp */,
+				765B7E2C1B6B7F7000A26E33 /* CCH_CREATE_FUNC.hpp */,
+				765B7E2E1B6B869500A26E33 /* LAST_ARG.hpp */,
+				765B7E321B6B889C00A26E33 /* CUT_LAST_ARG.hpp */,
 			);
 			path = Macro;
 			sourceTree = "<group>";
@@ -1236,6 +1245,7 @@
 				7693E1D01B22A6E90068F1CD /* Localize.h in Headers */,
 				7693E1B81B22A6E90068F1CD /* Layout.h in Headers */,
 				7693E1DA1B22A6E90068F1CD /* pack.h in Headers */,
+				765B7E2D1B6B7F7000A26E33 /* CCH_CREATE_FUNC.hpp in Headers */,
 				7693E1971B22A6E90068F1CD /* jsonserialization.h in Headers */,
 				764515781B3CE60800CD5E1E /* Context.hpp in Headers */,
 				7693E15E1B22A6E90068F1CD /* InstantActionFactory.h in Headers */,
@@ -1254,6 +1264,7 @@
 				7693E1FE1B22A6EA0068F1CD /* msgpack.h in Headers */,
 				7645157D1B3CF7B400CD5E1E /* FContext.h in Headers */,
 				7693E1931B22A6E90068F1CD /* reader.h in Headers */,
+				765B7E331B6B889C00A26E33 /* CUT_LAST_ARG.hpp in Headers */,
 				7693E1DE1B22A6E90068F1CD /* sbuffer.h in Headers */,
 				7693E1F91B22A6EA0068F1CD /* vrefbuffer.hpp in Headers */,
 				760B8FB41B4EE495003C4FF9 /* Parser.h in Headers */,
@@ -1268,6 +1279,7 @@
 				7693E20E1B22A6EA0068F1CD /* fixint.hpp in Headers */,
 				7693E2411B22A6EC0068F1CD /* ParallaxCamera.h in Headers */,
 				7693E1751B22A6E90068F1CD /* Def.h in Headers */,
+				765B7E2F1B6B869500A26E33 /* LAST_ARG.hpp in Headers */,
 				7693E1401B22A6E80068F1CD /* ActionGroup.h in Headers */,
 				7693E17B1B22A6E90068F1CD /* DrawNodeHelper.h in Headers */,
 				7693E24D1B22A6EC0068F1CD /* STLHelper.h in Headers */,

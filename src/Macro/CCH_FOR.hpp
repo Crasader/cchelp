@@ -4,6 +4,7 @@
 
 #define _CAT(a, b) a ## b
 #define CAT(a, b) _CAT(a, b)
+#define CCH_EXPAND(...) __VA_ARGS__
 
 #define CCH_FOR_0(M, D, ...)
 #define CCH_FOR_1(M, D, _1, ...) M(_1, D, 1)
