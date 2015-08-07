@@ -120,7 +120,6 @@ namespace ccHelp {
         });
         GroupLayout::registerLayout("label-text-v-align", lblTextVAlign);
         
-        // system text h alignment
         auto *lblDimension = new FunctionLayout([](Node *n, const Layout::Parameter &p) {
             Label *lbl = dynamic_cast<Label*>(n);
             if (!lbl)
@@ -144,5 +143,6 @@ namespace ccHelp {
             }
         });
         GroupLayout::registerLayout("label-dimension", lblDimension);
+        
     }
 }
