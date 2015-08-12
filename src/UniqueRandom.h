@@ -19,6 +19,7 @@ namespace ccHelp {
     {
     private:
         static uint INVALID;
+        
     private:
         uint upperBound;
         uint prime;
