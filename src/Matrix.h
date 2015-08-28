@@ -5,7 +5,7 @@
 
 namespace ccHelp
 {
-	template <typename T, T DEFAULT = T()>
+	template <typename T>
 	class Matrix
 	{
 	private:
@@ -22,7 +22,7 @@ namespace ccHelp
             {
                 for (uint c = 0; c < cols; ++c)
                 {
-                    mat[r][c] = DEFAULT;
+                    mat[r][c] = T();
                 }
             }
             
@@ -85,6 +85,46 @@ namespace ccHelp
         {
             CCASSERT(row < rows && col < cols, "Out of range");
             mat[row][col] = val;
+        }
+        
+        inline void foreach(std::function<void(const Index2D&, T&)> func)
+        {
+            Index2D ite;
+            for (ite.row = 0; ite.row < rows; ++ite.row)
+            {
+                for (ite.col = 0; ite.col < cols; ++ite.col)
+                {
+                    func(ite, this->get(ite.row, ite.col));
+                }
+            }
+        }
+        
+        inline void foreach(std::function<void(const Index2D&, const T&)> func) const
+        {
+            Index2D ite;
+            for (ite.row = 0; ite.row < rows; ++ite.row)
+            {
+                for (ite.col = 0; ite.col < cols; ++ite.col)
+                {
+                    func(ite, this->get(ite.row, ite.col));
+                }
+            }
+        }
+        
+        inline void foreach(std::function<void(T&)> func)
+        {
+            this->foreach([&func, this](const Index2D &idx, T &val)
+                          {
+                              func(val);
+                          });
+        }
+        
+        inline void foreach(std::function<void(const T&)> func) const
+        {
+            this->foreach([&func, this](const Index2D &idx, const T &val)
+                          {
+                              func(val);
+                          });
         }
 
 		inline uint nRows() const {return rows;}
