@@ -426,7 +426,7 @@ namespace ccHelp
     
     ulong Utils::time()
     {
-        return std::chrono::duration_cast<std::chrono::milliseconds>(std::chrono::system_clock::now().time_since_epoch()).count();
+        return (ulong) std::chrono::duration_cast<std::chrono::milliseconds>(std::chrono::system_clock::now().time_since_epoch()).count();
     }
     
     unsigned long long Utils::timeInMicros()
@@ -437,5 +437,47 @@ namespace ccHelp
     unsigned long long Utils::timeInNanos()
     {
         return std::chrono::duration_cast<std::chrono::nanoseconds>(std::chrono::system_clock::now().time_since_epoch()).count();
+    }
+    
+    Label* Utils::showToast(const string &msg,
+                            const string &ttf,
+                            float fontSize,
+                            const cocos2d::Color4B &textColor,
+                            cocos2d::Node *parent,
+                            std::function<void(Label *)> edit)
+    {
+        if (!parent)
+        {
+            parent = Director::getInstance()->getRunningScene();
+            if (!parent)
+                return nullptr;
+        }
+        
+        Label *lbl = Label::createWithTTF(msg, ttf, fontSize);
+        if (!lbl)
+            return nullptr;
+        
+        lbl->setTextColor(textColor);
+        lbl->setAlignment(TextHAlignment::CENTER, TextVAlignment::CENTER);
+        lbl->setAnchorPoint(Vec2::ANCHOR_MIDDLE);
+        auto parentSize = parent->getContentSize();
+        lbl->setPosition(parentSize.width * 0.5, parentSize.height * 0.2);
+        
+        if (edit)
+        {
+            edit(lbl);
+        }
+        
+        lbl->setOpacity(0);
+        auto *fadeIn = FadeIn::create(0.15);
+        auto *moveUp = MoveBy::create(1.35, Vec2(0, parentSize.height * 0.25));
+        auto *wait = DelayTime::create(0.35);
+        auto *fadeOut = FadeOut::create(1.f);
+        auto *combine = Spawn::create(moveUp, Sequence::create(wait, fadeOut, nullptr), nullptr);
+        auto *seq = Sequence::create(fadeIn, combine, RemoveSelf::create(), nullptr);
+        lbl->runAction(seq);
+        
+        parent->addChild(lbl);
+        return lbl;
     }
 }
