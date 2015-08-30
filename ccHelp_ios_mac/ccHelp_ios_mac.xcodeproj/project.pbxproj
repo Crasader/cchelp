@@ -25,6 +25,7 @@
 		7627E1191B5E370000ED7B66 /* InvokeLater.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7627E1171B5E370000ED7B66 /* InvokeLater.cpp */; };
 		7627E11A1B5E370000ED7B66 /* InvokeLater.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7627E1171B5E370000ED7B66 /* InvokeLater.cpp */; };
 		7627E11B1B5E370000ED7B66 /* InvokeLater.h in Headers */ = {isa = PBXBuildFile; fileRef = 7627E1181B5E370000ED7B66 /* InvokeLater.h */; };
+		7634C8451B90423200E097E6 /* Matrix.h in Headers */ = {isa = PBXBuildFile; fileRef = 7634C8441B90423200E097E6 /* Matrix.h */; };
 		76372D8E1B4B822F009E66B8 /* IOHelper.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 76372D8A1B4B822F009E66B8 /* IOHelper.cpp */; };
 		76372D8F1B4B822F009E66B8 /* IOHelper.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 76372D8A1B4B822F009E66B8 /* IOHelper.cpp */; };
 		76372D901B4B822F009E66B8 /* IOHelper.h in Headers */ = {isa = PBXBuildFile; fileRef = 76372D8B1B4B822F009E66B8 /* IOHelper.h */; };
@@ -371,6 +372,7 @@
 		762B24131B4E1782001290EE /* msgpack_ext.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = msgpack_ext.h; sourceTree = "<group>"; };
 		762B24141B4E1782001290EE /* msgpack_hmap.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = msgpack_hmap.h; sourceTree = "<group>"; };
 		762B24151B4E1782001290EE /* msgpack_hset.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = msgpack_hset.h; sourceTree = "<group>"; };
+		7634C8441B90423200E097E6 /* Matrix.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Matrix.h; sourceTree = "<group>"; };
 		76372D8A1B4B822F009E66B8 /* IOHelper.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = IOHelper.cpp; sourceTree = "<group>"; };
 		76372D8B1B4B822F009E66B8 /* IOHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IOHelper.h; sourceTree = "<group>"; };
 		76372D8C1B4B822F009E66B8 /* KVDB.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = KVDB.cpp; sourceTree = "<group>"; };
@@ -776,6 +778,7 @@
 				7693E0621B22A6E80068F1CD /* AnimationManager.cpp */,
 				7693E0631B22A6E80068F1CD /* AnimationManager.h */,
 				7693E0641B22A6E80068F1CD /* Array2D.h */,
+				7634C8441B90423200E097E6 /* Matrix.h */,
 				7693E0651B22A6E80068F1CD /* ccHelp.h */,
 				76B6020E1B3C5DE700B79B6E /* Context */,
 				7693E0661B22A6E80068F1CD /* Def.cpp */,
@@ -1190,6 +1193,7 @@
 				7693E1921B22A6E90068F1CD /* json.h in Headers */,
 				7693E1EA1B22A6EA0068F1CD /* pair.hpp in Headers */,
 				7693E1E81B22A6EA0068F1CD /* map.hpp in Headers */,
+				7634C8451B90423200E097E6 /* Matrix.h in Headers */,
 				7693E2241B22A6EB0068F1CD /* zbuffer.h in Headers */,
 				7693E2091B22A6EA0068F1CD /* sbuffer.hpp in Headers */,
 				7693E2271B22A6EB0068F1CD /* zone.hpp in Headers */,
