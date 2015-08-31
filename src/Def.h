@@ -98,14 +98,24 @@ extern CCH_FUNCTION DO_NOTHING_FUNC;
 #define CCH_NOT_INIT_CREATE(pRet) (autoReleasePointer(pRet))
 
 #define CCH_ALL_COMPARATORS(CLASS, comparor) \
-	inline bool operator==(const CLASS &x) const {return this->##comparor(x) == 0;} \
-	inline bool operator>(const CLASS &x) const {return this->##comparor(x) > 0;} \
-	inline bool operator<(const CLASS &x) const {return this->##comparor(x) < 0;} \
-	inline bool operator!=(const CLASS &x) const {return this->##comparor(x) != 0;} \
-	inline bool operator>=(const CLASS &x) const {return this->##comparor(x) >= 0;} \
-	inline bool operator<=(const CLASS &x) const {return this->##comparor(x) <= 0;} \
-	inline bool equals(const CLASS &x) const {return this->##comparor(x) == 0;} \
-	inline bool equals(const CLASS *x) const {return this->##comparor(*x) == 0;}
+	inline bool operator==(const CLASS &x) const {return this->comparor(x) == 0;} \
+	inline bool operator>(const CLASS &x) const {return this->comparor(x) > 0;} \
+	inline bool operator<(const CLASS &x) const {return this->comparor(x) < 0;} \
+	inline bool operator!=(const CLASS &x) const {return this->comparor(x) != 0;} \
+	inline bool operator>=(const CLASS &x) const {return this->comparor(x) >= 0;} \
+	inline bool operator<=(const CLASS &x) const {return this->comparor(x) <= 0;} \
+	inline bool equals(const CLASS &x) const {return this->comparor(x) == 0;} \
+	inline bool equals(const CLASS *x) const {return this->comparor(*x) == 0;}
+
+#define CCH_ALL_COMPARATORS_NO_INL(CLASS, comparor) \
+bool operator==(const CLASS &x) const {return this->comparor(x) == 0;} \
+bool operator>(const CLASS &x) const {return this->comparor(x) > 0;} \
+bool operator<(const CLASS &x) const {return this->comparor(x) < 0;} \
+bool operator!=(const CLASS &x) const {return this->comparor(x) != 0;} \
+bool operator>=(const CLASS &x) const {return this->comparor(x) >= 0;} \
+bool operator<=(const CLASS &x) const {return this->comparor(x) <= 0;} \
+bool equals(const CLASS &x) const {return this->comparor(x) == 0;} \
+bool equals(const CLASS *x) const {return this->comparor(*x) == 0;}
 
 #define PROPERTY_GET(Type, Name, var) \
 inline const Type get##Name() const {return this->var;} \
