@@ -96,6 +96,13 @@ namespace ccHelp
         static ulong time();
         static unsigned long long timeInMicros();
         static unsigned long long timeInNanos();
+        
+        static Label* showToast(const string &msg,
+                                const string &ttf = "",
+                                float fontSize = 12.f,
+                                const Color4B &textColor = Color4B::WHITE,
+                                Node *parent = nullptr,
+                                std::function<void(Label *)> custom = [](Label*){});
 
 	private:
 		static Vec2 anchorInPoint(const Node *node);
