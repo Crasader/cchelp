@@ -21,12 +21,6 @@
 		7693E03A1B22A6780068F1CD /* ApplicationServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7693E0391B22A6780068F1CD /* ApplicationServices.framework */; };
 		7693E03C1B22A67E0068F1CD /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7693E03B1B22A67E0068F1CD /* OpenGL.framework */; };
 		7693E03E1B22A6850068F1CD /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7693E03D1B22A6850068F1CD /* IOKit.framework */; };
-		7693E13E1B22A6E80068F1CD /* ActionGroup.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7693E0411B22A6E80068F1CD /* ActionGroup.cpp */; };
-		7693E13F1B22A6E80068F1CD /* ActionGroup.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7693E0411B22A6E80068F1CD /* ActionGroup.cpp */; };
-		7693E1401B22A6E80068F1CD /* ActionGroup.h in Headers */ = {isa = PBXBuildFile; fileRef = 7693E0421B22A6E80068F1CD /* ActionGroup.h */; };
-		7693E1411B22A6E80068F1CD /* ActionQueue.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7693E0431B22A6E80068F1CD /* ActionQueue.cpp */; };
-		7693E1421B22A6E80068F1CD /* ActionQueue.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7693E0431B22A6E80068F1CD /* ActionQueue.cpp */; };
-		7693E1431B22A6E80068F1CD /* ActionQueue.h in Headers */ = {isa = PBXBuildFile; fileRef = 7693E0441B22A6E80068F1CD /* ActionQueue.h */; };
 		7693E1441B22A6E80068F1CD /* ActionFactory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7693E0461B22A6E80068F1CD /* ActionFactory.cpp */; };
 		7693E1451B22A6E80068F1CD /* ActionFactory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7693E0461B22A6E80068F1CD /* ActionFactory.cpp */; };
 		7693E1461B22A6E80068F1CD /* ActionFactory.h in Headers */ = {isa = PBXBuildFile; fileRef = 7693E0471B22A6E80068F1CD /* ActionFactory.h */; };
@@ -272,12 +266,6 @@
 		7693E2361B22A6EB0068F1CD /* MultiStateAnimNode.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7693E1241B22A6E80068F1CD /* MultiStateAnimNode.cpp */; };
 		7693E2371B22A6EB0068F1CD /* MultiStateAnimNode.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7693E1241B22A6E80068F1CD /* MultiStateAnimNode.cpp */; };
 		7693E2381B22A6EB0068F1CD /* MultiStateAnimNode.h in Headers */ = {isa = PBXBuildFile; fileRef = 7693E1251B22A6E80068F1CD /* MultiStateAnimNode.h */; };
-		7693E2391B22A6EB0068F1CD /* OperationGroup.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7693E1261B22A6E80068F1CD /* OperationGroup.cpp */; };
-		7693E23A1B22A6EB0068F1CD /* OperationGroup.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7693E1261B22A6E80068F1CD /* OperationGroup.cpp */; };
-		7693E23B1B22A6EB0068F1CD /* OperationGroup.h in Headers */ = {isa = PBXBuildFile; fileRef = 7693E1271B22A6E80068F1CD /* OperationGroup.h */; };
-		7693E23C1B22A6EC0068F1CD /* OperationQueue.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7693E1281B22A6E80068F1CD /* OperationQueue.cpp */; };
-		7693E23D1B22A6EC0068F1CD /* OperationQueue.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7693E1281B22A6E80068F1CD /* OperationQueue.cpp */; };
-		7693E23E1B22A6EC0068F1CD /* OperationQueue.h in Headers */ = {isa = PBXBuildFile; fileRef = 7693E1291B22A6E80068F1CD /* OperationQueue.h */; };
 		7693E23F1B22A6EC0068F1CD /* ParallaxCamera.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7693E12A1B22A6E80068F1CD /* ParallaxCamera.cpp */; };
 		7693E2401B22A6EC0068F1CD /* ParallaxCamera.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7693E12A1B22A6E80068F1CD /* ParallaxCamera.cpp */; };
 		7693E2411B22A6EC0068F1CD /* ParallaxCamera.h in Headers */ = {isa = PBXBuildFile; fileRef = 7693E12B1B22A6E80068F1CD /* ParallaxCamera.h */; };
@@ -334,10 +322,6 @@
 		7693E0391B22A6780068F1CD /* ApplicationServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ApplicationServices.framework; path = System/Library/Frameworks/ApplicationServices.framework; sourceTree = SDKROOT; };
 		7693E03B1B22A67E0068F1CD /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
 		7693E03D1B22A6850068F1CD /* IOKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOKit.framework; path = System/Library/Frameworks/IOKit.framework; sourceTree = SDKROOT; };
-		7693E0411B22A6E80068F1CD /* ActionGroup.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ActionGroup.cpp; sourceTree = "<group>"; };
-		7693E0421B22A6E80068F1CD /* ActionGroup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActionGroup.h; sourceTree = "<group>"; };
-		7693E0431B22A6E80068F1CD /* ActionQueue.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ActionQueue.cpp; sourceTree = "<group>"; };
-		7693E0441B22A6E80068F1CD /* ActionQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActionQueue.h; sourceTree = "<group>"; };
 		7693E0461B22A6E80068F1CD /* ActionFactory.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ActionFactory.cpp; sourceTree = "<group>"; };
 		7693E0471B22A6E80068F1CD /* ActionFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActionFactory.h; sourceTree = "<group>"; };
 		7693E0481B22A6E80068F1CD /* ActionFactoryContext.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ActionFactoryContext.cpp; sourceTree = "<group>"; };
@@ -548,10 +532,6 @@
 		7693E1231B22A6E80068F1CD /* zone.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = zone.cpp; sourceTree = "<group>"; };
 		7693E1241B22A6E80068F1CD /* MultiStateAnimNode.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MultiStateAnimNode.cpp; sourceTree = "<group>"; };
 		7693E1251B22A6E80068F1CD /* MultiStateAnimNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MultiStateAnimNode.h; sourceTree = "<group>"; };
-		7693E1261B22A6E80068F1CD /* OperationGroup.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = OperationGroup.cpp; sourceTree = "<group>"; };
-		7693E1271B22A6E80068F1CD /* OperationGroup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OperationGroup.h; sourceTree = "<group>"; };
-		7693E1281B22A6E80068F1CD /* OperationQueue.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = OperationQueue.cpp; sourceTree = "<group>"; };
-		7693E1291B22A6E80068F1CD /* OperationQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OperationQueue.h; sourceTree = "<group>"; };
 		7693E12A1B22A6E80068F1CD /* ParallaxCamera.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ParallaxCamera.cpp; sourceTree = "<group>"; };
 		7693E12B1B22A6E80068F1CD /* ParallaxCamera.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ParallaxCamera.h; sourceTree = "<group>"; };
 		7693E12D1B22A6E80068F1CD /* Parcel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Parcel.h; sourceTree = "<group>"; };
@@ -648,10 +628,6 @@
 			isa = PBXGroup;
 			children = (
 				7646FEE21B22F5C8002B2E23 /* Operation */,
-				7693E0411B22A6E80068F1CD /* ActionGroup.cpp */,
-				7693E0421B22A6E80068F1CD /* ActionGroup.h */,
-				7693E0431B22A6E80068F1CD /* ActionQueue.cpp */,
-				7693E0441B22A6E80068F1CD /* ActionQueue.h */,
 				7693E0451B22A6E80068F1CD /* Actions */,
 				7693E0621B22A6E80068F1CD /* AnimationManager.cpp */,
 				7693E0631B22A6E80068F1CD /* AnimationManager.h */,
@@ -685,10 +661,6 @@
 				7693E0BF1B22A6E80068F1CD /* msgpack */,
 				7693E1241B22A6E80068F1CD /* MultiStateAnimNode.cpp */,
 				7693E1251B22A6E80068F1CD /* MultiStateAnimNode.h */,
-				7693E1261B22A6E80068F1CD /* OperationGroup.cpp */,
-				7693E1271B22A6E80068F1CD /* OperationGroup.h */,
-				7693E1281B22A6E80068F1CD /* OperationQueue.cpp */,
-				7693E1291B22A6E80068F1CD /* OperationQueue.h */,
 				7693E12A1B22A6E80068F1CD /* ParallaxCamera.cpp */,
 				7693E12B1B22A6E80068F1CD /* ParallaxCamera.h */,
 				7693E12C1B22A6E80068F1CD /* Parcel */,
@@ -1082,8 +1054,6 @@
 				7693E1CA1B22A6E90068F1CD /* impl1.hpp in Headers */,
 				7693E2071B22A6EA0068F1CD /* pack_template.h in Headers */,
 				7693E2221B22A6EB0068F1CD /* vrefbuffer.h in Headers */,
-				7693E23B1B22A6EB0068F1CD /* OperationGroup.h in Headers */,
-				7693E1431B22A6E80068F1CD /* ActionQueue.h in Headers */,
 				7693E1DD1B22A6E90068F1CD /* pack_template.h in Headers */,
 				7693E2151B22A6EB0068F1CD /* raw.hpp in Headers */,
 				7693E1E21B22A6EA0068F1CD /* define.hpp in Headers */,
@@ -1132,7 +1102,6 @@
 				7693E20E1B22A6EA0068F1CD /* fixint.hpp in Headers */,
 				7693E2411B22A6EC0068F1CD /* ParallaxCamera.h in Headers */,
 				7693E1751B22A6E90068F1CD /* Def.h in Headers */,
-				7693E1401B22A6E80068F1CD /* ActionGroup.h in Headers */,
 				7693E17B1B22A6E90068F1CD /* DrawNodeHelper.h in Headers */,
 				7693E24D1B22A6EC0068F1CD /* STLHelper.h in Headers */,
 				7693E1F51B22A6EA0068F1CD /* unpack_define.h in Headers */,
@@ -1197,7 +1166,6 @@
 				7693E1EF1B22A6EA0068F1CD /* unordered_set.hpp in Headers */,
 				7693E1A61B22A6E90068F1CD /* strserialization.hpp in Headers */,
 				7693E1901B22A6E90068F1CD /* features.h in Headers */,
-				7693E23E1B22A6EC0068F1CD /* OperationQueue.h in Headers */,
 				7693E1DB1B22A6E90068F1CD /* pack.hpp in Headers */,
 				7693E1FB1B22A6EA0068F1CD /* zbuffer.hpp in Headers */,
 				7693E17F1B22A6E90068F1CD /* ExceptionFactory.h in Headers */,
@@ -1293,7 +1261,6 @@
 				7693E2341B22A6EB0068F1CD /* zone.cpp in Sources */,
 				7693E1471B22A6E80068F1CD /* ActionFactoryContext.cpp in Sources */,
 				7693E1761B22A6E90068F1CD /* DialogLayer.cpp in Sources */,
-				7693E23C1B22A6EC0068F1CD /* OperationQueue.cpp in Sources */,
 				7693E22C1B22A6EB0068F1CD /* objectc.cpp in Sources */,
 				7693E1441B22A6E80068F1CD /* ActionFactory.cpp in Sources */,
 				7693E1651B22A6E90068F1CD /* ScaleToActionFactory.cpp in Sources */,
@@ -1314,7 +1281,6 @@
 				7693E2471B22A6EC0068F1CD /* Shortcut.cpp in Sources */,
 				7693E1B21B22A6E90068F1CD /* ImageViewLayouts.cpp in Sources */,
 				7693E1AA1B22A6E90068F1CD /* AddChildLayouts.cpp in Sources */,
-				7693E2391B22A6EB0068F1CD /* OperationGroup.cpp in Sources */,
 				7693E1621B22A6E90068F1CD /* PlaySoundActionFactory.cpp in Sources */,
 				7693E1CE1B22A6E90068F1CD /* Localize.cpp in Sources */,
 				76416D911B25FA7D00ECEFCD /* Context.cpp in Sources */,
@@ -1338,9 +1304,7 @@
 				7693E1731B22A6E90068F1CD /* Def.cpp in Sources */,
 				7693E2431B22A6EC0068F1CD /* Random.cpp in Sources */,
 				7693E1D11B22A6E90068F1CD /* Lock.cpp in Sources */,
-				7693E13E1B22A6E80068F1CD /* ActionGroup.cpp in Sources */,
 				7693E24E1B22A6EC0068F1CD /* Utils.cpp in Sources */,
-				7693E1411B22A6E80068F1CD /* ActionQueue.cpp in Sources */,
 				7693E1C81B22A6E90068F1CD /* WidgetLayouts.cpp in Sources */,
 				7693E1A31B22A6E90068F1CD /* json_writer.cpp in Sources */,
 				7693E1B91B22A6E90068F1CD /* LayoutHelper.cpp in Sources */,
@@ -1360,7 +1324,6 @@
 				7693E1B31B22A6E90068F1CD /* ImageViewLayouts.cpp in Sources */,
 				7693E19F1B22A6E90068F1CD /* json_reader.cpp in Sources */,
 				7693E1D61B22A6E90068F1CD /* MonsterDebuggerLayer.cpp in Sources */,
-				7693E23A1B22A6EB0068F1CD /* OperationGroup.cpp in Sources */,
 				7693E1541B22A6E90068F1CD /* DelayActionFactory.cpp in Sources */,
 				7693E24B1B22A6EC0068F1CD /* Sound.cpp in Sources */,
 				7693E14B1B22A6E90068F1CD /* ActionFactoryRegistration.cpp in Sources */,
@@ -1370,7 +1333,6 @@
 				7693E1BA1B22A6E90068F1CD /* LayoutHelper.cpp in Sources */,
 				7693E1481B22A6E90068F1CD /* ActionFactoryContext.cpp in Sources */,
 				7693E17A1B22A6E90068F1CD /* DrawNodeHelper.cpp in Sources */,
-				7693E13F1B22A6E80068F1CD /* ActionGroup.cpp in Sources */,
 				7693E22B1B22A6EB0068F1CD /* object.cpp in Sources */,
 				7693E2481B22A6EC0068F1CD /* Shortcut.cpp in Sources */,
 				7693E1CF1B22A6E90068F1CD /* Localize.cpp in Sources */,
@@ -1382,7 +1344,6 @@
 				7693E1C71B22A6E90068F1CD /* uiButtonLayouts.cpp in Sources */,
 				7693E1661B22A6E90068F1CD /* ScaleToActionFactory.cpp in Sources */,
 				7693E17E1B22A6E90068F1CD /* ExceptionFactory.cpp in Sources */,
-				7693E23D1B22A6EC0068F1CD /* OperationQueue.cpp in Sources */,
 				7693E2401B22A6EC0068F1CD /* ParallaxCamera.cpp in Sources */,
 				76416D921B25FA7D00ECEFCD /* Context.cpp in Sources */,
 				7693E2331B22A6EB0068F1CD /* vrefbuffer.cpp in Sources */,
@@ -1409,7 +1370,6 @@
 				7693E2531B22A6EC0068F1CD /* vsson.cpp in Sources */,
 				7693E2371B22A6EB0068F1CD /* MultiStateAnimNode.cpp in Sources */,
 				7693E1601B22A6E90068F1CD /* MoveByActionFactory.cpp in Sources */,
-				7693E1421B22A6E80068F1CD /* ActionQueue.cpp in Sources */,
 				7693E1C51B22A6E90068F1CD /* NodeSizingLayouts.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

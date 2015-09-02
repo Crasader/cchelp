@@ -6,17 +6,13 @@
 #include "ExceptionFactory.h"
 #include "RefHolder.h"
 #include "STLHelper.h"
-#include "ActionQueue.h"
 #include "ValueProxy.h"
 #include "Shortcut.h"
 #include "Index2D.h"
 #include "Array2D.h"
 #include "Matrix.h"
-#include "ActionGroup.h"
 #include "Lock.h"
-#include "OperationGroup.h"
 #include "DialogLayer.h"
-#include "OperationQueue.h"
 #include "Event.h"
 
 #include "lexical_cast/lexical_cast.h"
@@ -42,3 +38,5 @@
 
 #include "Utils.h"
 #include "Actions/ActionHelper.h"
+
+#include "Operation/OperationManager.h"

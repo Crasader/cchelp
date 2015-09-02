@@ -10,7 +10,7 @@
 
 using namespace std;
 
-namespace ccHelp2 {
+namespace ccHelp {
     Operation::~Operation() {}
     
     OperationSequence::OperationSequence(const vector<Operation *> &_ops)
@@ -249,6 +249,11 @@ namespace ccHelp2 {
         });
     }
     
+    bool OperationQueue::isOperating() const
+    {
+        return runningJob != nullptr;
+    }
+    
     OperationManager::Building::Building()
     : builder(nullptr), rule(RULE_AT_FIRST)
     {
@@ -292,6 +297,24 @@ namespace ccHelp2 {
         {
             opQueue->push(op, rule);
         }
+    }
+    
+    void OperationManager::addInSubSeq(Operation *op, OperationAddRule rule)
+    {
+        this->addmk([=](CCH_CALLBACK completion) {
+            this->newSequence(rule);
+            op->run(completion);
+            this->closeCurrent();
+        });
+    }
+    
+    void OperationManager::addInSubGr(Operation *op, OperationAddRule rule)
+    {
+        this->addmk([=](CCH_CALLBACK completion) {
+            this->newGroup(rule);
+            op->run(completion);
+            this->closeCurrent();
+        });
     }
     
     void OperationManager::newSequence(OperationAddRule rule)
@@ -343,6 +366,35 @@ namespace ccHelp2 {
     ccHelp::Context& OperationManager::currentContext()
     {
         return *opQueue->getCurrentJob()->getContext();
+    }
+    
+    Operation* mkop(cocos2d::Node *target, cocos2d::FiniteTimeAction *act)
+    {
+        class ActionOperation : public Operation
+        {
+        public:
+            cocos2d::FiniteTimeAction *act;
+            cocos2d::Node *target;
+            
+        public:
+            virtual void run(CCH_CALLBACK completion) override
+            {
+                cocos2d::CallFunc *cfCompl = cocos2d::CallFunc::create(completion);
+                cocos2d::Sequence *actWithCompl = cocos2d::Sequence::createWithTwoActions(act, cfCompl);
+                target->runAction(actWithCompl);
+            }
+        };
+        
+        auto *op = new ActionOperation;
+        op->act = act;
+        op->target = target;
+        
+        return op;
+    }
+    
+    bool OperationManager::isOperating() const
+    {
+        return opQueue->isOperating();
     }
     
     OperationManager OP;

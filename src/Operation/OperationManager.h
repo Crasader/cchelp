@@ -14,7 +14,7 @@
 #include <queue>
 #include <iostream>
 
-namespace ccHelp2 {
+namespace ccHelp {
     class /*interface*/ Operation
     {
     private:
@@ -58,7 +58,7 @@ namespace ccHelp2 {
     
     enum OperationAddRule
     {
-        RULE_NONE = 0,
+        RULE_NONE,
         RULE_AT_FIRST = 1,
         RULE_AT_LAST = RULE_NONE
     };
@@ -119,6 +119,7 @@ namespace ccHelp2 {
         void pushFront(Operation *op);
         void push(Operation *op, OperationAddRule rule);
         OperationJob* getCurrentJob() const;
+        bool isOperating() const;
     };
     
     template<typename T>
@@ -146,10 +147,14 @@ namespace ccHelp2 {
         OperationManager();
         ~OperationManager();
         void add(Operation *op, OperationAddRule rule = OperationAddRule::RULE_NONE);
+        void addInSubSeq(Operation *op, OperationAddRule rule = OperationAddRule::RULE_NONE);
+        void addInSubGr(Operation *op, OperationAddRule rule = OperationAddRule::RULE_NONE);
         
         void newSequence(OperationAddRule rule = OperationAddRule::RULE_NONE);
         void newGroup(OperationAddRule rule = OperationAddRule::RULE_NONE);
         void closeCurrent();
+        
+        bool isOperating() const;
         
         ccHelp::Context& currentContext();
         
@@ -159,6 +164,17 @@ namespace ccHelp2 {
             this->add(mkop(t), rule);
         }
         
+        template<typename T>
+        void addmkInSubSeq(const T& t, OperationAddRule rule = OperationAddRule::RULE_AT_FIRST)
+        {
+            this->addInSubSeq(mkop(t), rule);
+        }
+        
+        template<typename T>
+        void addmkInSubGr(const T& t, OperationAddRule rule = OperationAddRule::RULE_AT_FIRST)
+        {
+            this->addInSubGr(mkop(t), rule);
+        }
     };
     
     class Func0Operation : public Operation
@@ -203,5 +219,9 @@ namespace ccHelp2 {
         return new Func1Operation(func1);
     }
     
+    Operation* mkop(cocos2d::Node *target, cocos2d::FiniteTimeAction *act);
+    
     extern OperationManager OP;
+    
+#define MKOP CC_CALLBACK_0
 }
