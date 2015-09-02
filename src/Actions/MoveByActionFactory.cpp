@@ -11,20 +11,20 @@
 
 namespace ccHelp {
     
-    cocos2d::MoveBy* MoveByActionFactory::createAction(const AFContext &ctx) const
+    cocos2d::MoveBy* MoveByActionFactory::createAction(const FContext &ctx) const
     {
         float dur;
         cocos2d::Vec2 by;
         
-        if (!ctx.getField("duration", dur) &&
-            !ctx.getField("dur", dur))
+        if (!ctx.get("duration", dur) &&
+            !ctx.get("dur", dur))
         {
             return nullptr;
         }
         
-        if (!ctx.getField("by", by) &&
-            !ctx.getField("dx", by.x) &&
-            !ctx.getField("dy", by.y))
+        if (!ctx.get("by", by) &&
+            !ctx.get("dx", by.x) &&
+            !ctx.get("dy", by.y))
         {
             return nullptr;
         }

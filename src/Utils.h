@@ -23,6 +23,11 @@ namespace ccHelp
 	class Utils
 	{
 	public:
+        static void swallowTouch(Node *n);
+        static void swallowTouchBB(Node *n);
+        static void setCascadeOpacityAllChilds(Node *n, bool enabled = true);
+        static void setCascadeOpacityRecursively(Node *n, bool enabled = true);
+        
 		static void setNodeAnchorWithoutChangePosition
 			(Node *target, CREF(Vec2) newAnchor);
 		static Node* warpSpriteBySize(string sprName,  CREF(Size) size, int tag = 0);
@@ -85,7 +90,19 @@ namespace ccHelp
 		static string toupper(const string &s);
 		static string trim(const string &s);
         
-        static string enUSFormat(int d);
+        static string enUSFormat(long d);
+        static string collapse(double n);
+        
+        static ulong time();
+        static unsigned long long timeInMicros();
+        static unsigned long long timeInNanos();
+        
+        static Label* showToast(const string &msg,
+                                const string &ttf = "",
+                                float fontSize = 12.f,
+                                const Color4B &textColor = Color4B::WHITE,
+                                Node *parent = nullptr,
+                                std::function<void(Label *)> custom = [](Label*){});
 
 	private:
 		static Vec2 anchorInPoint(const Node *node);

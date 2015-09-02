@@ -3,6 +3,7 @@
 #include "Def.h"
 #include "Factory.h"
 #include "Random.h"
+#include "UniqueRandom.h"
 #include "ExceptionFactory.h"
 #include "RefHolder.h"
 #include "STLHelper.h"

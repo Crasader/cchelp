@@ -4,10 +4,20 @@
 
 #define USING_CC_HELP using namespace ccHelp
 
+typedef char byte;
+typedef unsigned char ubyte;
+typedef unsigned short ushort;
 typedef unsigned int uint;
+typedef unsigned long ulong;
 
 namespace ccHelp
 {
+    class obj
+    {
+    public:
+        virtual ~obj();
+    };
+    
 	template<class T>
 	int compare(const T& t1, const T& t2)
 	{
@@ -88,14 +98,24 @@ extern CCH_FUNCTION DO_NOTHING_FUNC;
 #define CCH_NOT_INIT_CREATE(pRet) (autoReleasePointer(pRet))
 
 #define CCH_ALL_COMPARATORS(CLASS, comparor) \
-	inline bool operator==(const CLASS &x) const {return this->##comparor(x) == 0;} \
-	inline bool operator>(const CLASS &x) const {return this->##comparor(x) > 0;} \
-	inline bool operator<(const CLASS &x) const {return this->##comparor(x) < 0;} \
-	inline bool operator!=(const CLASS &x) const {return this->##comparor(x) != 0;} \
-	inline bool operator>=(const CLASS &x) const {return this->##comparor(x) >= 0;} \
-	inline bool operator<=(const CLASS &x) const {return this->##comparor(x) <= 0;} \
-	inline bool equals(const CLASS &x) const {return this->##comparor(x) == 0;} \
-	inline bool equals(const CLASS *x) const {return this->##comparor(*x) == 0;}
+	inline bool operator==(const CLASS &x) const {return this->comparor(x) == 0;} \
+	inline bool operator>(const CLASS &x) const {return this->comparor(x) > 0;} \
+	inline bool operator<(const CLASS &x) const {return this->comparor(x) < 0;} \
+	inline bool operator!=(const CLASS &x) const {return this->comparor(x) != 0;} \
+	inline bool operator>=(const CLASS &x) const {return this->comparor(x) >= 0;} \
+	inline bool operator<=(const CLASS &x) const {return this->comparor(x) <= 0;} \
+	inline bool equals(const CLASS &x) const {return this->comparor(x) == 0;} \
+	inline bool equals(const CLASS *x) const {return this->comparor(*x) == 0;}
+
+#define CCH_ALL_COMPARATORS_NO_INL(CLASS, comparor) \
+bool operator==(const CLASS &x) const {return this->comparor(x) == 0;} \
+bool operator>(const CLASS &x) const {return this->comparor(x) > 0;} \
+bool operator<(const CLASS &x) const {return this->comparor(x) < 0;} \
+bool operator!=(const CLASS &x) const {return this->comparor(x) != 0;} \
+bool operator>=(const CLASS &x) const {return this->comparor(x) >= 0;} \
+bool operator<=(const CLASS &x) const {return this->comparor(x) <= 0;} \
+bool equals(const CLASS &x) const {return this->comparor(x) == 0;} \
+bool equals(const CLASS *x) const {return this->comparor(*x) == 0;}
 
 #define PROPERTY_GET(Type, Name, var) \
 inline const Type get##Name() const {return this->var;} \
@@ -157,3 +177,5 @@ inline Type get##Name() {return this->var;}
 #define CCH_SYNTHESIZE_PASS_BY_REF(type, var, func) \
 CC_SYNTHESIZE_PASS_BY_REF(type, var, func) \
 public: inline virtual type& get##func() {return var;} 
+
+#define ARG(...) __VA_ARGS__

@@ -119,5 +119,30 @@ namespace ccHelp {
             }
         });
         GroupLayout::registerLayout("label-text-v-align", lblTextVAlign);
+        
+        auto *lblDimension = new FunctionLayout([](Node *n, const Layout::Parameter &p) {
+            Label *lbl = dynamic_cast<Label*>(n);
+            if (!lbl)
+                return;
+            
+            if (p.isString() && p.asString() == "match_content")
+            {
+                lbl->setDimensions(lbl->getContentSize().width, lbl->getContentSize().height);
+            }
+            else if (p.isObject())
+            {
+                if (p["width"].isNumeric())
+                {
+                    lbl->setDimensions(p["width"].asFloat(), lbl->getDimensions().height);
+                }
+                
+                if (p["height"].isNumeric())
+                {
+                    lbl->setDimensions(lbl->getDimensions().width, p["height"].asFloat());
+                }
+            }
+        });
+        GroupLayout::registerLayout("label-dimension", lblDimension);
+        
     }
 }

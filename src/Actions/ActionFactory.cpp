@@ -10,4 +10,8 @@
 #include "Utils.h"
 
 namespace ccHelp {
+    ActionFactory::~ActionFactory()
+    {
+        
+    }
 }

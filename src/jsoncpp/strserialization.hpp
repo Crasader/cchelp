@@ -7,17 +7,39 @@ namespace Json {
 	namespace type
 	{
 		template <typename V>
-		inline std::string strSerialize(const V &v);
+		inline std::string strSerialize(const V &v)
+        {
+            std::stringstream ss;
+            ss<<v;
+            
+            return ss.str();
+        }
+        
 		template <typename V>
-		inline bool strDeserialize(const std::string &s, V &v);
+		inline bool strDeserialize(const std::string &s, V &v)
+        {
+            std::stringstream ss(s);
+            ss>>v;
+            
+            return !ss.fail();
+        }
 	}
 
 }  // namespace Json
 
 template<typename V>
-inline std::string toString(const V &v);
+inline std::string toString(const V &v)
+{
+    return Json::type::strSerialize(v);
+}
+
 template<typename V>
-inline V fromString(const std::string &s);
+inline V fromString(const std::string &s)
+{
+    V v;
+    Json::type::strDeserialize(s, v);
+    return v;
+}
 
 #define ENUM_STR_SERIALIZATION_DECL(TYPE) \
 namespace Json { \
@@ -29,6 +51,17 @@ std::string strSerialize(const TYPE &v); \
 template<> \
 bool strDeserialize(const std::string &s, TYPE &v); \
 }\
+} \
+template<> inline Json::Value Json::type::serialize(const TYPE &v) \
+{ \
+    return Json::Value(strSerialize(v)); \
+} \
+template<> inline bool Json::type::deserialize(const Json::Value& j, TYPE &v) \
+{ \
+    if (!j.isString()) \
+        return false; \
+    \
+    return strDeserialize(j.asString(), v); \
 }
 
 #define ENUM_TO_STRING(TYPE) \

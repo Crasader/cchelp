@@ -150,7 +150,7 @@ namespace ccHelp {
             if (p.isNumeric())
             {
                 n->setAnchorPoint(Vec2(n->getAnchorPoint().x, 0.5));
-                n->setPositionY(n->getParent()->getContentSize().width - p.asFloat());
+                n->setPositionY(p.asFloat());
             }
         });
         GroupLayout::registerLayout("align-center-y", alignCenterY);

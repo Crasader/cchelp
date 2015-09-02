@@ -7,6 +7,7 @@ namespace ccHelp
 {
 	class Factory;
 
+    // use with ref only
 	template<class E>
 	class Array2D : public cocos2d::Ref
 	{

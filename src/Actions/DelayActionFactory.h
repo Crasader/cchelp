@@ -13,6 +13,6 @@ namespace ccHelp {
     class DelayActionFactory : public ActionFactory
     {
     public:
-        virtual cocos2d::DelayTime* createAction(const AFContext &ctx) const override;
+        virtual cocos2d::DelayTime* createAction(const FContext &ctx) const override;
     };
 }

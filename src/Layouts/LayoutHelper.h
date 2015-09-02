@@ -8,6 +8,7 @@
 
 #pragma once
 #include "Layouts/Layout.h"
+#include "Layoutable.h"
 #include "LayoutQuery.h"
 #include "hash_container/hmap.h"
 #include "ui/CocosGUI.h"

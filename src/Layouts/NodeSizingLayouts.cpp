@@ -7,6 +7,7 @@
 //
 
 #include "LayoutRegistration.h"
+#include "Utils.h"
 
 namespace ccHelp {
     void regisNodeSizingLayouts()
@@ -104,5 +105,35 @@ namespace ccHelp {
         });
         GroupLayout::registerLayout("fit-size", scaleToSize);
         GroupLayout::registerLayout("scale-to-size", scaleToSize);
+        
+        auto *scaleToSizeBy = new FunctionLayout([](Node *n, const Layout::Parameter &p) {
+            Vec2 by = n->getContentSize();
+            
+            if (p["by"].isString())
+            {
+                string sBy = p["by"].asString();
+                sBy = Utils::tolower(sBy);
+                if (sBy == "parent" && n->getParent())
+                {
+                    by = n->getParent()->getContentSize();
+                }
+                else if (sBy == "screen")
+                {
+                    by = Director::getInstance()->getOpenGLView()->getDesignResolutionSize();
+                }
+            }
+            
+            if (p.isMember("width") && p["width"].isNumeric())
+            {
+                n->setScaleX(p["width"].asFloat() * by.x / n->getContentSize().width);
+            }
+            
+            if (p.isMember("height") && p["height"].isNumeric())
+            {
+                n->setScaleY(p["height"].asFloat() * by.y / n->getContentSize().height);
+            }
+        });
+        GroupLayout::registerLayout("fit-size-by", scaleToSizeBy);
+        GroupLayout::registerLayout("scale-to-size-by", scaleToSizeBy);
     }
 }

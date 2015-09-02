@@ -24,9 +24,6 @@
 		7693E1441B22A6E80068F1CD /* ActionFactory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7693E0461B22A6E80068F1CD /* ActionFactory.cpp */; };
 		7693E1451B22A6E80068F1CD /* ActionFactory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7693E0461B22A6E80068F1CD /* ActionFactory.cpp */; };
 		7693E1461B22A6E80068F1CD /* ActionFactory.h in Headers */ = {isa = PBXBuildFile; fileRef = 7693E0471B22A6E80068F1CD /* ActionFactory.h */; };
-		7693E1471B22A6E80068F1CD /* ActionFactoryContext.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7693E0481B22A6E80068F1CD /* ActionFactoryContext.cpp */; };
-		7693E1481B22A6E90068F1CD /* ActionFactoryContext.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7693E0481B22A6E80068F1CD /* ActionFactoryContext.cpp */; };
-		7693E1491B22A6E90068F1CD /* ActionFactoryContext.h in Headers */ = {isa = PBXBuildFile; fileRef = 7693E0491B22A6E80068F1CD /* ActionFactoryContext.h */; };
 		7693E14A1B22A6E90068F1CD /* ActionFactoryRegistration.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7693E04A1B22A6E80068F1CD /* ActionFactoryRegistration.cpp */; };
 		7693E14B1B22A6E90068F1CD /* ActionFactoryRegistration.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7693E04A1B22A6E80068F1CD /* ActionFactoryRegistration.cpp */; };
 		7693E14C1B22A6E90068F1CD /* ActionFactoryRegistration.h in Headers */ = {isa = PBXBuildFile; fileRef = 7693E04B1B22A6E80068F1CD /* ActionFactoryRegistration.h */; };
@@ -90,10 +87,7 @@
 		7693E1861B22A6E90068F1CD /* Index2D.h in Headers */ = {isa = PBXBuildFile; fileRef = 7693E0751B22A6E80068F1CD /* Index2D.h */; };
 		7693E1871B22A6E90068F1CD /* bool.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 7693E0771B22A6E80068F1CD /* bool.hpp */; };
 		7693E1881B22A6E90068F1CD /* def.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 7693E0781B22A6E80068F1CD /* def.hpp */; };
-		7693E1891B22A6E90068F1CD /* double.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 7693E0791B22A6E80068F1CD /* double.hpp */; };
-		7693E18A1B22A6E90068F1CD /* float.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 7693E07A1B22A6E80068F1CD /* float.hpp */; };
 		7693E18B1B22A6E90068F1CD /* hash_map.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 7693E07B1B22A6E80068F1CD /* hash_map.hpp */; };
-		7693E18C1B22A6E90068F1CD /* int.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 7693E07C1B22A6E80068F1CD /* int.hpp */; };
 		7693E18D1B22A6E90068F1CD /* assertions.h in Headers */ = {isa = PBXBuildFile; fileRef = 7693E07E1B22A6E80068F1CD /* assertions.h */; };
 		7693E18E1B22A6E90068F1CD /* autolink.h in Headers */ = {isa = PBXBuildFile; fileRef = 7693E07F1B22A6E80068F1CD /* autolink.h */; };
 		7693E18F1B22A6E90068F1CD /* config.h in Headers */ = {isa = PBXBuildFile; fileRef = 7693E0801B22A6E80068F1CD /* config.h */; };
@@ -107,7 +101,6 @@
 		7693E1971B22A6E90068F1CD /* jsonserialization.h in Headers */ = {isa = PBXBuildFile; fileRef = 7693E0881B22A6E80068F1CD /* jsonserialization.h */; };
 		7693E1981B22A6E90068F1CD /* jsonvalue.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 7693E0891B22A6E80068F1CD /* jsonvalue.hpp */; };
 		7693E1991B22A6E90068F1CD /* map.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 7693E08A1B22A6E80068F1CD /* map.hpp */; };
-		7693E19A1B22A6E90068F1CD /* object.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 7693E08B1B22A6E80068F1CD /* object.hpp */; };
 		7693E19B1B22A6E90068F1CD /* object_str.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 7693E08C1B22A6E80068F1CD /* object_str.hpp */; };
 		7693E19C1B22A6E90068F1CD /* serializor.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 7693E08D1B22A6E80068F1CD /* serializor.hpp */; };
 		7693E19D1B22A6E90068F1CD /* json_batchallocator.h in Headers */ = {isa = PBXBuildFile; fileRef = 7693E0901B22A6E80068F1CD /* json_batchallocator.h */; };
@@ -120,7 +113,7 @@
 		7693E1A41B22A6E90068F1CD /* json_writer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7693E0971B22A6E80068F1CD /* json_writer.cpp */; };
 		7693E1A51B22A6E90068F1CD /* string.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 7693E09A1B22A6E80068F1CD /* string.hpp */; };
 		7693E1A61B22A6E90068F1CD /* strserialization.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 7693E09B1B22A6E80068F1CD /* strserialization.hpp */; };
-		7693E1A71B22A6E90068F1CD /* uint.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 7693E09C1B22A6E80068F1CD /* uint.hpp */; };
+		7693E1A71B22A6E90068F1CD /* number.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 7693E09C1B22A6E80068F1CD /* number.hpp */; };
 		7693E1A81B22A6E90068F1CD /* vector.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 7693E09D1B22A6E80068F1CD /* vector.hpp */; };
 		7693E1A91B22A6E90068F1CD /* jsoncpp_ser.h in Headers */ = {isa = PBXBuildFile; fileRef = 7693E09E1B22A6E80068F1CD /* jsoncpp_ser.h */; };
 		7693E1AA1B22A6E90068F1CD /* AddChildLayouts.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7693E0A01B22A6E80068F1CD /* AddChildLayouts.cpp */; };
@@ -293,6 +286,10 @@
 		7693E2571B22A6EC0068F1CD /* WidgetUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = 7693E13D1B22A6E80068F1CD /* WidgetUtils.h */; };
 		7693E25C1B22ADFD0068F1CD /* libcocos2d iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7693E25B1B22ADFD0068F1CD /* libcocos2d iOS.a */; };
 		7693E25E1B22AE070068F1CD /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7693E25D1B22AE070068F1CD /* Foundation.framework */; };
+		76B602111B3C5DF500B79B6E /* ContextValue.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 76B6020F1B3C5DF500B79B6E /* ContextValue.cpp */; };
+		76B602121B3C5DF500B79B6E /* ContextValue.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 76B6020F1B3C5DF500B79B6E /* ContextValue.cpp */; };
+		76B602131B3C5DF500B79B6E /* ContextValue.h in Headers */ = {isa = PBXBuildFile; fileRef = 76B602101B3C5DF500B79B6E /* ContextValue.h */; };
+		76B602151B3C5E0D00B79B6E /* ContextValue.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 76B602141B3C5E0D00B79B6E /* ContextValue.hpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -324,8 +321,6 @@
 		7693E03D1B22A6850068F1CD /* IOKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOKit.framework; path = System/Library/Frameworks/IOKit.framework; sourceTree = SDKROOT; };
 		7693E0461B22A6E80068F1CD /* ActionFactory.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ActionFactory.cpp; sourceTree = "<group>"; };
 		7693E0471B22A6E80068F1CD /* ActionFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActionFactory.h; sourceTree = "<group>"; };
-		7693E0481B22A6E80068F1CD /* ActionFactoryContext.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ActionFactoryContext.cpp; sourceTree = "<group>"; };
-		7693E0491B22A6E80068F1CD /* ActionFactoryContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActionFactoryContext.h; sourceTree = "<group>"; };
 		7693E04A1B22A6E80068F1CD /* ActionFactoryRegistration.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ActionFactoryRegistration.cpp; sourceTree = "<group>"; };
 		7693E04B1B22A6E80068F1CD /* ActionFactoryRegistration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActionFactoryRegistration.h; sourceTree = "<group>"; };
 		7693E04C1B22A6E80068F1CD /* ActionHelper.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ActionHelper.cpp; sourceTree = "<group>"; };
@@ -371,10 +366,7 @@
 		7693E0751B22A6E80068F1CD /* Index2D.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Index2D.h; sourceTree = "<group>"; };
 		7693E0771B22A6E80068F1CD /* bool.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = bool.hpp; sourceTree = "<group>"; };
 		7693E0781B22A6E80068F1CD /* def.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = def.hpp; sourceTree = "<group>"; };
-		7693E0791B22A6E80068F1CD /* double.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = double.hpp; sourceTree = "<group>"; };
-		7693E07A1B22A6E80068F1CD /* float.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = float.hpp; sourceTree = "<group>"; };
 		7693E07B1B22A6E80068F1CD /* hash_map.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = hash_map.hpp; sourceTree = "<group>"; };
-		7693E07C1B22A6E80068F1CD /* int.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = int.hpp; sourceTree = "<group>"; };
 		7693E07E1B22A6E80068F1CD /* assertions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = assertions.h; sourceTree = "<group>"; };
 		7693E07F1B22A6E80068F1CD /* autolink.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = autolink.h; sourceTree = "<group>"; };
 		7693E0801B22A6E80068F1CD /* config.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = config.h; sourceTree = "<group>"; };
@@ -388,7 +380,6 @@
 		7693E0881B22A6E80068F1CD /* jsonserialization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = jsonserialization.h; sourceTree = "<group>"; };
 		7693E0891B22A6E80068F1CD /* jsonvalue.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = jsonvalue.hpp; sourceTree = "<group>"; };
 		7693E08A1B22A6E80068F1CD /* map.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = map.hpp; sourceTree = "<group>"; };
-		7693E08B1B22A6E80068F1CD /* object.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = object.hpp; sourceTree = "<group>"; };
 		7693E08C1B22A6E80068F1CD /* object_str.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = object_str.hpp; sourceTree = "<group>"; };
 		7693E08D1B22A6E80068F1CD /* serializor.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = serializor.hpp; sourceTree = "<group>"; };
 		7693E08F1B22A6E80068F1CD /* CMakeLists.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = CMakeLists.txt; sourceTree = "<group>"; };
@@ -404,7 +395,7 @@
 		7693E0991B22A6E80068F1CD /* version.h.in */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = version.h.in; sourceTree = "<group>"; };
 		7693E09A1B22A6E80068F1CD /* string.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = string.hpp; sourceTree = "<group>"; };
 		7693E09B1B22A6E80068F1CD /* strserialization.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = strserialization.hpp; sourceTree = "<group>"; };
-		7693E09C1B22A6E80068F1CD /* uint.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = uint.hpp; sourceTree = "<group>"; };
+		7693E09C1B22A6E80068F1CD /* number.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = number.hpp; sourceTree = "<group>"; };
 		7693E09D1B22A6E80068F1CD /* vector.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = vector.hpp; sourceTree = "<group>"; };
 		7693E09E1B22A6E80068F1CD /* jsoncpp_ser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = jsoncpp_ser.h; sourceTree = "<group>"; };
 		7693E0A01B22A6E80068F1CD /* AddChildLayouts.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AddChildLayouts.cpp; sourceTree = "<group>"; };
@@ -552,6 +543,10 @@
 		7693E13D1B22A6E80068F1CD /* WidgetUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WidgetUtils.h; sourceTree = "<group>"; };
 		7693E25B1B22ADFD0068F1CD /* libcocos2d iOS.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libcocos2d iOS.a"; path = "../../cocos2d/build/build/Debug-iphoneos/libcocos2d iOS.a"; sourceTree = "<group>"; };
 		7693E25D1B22AE070068F1CD /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		76B6020F1B3C5DF500B79B6E /* ContextValue.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ContextValue.cpp; sourceTree = "<group>"; };
+		76B602101B3C5DF500B79B6E /* ContextValue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContextValue.h; sourceTree = "<group>"; };
+		76B602141B3C5E0D00B79B6E /* ContextValue.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = ContextValue.hpp; sourceTree = "<group>"; };
+		76D423411B4F736700BB49A9 /* MathExpression.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MathExpression.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -632,7 +627,9 @@
 				7693E0621B22A6E80068F1CD /* AnimationManager.cpp */,
 				7693E0631B22A6E80068F1CD /* AnimationManager.h */,
 				7693E0641B22A6E80068F1CD /* Array2D.h */,
+				7634C8441B90423200E097E6 /* Matrix.h */,
 				7693E0651B22A6E80068F1CD /* ccHelp.h */,
+				76B6020E1B3C5DE700B79B6E /* Context */,
 				7693E0661B22A6E80068F1CD /* Def.cpp */,
 				7693E0671B22A6E80068F1CD /* Def.h */,
 				7693E0681B22A6E80068F1CD /* DialogLayer.cpp */,
@@ -691,8 +688,6 @@
 			children = (
 				7693E0461B22A6E80068F1CD /* ActionFactory.cpp */,
 				7693E0471B22A6E80068F1CD /* ActionFactory.h */,
-				7693E0481B22A6E80068F1CD /* ActionFactoryContext.cpp */,
-				7693E0491B22A6E80068F1CD /* ActionFactoryContext.h */,
 				7693E04A1B22A6E80068F1CD /* ActionFactoryRegistration.cpp */,
 				7693E04B1B22A6E80068F1CD /* ActionFactoryRegistration.h */,
 				7693E04C1B22A6E80068F1CD /* ActionHelper.cpp */,
@@ -735,21 +730,17 @@
 			children = (
 				7693E0771B22A6E80068F1CD /* bool.hpp */,
 				7693E0781B22A6E80068F1CD /* def.hpp */,
-				7693E0791B22A6E80068F1CD /* double.hpp */,
-				7693E07A1B22A6E80068F1CD /* float.hpp */,
 				7693E07B1B22A6E80068F1CD /* hash_map.hpp */,
-				7693E07C1B22A6E80068F1CD /* int.hpp */,
 				7693E07D1B22A6E80068F1CD /* json2 */,
 				7693E0881B22A6E80068F1CD /* jsonserialization.h */,
 				7693E0891B22A6E80068F1CD /* jsonvalue.hpp */,
 				7693E08A1B22A6E80068F1CD /* map.hpp */,
-				7693E08B1B22A6E80068F1CD /* object.hpp */,
 				7693E08C1B22A6E80068F1CD /* object_str.hpp */,
 				7693E08D1B22A6E80068F1CD /* serializor.hpp */,
 				7693E08E1B22A6E80068F1CD /* src */,
 				7693E09A1B22A6E80068F1CD /* string.hpp */,
 				7693E09B1B22A6E80068F1CD /* strserialization.hpp */,
-				7693E09C1B22A6E80068F1CD /* uint.hpp */,
+				7693E09C1B22A6E80068F1CD /* number.hpp */,
 				7693E09D1B22A6E80068F1CD /* vector.hpp */,
 			);
 			path = jsoncpp;
@@ -812,6 +803,7 @@
 				7693E0B01B22A6E80068F1CD /* NodeSizingLayouts.cpp */,
 				7693E0B11B22A6E80068F1CD /* uiButtonLayouts.cpp */,
 				7693E0B21B22A6E80068F1CD /* WidgetLayouts.cpp */,
+				764D64E81B589CE400DDE6CB /* Layoutable.h */,
 			);
 			path = Layouts;
 			sourceTree = "<group>";
@@ -830,6 +822,7 @@
 		7693E0BF1B22A6E80068F1CD /* msgpack */ = {
 			isa = PBXGroup;
 			children = (
+				762B24121B4E1782001290EE /* ext */,
 				7693E0C01B22A6E80068F1CD /* msgpack */,
 				7693E0E91B22A6E80068F1CD /* msgpack.h */,
 				7693E0EA1B22A6E80068F1CD /* msgpack.hpp */,
@@ -1000,6 +993,22 @@
 			path = vsson;
 			sourceTree = "<group>";
 		};
+		76B6020E1B3C5DE700B79B6E /* Context */ = {
+			isa = PBXGroup;
+			children = (
+				76B6020F1B3C5DF500B79B6E /* ContextValue.cpp */,
+				76B602101B3C5DF500B79B6E /* ContextValue.h */,
+				76B602141B3C5E0D00B79B6E /* ContextValue.hpp */,
+				764515721B3CE5CD00CD5E1E /* Context.cpp */,
+				764515731B3CE5CD00CD5E1E /* Context.h */,
+				764515771B3CE60800CD5E1E /* Context.hpp */,
+				764515791B3CF7B400CD5E1E /* FContext.cpp */,
+				7645157A1B3CF7B400CD5E1E /* FContext.h */,
+				7645157E1B3CF80F00CD5E1E /* FContext.hpp */,
+			);
+			path = Context;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -1011,10 +1020,12 @@
 				7693E1F61B22A6EA0068F1CD /* unpack_template.h in Headers */,
 				7693E1941B22A6E90068F1CD /* value.h in Headers */,
 				7693E1841B22A6E90068F1CD /* hmap.h in Headers */,
+				7607A9B71B4BBEE700F594EE /* Model.h in Headers */,
 				7693E1B11B22A6E90068F1CD /* GroupLayout.h in Headers */,
 				7693E2081B22A6EA0068F1CD /* sbuffer.h in Headers */,
 				7693E1A01B22A6E90068F1CD /* json_tool.h in Headers */,
 				7693E1D41B22A6E90068F1CD /* Matrix.h in Headers */,
+				76372D901B4B822F009E66B8 /* IOHelper.h in Headers */,
 				7693E1E51B22A6EA0068F1CD /* float.hpp in Headers */,
 				7693E21B1B22A6EB0068F1CD /* vector.hpp in Headers */,
 				7693E1D81B22A6E90068F1CD /* object.h in Headers */,
@@ -1024,6 +1035,7 @@
 				7693E1921B22A6E90068F1CD /* json.h in Headers */,
 				7693E1EA1B22A6EA0068F1CD /* pair.hpp in Headers */,
 				7693E1E81B22A6EA0068F1CD /* map.hpp in Headers */,
+				7634C8451B90423200E097E6 /* Matrix.h in Headers */,
 				7693E2241B22A6EB0068F1CD /* zbuffer.h in Headers */,
 				7693E2091B22A6EA0068F1CD /* sbuffer.hpp in Headers */,
 				7693E2271B22A6EB0068F1CD /* zone.hpp in Headers */,
@@ -1031,6 +1043,7 @@
 				7693E14F1B22A6E90068F1CD /* ActionHelper.h in Headers */,
 				7693E1861B22A6E90068F1CD /* Index2D.h in Headers */,
 				7693E21D1B22A6EB0068F1CD /* unpack.h in Headers */,
+				76B602151B3C5E0D00B79B6E /* ContextValue.hpp in Headers */,
 				7693E1701B22A6E90068F1CD /* AnimationManager.h in Headers */,
 				7693E19D1B22A6E90068F1CD /* json_batchallocator.h in Headers */,
 				7693E2571B22A6EC0068F1CD /* WidgetUtils.h in Headers */,
@@ -1038,14 +1051,17 @@
 				7693E2101B22A6EB0068F1CD /* int.hpp in Headers */,
 				7693E2491B22A6EC0068F1CD /* Shortcut.h in Headers */,
 				7693E1DF1B22A6E90068F1CD /* sbuffer.hpp in Headers */,
+				7679C8481B4C40A200081830 /* CCH_FOR2.hpp in Headers */,
 				7693E1ED1B22A6EA0068F1CD /* string.hpp in Headers */,
 				7693E1F31B22A6EA0068F1CD /* unpack.h in Headers */,
 				7693E1FC1B22A6EA0068F1CD /* zone.h in Headers */,
 				7693E20C1B22A6EA0068F1CD /* define.hpp in Headers */,
 				7693E1BB1B22A6E90068F1CD /* LayoutHelper.h in Headers */,
 				7693E1D91B22A6E90068F1CD /* object.hpp in Headers */,
+				76372D931B4B822F009E66B8 /* KVDB.h in Headers */,
 				7693E1CD1B22A6E90068F1CD /* lexical_cast.h in Headers */,
 				7693E18E1B22A6E90068F1CD /* autolink.h in Headers */,
+				763C33E21B556A4900A0DE3B /* UniqueRandom.h in Headers */,
 				7693E1711B22A6E90068F1CD /* Array2D.h in Headers */,
 				7693E2461B22A6EC0068F1CD /* RefHolder.h in Headers */,
 				7693E1671B22A6E90068F1CD /* ScaleToActionFactory.h in Headers */,
@@ -1055,6 +1071,7 @@
 				7693E2071B22A6EA0068F1CD /* pack_template.h in Headers */,
 				7693E2221B22A6EB0068F1CD /* vrefbuffer.h in Headers */,
 				7693E1DD1B22A6E90068F1CD /* pack_template.h in Headers */,
+				763F860B1B52DABB004C5411 /* Expression.h in Headers */,
 				7693E2151B22A6EB0068F1CD /* raw.hpp in Headers */,
 				7693E1E21B22A6EA0068F1CD /* define.hpp in Headers */,
 				76416D931B25FA7D00ECEFCD /* Context.h in Headers */,
@@ -1072,7 +1089,9 @@
 				7693E1D01B22A6E90068F1CD /* Localize.h in Headers */,
 				7693E1B81B22A6E90068F1CD /* Layout.h in Headers */,
 				7693E1DA1B22A6E90068F1CD /* pack.h in Headers */,
+				765B7E2D1B6B7F7000A26E33 /* CCH_CREATE_FUNC.hpp in Headers */,
 				7693E1971B22A6E90068F1CD /* jsonserialization.h in Headers */,
+				764515781B3CE60800CD5E1E /* Context.hpp in Headers */,
 				7693E15E1B22A6E90068F1CD /* InstantActionFactory.h in Headers */,
 				7693E2031B22A6EA0068F1CD /* object.hpp in Headers */,
 				7693E17C1B22A6E90068F1CD /* Event.h in Headers */,
@@ -1087,9 +1106,12 @@
 				7693E1E41B22A6EA0068F1CD /* fixint.hpp in Headers */,
 				7693E1F01B22A6EA0068F1CD /* tuple.hpp in Headers */,
 				7693E1FE1B22A6EA0068F1CD /* msgpack.h in Headers */,
+				7645157D1B3CF7B400CD5E1E /* FContext.h in Headers */,
 				7693E1931B22A6E90068F1CD /* reader.h in Headers */,
+				765B7E331B6B889C00A26E33 /* CUT_LAST_ARG.hpp in Headers */,
 				7693E1DE1B22A6E90068F1CD /* sbuffer.h in Headers */,
 				7693E1F91B22A6EA0068F1CD /* vrefbuffer.hpp in Headers */,
+				760B8FB41B4EE495003C4FF9 /* Parser.h in Headers */,
 				7693E1F71B22A6EA0068F1CD /* version.h in Headers */,
 				7693E24C1B22A6EC0068F1CD /* Sound.h in Headers */,
 				7693E20B1B22A6EA0068F1CD /* bool.hpp in Headers */,
@@ -1113,14 +1135,15 @@
 				7693E1991B22A6E90068F1CD /* map.hpp in Headers */,
 				7693E1BF1B22A6E90068F1CD /* LayoutRegistration.h in Headers */,
 				7693E1E01B22A6EA0068F1CD /* sysdep.h in Headers */,
-				7693E1A71B22A6E90068F1CD /* uint.hpp in Headers */,
-				7693E18A1B22A6E90068F1CD /* float.hpp in Headers */,
+				7693E1A71B22A6E90068F1CD /* number.hpp in Headers */,
 				7693E2171B22A6EB0068F1CD /* string.hpp in Headers */,
+				7645157F1B3CF80F00CD5E1E /* FContext.hpp in Headers */,
 				7693E1EC1B22A6EA0068F1CD /* set.hpp in Headers */,
 				7693E1851B22A6E90068F1CD /* hset.h in Headers */,
 				7693E1871B22A6E90068F1CD /* bool.hpp in Headers */,
 				7693E16D1B22A6E90068F1CD /* SpawnActionFactory.h in Headers */,
 				7693E18F1B22A6E90068F1CD /* config.h in Headers */,
+				764515761B3CE5CD00CD5E1E /* Context.h in Headers */,
 				7693E1F81B22A6EA0068F1CD /* vrefbuffer.h in Headers */,
 				7693E1A81B22A6E90068F1CD /* vector.hpp in Headers */,
 				7693E1801B22A6E90068F1CD /* Factory.h in Headers */,
@@ -1128,12 +1151,13 @@
 				7693E2281B22A6EB0068F1CD /* msgpack.h in Headers */,
 				7693E21F1B22A6EB0068F1CD /* unpack_define.h in Headers */,
 				7693E20D1B22A6EA0068F1CD /* deque.hpp in Headers */,
+				7679C84A1B4C464000081830 /* CCH_EVEN_ODD.hpp in Headers */,
 				7693E1DC1B22A6E90068F1CD /* pack_define.h in Headers */,
 				7693E1A51B22A6E90068F1CD /* string.hpp in Headers */,
 				7646FEE71B22F760002B2E23 /* OperationManager.h in Headers */,
 				7693E21E1B22A6EB0068F1CD /* unpack.hpp in Headers */,
-				7693E18C1B22A6E90068F1CD /* int.hpp in Headers */,
 				7693E1611B22A6E90068F1CD /* MoveByActionFactory.h in Headers */,
+				7627E11B1B5E370000ED7B66 /* InvokeLater.h in Headers */,
 				7693E1FF1B22A6EA0068F1CD /* msgpack.hpp in Headers */,
 				7693E2181B22A6EB0068F1CD /* unordered_map.hpp in Headers */,
 				7693E2131B22A6EB0068F1CD /* nil.hpp in Headers */,
@@ -1145,13 +1169,13 @@
 				7693E2501B22A6EC0068F1CD /* Utils.h in Headers */,
 				7693E21A1B22A6EB0068F1CD /* tuple.hpp in Headers */,
 				7693E1581B22A6E90068F1CD /* DoLayoutActionFactory.h in Headers */,
+				76B602131B3C5DF500B79B6E /* ContextValue.h in Headers */,
 				7693E1781B22A6E90068F1CD /* DialogLayer.h in Headers */,
-				7693E1891B22A6E90068F1CD /* double.hpp in Headers */,
 				7693E1961B22A6E90068F1CD /* writer.h in Headers */,
+				7607A9C01B4BE68200F594EE /* PP_NARG.hpp in Headers */,
 				7693E18B1B22A6E90068F1CD /* hash_map.hpp in Headers */,
 				7693E2061B22A6EA0068F1CD /* pack_define.h in Headers */,
 				7693E2511B22A6EC0068F1CD /* ValueProxy.h in Headers */,
-				7693E1491B22A6E90068F1CD /* ActionFactoryContext.h in Headers */,
 				7693E2051B22A6EA0068F1CD /* pack.hpp in Headers */,
 				7693E19C1B22A6E90068F1CD /* serializor.hpp in Headers */,
 				7693E1721B22A6E90068F1CD /* ccHelp.h in Headers */,
@@ -1160,10 +1184,10 @@
 				7693E2201B22A6EB0068F1CD /* unpack_template.h in Headers */,
 				7693E2161B22A6EB0068F1CD /* set.hpp in Headers */,
 				7693E1551B22A6E90068F1CD /* DelayActionFactory.h in Headers */,
-				7693E19A1B22A6E90068F1CD /* object.hpp in Headers */,
 				7693E1D31B22A6E90068F1CD /* Lock.h in Headers */,
 				7693E1E71B22A6EA0068F1CD /* list.hpp in Headers */,
 				7693E1EF1B22A6EA0068F1CD /* unordered_set.hpp in Headers */,
+				764576E61B69CD9E004B4728 /* ApplicationListener.h in Headers */,
 				7693E1A61B22A6E90068F1CD /* strserialization.hpp in Headers */,
 				7693E1901B22A6E90068F1CD /* features.h in Headers */,
 				7693E1DB1B22A6E90068F1CD /* pack.hpp in Headers */,
@@ -1259,20 +1283,24 @@
 				7693E2361B22A6EB0068F1CD /* MultiStateAnimNode.cpp in Sources */,
 				7693E2301B22A6EB0068F1CD /* version.cpp in Sources */,
 				7693E2341B22A6EB0068F1CD /* zone.cpp in Sources */,
-				7693E1471B22A6E80068F1CD /* ActionFactoryContext.cpp in Sources */,
 				7693E1761B22A6E90068F1CD /* DialogLayer.cpp in Sources */,
 				7693E22C1B22A6EB0068F1CD /* objectc.cpp in Sources */,
 				7693E1441B22A6E80068F1CD /* ActionFactory.cpp in Sources */,
 				7693E1651B22A6E90068F1CD /* ScaleToActionFactory.cpp in Sources */,
+				760B8FB61B4EE5DF003C4FF9 /* TokenType.cpp in Sources */,
 				7693E1B41B22A6E90068F1CD /* LabelLayouts.cpp in Sources */,
 				7693E1AC1B22A6E90068F1CD /* CommonLayouts.cpp in Sources */,
 				7693E2001B22A6EA0068F1CD /* gcc_atomic.cpp in Sources */,
+				764576E41B69CD9E004B4728 /* ApplicationListener.cpp in Sources */,
+				760B8FB21B4EE495003C4FF9 /* Parser.cpp in Sources */,
 				7693E2321B22A6EB0068F1CD /* vrefbuffer.cpp in Sources */,
 				7693E23F1B22A6EC0068F1CD /* ParallaxCamera.cpp in Sources */,
 				7693E2521B22A6EC0068F1CD /* vsson.cpp in Sources */,
+				7607A9B51B4BBEE700F594EE /* Model.cpp in Sources */,
 				7693E1561B22A6E90068F1CD /* DoLayoutActionFactory.cpp in Sources */,
 				7693E1BD1B22A6E90068F1CD /* LayoutRegistration.cpp in Sources */,
 				7693E1501B22A6E90068F1CD /* AnimateActionFactory.cpp in Sources */,
+				7627E1191B5E370000ED7B66 /* InvokeLater.cpp in Sources */,
 				7693E15F1B22A6E90068F1CD /* MoveByActionFactory.cpp in Sources */,
 				7693E22E1B22A6EB0068F1CD /* unpack.cpp in Sources */,
 				7693E16B1B22A6E90068F1CD /* SpawnAction.cpp in Sources */,
@@ -1285,24 +1313,31 @@
 				7693E1CE1B22A6E90068F1CD /* Localize.cpp in Sources */,
 				76416D911B25FA7D00ECEFCD /* Context.cpp in Sources */,
 				7693E1A11B22A6E90068F1CD /* json_value.cpp in Sources */,
+				764515741B3CE5CD00CD5E1E /* Context.cpp in Sources */,
 				7693E1791B22A6E90068F1CD /* DrawNodeHelper.cpp in Sources */,
 				7693E1C61B22A6E90068F1CD /* uiButtonLayouts.cpp in Sources */,
 				7693E1C21B22A6E90068F1CD /* NodePositioningLayouts.cpp in Sources */,
 				7693E15C1B22A6E90068F1CD /* InstantActionFactory.cpp in Sources */,
 				7693E14A1B22A6E90068F1CD /* ActionFactoryRegistration.cpp in Sources */,
+				76233DDB1B6794A1007915FA /* UniqueRandom.cpp in Sources */,
 				7693E1D51B22A6E90068F1CD /* MonsterDebuggerLayer.cpp in Sources */,
 				7693E1AF1B22A6E90068F1CD /* GroupLayout.cpp in Sources */,
 				7693E24A1B22A6EC0068F1CD /* Sound.cpp in Sources */,
+				7607A9BA1B4BC03200F594EE /* BaseModel.cpp in Sources */,
 				7693E2551B22A6EC0068F1CD /* WidgetUtils.cpp in Sources */,
 				7693E1591B22A6E90068F1CD /* FadeToActionFactory.cpp in Sources */,
+				7645157B1B3CF7B400CD5E1E /* FContext.cpp in Sources */,
 				7693E1C41B22A6E90068F1CD /* NodeSizingLayouts.cpp in Sources */,
 				7693E1C01B22A6E90068F1CD /* LoadingBarLayouts.cpp in Sources */,
+				76B602111B3C5DF500B79B6E /* ContextValue.cpp in Sources */,
 				7693E1531B22A6E90068F1CD /* DelayActionFactory.cpp in Sources */,
+				76372D8E1B4B822F009E66B8 /* IOHelper.cpp in Sources */,
 				7693E1811B22A6E90068F1CD /* Hash.cpp in Sources */,
 				7693E14D1B22A6E90068F1CD /* ActionHelper.cpp in Sources */,
 				7693E1B61B22A6E90068F1CD /* LayerColorLayouts.cpp in Sources */,
 				7693E1731B22A6E90068F1CD /* Def.cpp in Sources */,
 				7693E2431B22A6EC0068F1CD /* Random.cpp in Sources */,
+				763F86091B52DABB004C5411 /* Expression.hpp in Sources */,
 				7693E1D11B22A6E90068F1CD /* Lock.cpp in Sources */,
 				7693E24E1B22A6EC0068F1CD /* Utils.cpp in Sources */,
 				7693E1C81B22A6E90068F1CD /* WidgetLayouts.cpp in Sources */,
@@ -1326,15 +1361,18 @@
 				7693E1D61B22A6E90068F1CD /* MonsterDebuggerLayer.cpp in Sources */,
 				7693E1541B22A6E90068F1CD /* DelayActionFactory.cpp in Sources */,
 				7693E24B1B22A6EC0068F1CD /* Sound.cpp in Sources */,
+				760B8FB71B4EE5DF003C4FF9 /* TokenType.cpp in Sources */,
 				7693E14B1B22A6E90068F1CD /* ActionFactoryRegistration.cpp in Sources */,
 				7693E2011B22A6EA0068F1CD /* gcc_atomic.cpp in Sources */,
 				7693E1631B22A6E90068F1CD /* PlaySoundActionFactory.cpp in Sources */,
+				764576E51B69CD9E004B4728 /* ApplicationListener.cpp in Sources */,
+				760B8FB31B4EE495003C4FF9 /* Parser.cpp in Sources */,
 				7693E15D1B22A6E90068F1CD /* InstantActionFactory.cpp in Sources */,
 				7693E1BA1B22A6E90068F1CD /* LayoutHelper.cpp in Sources */,
-				7693E1481B22A6E90068F1CD /* ActionFactoryContext.cpp in Sources */,
 				7693E17A1B22A6E90068F1CD /* DrawNodeHelper.cpp in Sources */,
 				7693E22B1B22A6EB0068F1CD /* object.cpp in Sources */,
 				7693E2481B22A6EC0068F1CD /* Shortcut.cpp in Sources */,
+				7627E11A1B5E370000ED7B66 /* InvokeLater.cpp in Sources */,
 				7693E1CF1B22A6E90068F1CD /* Localize.cpp in Sources */,
 				7693E1C11B22A6E90068F1CD /* LoadingBarLayouts.cpp in Sources */,
 				7693E22D1B22A6EB0068F1CD /* objectc.cpp in Sources */,
@@ -1347,26 +1385,34 @@
 				7693E2401B22A6EC0068F1CD /* ParallaxCamera.cpp in Sources */,
 				76416D921B25FA7D00ECEFCD /* Context.cpp in Sources */,
 				7693E2331B22A6EB0068F1CD /* vrefbuffer.cpp in Sources */,
+				764515751B3CE5CD00CD5E1E /* Context.cpp in Sources */,
 				7693E1C31B22A6E90068F1CD /* NodePositioningLayouts.cpp in Sources */,
 				7693E16C1B22A6E90068F1CD /* SpawnAction.cpp in Sources */,
 				7693E1B71B22A6E90068F1CD /* LayerColorLayouts.cpp in Sources */,
 				7693E1AB1B22A6E90068F1CD /* AddChildLayouts.cpp in Sources */,
 				7693E1571B22A6E90068F1CD /* DoLayoutActionFactory.cpp in Sources */,
+				76233DDC1B6794A1007915FA /* UniqueRandom.cpp in Sources */,
 				7693E1511B22A6E90068F1CD /* AnimateActionFactory.cpp in Sources */,
 				7693E1C91B22A6E90068F1CD /* WidgetLayouts.cpp in Sources */,
 				7693E1AD1B22A6E90068F1CD /* CommonLayouts.cpp in Sources */,
+				7607A9BB1B4BC03200F594EE /* BaseModel.cpp in Sources */,
 				7693E2351B22A6EB0068F1CD /* zone.cpp in Sources */,
 				7693E1821B22A6E90068F1CD /* Hash.cpp in Sources */,
+				7645157C1B3CF7B400CD5E1E /* FContext.cpp in Sources */,
 				7693E1D21B22A6E90068F1CD /* Lock.cpp in Sources */,
 				7693E1A41B22A6E90068F1CD /* json_writer.cpp in Sources */,
+				76B602121B3C5DF500B79B6E /* ContextValue.cpp in Sources */,
 				7693E24F1B22A6EC0068F1CD /* Utils.cpp in Sources */,
+				76372D8F1B4B822F009E66B8 /* IOHelper.cpp in Sources */,
 				7693E15A1B22A6E90068F1CD /* FadeToActionFactory.cpp in Sources */,
 				7693E2311B22A6EB0068F1CD /* version.cpp in Sources */,
 				7693E2561B22A6EC0068F1CD /* WidgetUtils.cpp in Sources */,
 				7693E1771B22A6E90068F1CD /* DialogLayer.cpp in Sources */,
 				7693E1B01B22A6E90068F1CD /* GroupLayout.cpp in Sources */,
+				763F860A1B52DABB004C5411 /* Expression.hpp in Sources */,
 				7693E2441B22A6EC0068F1CD /* Random.cpp in Sources */,
 				7693E1A21B22A6E90068F1CD /* json_value.cpp in Sources */,
+				76372D921B4B822F009E66B8 /* KVDB.cpp in Sources */,
 				7693E2531B22A6EC0068F1CD /* vsson.cpp in Sources */,
 				7693E2371B22A6EB0068F1CD /* MultiStateAnimNode.cpp in Sources */,
 				7693E1601B22A6E90068F1CD /* MoveByActionFactory.cpp in Sources */,
@@ -1498,7 +1544,9 @@
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
 					"$(SRCROOT)/../src",
+					"$(SRCROOT)/../../cocos2d",
 					"$(SRCROOT)/../../cocos2d/cocos",
+					"$(SRCROOT)/../../cocos2d/external",
 					"$(SRCROOT)/../../cocos2d/external/png/include/mac",
 					"$(SRCROOT)/../../cocos2d/external/tiff/include/mac",
 					"$(SRCROOT)/../../cocos2d/external/webp/include/mac",
@@ -1565,7 +1613,9 @@
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
 					"$(SRCROOT)/../src",
+					"$(SRCROOT)/../../cocos2d",
 					"$(SRCROOT)/../../cocos2d/cocos",
+					"$(SRCROOT)/../../cocos2d/external",
 					"$(SRCROOT)/../../cocos2d/external/png/include/mac",
 					"$(SRCROOT)/../../cocos2d/external/tiff/include/mac",
 					"$(SRCROOT)/../../cocos2d/external/webp/include/mac",
@@ -1621,7 +1671,9 @@
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
 					"$(SRCROOT)/../src",
+					"$(SRCROOT)/../../cocos2d",
 					"$(SRCROOT)/../../cocos2d/cocos",
+					"$(SRCROOT)/../../cocos2d/external",
 					"$(SRCROOT)/../../cocos2d/external/png/include/ios",
 					"$(SRCROOT)/../../cocos2d/external/tiff/include/ios",
 					"$(SRCROOT)/../../cocos2d/external/webp/include/ios",
@@ -1679,7 +1731,9 @@
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
 					"$(SRCROOT)/../src",
+					"$(SRCROOT)/../../cocos2d",
 					"$(SRCROOT)/../../cocos2d/cocos",
+					"$(SRCROOT)/../../cocos2d/external",
 					"$(SRCROOT)/../../cocos2d/external/png/include/ios",
 					"$(SRCROOT)/../../cocos2d/external/tiff/include/ios",
 					"$(SRCROOT)/../../cocos2d/external/webp/include/ios",

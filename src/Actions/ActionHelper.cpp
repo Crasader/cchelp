@@ -15,7 +15,7 @@ namespace ccHelp {
     hmap<string, ActionFactory*> ActionHelper::FACTORIES;
     hmap<string, ActionFactory::Parameter> ActionHelper::CACHE;
     
-    cocos2d::Action* ActionHelper::createAction(const ActionFactory::Parameter &p, const ActionContext &ctx)
+    cocos2d::Action* ActionHelper::createAction(const ActionFactory::Parameter &p, const Context &ctx)
     {
         cocos2d::Action *action = nullptr;
         if (p.isObject())
@@ -42,12 +42,12 @@ namespace ccHelp {
             
             if (it != FACTORIES.end())
             {
-                action = it->second->createAction(AFContext(ctx, p));
+                action = it->second->createAction(FContext(ctx, p));
             }
             else
             {
                 // it may be instant action
-                action = InstantActionFactory::getInstance()->createAction(AFContext(ctx, p));
+                action = InstantActionFactory::getInstance()->createAction(FContext(ctx, p));
             }
             
         }
@@ -68,7 +68,7 @@ namespace ccHelp {
         return action;
     }
     
-    cocos2d::Action* ActionHelper::createActionByName(const string &actName, const ActionContext &ctx)
+    cocos2d::Action* ActionHelper::createActionByName(const string &actName, const Context &ctx)
     {
         auto it = CACHE.find(actName);
         if (it == CACHE.end())
@@ -79,7 +79,7 @@ namespace ccHelp {
         return nullptr;
     }
     
-    cocos2d::Action* ActionHelper::createActionFromFile(const string &file, const ActionContext &ctx)
+    cocos2d::Action* ActionHelper::createActionFromFile(const string &file, const Context &ctx)
     {
         auto it = CACHE.find(file);
         if (it == CACHE.end())
@@ -98,7 +98,7 @@ namespace ccHelp {
     
     cocos2d::Action* ActionHelper::createActionFromFile(const string &file,
                                                         const string &actID,
-                                                        const ActionContext &ctx)
+                                                        const Context &ctx)
     {
         auto it = CACHE.find(actID);
         if (it == CACHE.end())

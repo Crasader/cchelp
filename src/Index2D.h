@@ -10,8 +10,8 @@ namespace ccHelp
 		inline Index2D()
 			: row(0), col(0) {}
 
-		inline Index2D(uint row, uint col)
-			: row(row), col(col) {}
+		inline Index2D(uint _row, uint _col)
+			: row(_row), col(_col) {}
 
 		inline Index2D(CREF(Index2D) idx)
 			: row(idx.row), col(idx.col) {}
@@ -67,12 +67,11 @@ namespace ccHelp
 namespace std
 {
 	template <>
-	struct hash<ccHelp::Index2D>
+    struct hash<ccHelp::Index2D>
 	{
 		std::size_t operator()(const ccHelp::Index2D &k) const
 		{
 			return (size_t) k;
 		}
 	};
-
 }

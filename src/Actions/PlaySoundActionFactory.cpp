@@ -12,11 +12,11 @@
 
 namespace ccHelp {
     
-    cocos2d::CallFunc* PlaySoundActionFactory::createAction(const AFContext &ctx) const
+    cocos2d::CallFunc* PlaySoundActionFactory::createAction(const FContext &ctx) const
     {
         string sound;
-        if (!ctx.getField("Sound", sound) &&
-            !ctx.getField("1", sound))
+        if (!ctx.get("Sound", sound) &&
+            !ctx.get("1", sound))
         {
             return nullptr;
         }

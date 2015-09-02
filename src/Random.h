@@ -150,8 +150,5 @@ namespace ccHelp
 		/// <param name="trueRatio">True ratio (default is 0.5)</param>
 		/// <returns>Random logic value</returns> */
 		static bool RandomBool();
-
-	private:
-		static int seed;
 	};
 }

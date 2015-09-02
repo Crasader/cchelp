@@ -8,6 +8,54 @@ using namespace std;
 
 namespace ccHelp
 {
+    void Utils::setCascadeOpacityAllChilds(cocos2d::Node *n, bool enabled)
+    {
+        n->setCascadeOpacityEnabled(enabled);
+        for (auto *child : n->getChildren())
+        {
+            child->setCascadeOpacityEnabled(enabled);
+        }
+    }
+    
+    void Utils::setCascadeOpacityRecursively(cocos2d::Node *n, bool enabled)
+    {
+        if (!n)
+            return;
+        
+        n->setCascadeOpacityEnabled(enabled);
+        
+        for (auto *child : n->getChildren())
+        {
+            Utils::setCascadeOpacityRecursively(child);
+        }
+    }
+    
+    void Utils::swallowTouch(cocos2d::Node *n)
+    {
+        auto *touchListener = EventListenerTouchOneByOne::create();
+        touchListener->setSwallowTouches(true);
+        touchListener->onTouchBegan = [](Touch *t, cocos2d::Event *e)
+        {
+            return true;
+        };
+        Director::getInstance()->getEventDispatcher()->addEventListenerWithSceneGraphPriority(touchListener, n);
+    }
+    
+    void Utils::swallowTouchBB(cocos2d::Node *n)
+    {
+        auto *touchListener = EventListenerTouchOneByOne::create();
+        touchListener->setSwallowTouches(true);
+        touchListener->onTouchBegan = [=](Touch *t, cocos2d::Event *e)
+        {
+            if (!n->getParent())
+                return false;
+            
+            auto pos = n->getParent()->convertToNodeSpace(t->getLocation());
+            return n->getBoundingBox().containsPoint(pos);
+        };
+        Director::getInstance()->getEventDispatcher()->addEventListenerWithSceneGraphPriority(touchListener, n);
+    }
+    
 	void Utils::setNodeAnchorWithoutChangePosition(Node *target, CREF(Vec2) newAnchor)
 	{
 		const Node *parent = target->getParent();
@@ -49,6 +97,10 @@ namespace ccHelp
 
 	Scene* Utils::createScene(Node *scn)
 	{
+        if (scn->getName().empty())
+        {
+            scn->setName("main");
+        }
 		Scene *scene = Scene::create();
 		scene->addChild(scn);
 
@@ -239,8 +291,11 @@ namespace ccHelp
 		string content = FileUtils::getInstance()->getStringFromFile(fileName);
 		Json::Value j;
 
-		READER.parse(content, j);
-		return j;
+		if (READER.parse(content, j))
+            return j;
+        
+        log("Invalid json file: %s", fileName.c_str());
+        return Json::Value::null;
 	}
     
     Json::Value Utils::jsonFromVsson(const vsson::VSSObject &vsson)
@@ -282,16 +337,72 @@ namespace ccHelp
 		return trim;
 	}
     
-    string Utils::enUSFormat(int d)
+    string Utils::enUSFormat(long d)
     {
-        std::string str = StringUtils::format("%d", d);
+        std::string str = StringUtils::format("%ld", d);
         
-        for (int i = str.length()-3; i > 0; i -= 3)
+        for (long i = str.length()-3; i > 0; i -= 3)
         {
             str.insert(i, ",");
         }
         
         return str;
+    }
+    
+    string get_suffix(short nn3)
+    {
+        switch (nn3) {
+            case 0:
+                return "";
+            case 1:
+                return "K";
+            case 2:
+                return "M";
+            case 3:
+                return "B";
+            case 4:
+                return "T";
+            default:
+                break;
+        }
+        
+        nn3 -= 5;
+        
+        ushort nrep = 2 + (nn3 / ('z' - 'a'));
+        char c = 'a' + (nn3 % ('z' - 'a'));
+        
+        stringstream ss;
+        while (nrep > 0) {
+            ss<<c;
+            --nrep;
+        }
+        
+        return ss.str();
+    }
+    
+    string Utils::collapse(double n)
+    {
+        static uint DIV = 100000;
+        static double MAGIC_NUM = log(10) / DIV;
+        
+        stringstream ss;
+        if (n < 0)
+        {
+            ss<<'-';
+            n = abs(n);
+        }
+        
+        double nc = log(n);
+        nc /= MAGIC_NUM;
+        uint nn = static_cast<uint>(round(nc));
+        nn /= DIV;
+        ushort nn3 = nn / 3;
+        
+        n /= pow(10, 3 * nn3);
+        
+        ss<<std::setiosflags(ios::fixed)<<std::setprecision((nn3>0?2:0))<<n<<get_suffix(nn3);
+        
+        return ss.str();
     }
 
 	bool Utils::contains(const cocos2d::Node *node, CREF(Vec2) p)
@@ -311,5 +422,62 @@ namespace ccHelp
             return n->getPosition();
         
         return target->convertToNodeSpace(n->getParent()->convertToWorldSpace(n->getPosition()));
+    }
+    
+    ulong Utils::time()
+    {
+        return (ulong) std::chrono::duration_cast<std::chrono::milliseconds>(std::chrono::system_clock::now().time_since_epoch()).count();
+    }
+    
+    unsigned long long Utils::timeInMicros()
+    {
+        return std::chrono::duration_cast<std::chrono::microseconds>(std::chrono::system_clock::now().time_since_epoch()).count();
+    }
+    
+    unsigned long long Utils::timeInNanos()
+    {
+        return std::chrono::duration_cast<std::chrono::nanoseconds>(std::chrono::system_clock::now().time_since_epoch()).count();
+    }
+    
+    Label* Utils::showToast(const string &msg,
+                            const string &ttf,
+                            float fontSize,
+                            const cocos2d::Color4B &textColor,
+                            cocos2d::Node *parent,
+                            std::function<void(Label *)> edit)
+    {
+        if (!parent)
+        {
+            parent = Director::getInstance()->getRunningScene();
+            if (!parent)
+                return nullptr;
+        }
+        
+        Label *lbl = Label::createWithTTF(msg, ttf, fontSize);
+        if (!lbl)
+            return nullptr;
+        
+        lbl->setTextColor(textColor);
+        lbl->setAlignment(TextHAlignment::CENTER, TextVAlignment::CENTER);
+        lbl->setAnchorPoint(Vec2::ANCHOR_MIDDLE);
+        auto parentSize = parent->getContentSize();
+        lbl->setPosition(parentSize.width * 0.5, parentSize.height * 0.2);
+        
+        if (edit)
+        {
+            edit(lbl);
+        }
+        
+        lbl->setOpacity(0);
+        auto *fadeIn = FadeIn::create(0.15);
+        auto *moveUp = MoveBy::create(1.35, Vec2(0, parentSize.height * 0.25));
+        auto *wait = DelayTime::create(0.35);
+        auto *fadeOut = FadeOut::create(1.f);
+        auto *combine = Spawn::create(moveUp, Sequence::create(wait, fadeOut, nullptr), nullptr);
+        auto *seq = Sequence::create(fadeIn, combine, RemoveSelf::create(), nullptr);
+        lbl->runAction(seq);
+        
+        parent->addChild(lbl);
+        return lbl;
     }
 }

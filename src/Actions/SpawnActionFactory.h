@@ -12,6 +12,6 @@ namespace ccHelp {
     class SpawnActionFactory : public ActionFactory
     {
     public:
-        virtual cocos2d::Spawn* createAction(const AFContext &ctx) const override;
+        virtual cocos2d::Spawn* createAction(const FContext &ctx) const override;
     };
 }
