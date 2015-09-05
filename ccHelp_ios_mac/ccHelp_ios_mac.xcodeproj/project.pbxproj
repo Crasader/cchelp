@@ -392,6 +392,8 @@
 		765B7E2C1B6B7F7000A26E33 /* CCH_CREATE_FUNC.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = CCH_CREATE_FUNC.hpp; sourceTree = "<group>"; };
 		765B7E2E1B6B869500A26E33 /* LAST_ARG.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = LAST_ARG.hpp; sourceTree = "<group>"; };
 		765B7E321B6B889C00A26E33 /* CUT_LAST_ARG.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = CUT_LAST_ARG.hpp; sourceTree = "<group>"; };
+		76717CDE1B9A9FDD00A291CB /* ENUM.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = ENUM.hpp; sourceTree = "<group>"; };
+		76717CDF1B9AADFC00A291CB /* EnumHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EnumHelper.h; sourceTree = "<group>"; };
 		7679C8471B4C40A200081830 /* CCH_FOR2.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = CCH_FOR2.hpp; sourceTree = "<group>"; };
 		7679C8491B4C464000081830 /* CCH_EVEN_ODD.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = CCH_EVEN_ODD.hpp; sourceTree = "<group>"; };
 		7693DF451B229ED30068F1CD /* ccHelp_Mac.a */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = ccHelp_Mac.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -689,6 +691,7 @@
 				765B7E2C1B6B7F7000A26E33 /* CCH_CREATE_FUNC.hpp */,
 				765B7E2E1B6B869500A26E33 /* LAST_ARG.hpp */,
 				765B7E321B6B889C00A26E33 /* CUT_LAST_ARG.hpp */,
+				76717CDE1B9A9FDD00A291CB /* ENUM.hpp */,
 			);
 			path = Macro;
 			sourceTree = "<group>";
@@ -836,6 +839,7 @@
 				7627E1181B5E370000ED7B66 /* InvokeLater.h */,
 				764576E21B69CD9E004B4728 /* ApplicationListener.cpp */,
 				764576E31B69CD9E004B4728 /* ApplicationListener.h */,
+				76717CDF1B9AADFC00A291CB /* EnumHelper.h */,
 			);
 			name = src;
 			path = ../src;

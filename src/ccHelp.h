@@ -50,3 +50,5 @@
 #include "ApplicationListener.h"
 
 #include "Macro/CCH_CREATE_FUNC.hpp"
+
+#include "EnumHelper.h"
