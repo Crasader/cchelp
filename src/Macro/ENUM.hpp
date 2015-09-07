@@ -27,6 +27,12 @@
 #define CCH_STRINGIZE(x) CCH_STRINGIZE_I(x)
 #define CCH_STRINGIZE_I(x) #x
 
+#define ENUM_UTILS_DECL(NS, NAME) \
+template<> \
+string Json::type::strSerialize<NS::NAME>(const NS::NAME &e); \
+template<> \
+bool Json::type::strDeserialize<NS::NAME>(const string &s, NS::NAME &e);
+
 #define ENUM_UTILS_IMPL(NS, NAME, ...) \
 \
 template<> \
@@ -40,7 +46,7 @@ string Json::type::strSerialize<NS::NAME>(const NS::NAME &e) \
     return "";\
 } \
 template<> \
-bool ::Json::type::strDeserialize<NS::NAME>(const string &s, NS::NAME &e) \
+bool Json::type::strDeserialize<NS::NAME>(const string &s, NS::NAME &e) \
 { \
     CCH_FOR(FROM_STRING_IF, NS, __VA_ARGS__) \
     return false; \
