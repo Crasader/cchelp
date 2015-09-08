@@ -22,39 +22,33 @@ namespace ccHelp {
     public:
         virtual void doLayout(Node *root, const Layout::Parameter &p) const override
         {
-            if (p.isArray())
+            string type;
+            if (!p.get(type, 0, "type", nullptr))
+                return;
+            
+            string name;
+            if (!p.get(name, 1, "name", nullptr))
+                return;
+            
+            type = Utils::tolower(type);
+            auto ite = FACTORIES.find(type);
+            if (ite == FACTORIES.end())
+                return;
+            
+            Node *child = ite->second(p);
+            if (!child)
+                return;
+            
+            child->setName(name);
+            
+            int tag;
+            if (p.get(tag, 3, "tag", nullptr))
             {
-                for (uint i = 0; i < p.size(); ++i)
-                {
-                    this->doLayout(root, p[i]);
-                }
+                child->setTag(tag);
             }
-            else if (p.isObject())
-            {
-                if (!p.isMember("type") || !p["type"].isString())
-                    return;
-                
-                if (!p.isMember("name") || !p["name"].isString())
-                    return;
-                
-                string type = Utils::tolower(p["type"].asString());
-                auto ite = FACTORIES.find(type);
-                if (ite == FACTORIES.end())
-                    return;
-                
-                Node *child = ite->second(p);
-                if (!child)
-                    return;
-                
-                child->setName(p["name"].asString());
-                
-                if (p.isMember("tag") && p["tag"].isInt())
-                {
-                    child->setTag(p["tag"].asInt());
-                }
-                
-                root->addChild(child);
-            }
+            
+            root->addChild(child);
+            GroupLayout::getInstance()->doLayout(child, p);
         }
         
     public:
@@ -70,22 +64,26 @@ namespace ccHelp {
         FACTORIES["layer_color"] = [](const Layout::Parameter &p) {return LayerColor::create();};
         
         FACTORIES["sprite"] = [](const Layout::Parameter &p) {
-            if (!p.isMember("sprite") || !p["sprite"].isString())
+            string sprite;
+            if (!p.get(sprite))
                 return Sprite::create();
             
-            return Sprite::create(p["sprite"].asString());
+            return Sprite::create(sprite);
         };
         FACTORIES["sprite-frame"] = [](const Layout::Parameter &p) -> Sprite* {
-            if (!p.isMember("sprite") || !p["sprite"].isString())
+            string sprite;
+            if (!p.get(sprite))
                 return nullptr;
             
-            return Sprite::createWithSpriteFrameName(p["sprite"].asString());
+            return Sprite::createWithSpriteFrameName(sprite);
         };
+        
         FACTORIES["animation"] = [](const Layout::Parameter &p) -> Sprite* {
-            if (!p["animation"].isString())
+            string animName;
+            if (!p.get(animName))
                 return nullptr;
             
-            Animation *anim = AnimationCache::getInstance()->getAnimation(p["animation"].asString());
+            Animation *anim = AnimationCache::getInstance()->getAnimation(animName);
             if (!anim)
                 return nullptr;
             
@@ -97,24 +95,27 @@ namespace ccHelp {
         
         
         FACTORIES["button"] = [](const Layout::Parameter &p) {return ui::Button::create();};
+        FACTORIES["image"] = [](const Layout::Parameter &p) {return ui::ImageView::create();};
         
         FACTORIES["label"] = [](const Layout::Parameter &p) {return Label::create();};
         FACTORIES["label-ttf"] = [](const Layout::Parameter &p) -> Node* {
-            if (!p.isMember("font") || !p["font"].isString())
+            string font;
+            if (!p.get(font, 0, "font", "f", nullptr))
                 return nullptr;
             
             float fontSize;
-            if (!LayoutHelper::asFloat(p["font-size"], fontSize))
+            if (!p.get(fontSize, 1, "font-size", "fs", "size", "sz", "s", nullptr))
                 return nullptr;
             
-            Label *lbl = Label::createWithTTF("", p["font"].asString(), fontSize);
+            Label *lbl = Label::createWithTTF("", font, fontSize);
             return lbl;
         };
         FACTORIES["label-bmf"] = [](const Layout::Parameter &p) -> Node* {
-            if (!p.isMember("font") || !p["font"].isString())
+            string font;
+            if (!p.get(font))
                 return nullptr;
             
-            Label *lbl = Label::createWithBMFont(p["font"].asString(), "");
+            Label *lbl = Label::createWithBMFont(font, "");
             return lbl;
         };
     }

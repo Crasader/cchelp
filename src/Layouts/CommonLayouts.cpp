@@ -30,41 +30,44 @@ namespace ccHelp {
         
         // visible
         auto *visible = new FunctionLayout([](Node *n, const Layout::Parameter &p){
-            if (p.isBool())
+            bool isVisible = true;
+            if (p.get(isVisible))
             {
-                n->setVisible(p.asBool());
+                n->setVisible(isVisible);
             }
         });
         GroupLayout::registerLayout("visible", visible);
         
         // pause/resume
         auto *pause = new FunctionLayout([](Node *n, const Layout::Parameter &p){
-            if (!(p.isBool() || p.isNull()))
+            bool isPause = true;
+            if (!(p.get(isPause) || p.getJson().isNull()))
                 return;
             
-            if (p.isNull() || p.asBool())
+            if (!isPause)
             {
-                ccHelp::Utils::pauseRecursively(n);
+                ccHelp::Utils::resumeRecursively(n);
             }
             else
             {
-                ccHelp::Utils::resumeRecursively(n);
+                ccHelp::Utils::pauseRecursively(n);
             }
         });
         GroupLayout::registerLayout("pause", pause);
         
         // resume
         auto *resume = new FunctionLayout([](Node *n, const Layout::Parameter &p){
-            if (!(p.isBool() || p.isNull()))
+            bool isResume = true;
+            if (!(p.get(isResume) || p.getJson().isNull()))
                 return;
             
-            if (p.isNull() || p.asBool())
+            if (!isResume)
             {
-                ccHelp::Utils::resumeRecursively(n);
+                ccHelp::Utils::pauseRecursively(n);
             }
             else
             {
-                ccHelp::Utils::pauseRecursively(n);
+                ccHelp::Utils::resumeRecursively(n);
             }
         });
         GroupLayout::registerLayout("resume", resume);
@@ -81,18 +84,17 @@ namespace ccHelp {
         
         // color
         auto *cascadingColor = new FunctionLayout([](Node *n, const Layout::Parameter &p){
-            if (p.isBool())
+            bool enabled = true;
+            if (p.get(enabled))
             {
-                n->setCascadeColorEnabled(p.asBool());
+                n->setCascadeColorEnabled(enabled);
                 return;
             }
             
-            if (p.isObject() && p["enabled"].isBool() && p["mode"].isString())
+            string mode;
+            if (p.get(enabled, 0, "enabled", "e", nullptr) && p.get(mode, 1, "mode", "m", nullptr))
             {
-                string mode = p["mode"].asString();
                 mode = Utils::tolower(mode);
-                
-                bool enabled = p["enabled"].asBool();
                 
                 if (mode == "node")
                 {
@@ -139,61 +141,66 @@ namespace ccHelp {
         
         // color
         auto *cascadingOpacity = new FunctionLayout([](Node *n, const Layout::Parameter &p){
-            if (!p.isBool())
+            bool enabled = true;
+            if (!p.get(enabled))
                 return;
             
-            n->setCascadeOpacityEnabled(p.asBool());
+            n->setCascadeOpacityEnabled(enabled);
         });
         GroupLayout::registerLayout("cascade-opacity", cascadingOpacity);
         
         // z
         auto *z_ordering = new FunctionLayout([](Node *n, const Layout::Parameter &p){
-            if (!p.isInt())
+            int z = 0;
+            if (!p.get(z))
                 return;
             
-            n->setLocalZOrder(p.asInt());
+            n->setLocalZOrder(z);
         });
         GroupLayout::registerLayout("z-order", z_ordering);
         
         // tag
         auto *tagging = new FunctionLayout([](Node *n, const Layout::Parameter &p){
-            if (!p.isInt())
+            int tag = 0;
+            if (!p.get(tag))
                 return;
             
-            n->setTag(p.asInt());
+            n->setTag(tag);
         });
         GroupLayout::registerLayout("tag", tagging);
         
         // anchor
         auto *anchorLayout = new FunctionLayout([](Node *n, const Layout::Parameter &p){
             Vec2 anchor = n->getAnchorPoint();
-            if (p.isObject())
+            
+            bool ret = p.get(anchor.x, 0, "x", nullptr);
+            ret = p.get(anchor.y, 1, "y", nullptr) || ret;
+            
+            if (!ret)
             {
-                LayoutHelper::asFloat(p["x"], anchor.x);
-                LayoutHelper::asFloat(p["y"], anchor.y);
-            }
-            else if (p.isString())
-            {
-                string s = p.asString();
-                s = Utils::tolower(Utils::trim(s));
-                if (s == "top-left")
-                    anchor = Vec2::ANCHOR_TOP_LEFT;
-                else if (s == "middle-left")
-                    anchor = Vec2::ANCHOR_MIDDLE_LEFT;
-                else if (s == "bottom-left")
-                    anchor = Vec2::ANCHOR_BOTTOM_LEFT;
-                else if (s == "top-middle")
-                    anchor = Vec2::ANCHOR_MIDDLE_TOP;
-                else if (s == "middle-middle")
-                    anchor = Vec2::ANCHOR_MIDDLE;
-                else if (s == "bottom-middle")
-                    anchor = Vec2::ANCHOR_MIDDLE_BOTTOM;
-                else if (s == "top-right")
-                    anchor = Vec2::ANCHOR_TOP_RIGHT;
-                else if (s == "middle-right")
-                    anchor = Vec2::ANCHOR_MIDDLE_RIGHT;
-                else if (s == "bottom-right")
-                    anchor = Vec2::ANCHOR_BOTTOM_RIGHT;
+                string s;
+                if (p.get(s))
+                {
+                    s = Utils::tolower(Utils::trim(s));
+                    if (s == "top-left")
+                        anchor = Vec2::ANCHOR_TOP_LEFT;
+                    else if (s == "middle-left")
+                        anchor = Vec2::ANCHOR_MIDDLE_LEFT;
+                    else if (s == "bottom-left")
+                        anchor = Vec2::ANCHOR_BOTTOM_LEFT;
+                    else if (s == "top-middle")
+                        anchor = Vec2::ANCHOR_MIDDLE_TOP;
+                    else if (s == "middle-middle")
+                        anchor = Vec2::ANCHOR_MIDDLE;
+                    else if (s == "bottom-middle")
+                        anchor = Vec2::ANCHOR_MIDDLE_BOTTOM;
+                    else if (s == "top-right")
+                        anchor = Vec2::ANCHOR_TOP_RIGHT;
+                    else if (s == "middle-right")
+                        anchor = Vec2::ANCHOR_MIDDLE_RIGHT;
+                    else if (s == "bottom-right")
+                        anchor = Vec2::ANCHOR_BOTTOM_RIGHT;
+                }
             }
             
             n->setAnchorPoint(anchor);

@@ -12,14 +12,15 @@ namespace ccHelp {
     void regisNodePositioningLayouts()
     {
         auto *positioning = new FunctionLayout([](Node *n, const Layout::Parameter &p) {
-            if (p.isMember("x") && p["x"].isNumeric())
+            float pos;
+            if (p.get(pos, 0, "x", nullptr))
             {
-                n->setPositionX(p["x"].asFloat());
+                n->setPositionX(pos);
             }
             
-            if (p.isMember("y") && p["y"].isNumeric())
+            if (p.get(pos, 1, "y", nullptr))
             {
-                n->setPositionY(p["y"].asFloat());
+                n->setPositionY(pos);
             }
         });
         GroupLayout::registerLayout("position", positioning);
@@ -27,9 +28,10 @@ namespace ccHelp {
         /********************************************************************/
         
         auto *positioningX = new FunctionLayout([](Node *n, const Layout::Parameter &p) {
-            if (p.isNumeric())
+            float pos;
+            if (p.get(pos))
             {
-                n->setPositionX(p.asFloat());
+                n->setPositionX(pos);
             }
         });
         GroupLayout::registerLayout("position-x", positioningX);
@@ -37,9 +39,10 @@ namespace ccHelp {
         // ----------------------------------------
         
         auto *positioningY = new FunctionLayout([](Node *n, const Layout::Parameter &p) {
-            if (p.isNumeric())
+            float pos;
+            if (p.get(pos))
             {
-                n->setPositionY(p.asFloat());
+                n->setPositionY(pos);
             }
         });
         GroupLayout::registerLayout("position-y", positioningY);
@@ -72,85 +75,92 @@ namespace ccHelp {
     {
         /********************* ALIGN ABSOLUTELY *************************/
         
-        auto *align = new FunctionLayout([](Node *n, const Layout::Parameter &p) {
-            if (p.isMember("left") && p["left"].isNumeric())
+        auto *alignLayout = new FunctionLayout([](Node *n, const Layout::Parameter &p) {
+            float align = 0;
+            if (p.get(align, 0, "left", nullptr))
             {
                 n->setAnchorPoint(Vec2(0, n->getAnchorPoint().y));
-                n->setPositionX(p["left"].asFloat());
+                n->setPositionX(align);
             }
             
-            if (p.isMember("bottom") && p["bottom"].isNumeric())
+            if (p.get(align, 1, "bottom", nullptr))
             {
                 n->setAnchorPoint(Vec2(n->getAnchorPoint().x, 0));
-                n->setPositionY(p["bottom"].asFloat());
+                n->setPositionY(align);
             }
             
-            if (p.isMember("right") && p["right"].isNumeric())
+            if (n->getParent() && p.get(align, 2, "right", nullptr))
             {
                 n->setAnchorPoint(Vec2(1, n->getAnchorPoint().y));
-                n->setPositionX(n->getParent()->getContentSize().width - p["right"].asFloat());
+                n->setPositionX(n->getParent()->getContentSize().width - align);
             }
             
-            if (p.isMember("top") && p["top"].isNumeric())
+            if (n->getParent() && p.get(align, 3, "top", nullptr))
             {
                 n->setAnchorPoint(Vec2(n->getAnchorPoint().x, 1));
-                n->setPositionY(n->getParent()->getContentSize().height - p["top"].asFloat());
+                n->setPositionY(n->getParent()->getContentSize().height - align);
             }
         });
-        GroupLayout::registerLayout("align", align);
+        GroupLayout::registerLayout("align", alignLayout);
         
         auto *alignLeft = new FunctionLayout([](Node *n, const Layout::Parameter &p) {
-            if (p.isNumeric())
+            float align = 0;
+            if (p.get(align))
             {
                 n->setAnchorPoint(Vec2(0, n->getAnchorPoint().y));
-                n->setPositionX(p.asFloat());
+                n->setPositionX(align);
             }
         });
         GroupLayout::registerLayout("align-left", alignLeft);
         
         auto *alignBottom = new FunctionLayout([](Node *n, const Layout::Parameter &p) {
-            if (p.isNumeric())
+            float align = 0;
+            if (p.get(align))
             {
                 n->setAnchorPoint(Vec2(n->getAnchorPoint().x, 0));
-                n->setPositionY(p.asFloat());
+                n->setPositionY(align);
             }
         });
         GroupLayout::registerLayout("align-bottom", alignBottom);
         
         auto *alignRight = new FunctionLayout([](Node *n, const Layout::Parameter &p) {
-            if (p.isNumeric())
+            float align = 0;
+            if (n->getParent() && p.get(align))
             {
                 n->setAnchorPoint(Vec2(1, n->getAnchorPoint().y));
-                n->setPositionX(n->getParent()->getContentSize().width - p.asFloat());
+                n->setPositionX(n->getParent()->getContentSize().width - align);
             }
         });
         GroupLayout::registerLayout("align-right", alignRight);
         
         auto *alignTop = new FunctionLayout([](Node *n, const Layout::Parameter &p) {
-            if (p.isNumeric())
+            float align = 0;
+            if (n->getParent() && p.get(align))
             {
                 n->setAnchorPoint(Vec2(n->getAnchorPoint().x, 1));
-                n->setPositionY(n->getParent()->getContentSize().height - p.asFloat());
+                n->setPositionY(n->getParent()->getContentSize().height - align);
             }
         });
         GroupLayout::registerLayout("align-top", alignTop);
         
         
         auto *alignCenterX = new FunctionLayout([](Node *n, const Layout::Parameter &p) {
-            if (p.isNumeric())
+            float align = 0;
+            if (p.get(align))
             {
                 n->setAnchorPoint(Vec2(0.5, n->getAnchorPoint().y));
-                n->setPositionX(p.asFloat());
+                n->setPositionX(align);
             }
         });
         GroupLayout::registerLayout("align-center-x", alignCenterX);
         
         
         auto *alignCenterY = new FunctionLayout([](Node *n, const Layout::Parameter &p) {
-            if (p.isNumeric())
+            float align = 0;
+            if (p.get(align))
             {
                 n->setAnchorPoint(Vec2(n->getAnchorPoint().x, 0.5));
-                n->setPositionY(p.asFloat());
+                n->setPositionY(align);
             }
         });
         GroupLayout::registerLayout("align-center-y", alignCenterY);
@@ -161,27 +171,30 @@ namespace ccHelp {
         /********************* ALIGN PERCENTAGE *************************/
         
         auto *alignPrc = new FunctionLayout([](Node *n, const Layout::Parameter &p) {
-            float f;
+            if (!n->getParent())
+                return;
             
-            if (p.isMember("left") && LayoutHelper::asFloat(p["left"], f))
+            Layout::Parameter pp;
+            float f = 0;
+            if (p.get(pp, 0, "left", nullptr) && LayoutHelper::asFloat(pp, f))
             {
                 n->setAnchorPoint(Vec2(0, n->getAnchorPoint().y));
                 n->setPositionX(f * n->getParent()->getContentSize().width);
             }
             
-            if (p.isMember("bottom") && LayoutHelper::asFloat(p["bottom"], f))
+            if (p.get(pp, 1, "bottom", nullptr) && LayoutHelper::asFloat(pp, f))
             {
                 n->setAnchorPoint(Vec2(n->getAnchorPoint().x, 0));
                 n->setPositionY(f * n->getParent()->getContentSize().height);
             }
             
-            if (p.isMember("right") && LayoutHelper::asFloat(p["right"], f))
+            if (p.get(pp, 2, "right", nullptr) && LayoutHelper::asFloat(pp, f))
             {
                 n->setAnchorPoint(Vec2(1, n->getAnchorPoint().y));
                 n->setPositionX(n->getParent()->getContentSize().width * (1 - f));
             }
             
-            if (p.isMember("top") && LayoutHelper::asFloat(p["top"], f))
+            if (p.get(pp, 3, "top", nullptr) && LayoutHelper::asFloat(pp, f))
             {
                 n->setAnchorPoint(Vec2(n->getAnchorPoint().x, 1));
                 n->setPositionY(n->getParent()->getContentSize().height * (1 - f));
@@ -190,6 +203,9 @@ namespace ccHelp {
         GroupLayout::registerLayout("align-rate", alignPrc);
         
         auto *alignLeftPrc = new FunctionLayout([](Node *n, const Layout::Parameter &p) {
+            if (!n->getParent())
+                return;
+            
             float f = 0;
             if (LayoutHelper::asFloat(p, f))
             {
@@ -200,6 +216,9 @@ namespace ccHelp {
         GroupLayout::registerLayout("align-left-rate", alignLeftPrc);
         
         auto *alignBottomPrc = new FunctionLayout([](Node *n, const Layout::Parameter &p) {
+            if (!n->getParent())
+                return;
+            
             float f = 0;
             if (LayoutHelper::asFloat(p, f))
             {
@@ -210,6 +229,9 @@ namespace ccHelp {
         GroupLayout::registerLayout("align-bottom-rate", alignBottomPrc);
         
         auto *alignRightPrc = new FunctionLayout([](Node *n, const Layout::Parameter &p) {
+            if (!n->getParent())
+                return;
+            
             float f = 0;
             if (LayoutHelper::asFloat(p, f))
             {
@@ -220,6 +242,9 @@ namespace ccHelp {
         GroupLayout::registerLayout("align-right-rate", alignRightPrc);
         
         auto *alignTopPrc = new FunctionLayout([](Node *n, const Layout::Parameter &p) {
+            if (!n->getParent())
+                return;
+            
             float f = 0;
             if (LayoutHelper::asFloat(p, f))
             {
@@ -230,6 +255,9 @@ namespace ccHelp {
         GroupLayout::registerLayout("align-top-rate", alignTopPrc);
         
         auto *alignCenterXPrc = new FunctionLayout([](Node *n, const Layout::Parameter &p) {
+            if (!n->getParent())
+                return;
+            
             float f = 0;
             if (LayoutHelper::asFloat(p, f))
             {
@@ -240,6 +268,9 @@ namespace ccHelp {
         GroupLayout::registerLayout("align-center-x-rate", alignCenterXPrc);
         
         auto *alignCenterYPrc = new FunctionLayout([](Node *n, const Layout::Parameter &p) {
+            if (!n->getParent())
+                return;
+            
             float f = 0;
             if (LayoutHelper::asFloat(p, f))
             {

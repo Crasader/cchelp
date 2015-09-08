@@ -14,20 +14,21 @@ namespace ccHelp {
     void regisImageViewLayouts()
     {
         auto *scale9 = new FunctionLayout([](Node *n, const Layout::Parameter &p) {
-            if (!p.isBool())
+            bool scale9 = false;
+            if (!p.get(scale9))
                 return;
             
             ui::ImageView *imgView = dynamic_cast<ui::ImageView*>(n);
             if (!imgView)
                 return;
             
-            imgView->setScale9Enabled(p.asBool());
+            imgView->setScale9Enabled(scale9);
         });
         GroupLayout::registerLayout("img-view-scale9-enabled", scale9);
         
         auto *scale9Rect = new FunctionLayout([](Node *n, const Layout::Parameter &p) {
             Rect r;
-            if (!Json::type::deserialize(p, r))
+            if (!p.get(r))
                 return;
             
             ui::ImageView *imgView = dynamic_cast<ui::ImageView*>(n);
@@ -39,26 +40,35 @@ namespace ccHelp {
         GroupLayout::registerLayout("img-view-scale9-rect", scale9Rect);
         
         auto *setImage = new FunctionLayout([](Node *n, const Layout::Parameter &p) {
-            if (!p.isString())
-                return;
-            
             ui::ImageView *imgView = dynamic_cast<ui::ImageView*>(n);
             if (!imgView)
                 return;
             
-            imgView->loadTexture(p.asString());
+            string texture;
+            if (p.get(texture, 0, "texture", "tex", nullptr))
+            {
+                auto resType = ui::TextureResType::LOCAL;
+                string res;
+                if (p.get(res, 1, "res-type", "res", nullptr))
+                {
+                    LayoutHelper::asUIResType(res, resType);
+                }
+                
+                imgView->loadTexture(texture, resType);
+            }
         });
         GroupLayout::registerLayout("img-view-image", setImage);
         
         auto *setImageFrame = new FunctionLayout([](Node *n, const Layout::Parameter &p) {
-            if (!p.isString())
+            string texture;
+            if (!p.get(texture))
                 return;
             
             ui::ImageView *imgView = dynamic_cast<ui::ImageView*>(n);
             if (!imgView)
                 return;
             
-            imgView->loadTexture(p.asString(), ui::TextureResType::PLIST);
+            imgView->loadTexture(texture, ui::TextureResType::PLIST);
         });
         GroupLayout::registerLayout("img-view-image-frame", setImageFrame);
     }

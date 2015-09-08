@@ -12,21 +12,28 @@ namespace ccHelp {
     void regisWidgetLayouts()
     {
         auto *ignoreAdaptSize = new FunctionLayout([](Node *n, const Layout::Parameter &p) {
-            if (!p.isBool())
+            bool ignore = false;
+            if (!p.get(ignore))
                 return;
             
             ui::Widget *widget = dynamic_cast<ui::Widget*>(n);
             if (!widget)
                 return;
             
-            widget->ignoreContentAdaptWithSize(p.asBool());
+            widget->ignoreContentAdaptWithSize(ignore);
         });
         GroupLayout::registerLayout("widget-ignore-adapt-size", ignoreAdaptSize);
         
         auto *autosize = new FunctionLayout([ignoreAdaptSize](Node *n, const Layout::Parameter &p) {
-            if (!p.isBool())
+            bool autosize = true;
+            if (!p.get(autosize))
                 return;
-            ignoreAdaptSize->doLayout(n, Json::Value(!p.asBool()));
+            
+            ui::Widget *widget = dynamic_cast<ui::Widget*>(n);
+            if (!widget)
+                return;
+            
+            widget->ignoreContentAdaptWithSize(!autosize);
         });
         GroupLayout::registerLayout("widget-autosize", autosize);
     }
