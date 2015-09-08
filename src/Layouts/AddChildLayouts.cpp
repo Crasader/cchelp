@@ -8,6 +8,7 @@
 
 #include "LayoutRegistration.h"
 #include "Utils.h"
+#include "WidgetUtils.h"
 
 namespace ccHelp {
     
@@ -96,6 +97,19 @@ namespace ccHelp {
         
         FACTORIES["button"] = [](const Layout::Parameter &p) {return ui::Button::create();};
         FACTORIES["image"] = [](const Layout::Parameter &p) {return ui::ImageView::create();};
+        
+        
+        FACTORIES["button-ttf"] = [](const Layout::Parameter &p) -> ui::Button* {
+            string font;
+            if (!p.get(font, 0, "font", "f", nullptr))
+                return nullptr;
+            
+            float fontSize;
+            if (!p.get(fontSize, 1, "font-size", "fs", "size", "sz", "s", nullptr))
+                return nullptr;
+            
+            return WidgetUtils::createTTFButton(font, fontSize);
+        };
         
         FACTORIES["label"] = [](const Layout::Parameter &p) {return Label::create();};
         FACTORIES["label-ttf"] = [](const Layout::Parameter &p) -> Node* {
