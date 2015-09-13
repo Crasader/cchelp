@@ -40,4 +40,10 @@
 #include "Utils.h"
 #include "Actions/ActionHelper.h"
 
+#include "InvokeLater.h"
+
+#include "MathExpression/MathExpression.h"
+#include "ApplicationListener.h"
+
+#include "Macro/CCH_CREATE_FUNC.hpp"
 #include "Operation/OperationManager.h"

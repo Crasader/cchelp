@@ -145,6 +145,10 @@ inline Type get##Name() {return this->var;}
 
 #define STATIC_SYTHESINE_VAR_GET(Type, var) STATIC_SYTHESINE_GET(Type, var, var)
 
+#define CCH_SYNTHESIZE_MUTABLE_READONLY_PASS_BY_REF(type, var, func) \
+CC_SYNTHESIZE_READONLY_PASS_BY_REF(type, var, func) \
+virtual type & get##func(void) { return var; }
+
 #define STD_HASHABLE_DETAIL(CLASS, HASHER, COMPARER) \
 	inline int COMPARER (const CLASS &h) const \
 	{ \

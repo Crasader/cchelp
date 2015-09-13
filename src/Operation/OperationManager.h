@@ -8,9 +8,8 @@
 
 #pragma once
 #include "Def.h"
-#include "Context.h"
+#include "Context/Context.h"
 #include <list>
-#include <vector>
 #include <queue>
 #include <iostream>
 
@@ -36,7 +35,7 @@ namespace ccHelp {
         void activeNextOperation();
         
     public:
-        OperationSequence(const std::vector<Operation *> &ops);
+        OperationSequence(const std::list<Operation *> &ops);
         ~OperationSequence();
         virtual void run(CCH_CALLBACK completion) override;
     };
@@ -51,7 +50,7 @@ namespace ccHelp {
         void checkCompletion();
         
     public:
-        OperationGroup(const std::vector<Operation *> &ops);
+        OperationGroup(const std::list<Operation *> &ops);
         ~OperationGroup();
         virtual void run(CCH_CALLBACK completion) override;
     };
@@ -63,21 +62,20 @@ namespace ccHelp {
         RULE_AT_LAST = RULE_NONE
     };
     
+    enum BuildType
+    {
+        SEQUENCE,
+        GROUP
+    };
+    
     class OperationBuilder
     {
-    public:
-        enum BuildType
-        {
-            SEQUENCE,
-            GROUP
-        };
-        
     private:
         static OperationBuilder INST;
         
         bool isBuilding;
         BuildType type;
-        std::vector<Operation *> ops;
+        std::list<Operation *> ops;
         
     public:
         OperationBuilder();
@@ -120,10 +118,12 @@ namespace ccHelp {
         void push(Operation *op, OperationAddRule rule);
         OperationJob* getCurrentJob() const;
         bool isOperating() const;
+        
+        void await(OperationQueue &opQueue);
     };
     
-    template<typename T>
-    Operation* mkop(const T&);
+//    template<typename T>
+//    Operation* mkop(const T&);
     
     class OperationManager : public OperationQueue
     {
@@ -159,10 +159,7 @@ namespace ccHelp {
         ccHelp::Context& currentContext();
         
         template<typename T>
-        void addmk(const T& t, OperationAddRule rule = OperationAddRule::RULE_NONE)
-        {
-            this->add(mkop(t), rule);
-        }
+        void addmk(const T& t, OperationAddRule rule = OperationAddRule::RULE_NONE);
         
         template<typename T>
         void addmkInSubSeq(const T& t, OperationAddRule rule = OperationAddRule::RULE_AT_FIRST)
@@ -192,7 +189,7 @@ namespace ccHelp {
         }
     };
     
-    template<>
+//    template<>
     inline Operation* mkop(const std::function<void(void)> &func0)
     {
         return new Func0Operation(func0);
@@ -213,7 +210,7 @@ namespace ccHelp {
         }
     };
     
-    template<>
+//    template<>
     inline Operation* mkop(const std::function<void(CCH_CALLBACK)> &func1)
     {
         return new Func1Operation(func1);
@@ -221,7 +218,13 @@ namespace ccHelp {
     
     Operation* mkop(cocos2d::Node *target, cocos2d::FiniteTimeAction *act);
     
-    extern OperationManager OP;
+    template<typename T>
+    void OperationManager::addmk(const T& t, OperationAddRule rule)
+    {
+        this->add(mkop(t), rule);
+    }
+    
+//    extern OperationManager OP;
     
 #define MKOP CC_CALLBACK_0
 }

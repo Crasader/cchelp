@@ -13,7 +13,7 @@ using namespace std;
 namespace ccHelp {
     Operation::~Operation() {}
     
-    OperationSequence::OperationSequence(const vector<Operation *> &_ops)
+    OperationSequence::OperationSequence(const list<Operation *> &_ops)
     {
         for (Operation *op : _ops)
         {
@@ -52,7 +52,7 @@ namespace ccHelp {
         });
     }
     
-    OperationGroup::OperationGroup(const vector<Operation *> &_ops)
+    OperationGroup::OperationGroup(const list<Operation *> &_ops)
     : nRemainOperations(0)
     {
         ops.assign(_ops.begin(), _ops.end());
@@ -100,7 +100,7 @@ namespace ccHelp {
         
     }
     
-    OperationBuilder& OperationBuilder::begin(OperationBuilder::BuildType _type)
+    OperationBuilder& OperationBuilder::begin(BuildType _type)
     {
         assert(!isBuilding);
         assert(ops.size() == 0);
@@ -117,11 +117,13 @@ namespace ccHelp {
         
         if (rule == RULE_AT_FIRST)
         {
-            ops.insert(ops.begin(), op);
+            ops.push_front(op);
+            return *this;
         }
         else if (rule == RULE_AT_LAST)
         {
             ops.push_back(op);
+            return *this;
         }
         
         assert(false);
@@ -238,7 +240,7 @@ namespace ccHelp {
             return;
         
         OperationJob *topJob = this->ops.front();
-        this->ops.front();
+        this->ops.pop_front();
         
         runningJob = topJob;
         topJob->getOperation()->run([=] {
@@ -252,6 +254,60 @@ namespace ccHelp {
     bool OperationQueue::isOperating() const
     {
         return runningJob != nullptr;
+    }
+    
+    OperationQueue::OperationJob* OperationQueue::getCurrentJob() const
+    {
+        return runningJob;
+    }
+    
+    void OperationQueue::await(ccHelp::OperationQueue& opQueue)
+    {
+        struct WaitOperation : public Operation
+        {
+            CCH_FUNCTION completion;
+            bool isFinished;
+            
+            WaitOperation() : completion(nullptr), isFinished(false) {}
+            virtual void run(CCH_CALLBACK _compl) override
+            {
+                completion = _compl;
+                this->checkCompletion();
+            }
+            
+            void notify()
+            {
+                isFinished = true;
+                this->checkCompletion();
+            }
+            
+            void checkCompletion()
+            {
+                if (isFinished && completion)
+                {
+                    completion();
+                }
+            }
+        };
+        
+        struct NotifyOperation : public Operation
+        {
+            WaitOperation *waiter;
+            
+            NotifyOperation(WaitOperation *_waiter) : waiter(_waiter) {};
+            
+            virtual void run(CCH_CALLBACK completion) override
+            {
+                waiter->notify();
+                completion();
+            }
+        };
+        
+        WaitOperation *waitOp = new WaitOperation();
+        NotifyOperation *notifyOp = new NotifyOperation(waitOp);
+        
+        this->pushBack(waitOp);
+        opQueue.pushBack(notifyOp);
     }
     
     OperationManager::Building::Building()
@@ -301,20 +357,22 @@ namespace ccHelp {
     
     void OperationManager::addInSubSeq(Operation *op, OperationAddRule rule)
     {
-        this->addmk([=](CCH_CALLBACK completion) {
+        function<void(CCH_CALLBACK)> func = [=](CCH_CALLBACK completion) {
             this->newSequence(rule);
             op->run(completion);
             this->closeCurrent();
-        });
+        };
+        this->addmk(func);
     }
     
     void OperationManager::addInSubGr(Operation *op, OperationAddRule rule)
     {
-        this->addmk([=](CCH_CALLBACK completion) {
+        function<void(CCH_CALLBACK)> func = [=](CCH_CALLBACK completion) {
             this->newGroup(rule);
             op->run(completion);
             this->closeCurrent();
-        });
+        };
+        this->addmk(func);
     }
     
     void OperationManager::newSequence(OperationAddRule rule)
@@ -326,7 +384,7 @@ namespace ccHelp {
         
         currentBuilding.builder = new OperationBuilder();
         currentBuilding.rule = rule;
-        currentBuilding.builder->begin(OperationBuilder::SEQUENCE);
+        currentBuilding.builder->begin(SEQUENCE);
     }
     
     void OperationManager::newGroup(OperationAddRule rule)
@@ -338,7 +396,7 @@ namespace ccHelp {
         
         currentBuilding.builder = new OperationBuilder();
         currentBuilding.rule = rule;
-        currentBuilding.builder->begin(OperationBuilder::SEQUENCE);
+        currentBuilding.builder->begin(SEQUENCE);
     }
     
     void OperationManager::closeCurrent()
@@ -382,9 +440,11 @@ namespace ccHelp {
                 cocos2d::CallFunc *cfCompl = cocos2d::CallFunc::create(completion);
                 cocos2d::Sequence *actWithCompl = cocos2d::Sequence::createWithTwoActions(act, cfCompl);
                 target->runAction(actWithCompl);
+                act->release();
             }
         };
         
+        act->retain();
         auto *op = new ActionOperation;
         op->act = act;
         op->target = target;

@@ -6,6 +6,7 @@
 //  Copyright (c) 2015 Less. All rights reserved.
 //
 
+#pragma once
 #include "ContextValue.h"
 #include "hash_container/hmap.h"
 
