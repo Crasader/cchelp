@@ -15,17 +15,12 @@ namespace ccHelp {
         auto *resize = new FunctionLayout([](Node *n, const Layout::Parameter &p) {
             Size size = n->getContentSize();
             
-            if (p.isMember("width"))
+            bool ret = p.get(size.width, 0, "width", "w", nullptr);
+            ret = p.get(size.height, 1, "height", "h", nullptr) || ret;
+            if (ret)
             {
-                size.width = p["width"].asFloat();
+                n->setContentSize(size);
             }
-            
-            if (p.isMember("height"))
-            {
-                size.height = p["height"].asFloat();
-            }
-            
-            n->setContentSize(size);
         });
         GroupLayout::registerLayout("size", resize);
         GroupLayout::registerLayout("resize", resize);
@@ -34,12 +29,13 @@ namespace ccHelp {
             Size winSize = Director::getInstance()->getOpenGLView()->getDesignResolutionSize();
             Size size = n->getContentSize();
             
-            if (LayoutHelper::asFloat(p["width"], size.width))
+            Layout::Parameter pp;
+            if (p.get(pp, 0, "width", "w", nullptr) && LayoutHelper::asFloat(pp, size.width))
             {
                 size.width *= winSize.width;
             }
             
-            if (LayoutHelper::asFloat(p["height"], size.height))
+            if (p.get(pp, 1, "height", "h", nullptr) && LayoutHelper::asFloat(pp, size.height))
             {
                 size.height *= winSize.height;
             }
@@ -55,12 +51,13 @@ namespace ccHelp {
             Size parentSize = n->getParent()->getContentSize();
             Size size = n->getContentSize();
             
-            if (LayoutHelper::asFloat(p["width"], size.width))
+            Layout::Parameter pp;
+            if (p.get(pp, 0, "width", "w", nullptr) && LayoutHelper::asFloat(pp, size.width))
             {
                 size.width *= parentSize.width;
             }
             
-            if (LayoutHelper::asFloat(p["height"], size.height))
+            if (p.get(pp, 1, "height", "h", nullptr) && LayoutHelper::asFloat(pp, size.height))
             {
                 size.height *= parentSize.height;
             }
@@ -70,37 +67,36 @@ namespace ccHelp {
         GroupLayout::registerLayout("size-parent-rate", resizeParentRate);
         
         auto *scale = new FunctionLayout([](Node *n, const Layout::Parameter &p) {
-            if (p.isNumeric())
+            float s = 1.f;
+            if (p.get(s))
             {
-                n->setScale(p.asFloat());
+                n->setScale(s);
                 return;
             }
             
-            float scale = 1;
-            
-            string xField = LayoutHelper::chooseMember(p, 2, "width", "x");
-            if (!xField.empty() && LayoutHelper::asFloat(p[xField], scale))
+            if (p.get(s, 0, "width", "w", "x", nullptr))
             {
-                n->setScaleX(scale);
+                n->setScaleX(s);
             }
             
-            string yField = LayoutHelper::chooseMember(p, 2, "height", "y");
-            if (!yField.empty() && LayoutHelper::asFloat(p[yField], scale))
+            if (p.get(s, 1, "height", "h", "y", nullptr))
             {
-                n->setScaleY(scale);
+                n->setScaleY(s);
             }
         });
         GroupLayout::registerLayout("scale", scale);
         
         auto *scaleToSize = new FunctionLayout([](Node *n, const Layout::Parameter &p) {
-            if (p.isMember("width") && p["width"].isNumeric())
+            float s = 0.f;
+            Layout::Parameter pp;
+            if (p.get(pp, 0, "width", "w", "x", nullptr) && LayoutHelper::asFloat(pp, s))
             {
-				n->setScaleX(p["width"].asFloat() / n->getContentSize().width);
+				n->setScaleX(s / n->getContentSize().width);
             }
             
-            if (p.isMember("height") && p["height"].isNumeric())
+            if (p.get(pp, 1, "height", "h", "y", nullptr) && LayoutHelper::asFloat(pp, s))
             {
-				n->setScaleY(p["height"].asFloat() / n->getContentSize().height);
+				n->setScaleY(s / n->getContentSize().height);
             }
         });
         GroupLayout::registerLayout("fit-size", scaleToSize);
@@ -109,9 +105,9 @@ namespace ccHelp {
         auto *scaleToSizeBy = new FunctionLayout([](Node *n, const Layout::Parameter &p) {
             Vec2 by = n->getContentSize();
             
-            if (p["by"].isString())
+            string sBy;
+            if (p.get(sBy, 0, "by", nullptr))
             {
-                string sBy = p["by"].asString();
                 sBy = Utils::tolower(sBy);
                 if (sBy == "parent" && n->getParent())
                 {
@@ -123,14 +119,16 @@ namespace ccHelp {
                 }
             }
             
-            if (p.isMember("width") && p["width"].isNumeric())
+            Layout::Parameter pp;
+            float s = 0.f;
+            if (p.get(pp, 0, "width", "w", "x", nullptr) && LayoutHelper::asFloat(pp, s))
             {
-                n->setScaleX(p["width"].asFloat() * by.x / n->getContentSize().width);
+                n->setScaleX(s * by.x / n->getContentSize().width);
             }
             
-            if (p.isMember("height") && p["height"].isNumeric())
+            if (p.get(pp, 0, "width", "w", "x", nullptr) && LayoutHelper::asFloat(pp, s))
             {
-                n->setScaleY(p["height"].asFloat() * by.y / n->getContentSize().height);
+                n->setScaleY(s * by.y / n->getContentSize().height);
             }
         });
         GroupLayout::registerLayout("fit-size-by", scaleToSizeBy);

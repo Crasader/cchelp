@@ -32,40 +32,37 @@ namespace ccHelp {
             if (!loadBar)
                 return;
             
-            if (p.isString())
+            string texture;
+            if (p.get(texture, 0, "texture", "tex", nullptr))
             {
-                loadBar->loadTexture(p.asString());
-            }
-            else if (p.isObject())
-            {
-                if (!p.isMember("texture") || !p["texture"].isString())
-                    return;
-                
-                string tex = p["texture"].asString();
-                
                 auto resType = ui::TextureResType::LOCAL;
-                LayoutHelper::asUIResType(p["res-type"], resType);
+                string res;
+                if (p.get(res, 1, "res-type", "res", nullptr))
+                {
+                    LayoutHelper::asUIResType(res, resType);
+                }
                 
-                loadBar->loadTexture(tex, resType);
+                loadBar->loadTexture(texture, resType);
             }
         });
         GroupLayout::registerLayout("loadingbar-texture", setTexture);
         
         auto *enableScale9 = new FunctionLayout([](Node *n, const Layout::Parameter &p) {
-            if (!p.isBool())
+            bool enabled = true;
+            if (!p.get(enabled))
                 return;
             
             ui::LoadingBar *loadBar = dynamic_cast<ui::LoadingBar*>(n);
             if (!loadBar)
                 return;
             
-            loadBar->setScale9Enabled(p.asBool());
+            loadBar->setScale9Enabled(enabled);
         });
         GroupLayout::registerLayout("loadingbar-scale9-enabled", enableScale9);
         
         auto *scale9Rect = new FunctionLayout([](Node *n, const Layout::Parameter &p) {
             Rect r;
-            if (!Json::type::deserialize(p, r))
+            if (!p.get(r))
                 return;
             
             ui::LoadingBar *loadBar = dynamic_cast<ui::LoadingBar*>(n);

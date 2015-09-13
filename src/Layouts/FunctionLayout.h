@@ -25,7 +25,7 @@ namespace ccHelp {
         {
         }
         
-        inline virtual void doLayout(cocos2d::Node *node, const Parameter &par) const
+        inline virtual void doLayout(cocos2d::Node *node, const Parameter &par) const override
         {
             func(node, par);
         }

@@ -39,11 +39,12 @@ namespace ccHelp {
     void regisButtonLayouts()
     {
         auto *titleText = new FunctionLayout([](Node *n, const Layout::Parameter &p) {
-            if (p.isString())
+            string title;
+            if (p.get(title))
             {
                 if (ui::Button *btn = dynamic_cast<ui::Button*>(n))
                 {
-                    btn->setTitleText(p.asString());
+                    btn->setTitleText(title);
                 }
             }
         });
@@ -51,22 +52,24 @@ namespace ccHelp {
         
         
         auto *titleFontSize = new FunctionLayout([](Node *n, const Layout::Parameter &p) {
-            if (p.isNumeric())
+            float fontSize = 12;
+            if (p.get(fontSize))
             {
                 if (ui::Button *btn = dynamic_cast<ui::Button*>(n))
                 {
-                    btn->setTitleFontSize(p.asFloat());
+                    btn->setTitleFontSize(fontSize);
                 }
             }
         });
         GroupLayout::registerLayout("button-title-size", titleFontSize);
         
         auto *titleFontName = new FunctionLayout([](Node *n, const Layout::Parameter &p) {
-            if (p.isString())
+            string font;
+            if (p.get(font))
             {
                 if (ui::Button *btn = dynamic_cast<ui::Button*>(n))
                 {
-                    btn->setTitleFontName(p.asString());
+                    btn->setTitleFontName(font);
                 }
             }
         });
@@ -74,9 +77,6 @@ namespace ccHelp {
         
         
         auto *titleColor = new FunctionLayout([](Node *n, const Layout::Parameter &p) {
-            if (!p.isString())
-                return;
-            
             ui::Button *btn = dynamic_cast<ui::Button*>(n);
             if (!btn)
                 return;
@@ -94,21 +94,17 @@ namespace ccHelp {
             if (!btn)
                 return;
             
-            if (p.isString())
+            string texture;
+            if (p.get(texture, 0, "texture", "tex", nullptr))
             {
-                btn->loadTextureNormal(p.asString());
-            }
-            else if (p.isObject())
-            {
-                if (!p.isMember("texture") || !p["texture"].isString())
-                    return;
-                
-                string tex = p["texture"].asString();
-                
                 auto resType = ui::TextureResType::LOCAL;
-                LayoutHelper::asUIResType(p["res-type"], resType);
+                string res;
+                if (p.get(res, 1, "res-type", "res", nullptr))
+                {
+                    LayoutHelper::asUIResType(res, resType);
+                }
                 
-                btn->loadTextureNormal(tex, resType);
+                btn->loadTextureNormal(texture, resType);
             }
         });
         GroupLayout::registerLayout("button-normal", loadNormalTexture);
@@ -119,21 +115,17 @@ namespace ccHelp {
             if (!btn)
                 return;
             
-            if (p.isString())
+            string texture;
+            if (p.get(texture, 0, "texture", "tex", nullptr))
             {
-                btn->loadTexturePressed(p.asString());
-            }
-            else if (p.isObject())
-            {
-                if (!p.isMember("texture") || !p["texture"].isString())
-                    return;
-                
-                string tex = p["texture"].asString();
-                
                 auto resType = ui::TextureResType::LOCAL;
-                LayoutHelper::asUIResType(p["res-type"], resType);
+                string res;
+                if (p.get(res, 1, "res-type", "res", nullptr))
+                {
+                    LayoutHelper::asUIResType(res, resType);
+                }
                 
-                btn->loadTexturePressed(tex, resType);
+                btn->loadTexturePressed(texture, resType);
             }
         });
         GroupLayout::registerLayout("button-pressed", loadPressedTexture);
@@ -143,44 +135,24 @@ namespace ccHelp {
             if (!btn)
                 return;
             
-            if (p.isString())
+            string texture;
+            if (p.get(texture, 0, "texture", "tex", nullptr))
             {
-                btn->loadTextureDisabled(p.asString());
-            }
-            else if (p.isObject())
-            {
-                if (!p.isMember("texture") || !p["texture"].isString())
-                    return;
-                
-                string tex = p["texture"].asString();
-                
                 auto resType = ui::TextureResType::LOCAL;
-                LayoutHelper::asUIResType(p["res-type"], resType);
+                string res;
+                if (p.get(res, 1, "res-type", "res", nullptr))
+                {
+                    LayoutHelper::asUIResType(res, resType);
+                }
                 
-                btn->loadTextureDisabled(tex, resType);
+                btn->loadTextureDisabled(texture, resType);
             }
         });
         GroupLayout::registerLayout("button-disabled", loadDisabledTexture);
 
-        auto *setTitleRenderer = new FunctionLayout([](Node *n, const Layout::Parameter &p) {
-            if (!p.isString())
-                return;
-            
-            ui::Button *btn = dynamic_cast<ui::Button*>(n);
-            if (!btn)
-                return;
-            
-            Label *lbl = LayoutHelper::query<Label>(n, p.asString());
-            if (!lbl)
-                return;
-            
-            ((_Button *) btn)->setTitleRenderer(lbl);
-        });
-        GroupLayout::registerLayout("button-title-renderer!", setTitleRenderer);
-        
         auto *pressedEnabled = new FunctionLayout([](Node *n, const Layout::Parameter &p) {
             bool isEnabled = false;
-            if (!Json::type::deserialize(p, isEnabled))
+            if (!p.get(isEnabled))
                 return;
             
             ui::Button *btn = dynamic_cast<ui::Button*>(n);

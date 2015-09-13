@@ -19,7 +19,12 @@ namespace ccHelp {
     hmap<string, Layout *> GroupLayout::Layouts;
     GroupLayout* GroupLayout::inst = new GroupLayout;
     
-    void GroupLayout::doLayout(cocos2d::Node *root, const Parameter &par) const
+    void GroupLayout::doLayout(cocos2d::Node *root, const Layout::Parameter &par) const
+    {
+        this->doLayout(root, par.getJson());
+    }
+    
+    void GroupLayout::doLayout(cocos2d::Node *root, const Json::Value &par) const
     {
         if (!par.isObject())
         {
@@ -43,12 +48,33 @@ namespace ccHelp {
             // if this tag wasn't node, it may be a layout method
             auto layoutTag = Utils::tolower(tag);
             auto layoutIte = GroupLayout::Layouts.find(layoutTag);
-            if (layoutIte == GroupLayout::Layouts.end())
+            if (layoutIte != GroupLayout::Layouts.end())
+            {
+                // this tag is a layout
+                Layout *layout = layoutIte->second;
+                layout->doLayout(root, par[tag]);
                 continue;
+            }
             
-            // this tag is a layout
-            Layout *layout = layoutIte->second;
-            layout->doLayout(root, par[tag]);
+            if (tag.length() > 0 && tag[0] == '+')
+            {
+                // this tag is new child
+                auto childName = tag.substr(1, tag.length() - 1);
+                layoutIte = GroupLayout::Layouts.find("addchild");
+                if (layoutIte == GroupLayout::Layouts.end() || !layoutIte->second)
+                    continue;
+                
+                auto *addChildLayout = layoutIte->second;
+                Json::Value addChildPar = par[tag];
+                addChildPar["name"] = childName;
+                addChildLayout->doLayout(root, addChildPar);
+                
+                auto *newChild = root->getChildByName(childName);
+                if (newChild)
+                {
+                    this->doLayout(newChild, addChildPar);
+                }
+            }
         }
     }
     

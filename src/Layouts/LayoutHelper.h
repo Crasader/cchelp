@@ -19,7 +19,7 @@ namespace ccHelp {
     class LayoutHelper : public Layout
     {
     public:
-        static cocos2d::Node* queryNode(cocos2d::Node *root, const string &query);
+        static cocos2d::Node* queryNode(cocos2d::Node *root, string query);
         
         template <typename T>
         static T* query(cocos2d::Node *root, const string &query)
@@ -47,8 +47,7 @@ namespace ccHelp {
         static bool asFloat(const Layout::Parameter &p, float &f);
         static bool asColor3(const Layout::Parameter &p, cocos2d::Color3B &c);
         static bool asColor4(const Layout::Parameter &p, cocos2d::Color4B &c);
-        static bool asUIResType(const Layout::Parameter &p, cocos2d::ui::TextureResType &t);
-        static string chooseMember(const Layout::Parameter &par, uint npar, ...);
+        static bool asUIResType(const string &res, cocos2d::ui::TextureResType &t);
         
     public:
         static void initAllLayouts();

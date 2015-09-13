@@ -30,6 +30,19 @@ namespace ccHelp
         }
     }
     
+    void Utils::setCascadeColorRecursively(cocos2d::Node *n, bool enabled)
+    {
+        if (!n)
+            return;
+        
+        n->setCascadeColorEnabled(enabled);
+        
+        for (auto *child : n->getChildren())
+        {
+            Utils::setCascadeColorRecursively(child);
+        }
+    }
+    
     void Utils::swallowTouch(cocos2d::Node *n)
     {
         auto *touchListener = EventListenerTouchOneByOne::create();

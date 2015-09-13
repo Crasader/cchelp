@@ -13,14 +13,15 @@ namespace ccHelp {
     {
         // system font
         auto *lblSystemFont = new FunctionLayout([](Node *n, const Layout::Parameter &p) {
-            if (!p.isString())
+            string font;
+            if (!p.get(font))
                 return;
             
             Label *lbl = dynamic_cast<Label*>(n);
             if (!lbl)
                 return;
             
-            lbl->setSystemFontName(p.asString());
+            lbl->setSystemFontName(font);
         });
         GroupLayout::registerLayout("label-system-font", lblSystemFont);
         
@@ -40,14 +41,15 @@ namespace ccHelp {
         
         // system text
         auto *lblText = new FunctionLayout([](Node *n, const Layout::Parameter &p) {
-            if (!p.isString())
+            string text;
+            if (!p.get(text))
                 return;
             
             Label *lbl = dynamic_cast<Label*>(n);
             if (!lbl)
                 return;
             
-            lbl->setString(p.asString());
+            lbl->setString(text);
         });
         GroupLayout::registerLayout("label-text", lblText);
         
@@ -68,14 +70,14 @@ namespace ccHelp {
         
         // system text h alignment
         auto *lblTextHAlign = new FunctionLayout([](Node *n, const Layout::Parameter &p) {
-            if (!p.isString())
+            string align;
+            if (!p.get(align))
                 return;
             
             Label *lbl = dynamic_cast<Label*>(n);
             if (!lbl)
                 return;
             
-            string align = p.asString();
             for (auto &c : align) {c = tolower(c);}
             
             if (align == "left")
@@ -95,14 +97,14 @@ namespace ccHelp {
         
         // system text h alignment
         auto *lblTextVAlign = new FunctionLayout([](Node *n, const Layout::Parameter &p) {
-            if (!p.isString())
+            string align;
+            if (!p.get(align))
                 return;
             
             Label *lbl = dynamic_cast<Label*>(n);
             if (!lbl)
                 return;
             
-            string align = p.asString();
             for (auto &c : align) {c = tolower(c);}
             
             if (align == "top")
@@ -125,21 +127,21 @@ namespace ccHelp {
             if (!lbl)
                 return;
             
-            if (p.isString() && p.asString() == "match_content")
+            string matchContent;
+            if (p.get(matchContent) && matchContent == "match_content")
             {
                 lbl->setDimensions(lbl->getContentSize().width, lbl->getContentSize().height);
+                return;
             }
-            else if (p.isObject())
+            
+            float size = 0.f;
+            if (p.get(size, 1, "width", "w", nullptr))
             {
-                if (p["width"].isNumeric())
-                {
-                    lbl->setDimensions(p["width"].asFloat(), lbl->getDimensions().height);
-                }
-                
-                if (p["height"].isNumeric())
-                {
-                    lbl->setDimensions(lbl->getDimensions().width, p["height"].asFloat());
-                }
+                lbl->setDimensions(size, lbl->getDimensions().height);
+            }
+            if (p.get(size, 2, "height", "h", nullptr))
+            {
+                lbl->setDimensions(lbl->getDimensions().width, size);
             }
         });
         GroupLayout::registerLayout("label-dimension", lblDimension);

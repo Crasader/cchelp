@@ -21,7 +21,7 @@ namespace ccHelp {
     hmap<std::string, Layout::Parameter> LayoutHelper::Cache;
     hmap<std::string, LayoutQuery> LayoutHelper::Queries;
     
-    Node* LayoutHelper::queryNode(cocos2d::Node *root, const string &query)
+    Node* LayoutHelper::queryNode(cocos2d::Node *root, string query)
     {
         if (query.empty())
             return root;
@@ -33,6 +33,12 @@ namespace ccHelp {
             Node *ret = it->second(root);
             if (ret)
                 return ret;
+        }
+        
+        // check if query has special prefix
+        if (query[0] == '+')
+        {
+            query = query.substr(1, query.length() - 1);
         }
         
         stringstream ss(query);
@@ -61,7 +67,7 @@ namespace ccHelp {
     void LayoutHelper::loadLayoutFile(const std::string &file)
     {
         Json::Reader reader;
-        Layout::Parameter param;
+        Json::Value param;
         
         string content = FileUtils::getInstance()->getStringFromFile(file);
         
@@ -128,7 +134,7 @@ namespace ccHelp {
         
         if (ite == Cache.end())
         {
-            return Json::Value::null;
+            return Layout::Parameter::null;
         }
         
         return ite->second;
@@ -136,34 +142,23 @@ namespace ccHelp {
     
     bool LayoutHelper::asFloat(const Layout::Parameter &p, float &f)
     {
-        switch (p.type()) {
-            case Json::ValueType::intValue:
-            case Json::ValueType::uintValue:
-            case Json::ValueType::realValue:
+        if (p.get(f))
+            return true;
+        
+        string s;
+        if (p.get(s))
+        {
+            float ff = 0;
+            float ratio = 1;
+            if (s[s.length() - 1] == '%')
             {
-                f = p.asFloat();
-                return true;
+                s.pop_back();
+                ratio = 100;
             }
-                
-            case Json::ValueType::stringValue:
-            {
-                float ff = 0;
-                auto s = p.asString();
-                float ratio = 1;
-                if (s[s.length() - 1] == '%')
-                {
-                    s.pop_back();
-                    ratio = 100;
-                }
-                
-                sscanf(s.c_str(), "%f", &ff);
-                f = ff / ratio;
-                return true;
-            }
-                break;
-                
-            default:
-                break;
+            
+            sscanf(s.c_str(), "%f", &ff);
+            f = ff / ratio;
+            return true;
         }
         
         return false;
@@ -171,14 +166,11 @@ namespace ccHelp {
     
     bool LayoutHelper::asColor3(const Layout::Parameter &p, cocos2d::Color3B &c)
     {
-        if (!p.isString())
+        string s;
+        if (!p.get(s))
             return false;
         
-        string s = p.asString();
-        for (auto &c : s)
-        {
-            c = toupper(c);
-        }
+        s = Utils::toupper(s);
         
         c = ccHelp::Utils::colorFromText<Color3B>(s);
         if (c != Color3B::BLACK || s == "BLACK")
@@ -204,14 +196,11 @@ namespace ccHelp {
     
     bool LayoutHelper::asColor4(const Layout::Parameter &p, cocos2d::Color4B &c)
     {
-        if (!p.isString())
+        string s;
+        if (!p.get(s))
             return false;
         
-        string s = p.asString();
-        for (auto &c : s)
-        {
-            c = toupper(c);
-        }
+        s = Utils::toupper(s);
         
         c = ccHelp::Utils::colorFromText<Color4B>(s);
         if (c != Color3B::BLACK || s == "BLACK")
@@ -236,14 +225,9 @@ namespace ccHelp {
         return true;
     }
     
-    bool LayoutHelper::asUIResType(const Layout::Parameter &p, ui::TextureResType &t)
+    bool LayoutHelper::asUIResType(const string &res, ui::TextureResType &t)
     {
-        if (!p.isString())
-            return false;
-        
-        string s = p.asString();
-        for (char &c : s) {c = tolower(c);}
-        
+        auto s = Utils::tolower(res);
         if (s == "local")
         {
             t = ui::TextureResType::LOCAL;
@@ -257,22 +241,5 @@ namespace ccHelp {
         }
         
         return false;
-    }
-    
-    string LayoutHelper::chooseMember(const Layout::Parameter &par, uint n, ...)
-    {
-        va_list ap;
-        va_start(ap, n);
-        
-        for (uint i = 0; i < n; ++i)
-        {
-            const char *p = va_arg(ap, const char *);
-            if (par.isMember(p))
-                return p;
-        }
-        
-        va_end(ap);
-        
-        return "";
     }
 }

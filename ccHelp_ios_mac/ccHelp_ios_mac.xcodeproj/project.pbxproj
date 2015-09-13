@@ -32,6 +32,8 @@
 		76372D911B4B822F009E66B8 /* KVDB.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 76372D8C1B4B822F009E66B8 /* KVDB.cpp */; };
 		76372D921B4B822F009E66B8 /* KVDB.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 76372D8C1B4B822F009E66B8 /* KVDB.cpp */; };
 		76372D931B4B822F009E66B8 /* KVDB.h in Headers */ = {isa = PBXBuildFile; fileRef = 76372D8D1B4B822F009E66B8 /* KVDB.h */; };
+		763BAE7A1B9DA1A60032C1DD /* Layout.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 763BAE791B9DA1A60032C1DD /* Layout.cpp */; };
+		763BAE7B1B9DA1A60032C1DD /* Layout.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 763BAE791B9DA1A60032C1DD /* Layout.cpp */; };
 		763C33E21B556A4900A0DE3B /* UniqueRandom.h in Headers */ = {isa = PBXBuildFile; fileRef = 763C33DF1B556A4900A0DE3B /* UniqueRandom.h */; };
 		763F86091B52DABB004C5411 /* Expression.hpp in Sources */ = {isa = PBXBuildFile; fileRef = 763F86071B52DABB004C5411 /* Expression.hpp */; };
 		763F860A1B52DABB004C5411 /* Expression.hpp in Sources */ = {isa = PBXBuildFile; fileRef = 763F86071B52DABB004C5411 /* Expression.hpp */; };
@@ -331,6 +333,9 @@
 		76B602121B3C5DF500B79B6E /* ContextValue.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 76B6020F1B3C5DF500B79B6E /* ContextValue.cpp */; };
 		76B602131B3C5DF500B79B6E /* ContextValue.h in Headers */ = {isa = PBXBuildFile; fileRef = 76B602101B3C5DF500B79B6E /* ContextValue.h */; };
 		76B602151B3C5E0D00B79B6E /* ContextValue.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 76B602141B3C5E0D00B79B6E /* ContextValue.hpp */; };
+		76C0D6201BA2DD8E00707D8B /* ObjectPool.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 76C0D61E1BA2DD8E00707D8B /* ObjectPool.cpp */; };
+		76C0D6211BA2DD8E00707D8B /* ObjectPool.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 76C0D61E1BA2DD8E00707D8B /* ObjectPool.cpp */; };
+		76C0D6221BA2DD8E00707D8B /* ObjectPool.h in Headers */ = {isa = PBXBuildFile; fileRef = 76C0D61F1BA2DD8E00707D8B /* ObjectPool.h */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -368,6 +373,7 @@
 		76372D8B1B4B822F009E66B8 /* IOHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IOHelper.h; sourceTree = "<group>"; };
 		76372D8C1B4B822F009E66B8 /* KVDB.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = KVDB.cpp; sourceTree = "<group>"; };
 		76372D8D1B4B822F009E66B8 /* KVDB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KVDB.h; sourceTree = "<group>"; };
+		763BAE791B9DA1A60032C1DD /* Layout.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Layout.cpp; sourceTree = "<group>"; };
 		763C33DF1B556A4900A0DE3B /* UniqueRandom.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UniqueRandom.h; sourceTree = "<group>"; };
 		763F86071B52DABB004C5411 /* Expression.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Expression.hpp; sourceTree = "<group>"; };
 		763F86081B52DABB004C5411 /* Expression.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Expression.h; sourceTree = "<group>"; };
@@ -385,6 +391,8 @@
 		765B7E2C1B6B7F7000A26E33 /* CCH_CREATE_FUNC.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = CCH_CREATE_FUNC.hpp; sourceTree = "<group>"; };
 		765B7E2E1B6B869500A26E33 /* LAST_ARG.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = LAST_ARG.hpp; sourceTree = "<group>"; };
 		765B7E321B6B889C00A26E33 /* CUT_LAST_ARG.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = CUT_LAST_ARG.hpp; sourceTree = "<group>"; };
+		76717CDE1B9A9FDD00A291CB /* ENUM.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = ENUM.hpp; sourceTree = "<group>"; };
+		76717CDF1B9AADFC00A291CB /* EnumHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EnumHelper.h; sourceTree = "<group>"; };
 		7679C8471B4C40A200081830 /* CCH_FOR2.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = CCH_FOR2.hpp; sourceTree = "<group>"; };
 		7679C8491B4C464000081830 /* CCH_EVEN_ODD.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = CCH_EVEN_ODD.hpp; sourceTree = "<group>"; };
 		7693DF451B229ED30068F1CD /* ccHelp_Mac.a */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = ccHelp_Mac.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -623,6 +631,8 @@
 		76B6020F1B3C5DF500B79B6E /* ContextValue.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ContextValue.cpp; sourceTree = "<group>"; };
 		76B602101B3C5DF500B79B6E /* ContextValue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContextValue.h; sourceTree = "<group>"; };
 		76B602141B3C5E0D00B79B6E /* ContextValue.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = ContextValue.hpp; sourceTree = "<group>"; };
+		76C0D61E1BA2DD8E00707D8B /* ObjectPool.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ObjectPool.cpp; sourceTree = "<group>"; };
+		76C0D61F1BA2DD8E00707D8B /* ObjectPool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ObjectPool.h; sourceTree = "<group>"; };
 		76D423411B4F736700BB49A9 /* MathExpression.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MathExpression.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -674,6 +684,7 @@
 				765B7E2C1B6B7F7000A26E33 /* CCH_CREATE_FUNC.hpp */,
 				765B7E2E1B6B869500A26E33 /* LAST_ARG.hpp */,
 				765B7E321B6B889C00A26E33 /* CUT_LAST_ARG.hpp */,
+				76717CDE1B9A9FDD00A291CB /* ENUM.hpp */,
 			);
 			path = Macro;
 			sourceTree = "<group>";
@@ -823,6 +834,9 @@
 				7627E1181B5E370000ED7B66 /* InvokeLater.h */,
 				764576E21B69CD9E004B4728 /* ApplicationListener.cpp */,
 				764576E31B69CD9E004B4728 /* ApplicationListener.h */,
+				76717CDF1B9AADFC00A291CB /* EnumHelper.h */,
+				76C0D61E1BA2DD8E00707D8B /* ObjectPool.cpp */,
+				76C0D61F1BA2DD8E00707D8B /* ObjectPool.h */,
 			);
 			name = src;
 			path = ../src;
@@ -949,6 +963,7 @@
 				7693E0B11B22A6E80068F1CD /* uiButtonLayouts.cpp */,
 				7693E0B21B22A6E80068F1CD /* WidgetLayouts.cpp */,
 				764D64E81B589CE400DDE6CB /* Layoutable.h */,
+				763BAE791B9DA1A60032C1DD /* Layout.cpp */,
 			);
 			path = Layouts;
 			sourceTree = "<group>";
@@ -1179,6 +1194,7 @@
 				7693E1D71B22A6E90068F1CD /* MonsterDebuggerLayer.h in Headers */,
 				7693E1921B22A6E90068F1CD /* json.h in Headers */,
 				7693E1EA1B22A6EA0068F1CD /* pair.hpp in Headers */,
+				76C0D6221BA2DD8E00707D8B /* ObjectPool.h in Headers */,
 				7693E1E81B22A6EA0068F1CD /* map.hpp in Headers */,
 				7634C8451B90423200E097E6 /* Matrix.h in Headers */,
 				7693E2241B22A6EB0068F1CD /* zbuffer.h in Headers */,
@@ -1422,6 +1438,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				76C0D6201BA2DD8E00707D8B /* ObjectPool.cpp in Sources */,
 				7693E1681B22A6E90068F1CD /* SequenceActionFactory.cpp in Sources */,
 				7693E17D1B22A6E90068F1CD /* ExceptionFactory.cpp in Sources */,
 				7693E16E1B22A6E90068F1CD /* AnimationManager.cpp in Sources */,
@@ -1487,6 +1504,7 @@
 				76372D911B4B822F009E66B8 /* KVDB.cpp in Sources */,
 				7693E24E1B22A6EC0068F1CD /* Utils.cpp in Sources */,
 				7693E1C81B22A6E90068F1CD /* WidgetLayouts.cpp in Sources */,
+				763BAE7A1B9DA1A60032C1DD /* Layout.cpp in Sources */,
 				7693E1A31B22A6E90068F1CD /* json_writer.cpp in Sources */,
 				7693E1B91B22A6E90068F1CD /* LayoutHelper.cpp in Sources */,
 			);
@@ -1496,6 +1514,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				76C0D6211BA2DD8E00707D8B /* ObjectPool.cpp in Sources */,
 				7693E16F1B22A6E90068F1CD /* AnimationManager.cpp in Sources */,
 				7693E22F1B22A6EB0068F1CD /* unpack.cpp in Sources */,
 				7693E1B51B22A6E90068F1CD /* LabelLayouts.cpp in Sources */,
@@ -1562,6 +1581,8 @@
 				7693E2531B22A6EC0068F1CD /* vsson.cpp in Sources */,
 				7693E2371B22A6EB0068F1CD /* MultiStateAnimNode.cpp in Sources */,
 				7693E1601B22A6E90068F1CD /* MoveByActionFactory.cpp in Sources */,
+				763BAE7B1B9DA1A60032C1DD /* Layout.cpp in Sources */,
+				7693E1421B22A6E80068F1CD /* ActionQueue.cpp in Sources */,
 				7693E1C51B22A6E90068F1CD /* NodeSizingLayouts.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

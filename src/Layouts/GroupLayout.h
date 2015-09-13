@@ -26,6 +26,7 @@ namespace ccHelp {
         static GroupLayout* getInstance() {return inst;}
         
     public:
-        virtual void doLayout(cocos2d::Node *node, const Parameter &par) const;
+        virtual void doLayout(cocos2d::Node *node, const Json::Value &par) const;
+        virtual void doLayout(cocos2d::Node *node, const Parameter &par) const override;
     };
 }
