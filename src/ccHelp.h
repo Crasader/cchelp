@@ -48,3 +48,5 @@
 #include "Macro/CCH_CREATE_FUNC.hpp"
 #include "Operation/OperationManager.h"
 #include "EnumHelper.h"
+
+using namespace std;
