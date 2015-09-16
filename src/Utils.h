@@ -70,6 +70,7 @@ namespace ccHelp
 
 		static void loadCustomFonts(CREF(vector<string>) fontFiles, CREF(vector<float>) = vector<float>());
 
+        static void iteChildRecursively(cocos2d::Node *node, const std::function<void(Node*)> &handler);
 		static void pauseRecursively(cocos2d::Node *node);
 		static void resumeRecursively(cocos2d::Node *node);
 		static bool isVisibleRecursively(const cocos2d::Node *node);

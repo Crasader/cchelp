@@ -262,28 +262,30 @@ namespace ccHelp
 		}
 	}
 	
+    void Utils::iteChildRecursively(cocos2d::Node *node, const std::function<void (Node *)> &handler)
+    {
+        if (!node)
+            return;
+        
+        handler(node);
+        for (auto *child : node->getChildren())
+        {
+            iteChildRecursively(child, handler);
+        }
+    }
+    
 	void Utils::pauseRecursively(cocos2d::Node *node)
 	{
-		if (!node)
-			return;
-
-		node->pause();
-		for (auto *child : node->getChildren())
-		{
-			pauseRecursively(child);
-		}
+        Utils::iteChildRecursively(node, [](Node *n){
+            n->pause();
+        });
 	}
 
 	void Utils::resumeRecursively(cocos2d::Node *node)
-	{
-		if (!node)
-			return;
-
-		node->resume();
-		for (auto *child : node->getChildren())
-		{
-			resumeRecursively(child);
-		}
+    {
+        Utils::iteChildRecursively(node, [](Node *n){
+            n->resume();
+        });
 	}
 
 	bool Utils::isVisibleRecursively(const cocos2d::Node *node)
