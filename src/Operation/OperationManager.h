@@ -119,7 +119,13 @@ namespace ccHelp {
         OperationJob* getCurrentJob() const;
         bool isOperating() const;
         
-        void await(OperationQueue &opQueue);
+        void await(OperationQueue &opQueue, OperationAddRule rule = RULE_NONE);
+        void awaitBack(OperationQueue &opQueue);
+        void awaitFront(OperationQueue &opQueue);
+        
+        void delay(float t, OperationAddRule rule = RULE_NONE);
+        inline void delayBack(float t) {delay(t, RULE_AT_LAST);}
+        inline void delayFront(float t) {delay(t, RULE_AT_FIRST);}
     };
     
 //    template<typename T>
