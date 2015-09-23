@@ -495,4 +495,16 @@ namespace ccHelp
         parent->addChild(lbl);
         return lbl;
     }
+    
+    
+    bool Utils::pnpoly(int nvert, const Vec2 *vert, const Vec2 &test)
+    {
+        int i, j, c = 0;
+        for (i = 0, j = nvert-1; i < nvert; j = i++) {
+            if ( ((vert[i].y>test.y) != (vert[j].y>test.y)) &&
+                (test.x < (vert[j].x-vert[i].x) * (test.y-vert[i].y) / (vert[j].y-vert[i].y) + vert[i].x) )
+                c = !c;
+        }
+        return c;
+    }
 }

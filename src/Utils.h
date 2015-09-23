@@ -105,6 +105,9 @@ namespace ccHelp
                                 const Color4B &textColor = Color4B::WHITE,
                                 Node *parent = nullptr,
                                 std::function<void(Label *)> custom = [](Label*){});
+        
+        static bool pnpoly(int nvert, const Vec2 *vert, const Vec2 &test);
+        
 
 	private:
 		static Vec2 anchorInPoint(const Node *node);
