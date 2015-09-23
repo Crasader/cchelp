@@ -100,7 +100,7 @@ namespace ccHelp
         static unsigned long long timeInNanos();
         
         static Label* showToast(const string &msg,
-                                const string &ttf = "",
+                                const string &ttf,
                                 float fontSize = 12.f,
                                 const Color4B &textColor = Color4B::WHITE,
                                 Node *parent = nullptr,
