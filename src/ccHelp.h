@@ -19,7 +19,7 @@
 #include "lexical_cast/lexical_cast.h"
 #include "vsson/vsson.h"
 
-#include "msgpack/msgpack.h"
+#include "msgpack/msgpack_helper.hpp"
 
 #include "Hash.h"
 

@@ -38,6 +38,9 @@
 		763F86091B52DABB004C5411 /* Expression.hpp in Sources */ = {isa = PBXBuildFile; fileRef = 763F86071B52DABB004C5411 /* Expression.hpp */; };
 		763F860A1B52DABB004C5411 /* Expression.hpp in Sources */ = {isa = PBXBuildFile; fileRef = 763F86071B52DABB004C5411 /* Expression.hpp */; };
 		763F860B1B52DABB004C5411 /* Expression.h in Headers */ = {isa = PBXBuildFile; fileRef = 763F86081B52DABB004C5411 /* Expression.h */; };
+		7645081E1BB40123005FDE27 /* UVector.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7645081C1BB40123005FDE27 /* UVector.cpp */; };
+		7645081F1BB40123005FDE27 /* UVector.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7645081C1BB40123005FDE27 /* UVector.cpp */; };
+		764508201BB40123005FDE27 /* UVector.h in Headers */ = {isa = PBXBuildFile; fileRef = 7645081D1BB40123005FDE27 /* UVector.h */; };
 		764515741B3CE5CD00CD5E1E /* Context.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 764515721B3CE5CD00CD5E1E /* Context.cpp */; };
 		764515751B3CE5CD00CD5E1E /* Context.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 764515721B3CE5CD00CD5E1E /* Context.cpp */; };
 		764515761B3CE5CD00CD5E1E /* Context.h in Headers */ = {isa = PBXBuildFile; fileRef = 764515731B3CE5CD00CD5E1E /* Context.h */; };
@@ -377,6 +380,10 @@
 		763C33DF1B556A4900A0DE3B /* UniqueRandom.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UniqueRandom.h; sourceTree = "<group>"; };
 		763F86071B52DABB004C5411 /* Expression.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Expression.hpp; sourceTree = "<group>"; };
 		763F86081B52DABB004C5411 /* Expression.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Expression.h; sourceTree = "<group>"; };
+		764508151BB3E46B005FDE27 /* msgpack_helper.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = msgpack_helper.hpp; sourceTree = "<group>"; };
+		764508161BB3E6B4005FDE27 /* BINARY.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = BINARY.hpp; sourceTree = "<group>"; };
+		7645081C1BB40123005FDE27 /* UVector.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = UVector.cpp; sourceTree = "<group>"; };
+		7645081D1BB40123005FDE27 /* UVector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UVector.h; sourceTree = "<group>"; };
 		764515721B3CE5CD00CD5E1E /* Context.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Context.cpp; sourceTree = "<group>"; };
 		764515731B3CE5CD00CD5E1E /* Context.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Context.h; sourceTree = "<group>"; };
 		764515771B3CE60800CD5E1E /* Context.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Context.hpp; sourceTree = "<group>"; };
@@ -685,6 +692,7 @@
 				765B7E2E1B6B869500A26E33 /* LAST_ARG.hpp */,
 				765B7E321B6B889C00A26E33 /* CUT_LAST_ARG.hpp */,
 				76717CDE1B9A9FDD00A291CB /* ENUM.hpp */,
+				764508161BB3E6B4005FDE27 /* BINARY.hpp */,
 			);
 			path = Macro;
 			sourceTree = "<group>";
@@ -837,6 +845,8 @@
 				76717CDF1B9AADFC00A291CB /* EnumHelper.h */,
 				76C0D61E1BA2DD8E00707D8B /* ObjectPool.cpp */,
 				76C0D61F1BA2DD8E00707D8B /* ObjectPool.h */,
+				7645081C1BB40123005FDE27 /* UVector.cpp */,
+				7645081D1BB40123005FDE27 /* UVector.h */,
 			);
 			name = src;
 			path = ../src;
@@ -987,6 +997,7 @@
 				7693E0E91B22A6E80068F1CD /* msgpack.h */,
 				7693E0EA1B22A6E80068F1CD /* msgpack.hpp */,
 				7693E0EB1B22A6E80068F1CD /* src */,
+				764508151BB3E46B005FDE27 /* msgpack_helper.hpp */,
 			);
 			path = msgpack;
 			sourceTree = "<group>";
@@ -1358,6 +1369,7 @@
 				7693E19B1B22A6E90068F1CD /* object_str.hpp in Headers */,
 				7693E20A1B22A6EA0068F1CD /* sysdep.h in Headers */,
 				7693E21C1B22A6EB0068F1CD /* type.hpp in Headers */,
+				764508201BB40123005FDE27 /* UVector.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1490,6 +1502,7 @@
 				7693E1591B22A6E90068F1CD /* FadeToActionFactory.cpp in Sources */,
 				7645157B1B3CF7B400CD5E1E /* FContext.cpp in Sources */,
 				7693E1C41B22A6E90068F1CD /* NodeSizingLayouts.cpp in Sources */,
+				7645081E1BB40123005FDE27 /* UVector.cpp in Sources */,
 				7693E1C01B22A6E90068F1CD /* LoadingBarLayouts.cpp in Sources */,
 				76B602111B3C5DF500B79B6E /* ContextValue.cpp in Sources */,
 				7693E1531B22A6E90068F1CD /* DelayActionFactory.cpp in Sources */,
@@ -1566,6 +1579,7 @@
 				7645157C1B3CF7B400CD5E1E /* FContext.cpp in Sources */,
 				7693E1D21B22A6E90068F1CD /* Lock.cpp in Sources */,
 				7693E1A41B22A6E90068F1CD /* json_writer.cpp in Sources */,
+				7645081F1BB40123005FDE27 /* UVector.cpp in Sources */,
 				76B602121B3C5DF500B79B6E /* ContextValue.cpp in Sources */,
 				7693E24F1B22A6EC0068F1CD /* Utils.cpp in Sources */,
 				76372D8F1B4B822F009E66B8 /* IOHelper.cpp in Sources */,
@@ -1582,7 +1596,6 @@
 				7693E2371B22A6EB0068F1CD /* MultiStateAnimNode.cpp in Sources */,
 				7693E1601B22A6E90068F1CD /* MoveByActionFactory.cpp in Sources */,
 				763BAE7B1B9DA1A60032C1DD /* Layout.cpp in Sources */,
-				7693E1421B22A6E80068F1CD /* ActionQueue.cpp in Sources */,
 				7693E1C51B22A6E90068F1CD /* NodeSizingLayouts.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
