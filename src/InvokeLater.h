@@ -20,20 +20,34 @@ namespace ccHelp {
         }
     };
     
+    struct LazyJob
+    {
+        Job job;
+        float time;
+    };
+    
     class InvokeLater : public virtual obj
     {
     private:
         static InvokeLater* _instance;
-        std::queue<Job> Jobs;
+        std::list<Job> Jobs;
+        std::vector<LazyJob> LazyJobs;
+        
+        bool _clearDirty;
         
     public:
         static InvokeLater* getInstance();
         
     private:
-        void doJobs();
+        void doJobs(float dt);
+        bool checkClear();
         
     public:
+        InvokeLater();
         // this method is called in other thread, must be safer
         void invoke(std::function<void()> func);
+        void invoke(std::function<void()> func, float time);
+        
+        void clear();
     };
 }

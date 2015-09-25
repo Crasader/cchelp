@@ -7,6 +7,7 @@
 //
 
 #include "OperationManager.h"
+#include "InvokeLater.h"
 
 using namespace std;
 
@@ -261,7 +262,7 @@ namespace ccHelp {
         return runningJob;
     }
     
-    void OperationQueue::await(ccHelp::OperationQueue& opQueue)
+    void OperationQueue::await(ccHelp::OperationQueue& opQueue, OperationAddRule rule)
     {
         struct WaitOperation : public Operation
         {
@@ -306,8 +307,38 @@ namespace ccHelp {
         WaitOperation *waitOp = new WaitOperation();
         NotifyOperation *notifyOp = new NotifyOperation(waitOp);
         
-        this->pushBack(waitOp);
+        this->push(waitOp, rule);
         opQueue.pushBack(notifyOp);
+    }
+    
+    void OperationQueue::awaitFront(OperationQueue &queue)
+    {
+        this->await(queue, RULE_AT_FIRST);
+    }
+    
+    void OperationQueue::awaitBack(OperationQueue &queue)
+    {
+        this->await(queue, RULE_AT_LAST);
+    }
+    
+    void OperationQueue::delay(float t, OperationAddRule rule)
+    {
+        class DelayOperation : public Operation
+        {
+        public:
+            float delay;
+            
+            DelayOperation(float time) : delay(time) {}
+            
+            virtual void run(CCH_CALLBACK _compl) override
+            {
+                InvokeLater::getInstance()->invoke([=]{
+                    _compl();
+                }, delay);
+            }
+        };
+        
+        this->push(new DelayOperation(t), rule);
     }
     
     OperationManager::Building::Building()

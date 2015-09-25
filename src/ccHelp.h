@@ -19,7 +19,7 @@
 #include "lexical_cast/lexical_cast.h"
 #include "vsson/vsson.h"
 
-#include "msgpack/msgpack.h"
+#include "msgpack/msgpack_helper.hpp"
 
 #include "Hash.h"
 
@@ -48,3 +48,5 @@
 #include "Macro/CCH_CREATE_FUNC.hpp"
 #include "Operation/OperationManager.h"
 #include "EnumHelper.h"
+
+using namespace std;

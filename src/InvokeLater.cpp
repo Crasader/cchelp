@@ -10,6 +10,12 @@
 
 namespace ccHelp
 {
+    InvokeLater::InvokeLater()
+    : _clearDirty(false)
+    {
+        
+    }
+    
     InvokeLater* InvokeLater::_instance = nullptr;
     
     InvokeLater* InvokeLater::getInstance()
@@ -18,26 +24,70 @@ namespace ccHelp
         {
             _instance = new InvokeLater();
             cocos2d::Director::getInstance()->getScheduler()->schedule([=](float dt) {
-                _instance->doJobs();
+                _instance->doJobs(dt);
             }, _instance, 0, false, "InvokeLaterScheduleBackground");
         }
         
         return _instance;
     }
     
-    void InvokeLater::doJobs()
+    void InvokeLater::doJobs(float dt)
     {
         while (!Jobs.empty())
         {
+            if (this->checkClear())
+                return;
+            
             auto job = Jobs.front();
-            Jobs.pop();
+            Jobs.pop_front();
             
             job.func();
+        }
+        
+        for (size_t i = 0; i < LazyJobs.size();)
+        {
+            if (this->checkClear())
+                return;
+            
+            auto &job = LazyJobs[i];
+            
+            job.time -= dt;
+            if (job.time <= 0)
+            {
+                job.job.func();
+                LazyJobs.erase(LazyJobs.begin() + i);
+                continue;
+            }
+            
+            ++i;
         }
     }
     
     void InvokeLater::invoke(std::function<void()> func)
     {
-        Jobs.push(Job(func));
+        Jobs.push_back(Job(func));
+    }
+    
+    void InvokeLater::invoke(std::function<void()> func, float time)
+    {
+        LazyJobs.push_back({Job(func), time});
+    }
+    
+    void InvokeLater::clear()
+    {
+        _clearDirty = true;
+    }
+    
+    bool InvokeLater::checkClear()
+    {
+        if (_clearDirty)
+        {
+            Jobs.clear();
+            LazyJobs.clear();
+            _clearDirty = false;
+            return true;
+        }
+        
+        return false;
     }
 }

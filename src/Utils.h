@@ -70,6 +70,7 @@ namespace ccHelp
 
 		static void loadCustomFonts(CREF(vector<string>) fontFiles, CREF(vector<float>) = vector<float>());
 
+        static void iteChildRecursively(cocos2d::Node *node, const std::function<void(Node*)> &handler);
 		static void pauseRecursively(cocos2d::Node *node);
 		static void resumeRecursively(cocos2d::Node *node);
 		static bool isVisibleRecursively(const cocos2d::Node *node);
@@ -99,11 +100,14 @@ namespace ccHelp
         static unsigned long long timeInNanos();
         
         static Label* showToast(const string &msg,
-                                const string &ttf = "",
+                                const string &ttf,
                                 float fontSize = 12.f,
                                 const Color4B &textColor = Color4B::WHITE,
                                 Node *parent = nullptr,
                                 std::function<void(Label *)> custom = [](Label*){});
+        
+        static bool pnpoly(int nvert, const Vec2 *vert, const Vec2 &test);
+        
 
 	private:
 		static Vec2 anchorInPoint(const Node *node);

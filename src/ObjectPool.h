@@ -41,7 +41,7 @@ namespace ccHelp
         ObjectPool(FACTORY factory, HANDLE cleaner)
         : mMaxObj(100), mFactory(factory), mCleaner(cleaner) {}
         
-        ~ObjectPool()
+        ~ObjectPool<T>()
         {
             for (auto obj : mBorrowedObjs)
             {
@@ -111,6 +111,15 @@ namespace ccHelp
             }
             
             updateIdleList();
+        }
+        
+        void returnAllObj()
+        {
+            auto copy = mBorrowedObjs;
+            for (T obj : copy)
+            {
+                returnObj(obj);
+            }
         }
     };
 }

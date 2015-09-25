@@ -262,28 +262,30 @@ namespace ccHelp
 		}
 	}
 	
+    void Utils::iteChildRecursively(cocos2d::Node *node, const std::function<void (Node *)> &handler)
+    {
+        if (!node)
+            return;
+        
+        handler(node);
+        for (auto *child : node->getChildren())
+        {
+            iteChildRecursively(child, handler);
+        }
+    }
+    
 	void Utils::pauseRecursively(cocos2d::Node *node)
 	{
-		if (!node)
-			return;
-
-		node->pause();
-		for (auto *child : node->getChildren())
-		{
-			pauseRecursively(child);
-		}
+        Utils::iteChildRecursively(node, [](Node *n){
+            n->pause();
+        });
 	}
 
 	void Utils::resumeRecursively(cocos2d::Node *node)
-	{
-		if (!node)
-			return;
-
-		node->resume();
-		for (auto *child : node->getChildren())
-		{
-			resumeRecursively(child);
-		}
+    {
+        Utils::iteChildRecursively(node, [](Node *n){
+            n->resume();
+        });
 	}
 
 	bool Utils::isVisibleRecursively(const cocos2d::Node *node)
@@ -492,5 +494,17 @@ namespace ccHelp
         
         parent->addChild(lbl);
         return lbl;
+    }
+    
+    
+    bool Utils::pnpoly(int nvert, const Vec2 *vert, const Vec2 &test)
+    {
+        int i, j, c = 0;
+        for (i = 0, j = nvert-1; i < nvert; j = i++) {
+            if ( ((vert[i].y>test.y) != (vert[j].y>test.y)) &&
+                (test.x < (vert[j].x-vert[i].x) * (test.y-vert[i].y) / (vert[j].y-vert[i].y) + vert[i].x) )
+                c = !c;
+        }
+        return c;
     }
 }
