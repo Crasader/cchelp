@@ -48,8 +48,8 @@ namespace ccHelp
 		template <class T>
 		static void replaceInVector(std::vector<T> &vec, int i, const T& obj);
 		static string format(const char *format, ...);
-		template <class K, class V>
-		static bool mapContains(const map<K, V>& m, CREF(K) key);
+		template <class C, class O>
+        static bool contains(const C& c, CREF(O) obj);
 		template <class K, class V>
 		static map<K, V> mkMap(uint n, ...);
 
@@ -115,11 +115,11 @@ namespace ccHelp
 		vec.data()[i] = obj;
 	}
 
-	template <class K, class V>
-	bool Utils::mapContains(const map<K, V>& m, CREF(K) key)
+	template <class C, class O>
+	bool Utils::contains(const C& c, CREF(O) obj)
 	{
-		return m.find(key) != m.cend();
-	}
+		return c.find(obj) != c.cend();
+    }
 
 	template <class K, class V>
 	map<K, V> Utils::mkMap(uint n, ...)
