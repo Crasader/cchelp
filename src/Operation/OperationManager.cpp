@@ -140,7 +140,7 @@ namespace ccHelp {
                 op = new OperationSequence(ops);
                 break;
             case GROUP:
-                op = new OperationSequence(ops);
+                op = new OperationGroup(ops);
                 break;
         }
         
@@ -321,23 +321,23 @@ namespace ccHelp {
         this->await(queue, RULE_AT_LAST);
     }
     
+    class DelayOperation : public Operation
+    {
+    public:
+        float delay;
+        
+        DelayOperation(float time) : delay(time) {}
+        
+        virtual void run(CCH_CALLBACK _compl) override
+        {
+            InvokeLater::getInstance()->invoke([=]{
+                _compl();
+            }, delay);
+        }
+    };
+    
     void OperationQueue::delay(float t, OperationAddRule rule)
     {
-        class DelayOperation : public Operation
-        {
-        public:
-            float delay;
-            
-            DelayOperation(float time) : delay(time) {}
-            
-            virtual void run(CCH_CALLBACK _compl) override
-            {
-                InvokeLater::getInstance()->invoke([=]{
-                    _compl();
-                }, delay);
-            }
-        };
-        
         this->push(new DelayOperation(t), rule);
     }
     
@@ -360,12 +360,10 @@ namespace ccHelp {
     
     OperationManager::OperationManager()
     {
-        opQueue = new OperationQueue();
     }
     
     OperationManager::~OperationManager()
     {
-        delete opQueue;
         currentBuilding.releaseAll();
         while (!stackedBuildings.empty())
         {
@@ -382,29 +380,29 @@ namespace ccHelp {
         }
         else
         {
-            opQueue->push(op, rule);
+            mQueue.push(op, rule);
         }
     }
     
-    void OperationManager::addInSubSeq(Operation *op, OperationAddRule rule)
-    {
-        function<void(CCH_CALLBACK)> func = [=](CCH_CALLBACK completion) {
-            this->newSequence(rule);
-            op->run(completion);
-            this->closeCurrent();
-        };
-        this->addmk(func);
-    }
-    
-    void OperationManager::addInSubGr(Operation *op, OperationAddRule rule)
-    {
-        function<void(CCH_CALLBACK)> func = [=](CCH_CALLBACK completion) {
-            this->newGroup(rule);
-            op->run(completion);
-            this->closeCurrent();
-        };
-        this->addmk(func);
-    }
+//    void OperationManager::addInSubSeq(Operation *op, OperationAddRule rule)
+//    {
+//        function<void(CCH_CALLBACK)> func = [=](CCH_CALLBACK completion) {
+//            this->newSequence(rule);
+//            op->run(completion);
+//            this->closeCurrent();
+//        };
+//        this->addmk(func);
+//    }
+//    
+//    void OperationManager::addInSubGr(Operation *op, OperationAddRule rule)
+//    {
+//        function<void(CCH_CALLBACK)> func = [=](CCH_CALLBACK completion) {
+//            this->newGroup(rule);
+//            op->run(completion);
+//            this->closeCurrent();
+//        };
+//        this->addmk(func);
+//    }
     
     void OperationManager::newSequence(OperationAddRule rule)
     {
@@ -427,7 +425,7 @@ namespace ccHelp {
         
         currentBuilding.builder = new OperationBuilder();
         currentBuilding.rule = rule;
-        currentBuilding.builder->begin(SEQUENCE);
+        currentBuilding.builder->begin(GROUP);
     }
     
     void OperationManager::closeCurrent()
@@ -448,13 +446,28 @@ namespace ccHelp {
         }
         else
         {
-            this->opQueue->push(op, currentBuilding.rule);
+            mQueue.push(op, currentBuilding.rule);
         }
     }
     
     ccHelp::Context& OperationManager::currentContext()
     {
-        return *opQueue->getCurrentJob()->getContext();
+        return *(mQueue.getCurrentJob()->getContext());
+    }
+    
+    bool OperationManager::isOperating() const
+    {
+        return mQueue.isOperating();
+    }
+    
+    void OperationManager::delay(float t, OperationAddRule rule)
+    {
+        this->add(new DelayOperation(t), rule);
+    }
+    
+    void OperationManager::await(ccHelp::OperationManager &op, OperationAddRule rule)
+    {
+        return mQueue.await(op.mQueue, rule);
     }
     
     Operation* mkop(cocos2d::Node *target, cocos2d::FiniteTimeAction *act)
@@ -481,11 +494,6 @@ namespace ccHelp {
         op->target = target;
         
         return op;
-    }
-    
-    bool OperationManager::isOperating() const
-    {
-        return opQueue->isOperating();
     }
     
     OperationManager OP;

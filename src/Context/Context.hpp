@@ -26,7 +26,9 @@ namespace ccHelp {
     template <typename T>
     T* Context::getPointer(const std::string &k) const
     {
-        return getValue(k).asPointer<T>();
+        T *t = nullptr;
+        getValue(k).asPointer<T>(t);
+        return t;
     }
     
     template <typename T>

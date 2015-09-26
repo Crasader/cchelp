@@ -131,7 +131,7 @@ namespace ccHelp {
 //    template<typename T>
 //    Operation* mkop(const T&);
     
-    class OperationManager : public OperationQueue
+    class OperationManager
     {
     private:
         struct Building
@@ -144,8 +144,7 @@ namespace ccHelp {
         };
         
     private:
-        OperationQueue *opQueue;
-        
+        OperationQueue mQueue;
         std::stack<OperationManager::Building> stackedBuildings;
         OperationManager::Building currentBuilding;
         
@@ -153,31 +152,41 @@ namespace ccHelp {
         OperationManager();
         ~OperationManager();
         void add(Operation *op, OperationAddRule rule = OperationAddRule::RULE_NONE);
-        void addInSubSeq(Operation *op, OperationAddRule rule = OperationAddRule::RULE_NONE);
-        void addInSubGr(Operation *op, OperationAddRule rule = OperationAddRule::RULE_NONE);
+//        void addInSubSeq(Operation *op, OperationAddRule rule = OperationAddRule::RULE_NONE);
+//        void addInSubGr(Operation *op, OperationAddRule rule = OperationAddRule::RULE_NONE);
         
         void newSequence(OperationAddRule rule = OperationAddRule::RULE_NONE);
         void newGroup(OperationAddRule rule = OperationAddRule::RULE_NONE);
         void closeCurrent();
-        
-        bool isOperating() const;
         
         ccHelp::Context& currentContext();
         
         template<typename T>
         void addmk(const T& t, OperationAddRule rule = OperationAddRule::RULE_NONE);
         
-        template<typename T>
-        void addmkInSubSeq(const T& t, OperationAddRule rule = OperationAddRule::RULE_AT_FIRST)
-        {
-            this->addInSubSeq(mkop(t), rule);
-        }
+        // Decorate OperationQueue
         
-        template<typename T>
-        void addmkInSubGr(const T& t, OperationAddRule rule = OperationAddRule::RULE_AT_FIRST)
-        {
-            this->addInSubGr(mkop(t), rule);
-        }
+        bool isOperating() const;
+        
+        void delay(float t, OperationAddRule rule = RULE_NONE);
+        inline void delayBack(float t) {delay(t, RULE_AT_LAST);}
+        inline void delayFront(float t) {delay(t, RULE_AT_FIRST);}
+        
+        void await(OperationManager &op, OperationAddRule rule = RULE_NONE);
+        inline void awaitBack(OperationManager &op) {await(op, RULE_AT_LAST);}
+        inline void awaitFront(OperationManager &op) {await(op, RULE_AT_FIRST);}
+        
+//        template<typename T>
+//        void addmkInSubSeq(const T& t, OperationAddRule rule = OperationAddRule::RULE_AT_FIRST)
+//        {
+//            this->addInSubSeq(mkop(t), rule);
+//        }
+//        
+//        template<typename T>
+//        void addmkInSubGr(const T& t, OperationAddRule rule = OperationAddRule::RULE_AT_FIRST)
+//        {
+//            this->addInSubGr(mkop(t), rule);
+//        }
     };
     
     class Func0Operation : public Operation
