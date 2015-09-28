@@ -341,7 +341,19 @@ namespace ccHelp
 		string upper(s);
 		for (auto &c : upper) { c = std::toupper(c); }
 		return upper;
-	}
+    }
+    
+    string Utils::tocapitalize(const string &s)
+    {
+        string cap(s);
+        for (auto &c : cap) { c = std::tolower(c); }
+        if (cap.length() > 0)
+        {
+            cap[0] = std::toupper(cap[0]);
+        }
+        
+        return cap;
+    }
 
 	string Utils::trim(const string &s)
 	{

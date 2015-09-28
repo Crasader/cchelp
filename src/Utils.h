@@ -90,6 +90,7 @@ namespace ccHelp
 
 		static string tolower(const string &s);
 		static string toupper(const string &s);
+        static string tocapitalize(const string &s);
 		static string trim(const string &s);
         
         static string enUSFormat(long d);
