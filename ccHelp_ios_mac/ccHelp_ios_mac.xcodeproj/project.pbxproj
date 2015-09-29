@@ -332,6 +332,9 @@
 		7693E2571B22A6EC0068F1CD /* WidgetUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = 7693E13D1B22A6E80068F1CD /* WidgetUtils.h */; };
 		7693E25C1B22ADFD0068F1CD /* libcocos2d iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7693E25B1B22ADFD0068F1CD /* libcocos2d iOS.a */; };
 		7693E25E1B22AE070068F1CD /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7693E25D1B22AE070068F1CD /* Foundation.framework */; };
+		769D26851BBA4AD5004E95F6 /* UMap.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 769D26831BBA4AD5004E95F6 /* UMap.cpp */; };
+		769D26861BBA4AD5004E95F6 /* UMap.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 769D26831BBA4AD5004E95F6 /* UMap.cpp */; };
+		769D26871BBA4AD5004E95F6 /* UMap.h in Headers */ = {isa = PBXBuildFile; fileRef = 769D26841BBA4AD5004E95F6 /* UMap.h */; };
 		76B602111B3C5DF500B79B6E /* ContextValue.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 76B6020F1B3C5DF500B79B6E /* ContextValue.cpp */; };
 		76B602121B3C5DF500B79B6E /* ContextValue.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 76B6020F1B3C5DF500B79B6E /* ContextValue.cpp */; };
 		76B602131B3C5DF500B79B6E /* ContextValue.h in Headers */ = {isa = PBXBuildFile; fileRef = 76B602101B3C5DF500B79B6E /* ContextValue.h */; };
@@ -635,6 +638,8 @@
 		7693E13D1B22A6E80068F1CD /* WidgetUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WidgetUtils.h; sourceTree = "<group>"; };
 		7693E25B1B22ADFD0068F1CD /* libcocos2d iOS.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libcocos2d iOS.a"; path = "../../cocos2d/build/build/Debug-iphoneos/libcocos2d iOS.a"; sourceTree = "<group>"; };
 		7693E25D1B22AE070068F1CD /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		769D26831BBA4AD5004E95F6 /* UMap.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = UMap.cpp; sourceTree = "<group>"; };
+		769D26841BBA4AD5004E95F6 /* UMap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UMap.h; sourceTree = "<group>"; };
 		76B6020F1B3C5DF500B79B6E /* ContextValue.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ContextValue.cpp; sourceTree = "<group>"; };
 		76B602101B3C5DF500B79B6E /* ContextValue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContextValue.h; sourceTree = "<group>"; };
 		76B602141B3C5E0D00B79B6E /* ContextValue.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = ContextValue.hpp; sourceTree = "<group>"; };
@@ -847,6 +852,8 @@
 				76C0D61F1BA2DD8E00707D8B /* ObjectPool.h */,
 				7645081C1BB40123005FDE27 /* UVector.cpp */,
 				7645081D1BB40123005FDE27 /* UVector.h */,
+				769D26831BBA4AD5004E95F6 /* UMap.cpp */,
+				769D26841BBA4AD5004E95F6 /* UMap.h */,
 			);
 			name = src;
 			path = ../src;
@@ -1194,6 +1201,7 @@
 				7607A9B71B4BBEE700F594EE /* Model.h in Headers */,
 				7693E1B11B22A6E90068F1CD /* GroupLayout.h in Headers */,
 				7693E2081B22A6EA0068F1CD /* sbuffer.h in Headers */,
+				769D26871BBA4AD5004E95F6 /* UMap.h in Headers */,
 				7693E1A01B22A6E90068F1CD /* json_tool.h in Headers */,
 				7693E1D41B22A6E90068F1CD /* Matrix.h in Headers */,
 				76372D901B4B822F009E66B8 /* IOHelper.h in Headers */,
@@ -1510,6 +1518,7 @@
 				7693E1811B22A6E90068F1CD /* Hash.cpp in Sources */,
 				7693E14D1B22A6E90068F1CD /* ActionHelper.cpp in Sources */,
 				7693E1B61B22A6E90068F1CD /* LayerColorLayouts.cpp in Sources */,
+				769D26851BBA4AD5004E95F6 /* UMap.cpp in Sources */,
 				7693E1731B22A6E90068F1CD /* Def.cpp in Sources */,
 				7693E2431B22A6EC0068F1CD /* Random.cpp in Sources */,
 				763F86091B52DABB004C5411 /* Expression.hpp in Sources */,
@@ -1587,6 +1596,7 @@
 				7693E2311B22A6EB0068F1CD /* version.cpp in Sources */,
 				7693E2561B22A6EC0068F1CD /* WidgetUtils.cpp in Sources */,
 				7693E1771B22A6E90068F1CD /* DialogLayer.cpp in Sources */,
+				769D26861BBA4AD5004E95F6 /* UMap.cpp in Sources */,
 				7693E1B01B22A6E90068F1CD /* GroupLayout.cpp in Sources */,
 				763F860A1B52DABB004C5411 /* Expression.hpp in Sources */,
 				7693E2441B22A6EC0068F1CD /* Random.cpp in Sources */,
