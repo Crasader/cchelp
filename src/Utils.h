@@ -8,6 +8,8 @@
 #include <fstream>
 #include "msgpack/msgpack.hpp"
 #include "jsoncpp/serializor.hpp"
+#include "hash_container/hset.h"
+#include "Index2D.h"
 #include <vsson/vsson.h>
 
 USING_NS_CC;
@@ -109,7 +111,9 @@ namespace ccHelp
         
         static bool pnpoly(int nvert, const Vec2 *vert, const Vec2 &test);
         
-
+        static void listIndexesWithRange(CREF(Index2D) idx, uint range, _out_ hset<Index2D> &indexes);
+        static void listIndexesInRange(CREF(Index2D) idx, uint range, _out_ hset<Index2D> &indexes);
+        
 	private:
 		static Vec2 anchorInPoint(const Node *node);
 	};

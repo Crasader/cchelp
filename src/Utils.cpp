@@ -519,4 +519,34 @@ namespace ccHelp
         }
         return c;
     }
+    
+    void Utils::listIndexesWithRange(CREF(Index2D) idx, uint range, _out_ hset<Index2D> &indexes)
+    {
+        indexes.clear();
+        
+        for (int r = range; r >= 0; --r)
+        {
+            int c = range - r;
+            indexes.insert(idx.mod(r, c));
+            indexes.insert(idx.mod(r, -c));
+            indexes.insert(idx.mod(-r, c));
+            indexes.insert(idx.mod(-r, -c));
+        }
+    }
+    
+    void Utils::listIndexesInRange(const ccHelp::Index2D &idx, uint range, hset<ccHelp::Index2D> &indexes)
+    {
+        indexes.clear();
+        for (uint rng = 0; rng <= range; ++rng)
+        {
+            for (int r = rng; r >= 0; --r)
+            {
+                int c = rng - r;
+                indexes.insert(idx.mod(r, c));
+                indexes.insert(idx.mod(r, -c));
+                indexes.insert(idx.mod(-r, c));
+                indexes.insert(idx.mod(-r, -c));
+            }
+        }
+    }
 }
