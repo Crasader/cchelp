@@ -24,7 +24,6 @@ namespace ccHelp
 	{
 		return randomer();
 	}
-
 	
 	int Random::RandomNegativeInt()
 	{
@@ -80,7 +79,7 @@ namespace ccHelp
 	{
 		if (min > 0)
 			return 0;
-		return Random::RandomDouble() * min;
+		return Random::RandomNegativeDouble() * min;
 	}
 
 	

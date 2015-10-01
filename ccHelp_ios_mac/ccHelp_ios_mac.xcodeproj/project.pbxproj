@@ -26,6 +26,9 @@
 		7627E11A1B5E370000ED7B66 /* InvokeLater.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7627E1171B5E370000ED7B66 /* InvokeLater.cpp */; };
 		7627E11B1B5E370000ED7B66 /* InvokeLater.h in Headers */ = {isa = PBXBuildFile; fileRef = 7627E1181B5E370000ED7B66 /* InvokeLater.h */; };
 		7634C8451B90423200E097E6 /* Matrix.h in Headers */ = {isa = PBXBuildFile; fileRef = 7634C8441B90423200E097E6 /* Matrix.h */; };
+		7637294F1BBD27DE00ADD4F5 /* ColorHelper.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7637294D1BBD27DE00ADD4F5 /* ColorHelper.cpp */; };
+		763729501BBD27DE00ADD4F5 /* ColorHelper.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7637294D1BBD27DE00ADD4F5 /* ColorHelper.cpp */; };
+		763729511BBD27DE00ADD4F5 /* ColorHelper.h in Headers */ = {isa = PBXBuildFile; fileRef = 7637294E1BBD27DE00ADD4F5 /* ColorHelper.h */; };
 		76372D8E1B4B822F009E66B8 /* IOHelper.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 76372D8A1B4B822F009E66B8 /* IOHelper.cpp */; };
 		76372D8F1B4B822F009E66B8 /* IOHelper.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 76372D8A1B4B822F009E66B8 /* IOHelper.cpp */; };
 		76372D901B4B822F009E66B8 /* IOHelper.h in Headers */ = {isa = PBXBuildFile; fileRef = 76372D8B1B4B822F009E66B8 /* IOHelper.h */; };
@@ -375,6 +378,8 @@
 		762B24141B4E1782001290EE /* msgpack_hmap.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = msgpack_hmap.h; sourceTree = "<group>"; };
 		762B24151B4E1782001290EE /* msgpack_hset.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = msgpack_hset.h; sourceTree = "<group>"; };
 		7634C8441B90423200E097E6 /* Matrix.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Matrix.h; sourceTree = "<group>"; };
+		7637294D1BBD27DE00ADD4F5 /* ColorHelper.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ColorHelper.cpp; sourceTree = "<group>"; };
+		7637294E1BBD27DE00ADD4F5 /* ColorHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ColorHelper.h; sourceTree = "<group>"; };
 		76372D8A1B4B822F009E66B8 /* IOHelper.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = IOHelper.cpp; sourceTree = "<group>"; };
 		76372D8B1B4B822F009E66B8 /* IOHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IOHelper.h; sourceTree = "<group>"; };
 		76372D8C1B4B822F009E66B8 /* KVDB.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = KVDB.cpp; sourceTree = "<group>"; };
@@ -854,6 +859,8 @@
 				7645081D1BB40123005FDE27 /* UVector.h */,
 				769D26831BBA4AD5004E95F6 /* UMap.cpp */,
 				769D26841BBA4AD5004E95F6 /* UMap.h */,
+				7637294D1BBD27DE00ADD4F5 /* ColorHelper.cpp */,
+				7637294E1BBD27DE00ADD4F5 /* ColorHelper.h */,
 			);
 			name = src;
 			path = ../src;
@@ -1359,6 +1366,7 @@
 				7693E2051B22A6EA0068F1CD /* pack.hpp in Headers */,
 				7693E19C1B22A6E90068F1CD /* serializor.hpp in Headers */,
 				7693E1721B22A6E90068F1CD /* ccHelp.h in Headers */,
+				763729511BBD27DE00ADD4F5 /* ColorHelper.h in Headers */,
 				7693E1EE1B22A6EA0068F1CD /* unordered_map.hpp in Headers */,
 				7693E2191B22A6EB0068F1CD /* unordered_set.hpp in Headers */,
 				7693E2201B22A6EB0068F1CD /* unpack_template.h in Headers */,
@@ -1521,6 +1529,7 @@
 				769D26851BBA4AD5004E95F6 /* UMap.cpp in Sources */,
 				7693E1731B22A6E90068F1CD /* Def.cpp in Sources */,
 				7693E2431B22A6EC0068F1CD /* Random.cpp in Sources */,
+				7637294F1BBD27DE00ADD4F5 /* ColorHelper.cpp in Sources */,
 				763F86091B52DABB004C5411 /* Expression.hpp in Sources */,
 				7693E1D11B22A6E90068F1CD /* Lock.cpp in Sources */,
 				76372D911B4B822F009E66B8 /* KVDB.cpp in Sources */,
@@ -1599,6 +1608,7 @@
 				769D26861BBA4AD5004E95F6 /* UMap.cpp in Sources */,
 				7693E1B01B22A6E90068F1CD /* GroupLayout.cpp in Sources */,
 				763F860A1B52DABB004C5411 /* Expression.hpp in Sources */,
+				763729501BBD27DE00ADD4F5 /* ColorHelper.cpp in Sources */,
 				7693E2441B22A6EC0068F1CD /* Random.cpp in Sources */,
 				7693E1A21B22A6E90068F1CD /* json_value.cpp in Sources */,
 				76372D921B4B822F009E66B8 /* KVDB.cpp in Sources */,
