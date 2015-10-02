@@ -39,7 +39,7 @@ namespace ccHelp
 			DIALOG_COMPLETION completion = DO_NOTHING_COMPLETION);
 
 		static void closeDialog(DialogLayer *dlgLayer, Node *dialog,
-			DialogAnimation anim, DIALOG_COMPLETION completion);
+			DialogAnimation anim = DialogAnimation::NONE, DIALOG_COMPLETION completion = DO_NOTHING_COMPLETION);
 
 	private:
 		static FiniteTimeAction* makeShowAnim(DialogAnimation anim, Node *parent, Node *dlg);	private:
