@@ -12,7 +12,7 @@
 #include "hash_container/hmap.h"
 #include "msgpack/msgpack_helper.hpp"
 
-namespace strife {
+namespace ccHelp {
     
     template <typename K, typename V, typename H = std::hash<K>>
     class UMap : public hmap<K, std::unique_ptr<V>, H>

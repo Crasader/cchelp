@@ -11,7 +11,7 @@
 #include <memory>
 #include "msgpack/msgpack_helper.hpp"
 
-namespace strife {
+namespace ccHelp {
     
     template <typename T>
     class UVector : public std::vector<std::unique_ptr<T>>
