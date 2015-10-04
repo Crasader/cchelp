@@ -25,7 +25,6 @@
 		7627E1191B5E370000ED7B66 /* InvokeLater.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7627E1171B5E370000ED7B66 /* InvokeLater.cpp */; };
 		7627E11A1B5E370000ED7B66 /* InvokeLater.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7627E1171B5E370000ED7B66 /* InvokeLater.cpp */; };
 		7627E11B1B5E370000ED7B66 /* InvokeLater.h in Headers */ = {isa = PBXBuildFile; fileRef = 7627E1181B5E370000ED7B66 /* InvokeLater.h */; };
-		7634C8451B90423200E097E6 /* Matrix.h in Headers */ = {isa = PBXBuildFile; fileRef = 7634C8441B90423200E097E6 /* Matrix.h */; };
 		7637294F1BBD27DE00ADD4F5 /* ColorHelper.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7637294D1BBD27DE00ADD4F5 /* ColorHelper.cpp */; };
 		763729501BBD27DE00ADD4F5 /* ColorHelper.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7637294D1BBD27DE00ADD4F5 /* ColorHelper.cpp */; };
 		763729511BBD27DE00ADD4F5 /* ColorHelper.h in Headers */ = {isa = PBXBuildFile; fileRef = 7637294E1BBD27DE00ADD4F5 /* ColorHelper.h */; };
@@ -1222,7 +1221,6 @@
 				7693E1EA1B22A6EA0068F1CD /* pair.hpp in Headers */,
 				76C0D6221BA2DD8E00707D8B /* ObjectPool.h in Headers */,
 				7693E1E81B22A6EA0068F1CD /* map.hpp in Headers */,
-				7634C8451B90423200E097E6 /* Matrix.h in Headers */,
 				7693E2241B22A6EB0068F1CD /* zbuffer.h in Headers */,
 				7693E2091B22A6EA0068F1CD /* sbuffer.hpp in Headers */,
 				7693E2271B22A6EB0068F1CD /* zone.hpp in Headers */,
@@ -1432,7 +1430,7 @@
 		7693DF3D1B229ED30068F1CD /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0630;
+				LastUpgradeCheck = 0640;
 				ORGANIZATIONNAME = Less;
 				TargetAttributes = {
 					7693DF441B229ED30068F1CD = {
@@ -1713,6 +1711,7 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = NO;
+				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -1781,6 +1780,7 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = NO;
+				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;

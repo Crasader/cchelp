@@ -14,8 +14,14 @@
 namespace ccHelp {
     
     template <typename T>
+    using UP = std::unique_ptr<T>;
+    
+    template <typename T>
     class UVector : public std::vector<std::unique_ptr<T>>
     {
+    private:
+        std::unique_ptr<std::vector<T *>> mVector;
+        
     public:
         template <typename Packer>
         void msgpack_pack(Packer& pk) const
@@ -68,6 +74,31 @@ namespace ccHelp {
         {
             std::unique_ptr<T> ptr(p);
             this->push_back(std::move(ptr));
+        }
+        
+    private:
+        const std::vector<T *>& asVectorMutable()
+        {
+            if (!mVector.get())
+            {
+                mVector = std::unique_ptr<std::vector<T*>>(new std::vector<T*>());
+            }
+            
+            mVector->clear();
+            mVector->reserve(this->size());
+            
+            for (auto &up : *this)
+            {
+                mVector->push_back(up.get());
+            }
+            
+            return *mVector.get();
+        }
+        
+    public:
+        const std::vector<T *>& asVector() const
+        {
+            return const_cast<UVector<T>*>(this)->asVectorMutable();
         }
     };
 }
