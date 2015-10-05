@@ -47,9 +47,9 @@ namespace ccHelp
     {
         auto *touchListener = EventListenerTouchOneByOne::create();
         touchListener->setSwallowTouches(true);
-        touchListener->onTouchBegan = [](Touch *t, cocos2d::Event *e)
+        touchListener->onTouchBegan = [=](Touch *t, cocos2d::Event *e)
         {
-            return true;
+            return Utils::isVisibleRecursively(n);
         };
         Director::getInstance()->getEventDispatcher()->addEventListenerWithSceneGraphPriority(touchListener, n);
     }
