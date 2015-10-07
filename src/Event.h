@@ -1,4 +1,5 @@
 #pragma once
+#include <hash_container/hmap.h>
 #include <list>
 #include <functional>
 
@@ -10,6 +11,7 @@ namespace ccHelp
     template<>
     struct Event<void()>
     {
+        hmap<std::string, std::function<void()>*> namedFuncs;
         std::list<std::function<void()>> funcs;
         
         Event<void()>() {}
@@ -55,6 +57,7 @@ namespace ccHelp
         void clear()
         {
             funcs.clear();
+            namedFuncs.clear();
         }
         
         operator bool()
@@ -76,6 +79,14 @@ namespace ccHelp
                 if (f)
                     f();
             }
+        }
+        
+        void add(std::function<void()> f, const std::string &name)
+        {
+            assert(namedFuncs.find(name) == namedFuncs.end());
+            
+            funcs.push_back(f);
+            namedFuncs[name] = &(funcs.back());
         }
         
     private:

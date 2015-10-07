@@ -63,6 +63,9 @@ namespace ccHelp
             if (!n->getParent())
                 return false;
             
+            if (!Utils::isVisibleRecursively(n))
+                return false;
+            
             auto pos = n->getParent()->convertToNodeSpace(t->getLocation());
             return n->getBoundingBox().containsPoint(pos);
         };
@@ -107,6 +110,18 @@ namespace ccHelp
 		
 		return node;
 	}
+    
+    void Utils::addOrRemoveChild(bool isAdd, Node *parent, Node *child)
+    {
+        if (isAdd && !child->getParent())
+        {
+            parent->addChild(child);
+        }
+        else
+        {
+            child->removeFromParent();
+        }
+    }
 
 	Scene* Utils::createScene(Node *scn)
 	{

@@ -34,7 +34,8 @@ namespace ccHelp
 		static void setNodeAnchorWithoutChangePosition
 			(Node *target, CREF(Vec2) newAnchor);
 		static Node* warpSpriteBySize(string sprName,  CREF(Size) size, int tag = 0);
-        static Vec2 convertPosition(Node *n, Node *target);   
+        static Vec2 convertPosition(Node *n, Node *target);
+        static void addOrRemoveChild(bool isAdd, Node *parent, Node *child);
         
         template<class S>
 		static Scene* createScene();
@@ -186,7 +187,7 @@ namespace ccHelp
 		return CCH_NOT_INIT_CREATE(ref);
 	}
 
-	class CoordinateTransformer
+    class CoordinateTransformer : public ccHelp::obj
 	{
 	public:
 		PUREF(Vec2 transform(CREF(Vec2) p) const);
