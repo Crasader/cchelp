@@ -25,6 +25,7 @@ namespace ccHelp
 	class Utils
 	{
 	public:
+        static void removeTouch(cocos2d::Node *n);
         static void swallowTouch(Node *n);
         static void swallowTouchBB(Node *n);
         static void setCascadeOpacityAllChilds(Node *n, bool enabled = true);

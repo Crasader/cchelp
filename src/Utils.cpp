@@ -43,6 +43,11 @@ namespace ccHelp
         }
     }
     
+    void Utils::removeTouch(cocos2d::Node *n)
+    {
+        Director::getInstance()->getEventDispatcher()->removeEventListenersForTarget(n);
+    }
+    
     void Utils::swallowTouch(cocos2d::Node *n)
     {
         auto *touchListener = EventListenerTouchOneByOne::create();
