@@ -6,55 +6,43 @@
 //
 //
 
+#include "AddChildLayouts.h"
 #include "LayoutRegistration.h"
 #include "Utils.h"
 #include "WidgetUtils.h"
 
 namespace ccHelp {
     
-    class AddChildLayout : public Layout
+    void AddChildLayout::doLayout(Node *root, const Layout::Parameter &p) const
     {
-    public:
-        typedef function<Node*(const Layout::Parameter &p)> Factory;
+        string type;
+        if (!p.get(type, 0, "type", nullptr))
+            return;
         
-    private:
-        static hmap<string, Factory> FACTORIES;
+        string name;
+        if (!p.get(name, 1, "name", nullptr))
+            return;
         
-    public:
-        virtual void doLayout(Node *root, const Layout::Parameter &p) const override
+        type = Utils::tolower(type);
+        auto ite = AddChildLayout::FACTORIES.find(type);
+        if (ite == AddChildLayout::FACTORIES.end())
+            return;
+        
+        Node *child = ite->second(p);
+        if (!child)
+            return;
+        
+        child->setName(name);
+        
+        int tag;
+        if (p.get(tag, 3, "tag", nullptr))
         {
-            string type;
-            if (!p.get(type, 0, "type", nullptr))
-                return;
-            
-            string name;
-            if (!p.get(name, 1, "name", nullptr))
-                return;
-            
-            type = Utils::tolower(type);
-            auto ite = FACTORIES.find(type);
-            if (ite == FACTORIES.end())
-                return;
-            
-            Node *child = ite->second(p);
-            if (!child)
-                return;
-            
-            child->setName(name);
-            
-            int tag;
-            if (p.get(tag, 3, "tag", nullptr))
-            {
-                child->setTag(tag);
-            }
-            
-            root->addChild(child);
-            GroupLayout::getInstance()->doLayout(child, p);
+            child->setTag(tag);
         }
         
-    public:
-        STATIC_CONSTRUCTOR_DECLARE(AddChildLayout);
-    };
+        root->addChild(child);
+        GroupLayout::getInstance()->doLayout(child, p);
+    }
     
     hmap<string, AddChildLayout::Factory> AddChildLayout::FACTORIES;
     

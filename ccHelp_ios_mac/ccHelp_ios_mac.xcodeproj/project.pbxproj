@@ -405,6 +405,7 @@
 		765B7E2C1B6B7F7000A26E33 /* CCH_CREATE_FUNC.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = CCH_CREATE_FUNC.hpp; sourceTree = "<group>"; };
 		765B7E2E1B6B869500A26E33 /* LAST_ARG.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = LAST_ARG.hpp; sourceTree = "<group>"; };
 		765B7E321B6B889C00A26E33 /* CUT_LAST_ARG.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = CUT_LAST_ARG.hpp; sourceTree = "<group>"; };
+		7662DE401BCBCC0600802345 /* AddChildLayouts.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AddChildLayouts.h; sourceTree = "<group>"; };
 		76717CDE1B9A9FDD00A291CB /* ENUM.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = ENUM.hpp; sourceTree = "<group>"; };
 		76717CDF1B9AADFC00A291CB /* EnumHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EnumHelper.h; sourceTree = "<group>"; };
 		7679C8471B4C40A200081830 /* CCH_FOR2.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = CCH_FOR2.hpp; sourceTree = "<group>"; };
@@ -987,6 +988,7 @@
 				7693E0B21B22A6E80068F1CD /* WidgetLayouts.cpp */,
 				764D64E81B589CE400DDE6CB /* Layoutable.h */,
 				763BAE791B9DA1A60032C1DD /* Layout.cpp */,
+				7662DE401BCBCC0600802345 /* AddChildLayouts.h */,
 			);
 			path = Layouts;
 			sourceTree = "<group>";
