@@ -88,4 +88,19 @@ namespace ccHelp {
         
         return btn;
     }
+    
+    void WidgetUtils::clearRichText(ui::RichText *rt)
+    {
+        struct _RT : public ui::RichText
+        {
+        public:
+            void clearElems()
+            {
+                _richElements.clear();
+                _formatTextDirty = true;
+            }
+        };
+        
+        static_cast<_RT *>(rt)->clearElems();
+    }
 }
