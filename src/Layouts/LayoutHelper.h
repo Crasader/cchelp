@@ -42,6 +42,7 @@ namespace ccHelp {
         static void apply(cocos2d::Node *root, const std::string &file);
         static void applyJsonString(cocos2d::Node *root, const std::string jsParam);
         static void applyJson(cocos2d::Node *root, const Layout::Parameter &p);
+        static void format(cocos2d::Node *root, const string &key, const Json::Value &p);
         static const Layout::Parameter& getLayout(const std::string &file);
         
         static bool asFloat(const Layout::Parameter &p, float &f);

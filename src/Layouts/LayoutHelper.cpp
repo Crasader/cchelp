@@ -121,6 +121,14 @@ namespace ccHelp {
         GroupLayout::getInstance()->doLayout(root, p);
     }
     
+    void LayoutHelper::format(Node *root, const string &key, const Json::Value &js)
+    {
+        Json::Value par;
+        par[key] = js;
+        
+        GroupLayout::getInstance()->doLayout(root, par);
+    }
+    
     const Layout::Parameter& LayoutHelper::getLayout(const std::string &file)
     {
         auto ite = Cache.find(file);
