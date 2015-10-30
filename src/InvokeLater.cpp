@@ -33,6 +33,9 @@ namespace ccHelp
     
     void InvokeLater::doJobs(float dt)
     {
+        if (this->checkClear())
+            return;
+        
         while (!Jobs.empty())
         {
             if (this->checkClear())
@@ -43,6 +46,9 @@ namespace ccHelp
             
             job.func();
         }
+        
+        if (this->checkClear())
+            return;
         
         for (size_t i = 0; i < LazyJobs.size();)
         {
@@ -61,6 +67,8 @@ namespace ccHelp
             
             ++i;
         }
+        
+        this->checkClear();
     }
     
     void InvokeLater::invoke(std::function<void()> func)
