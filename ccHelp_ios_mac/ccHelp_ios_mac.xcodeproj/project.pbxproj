@@ -57,6 +57,9 @@
 		7646FEE51B22F760002B2E23 /* OperationManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7646FEE31B22F760002B2E23 /* OperationManager.cpp */; };
 		7646FEE61B22F760002B2E23 /* OperationManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7646FEE31B22F760002B2E23 /* OperationManager.cpp */; };
 		7646FEE71B22F760002B2E23 /* OperationManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 7646FEE41B22F760002B2E23 /* OperationManager.h */; };
+		764710F71BE74E3C005EBB74 /* MD5.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 764710F51BE74E3C005EBB74 /* MD5.cpp */; };
+		764710F81BE74E3C005EBB74 /* MD5.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 764710F51BE74E3C005EBB74 /* MD5.cpp */; };
+		764710F91BE74E3C005EBB74 /* MD5.h in Headers */ = {isa = PBXBuildFile; fileRef = 764710F61BE74E3C005EBB74 /* MD5.h */; };
 		765B7E2D1B6B7F7000A26E33 /* CCH_CREATE_FUNC.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 765B7E2C1B6B7F7000A26E33 /* CCH_CREATE_FUNC.hpp */; };
 		765B7E2F1B6B869500A26E33 /* LAST_ARG.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 765B7E2E1B6B869500A26E33 /* LAST_ARG.hpp */; };
 		765B7E331B6B889C00A26E33 /* CUT_LAST_ARG.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 765B7E321B6B889C00A26E33 /* CUT_LAST_ARG.hpp */; };
@@ -401,6 +404,8 @@
 		764576E31B69CD9E004B4728 /* ApplicationListener.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApplicationListener.h; sourceTree = "<group>"; };
 		7646FEE31B22F760002B2E23 /* OperationManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = OperationManager.cpp; sourceTree = "<group>"; };
 		7646FEE41B22F760002B2E23 /* OperationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OperationManager.h; sourceTree = "<group>"; };
+		764710F51BE74E3C005EBB74 /* MD5.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MD5.cpp; sourceTree = "<group>"; };
+		764710F61BE74E3C005EBB74 /* MD5.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MD5.h; sourceTree = "<group>"; };
 		764D64E81B589CE400DDE6CB /* Layoutable.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Layoutable.h; sourceTree = "<group>"; };
 		765B7E2C1B6B7F7000A26E33 /* CCH_CREATE_FUNC.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = CCH_CREATE_FUNC.hpp; sourceTree = "<group>"; };
 		765B7E2E1B6B869500A26E33 /* LAST_ARG.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = LAST_ARG.hpp; sourceTree = "<group>"; };
@@ -861,6 +866,8 @@
 				769D26841BBA4AD5004E95F6 /* UMap.h */,
 				7637294D1BBD27DE00ADD4F5 /* ColorHelper.cpp */,
 				7637294E1BBD27DE00ADD4F5 /* ColorHelper.h */,
+				764710F51BE74E3C005EBB74 /* MD5.cpp */,
+				764710F61BE74E3C005EBB74 /* MD5.h */,
 			);
 			name = src;
 			path = ../src;
@@ -1244,6 +1251,7 @@
 				7693E1FC1B22A6EA0068F1CD /* zone.h in Headers */,
 				7693E20C1B22A6EA0068F1CD /* define.hpp in Headers */,
 				7693E1BB1B22A6E90068F1CD /* LayoutHelper.h in Headers */,
+				764710F91BE74E3C005EBB74 /* MD5.h in Headers */,
 				7693E1D91B22A6E90068F1CD /* object.hpp in Headers */,
 				76372D931B4B822F009E66B8 /* KVDB.h in Headers */,
 				7693E1CD1B22A6E90068F1CD /* lexical_cast.h in Headers */,
@@ -1487,6 +1495,7 @@
 				7693E2321B22A6EB0068F1CD /* vrefbuffer.cpp in Sources */,
 				7693E23F1B22A6EC0068F1CD /* ParallaxCamera.cpp in Sources */,
 				7693E2521B22A6EC0068F1CD /* vsson.cpp in Sources */,
+				764710F71BE74E3C005EBB74 /* MD5.cpp in Sources */,
 				7607A9B51B4BBEE700F594EE /* Model.cpp in Sources */,
 				7693E1561B22A6E90068F1CD /* DoLayoutActionFactory.cpp in Sources */,
 				7693E1BD1B22A6E90068F1CD /* LayoutRegistration.cpp in Sources */,
@@ -1566,6 +1575,7 @@
 				7693E15D1B22A6E90068F1CD /* InstantActionFactory.cpp in Sources */,
 				7693E1BA1B22A6E90068F1CD /* LayoutHelper.cpp in Sources */,
 				7693E17A1B22A6E90068F1CD /* DrawNodeHelper.cpp in Sources */,
+				764710F81BE74E3C005EBB74 /* MD5.cpp in Sources */,
 				7607A9B61B4BBEE700F594EE /* Model.cpp in Sources */,
 				7693E22B1B22A6EB0068F1CD /* object.cpp in Sources */,
 				7693E2481B22A6EC0068F1CD /* Shortcut.cpp in Sources */,
