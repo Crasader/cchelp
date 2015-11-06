@@ -31,16 +31,21 @@ namespace ccHelp
         
         void clear();
         
-        std::string operator<<(SSTOKEN tok)
+        inline std::string operator%(SSTOKEN tok)
         {
             return this->ret();
         }
         
         template <typename T>
-        SSPooledObject& operator<<(const T& t)
+        SSPooledObject& operator%(const T& t)
         {
             this->Stream<<t;
             return *this;
+        }
+        
+        inline operator std::string()
+        {
+            return ret();
         }
         
         std::string ret();
