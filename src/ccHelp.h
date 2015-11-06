@@ -49,4 +49,6 @@
 #include "Operation/OperationManager.h"
 #include "EnumHelper.h"
 
+#include "StringStreamPool.h"
+
 using namespace std;
