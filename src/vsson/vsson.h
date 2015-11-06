@@ -70,6 +70,8 @@ namespace vsson
         bool member(const string &name) const;
         bool member(int idx) const;
         
+        unsigned int arrCount() const {return indexedField.size();}
+        
         void clear();
     };
     

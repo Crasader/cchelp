@@ -63,6 +63,9 @@
 		765B7E2D1B6B7F7000A26E33 /* CCH_CREATE_FUNC.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 765B7E2C1B6B7F7000A26E33 /* CCH_CREATE_FUNC.hpp */; };
 		765B7E2F1B6B869500A26E33 /* LAST_ARG.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 765B7E2E1B6B869500A26E33 /* LAST_ARG.hpp */; };
 		765B7E331B6B889C00A26E33 /* CUT_LAST_ARG.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 765B7E321B6B889C00A26E33 /* CUT_LAST_ARG.hpp */; };
+		767204081BEC88D100C0D2CB /* StringStreamPool.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 767204061BEC88D100C0D2CB /* StringStreamPool.cpp */; };
+		767204091BEC88D100C0D2CB /* StringStreamPool.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 767204061BEC88D100C0D2CB /* StringStreamPool.cpp */; };
+		7672040A1BEC88D100C0D2CB /* StringStreamPool.h in Headers */ = {isa = PBXBuildFile; fileRef = 767204071BEC88D100C0D2CB /* StringStreamPool.h */; };
 		7679C8481B4C40A200081830 /* CCH_FOR2.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 7679C8471B4C40A200081830 /* CCH_FOR2.hpp */; };
 		7679C84A1B4C464000081830 /* CCH_EVEN_ODD.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 7679C8491B4C464000081830 /* CCH_EVEN_ODD.hpp */; };
 		7693E0321B22A6100068F1CD /* libcocos2d Mac.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7693E02F1B22A5EB0068F1CD /* libcocos2d Mac.a */; };
@@ -413,6 +416,8 @@
 		7662DE401BCBCC0600802345 /* AddChildLayouts.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AddChildLayouts.h; sourceTree = "<group>"; };
 		76717CDE1B9A9FDD00A291CB /* ENUM.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = ENUM.hpp; sourceTree = "<group>"; };
 		76717CDF1B9AADFC00A291CB /* EnumHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EnumHelper.h; sourceTree = "<group>"; };
+		767204061BEC88D100C0D2CB /* StringStreamPool.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = StringStreamPool.cpp; sourceTree = "<group>"; };
+		767204071BEC88D100C0D2CB /* StringStreamPool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StringStreamPool.h; sourceTree = "<group>"; };
 		7679C8471B4C40A200081830 /* CCH_FOR2.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = CCH_FOR2.hpp; sourceTree = "<group>"; };
 		7679C8491B4C464000081830 /* CCH_EVEN_ODD.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = CCH_EVEN_ODD.hpp; sourceTree = "<group>"; };
 		7693DF451B229ED30068F1CD /* ccHelp_Mac.a */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = ccHelp_Mac.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -868,6 +873,8 @@
 				7637294E1BBD27DE00ADD4F5 /* ColorHelper.h */,
 				764710F51BE74E3C005EBB74 /* MD5.cpp */,
 				764710F61BE74E3C005EBB74 /* MD5.h */,
+				767204061BEC88D100C0D2CB /* StringStreamPool.cpp */,
+				767204071BEC88D100C0D2CB /* StringStreamPool.h */,
 			);
 			name = src;
 			path = ../src;
@@ -1392,6 +1399,7 @@
 				7693E17F1B22A6E90068F1CD /* ExceptionFactory.h in Headers */,
 				7693E19B1B22A6E90068F1CD /* object_str.hpp in Headers */,
 				7693E20A1B22A6EA0068F1CD /* sysdep.h in Headers */,
+				7672040A1BEC88D100C0D2CB /* StringStreamPool.h in Headers */,
 				7693E21C1B22A6EB0068F1CD /* type.hpp in Headers */,
 				764508201BB40123005FDE27 /* UVector.h in Headers */,
 			);
@@ -1532,6 +1540,7 @@
 				76B602111B3C5DF500B79B6E /* ContextValue.cpp in Sources */,
 				7693E1531B22A6E90068F1CD /* DelayActionFactory.cpp in Sources */,
 				76372D8E1B4B822F009E66B8 /* IOHelper.cpp in Sources */,
+				767204081BEC88D100C0D2CB /* StringStreamPool.cpp in Sources */,
 				7693E1811B22A6E90068F1CD /* Hash.cpp in Sources */,
 				7693E14D1B22A6E90068F1CD /* ActionHelper.cpp in Sources */,
 				7693E1B61B22A6E90068F1CD /* LayerColorLayouts.cpp in Sources */,
@@ -1612,6 +1621,7 @@
 				7693E24F1B22A6EC0068F1CD /* Utils.cpp in Sources */,
 				76372D8F1B4B822F009E66B8 /* IOHelper.cpp in Sources */,
 				7693E15A1B22A6E90068F1CD /* FadeToActionFactory.cpp in Sources */,
+				767204091BEC88D100C0D2CB /* StringStreamPool.cpp in Sources */,
 				7693E2311B22A6EB0068F1CD /* version.cpp in Sources */,
 				7693E2561B22A6EC0068F1CD /* WidgetUtils.cpp in Sources */,
 				7693E1771B22A6E90068F1CD /* DialogLayer.cpp in Sources */,

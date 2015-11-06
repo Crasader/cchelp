@@ -107,6 +107,7 @@ namespace ccHelp {
     private:
         std::deque<OperationJob *> ops;
         OperationJob *runningJob;
+        bool _terminateFlag;
         
         void activeNextOperation();
         
@@ -126,6 +127,8 @@ namespace ccHelp {
         void delay(float t, OperationAddRule rule = RULE_NONE);
         inline void delayBack(float t) {delay(t, RULE_AT_LAST);}
         inline void delayFront(float t) {delay(t, RULE_AT_FIRST);}
+        
+        void terminate();
     };
     
 //    template<typename T>
@@ -176,6 +179,7 @@ namespace ccHelp {
         inline void awaitBack(OperationManager &op) {await(op, RULE_AT_LAST);}
         inline void awaitFront(OperationManager &op) {await(op, RULE_AT_FIRST);}
         
+        void terminate();
 //        template<typename T>
 //        void addmkInSubSeq(const T& t, OperationAddRule rule = OperationAddRule::RULE_AT_FIRST)
 //        {

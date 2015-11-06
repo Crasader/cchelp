@@ -197,7 +197,7 @@ namespace ccHelp {
     }
     
     OperationQueue::OperationQueue()
-    : runningJob(nullptr)
+    : runningJob(nullptr), _terminateFlag(false)
     {
         
     }
@@ -237,19 +237,34 @@ namespace ccHelp {
     
     void OperationQueue::activeNextOperation()
     {
-        if (runningJob || this->ops.empty())
+        if (runningJob)
             return;
+        
+        if (ops.empty())
+        {
+            _terminateFlag = false;
+            return;
+        }
         
         OperationJob *topJob = this->ops.front();
         this->ops.pop_front();
         
         runningJob = topJob;
-        topJob->getOperation()->run([=] {
+        if (!_terminateFlag)
+        {
+            topJob->getOperation()->run([=] {
+                runningJob = nullptr;
+                delete topJob;
+                
+                this->activeNextOperation();
+            });
+        }
+        else
+        {
             runningJob = nullptr;
             delete topJob;
-            
             this->activeNextOperation();
-        });
+        }
     }
     
     bool OperationQueue::isOperating() const
@@ -339,6 +354,11 @@ namespace ccHelp {
     void OperationQueue::delay(float t, OperationAddRule rule)
     {
         this->push(new DelayOperation(t), rule);
+    }
+    
+    void OperationQueue::terminate()
+    {
+        _terminateFlag = true;
     }
     
     OperationManager::Building::Building()
@@ -468,6 +488,13 @@ namespace ccHelp {
     void OperationManager::await(ccHelp::OperationManager &op, OperationAddRule rule)
     {
         return mQueue.await(op.mQueue, rule);
+    }
+    
+    void OperationManager::terminate()
+    {
+        mQueue.terminate();
+        currentBuilding.releaseAll();
+        while (!stackedBuildings.empty()) {stackedBuildings.pop();}
     }
     
     Operation* mkop(cocos2d::Node *target, cocos2d::FiniteTimeAction *act)
