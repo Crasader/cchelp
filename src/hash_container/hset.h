@@ -40,9 +40,9 @@ namespace Json {
                 v.reserve(j.size());
                 for (unsigned int i = 0; i < j.size(); ++i)
                 {
-                    hset<T> val;
+                    T val;
                     Json::type::deserialize(j[i], val);
-                    v.push_back(val);
+                    v.insert(val);
                 }
                 return true;
             }
