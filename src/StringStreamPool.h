@@ -48,6 +48,11 @@ namespace ccHelp
             return ret();
         }
         
+        inline operator const char*()
+        {
+            return ret().c_str();
+        }
+        
         std::string ret();
     };
     
