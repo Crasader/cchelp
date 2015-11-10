@@ -59,7 +59,9 @@ namespace ccHelp
 		if (closeAcion)
 		{
 			auto actionWithCompletion = Sequence::create(closeAcion,
-				CallFunc::create([dlgLayer]{dlgLayer->removeFromParent();}),
+				CallFunc::create([dlgLayer] {
+                dlgLayer->removeFromParent();
+            }),
 				CallFunc::create([=]
 			{
 				completion(dlgLayer);
