@@ -15,7 +15,8 @@ namespace ccHelp
 	enum DialogAlign
 	{
 		NO_ALIGN = 0,
-		CENTER = 1
+		CENTER = 1,
+        BOTTOM_CENTER = 2
 	};
 
 	class DialogLayer : public Node

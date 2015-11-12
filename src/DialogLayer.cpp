@@ -126,6 +126,11 @@ namespace ccHelp
 		{
 			return parent->getContentSize() / 2;
 		}
+        
+        if (align == BOTTOM_CENTER)
+        {
+            return Vec2(parent->getContentSize().width / 2, parent->getContentSize().height * 0.15f);
+        }
 
 		return dlg->getPosition();
 	}
