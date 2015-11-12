@@ -359,6 +359,7 @@ namespace ccHelp {
     void OperationQueue::terminate()
     {
         _terminateFlag = true;
+        this->activeNextOperation();
     }
     
     OperationManager::Building::Building()
