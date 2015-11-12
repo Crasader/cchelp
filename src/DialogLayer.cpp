@@ -29,7 +29,7 @@ namespace ccHelp
 		DialogLayer *dlgLayer = Utils::createnx(new DialogLayer(parent, dialog, fillBg));
 		parent->addChild(dlgLayer, 0x1000);
 
-		dialog->setPosition(alignInPoint(align, dlgLayer, dialog));
+		dialog->setPosition(align(dlgLayer, dialog));
 
 		FiniteTimeAction *showAction = makeShowAnim(anim, dlgLayer, dialog);
 		if (showAction)
@@ -119,19 +119,19 @@ namespace ccHelp
 
 		return nullptr;
 	}
-
-	Vec2 DialogLayer::alignInPoint(DialogAlign align, Node *parent, Node *dlg)
-	{
-		if (align == CENTER)
-		{
-			return parent->getContentSize() / 2;
-		}
-        
-        if (align == BOTTOM_CENTER)
-        {
-            return Vec2(parent->getContentSize().width / 2, parent->getContentSize().height * 0.15f);
-        }
-
-		return dlg->getPosition();
-	}
+    
+    DialogAlign NO_ALIGN = [](Node *p, Node *d)
+    {
+        return d->getPosition();
+    };
+    
+    DialogAlign CENTER = [](Node *p, Node *d)
+    {
+        return p->getContentSize() * 0.5f;
+    };
+    
+    DialogAlign BOTTOM_CENTER = [](Node *p, Node *d)
+    {
+        return Vec2(p->getContentSize().width / 2, p->getContentSize().height * 0.15f);
+    };
 }

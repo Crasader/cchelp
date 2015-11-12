@@ -12,12 +12,10 @@ namespace ccHelp
 		ZOOM_FADE = 1
 	};
 
-	enum DialogAlign
-	{
-		NO_ALIGN = 0,
-		CENTER = 1,
-        BOTTOM_CENTER = 2
-	};
+    typedef std::function<Vec2(Node *, Node *)> DialogAlign;
+    extern DialogAlign NO_ALIGN;
+    extern DialogAlign CENTER;
+    extern DialogAlign BOTTOM_CENTER;
 
 	class DialogLayer : public Node
 	{
@@ -36,7 +34,7 @@ namespace ccHelp
 		static DialogLayer* showDialog(Node *parent, Node *dialog,
 			CREF(Color4B) fillBg = Color4B(),
 			DialogAnimation anim = DialogAnimation::NONE,
-			DialogAlign align = DialogAlign::NO_ALIGN,
+			DialogAlign align = NO_ALIGN,
 			DIALOG_COMPLETION completion = DO_NOTHING_COMPLETION);
 
 		static void closeDialog(DialogLayer *dlgLayer, Node *dialog,
@@ -45,7 +43,5 @@ namespace ccHelp
 	private:
 		static FiniteTimeAction* makeShowAnim(DialogAnimation anim, Node *parent, Node *dlg);	private:
 		static FiniteTimeAction* makeCloseAnim(DialogAnimation anim, Node *parent, Node *dlg);
-
-		static Vec2 alignInPoint(DialogAlign align, Node *parent, Node *dlgs);
 	};
 }
