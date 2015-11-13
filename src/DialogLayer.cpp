@@ -80,7 +80,7 @@ namespace ccHelp
 	FiniteTimeAction* DialogLayer::makeShowAnim(DialogAnimation anim,
 		Node *parent, Node *dlg)
 	{
-		static const float ANIM_DUR = 0.5f;
+		static const float ANIM_DUR = 0.2f;
 
 		if (anim == DialogAnimation::ZOOM_FADE)
 		{
@@ -105,7 +105,7 @@ namespace ccHelp
 	FiniteTimeAction* DialogLayer::makeCloseAnim(DialogAnimation anim,
 		Node *parent, Node *dlg)
 	{
-		static const float ANIM_DUR = 0.5f;
+		static const float ANIM_DUR = 0.2f;
 
 		if (anim == DialogAnimation::ZOOM_FADE)
 		{
